@@ -28,8 +28,9 @@ public class Ejercicio19Boletin {
                     System.out.print(space);
                 }
             System.out.println(asterisco);
-            }
-        }                                                      
+        }
+    }                                                      
+    System.out.println("Prueba");
     }
 }
 
