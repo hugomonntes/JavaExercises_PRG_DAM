@@ -22,18 +22,23 @@ public class Ejercicio19Boletin {
                 }
             }
         }
-        
         if (opcionD.equals("i")) {
-            for(int i = numeroAstersicos; i >= 0; i--){
-                System.out.println(asterisco);
-                for(int contadorEspacios = numeroAstersicos; contadorEspacios >= 0; contadorEspacios--){
+            for(int i = 0; i < numeroAstersicos; i++){
+                for(int contadorEspacios = (numeroAstersicos - i); contadorEspacios > 0; contadorEspacios--){
                     System.out.print(space);
                 }
+            System.out.println(asterisco);
             }
-        }
-    }                                                            
+        }                                                      
+    }
 }
 
 /*
-
+19.a) Realizar un programa que dibuje una ristra de N asteriscos en pantalla (N es
+un número introducido polo usuario).
+Ejemplo:
+Cuantos asteriscos deseas dibujar? 10
+**********
+b) Repetirlo pero dibujando la ristra en diagonal. El usuario escogerá se la
+dibuja de izquierda la derecha o de derecha la izquierda.
 */
