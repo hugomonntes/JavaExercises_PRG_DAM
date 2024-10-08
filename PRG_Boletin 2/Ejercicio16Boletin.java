@@ -1,0 +1,96 @@
+import java.util.Scanner;
+
+public class Ejercicio16Boletin {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numeroIncognita;
+        int numeroIntroducido;
+        int contadorIntentos;
+        boolean acertado;
+        boolean seguirJugando = true;
+        String opcionJugar;
+
+        do {
+            numeroIntroducido = 0;
+            contadorIntentos = 5;
+            acertado = false;
+            System.out.println("___________________\n");
+            System.out.println("Turno del Jugador 1");
+            System.out.println("___________________\n");
+
+            do { // Filtro para que el player 1 no introduzca numeros fuera de ese rango.
+                System.out.print("Introduce el número incógnita del 1 al 100: ");
+                numeroIncognita = sc.nextInt();
+                if (numeroIncognita < 1 || numeroIncognita > 100) {
+                    System.out.println("❌ Error, el número debe estar entre 1 y 100.");
+                }
+            } while (numeroIncognita < 1 || numeroIncognita > 100);
+
+            for (int i = 0; i < 50; i++) { // Efecto limpiar pantalla.
+                System.out.println();
+            }
+
+            System.out.println("___________________\n");
+            System.out.println("Turno del Jugador 2 (Tienes 5 intentos)");
+            System.out.println("___________________\n");
+
+            while (contadorIntentos > 0 && !acertado) { // Condiciones para ganar o no el juego.
+                System.out.print("Adivina el número:");
+                numeroIntroducido = sc.nextInt();
+                if (numeroIncognita == numeroIntroducido) {
+                    System.out.printf("✅ ¡Acertaste! ¡Enhorabuena! 🎉🎉 El número era el %d! \n", numeroIncognita);
+                    acertado = true;
+                } else if (numeroIncognita != numeroIntroducido) {
+                    if (numeroIntroducido <= 0 || numeroIntroducido > 100) {
+                        System.out.println("❌ Error, el número debe estar entre 1 y 100;");
+                    } else {
+                        contadorIntentos--;
+                        System.out.printf("❌ ¡Fallaste! Te quedan %d intentos. \n", contadorIntentos);
+                        if (contadorIntentos == 0) {
+                            System.out.printf("🔄¡Inténtalo de nuevo!💪🔥\n");
+                        }
+                    }
+                }
+            }
+            System.out.print("Quieres seguir jungando (S/N): ");
+            sc.nextLine();
+            opcionJugar = sc.nextLine().toUpperCase();
+            if (opcionJugar.equals("S")){
+                seguirJugando = true;
+            } else if(opcionJugar.equals("N")){
+                seguirJugando = false;
+                System.out.println("Gracias por jugar!");
+            } else {
+                System.out.println("❌ Introduce un carácter válido!");
+                seguirJugando = false;
+                seguirJugando = false;
+            }
+        } while (seguirJugando);
+    }
+}
+/*
+ * 16.Realizar el juego Adivina un número entre 1 y 100 para dos personas. El
+ * Computador pide un número entre 1 y 100 al jugador 1, luego borra la pantalla
+ * y el jugador 2 debe adivinar el número en, como máximo, 5 intentos. Se debe
+ * indicar en cada intento si el número a acertar es mayor o menor que el
+ * indicado
+ * por el jugador 2. Además se informará de los intentos que quedan. Al terminar
+ * el juego se debe preguntar si se desea jugar otra partida o terminar el
+ * programa. Tanto en la petición al jugador 1 como al jugador 2 si el numero no
+ * está en el rango 1 a 100 debe volver a pedirlo y no contar intento
+ */
+
+/*
+ * Turno del Jugador 1 -- > Introduce un numero del 1 al 100: X
+ * Player 2 --> Adivina el número:
+ * "Te quedan 4 intentos"
+ * Player 2 --> Adivina el número:
+ * "Te quedan 3 intentos"
+ * Player 2 --> Adivina el número:
+ * Player 2 --> Adivina el número:
+ * Player 2 --> Adivina el número:
+ * if(numero == numero){
+ * 
+ * }
+ * 
+ */
