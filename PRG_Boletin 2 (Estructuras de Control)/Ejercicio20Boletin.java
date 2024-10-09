@@ -6,15 +6,31 @@ public class Ejercicio20Boletin {
         int numeroAsteriscos;
         String asterisco = "*";
         String space = " ";
+        int sumaAst = 0;
 
         System.out.print("Introduce el numero de asteriscos: ");
         numeroAsteriscos = sc.nextInt();
 
-        for (int i = 0; i <= numeroAsteriscos; i++) {
-            System.out.println(asterisco);
-            for (int z = 0; z <= numeroAsteriscos; z++) {
+        for (int i = 1; i <= numeroAsteriscos; i++) {
+            for (int x = 1; x <= i; x++) {
                 System.out.print(asterisco);
             }
+            System.out.println(space);
+        }
+
+        System.out.println("\n");
+
+        for (int i = 1; i <= numeroAsteriscos; i++) {
+            for (int j = 1; j <= numeroAsteriscos - i; j++) {
+                System.out.print(space);
+            }
+            for (int x = 1; x <= i; x++) {
+                System.out.print(asterisco);
+                for(int v = 1; v < x; v++){
+                    System.out.print(asterisco);
+                }
+            }
+            System.out.println(space);
         }
     }
 }
