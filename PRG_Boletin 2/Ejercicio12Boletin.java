@@ -4,18 +4,22 @@ public class Ejercicio12Boletin {
             System.out.println(i);
         }
         System.out.println(" \n_________________ \n");
+
         for(int i = 50; i >= 1; i--){
             System.out.println(i);
         }
         System.out.println(" \n_________________ \n");
+
         for(int i = 2; i <= 20; i = i + 2){
             System.out.println(i);
         }
         System.out.println(" \n_________________ \n");
+
         for(int i = 91; i <= 130; i = i + 2){
             System.out.println(i);
         }
         System.out.println(" \n_________________ \n");
+        
         for(int i = 70; i >= 25; i = i - 5){
             System.out.println(i);
         }

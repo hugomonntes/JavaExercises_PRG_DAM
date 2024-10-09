@@ -22,6 +22,7 @@ public class Ejercicio20Boletin {
                 }
             }
         }
+        System.out.print("Prueba");
     }
 }
 
