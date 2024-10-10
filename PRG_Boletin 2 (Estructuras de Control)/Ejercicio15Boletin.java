@@ -18,7 +18,7 @@ public class Ejercicio15Boletin {
             System.out.print("Introduce la opción: ");
             opcion = sc.nextInt();
 
-            switch (opcion) {
+            switch (opcion) { //TODO noadmitir negativos
                 case 1:
                 System.out.print("Introduce tu cantidad en Euros (€): ");
                 cantidad = sc.nextInt();

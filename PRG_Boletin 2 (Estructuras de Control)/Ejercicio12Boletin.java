@@ -10,7 +10,7 @@ public class Ejercicio12Boletin {
         }
         System.out.println(" \n_________________ \n");
 
-        for(int i = 2; i <= 20; i = i + 2){
+        for(int i = 2; i < 20; i = i + 2){
             System.out.println(i);
         }
         System.out.println(" \n_________________ \n");

@@ -16,7 +16,7 @@ public class Ejercicio14Boletin {
             numeros = sc.nextInt();
             if (numeros != 0) {
                 contador++;
-                acumulador = acumulador + numeros;
+              //  acumulador = acumulador + numeros;
             }
             if (numeros < 0) {
                 contadorNumerosNegativos++;
