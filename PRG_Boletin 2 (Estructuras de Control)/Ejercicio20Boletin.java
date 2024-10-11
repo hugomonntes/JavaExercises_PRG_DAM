@@ -24,13 +24,10 @@ public class Ejercicio20Boletin {
             for (int j = 1; j <= numeroAsteriscos - i; j++) {
                 System.out.print(space);
             }
-            for (int x = 1; x <= i; x++) {
+            for (int k = 1; k <= (2 * i - 1); k++) {
                 System.out.print(asterisco);
-                for(int v = 1; v < x; v++){
-                    System.out.print(asterisco);
-                }
             }
-            System.out.println(space);
+            System.out.println();
         }
     }
 }

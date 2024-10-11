@@ -46,6 +46,11 @@ public class Ejercicio16Boletin {
                     } else {
                         contadorIntentos--;
                         System.out.printf("❌ ¡Fallaste! Te quedan %d intentos. \n", contadorIntentos);
+                        if (numeroIncognita > numeroIntroducido) {
+                            System.out.printf("💡 ¡PISTA! El numero es MAYOR al que introduciste! \n");
+                        } else if (numeroIncognita < numeroIntroducido) {
+                            System.out.printf("💡 ¡PISTA! El numero es MENOR al que introduciste! \n");
+                        }
                         if (contadorIntentos == 0) {
                             System.out.printf("🔄¡Inténtalo de nuevo!💪🔥\n");
                         }

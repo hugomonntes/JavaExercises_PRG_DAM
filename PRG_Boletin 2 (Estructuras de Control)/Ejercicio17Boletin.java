@@ -24,6 +24,7 @@ public class Ejercicio17Boletin {
                 };
             }
             System.out.println("La suma total es: " + acumulador);
+            acumulador = 0;
             System.out.print("Quieres continuar? (S/N): ");
             sc.nextLine();
             opcion = sc.nextLine().toUpperCase();

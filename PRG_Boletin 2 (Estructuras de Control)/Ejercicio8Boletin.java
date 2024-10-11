@@ -16,7 +16,13 @@ public class Ejercicio8Boletin {
         System.out.print("Tercer número: ");
         thirdNumber = sc.nextInt();
 
-        maxNumber = Math.max(firstNumber ,Math.max(secondNumber, thirdNumber));//TODO Con ifs
+        if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
+            maxNumber = firstNumber;
+        } else if (secondNumber >= firstNumber && secondNumber >= thirdNumber) {
+            maxNumber = secondNumber;
+        } else {
+            maxNumber = thirdNumber;
+        }//TODO Con ifs
 
         System.out.printf("El número mayor es: %d \n", maxNumber);
     }

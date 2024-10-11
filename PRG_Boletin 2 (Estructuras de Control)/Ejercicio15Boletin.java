@@ -18,17 +18,27 @@ public class Ejercicio15Boletin {
             System.out.print("Introduce la opción: ");
             opcion = sc.nextInt();
 
-            switch (opcion) { //TODO noadmitir negativos
+            switch (opcion) { //TODO no admitir negativos
                 case 1:
-                System.out.print("Introduce tu cantidad en Euros (€): ");
-                cantidad = sc.nextInt();
-                resultadoFinal = cantidad * valorEuroALibra;
-                System.out.printf("%.2f Euros (€) es equivalente a %.2f Libras (£) \n", cantidad, resultadoFinal);
+                    System.out.print("Introduce tu cantidad en Euros (€): ");
+                    cantidad = sc.nextInt();
+                    while (cantidad <= 0) {
+                        System.out.println("No puedes introducir una cantidad negativa!");
+                        System.out.print("Introduce tu cantidad en Euros (€): ");
+                        cantidad = sc.nextInt();
+                    }
+                    resultadoFinal = cantidad * valorEuroALibra;
+                    System.out.printf("%.2f Euros (€) es equivalente a %.2f Libras (£) \n", cantidad, resultadoFinal);
                 break;
 
                 case 2:
                 System.out.print("Introduce tu cantidad en Libras (£): ");
                 cantidad = sc.nextInt();
+                while (cantidad <= 0) {
+                    System.out.println("No puedes introducir una cantidad negativa!");
+                    System.out.print("Introduce tu cantidad en Euros (€): ");
+                    cantidad = sc.nextInt();
+                }
                 resultadoFinal = cantidad * valorLibraAEuro;
                 System.out.printf("%.2f Libras (£) es equivalente a %.2f Euros (€) \n", cantidad, resultadoFinal);
                 break;
