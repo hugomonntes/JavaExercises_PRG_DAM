@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Ejercicio17Boletin {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //TODO problema inic
         Scanner sc = new Scanner(System.in);
         int numero;
         int acumulador = 0;

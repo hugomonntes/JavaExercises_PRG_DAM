@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Ejercicio16Boletin {
-    public static void main(String[] args) {
+    public static void main(String[] args) {// TODO indicar > o < e informar de nº si se pierde
         Scanner sc = new Scanner(System.in);
         int numeroIncognita;
         int numeroIntroducido;
