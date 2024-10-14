@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Ejercicio21Boletin {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //#region VARIABLES INICIALES 
@@ -47,54 +48,21 @@ public class Ejercicio21Boletin {
             System.out.println("5. Salir del hipódromo.");
             System.out.print("Selecciona tu caballo (1/4) o Pulsa (5) para Salir: ");
             opcion = sc.nextInt();
-            
             switch (opcion) {
                 case 1:
                 System.out.println("Has seleccionado a Spirit ¡Suerte!");
-                    do{
-                        System.out.print("Cantidad a apostar: ");
-                        saldoApostado = sc.nextInt();
-                        System.out.println("Has apostado: " + saldoApostado + "€");
-                        System.out.print("Pulsa (S) para continuar o (N) para cancelar: ");
-                        sc.nextLine();
-                        opcionVerificarApuesta = sc.nextLine().toUpperCase();
-                    } while (opcionVerificarApuesta.equals("N"));
                 break;
 
                 case 2:
                 System.out.println("Has seleccionado a Sombra ¡Suerte!");
-                do{
-                    System.out.print("Cantidad a apostar: ");
-                    saldoApostado = sc.nextInt();
-                    System.out.println("Has apostado: " + saldoApostado + "€");
-                    System.out.print("Pulsa (S) para continuar o (N) para cancelar: ");
-                    sc.nextLine();
-                    opcionVerificarApuesta = sc.nextLine().toUpperCase();
-                } while (opcionVerificarApuesta.equals("N"));
                 break;
 
                 case 3:
                 System.out.println("Has seleccionado a Tornado ¡Suerte!");
-                do{
-                    System.out.print("Cantidad a apostar: ");
-                    saldoApostado = sc.nextInt();
-                    System.out.println("Has apostado: " + saldoApostado + "€");
-                    System.out.print("Pulsa (S) para continuar o (N) para cancelar: ");
-                    sc.nextLine();
-                    opcionVerificarApuesta = sc.nextLine().toUpperCase();
-                } while (opcionVerificarApuesta.equals("N"));
                 break;
 
                 case 4:
                 System.out.println("Has seleccionado a Bucefalo ¡Suerte!");
-                do{
-                    System.out.print("Cantidad a apostar: ");
-                    saldoApostado = sc.nextInt();
-                    System.out.println("Has apostado: " + saldoApostado + "€");
-                    System.out.print("Pulsa (S) para continuar o (N) para cancelar: ");
-                    sc.nextLine();
-                    opcionVerificarApuesta = sc.nextLine().toUpperCase();
-                } while (opcionVerificarApuesta.equals("N"));
                 break;
 
                 case 5: //FIXME Al introducir el 5 juega la carrera y no sale, sale dsps
@@ -105,6 +73,15 @@ public class Ejercicio21Boletin {
                 System.out.println("Introduce una opción válida!");
                 break;
             }
+
+            do{
+                System.out.print("Cantidad a apostar: ");
+                saldoApostado = sc.nextInt();
+                System.out.println("Has apostado: " + saldoApostado + "€");
+                System.out.print("Pulsa (S) para continuar o (N) para cancelar: ");
+                sc.nextLine();
+                opcionVerificarApuesta = sc.nextLine().toUpperCase();
+            } while (opcionVerificarApuesta.equals("N"));
 
             if (opcion != 5) {
                 while (posSpirit < lineaDeMeta && posSombra < lineaDeMeta && posTornado < lineaDeMeta && posBucefalo < lineaDeMeta) {
@@ -144,7 +121,6 @@ public class Ejercicio21Boletin {
                     long startTime = System.currentTimeMillis();
                     while (System.currentTimeMillis() - startTime < 200) {
                     }
-
                 }
             }
         } while(opcion != 5);
