@@ -24,6 +24,7 @@ public class Ejercicio21Boletin {
         String opcionVerificarApuesta;
         //#endregion
         //#region TODO'S
+        //TODO Crear una función que pinte la linea de meta maxima pasar como parametro el Num RAndom MAYOR comparados entre ellos con Math.Max();
         //TODO Hacer como un metodo de apostar por cada caballo
         //TODO Que tengas un saldo inicial y si pierde dependiendo X posicion del caballo t reste hasta que llegues a importe 0
         //TODO Hacer el IF para saber quien es el ganador
