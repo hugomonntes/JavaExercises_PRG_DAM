@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio9Boletin2ºForma {
+public class Ex9_2_b2 {
     public static void main(String[] args) { // TODO negativos
         Scanner sc = new Scanner(System.in);
         int n;
