@@ -73,7 +73,7 @@ public class Ejercicio21Boletin {
 
                 default:
                     System.out.println("Introduce una opción válida!");
-                    continue; // Vuelve a mostrar el menú si la opción no es válida
+                    continue;
             }
 
             do {
