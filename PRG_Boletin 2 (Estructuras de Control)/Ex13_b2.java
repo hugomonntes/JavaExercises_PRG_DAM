@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio13Boletin {
+public class Ex13_b2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numeroMaximo;

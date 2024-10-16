@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio11Boletin {
+public class Ex11_b2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int suma = 0;

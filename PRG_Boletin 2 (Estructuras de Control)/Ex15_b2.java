@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio15Boletin {
+public class Ex15_b2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double cantidad = 0;

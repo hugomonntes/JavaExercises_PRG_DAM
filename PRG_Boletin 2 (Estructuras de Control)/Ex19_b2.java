@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio19Boletin {
+public class Ex19_b2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numeroAstersicos;

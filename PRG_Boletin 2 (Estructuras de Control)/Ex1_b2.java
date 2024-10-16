@@ -1,4 +1,4 @@
-public class Ejercicio1Boletin {
+public class Ex1_b2 {
     public static void main(String[] args) {
         int contador = 0;
         int contadorDoWhile = 0;
