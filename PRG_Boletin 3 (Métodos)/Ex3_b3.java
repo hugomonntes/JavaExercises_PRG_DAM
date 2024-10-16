@@ -18,7 +18,6 @@ public class Ex3_b3 {
     public static void mostrarDato(String msg, double resultadoArea) {
         System.out.printf(msg + "%.3f \n", resultadoArea);
     }
-    //TODO Poner 3 decimales..
     public static void main(String[] args){
         int altura = pedirDato();
         int radio = pedirDato();
