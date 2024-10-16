@@ -18,7 +18,7 @@ public class Ex15_b2 {
             System.out.print("Introduce la opción: ");
             opcion = sc.nextInt();
 
-            switch (opcion) { //TODO no admitir negativos
+            switch (opcion) {
                 case 1:
                     System.out.print("Introduce tu cantidad en Euros (€): ");
                     cantidad = sc.nextInt();

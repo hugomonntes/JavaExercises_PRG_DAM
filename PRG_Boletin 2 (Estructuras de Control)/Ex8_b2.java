@@ -18,11 +18,11 @@ public class Ex8_b2 {
 
         if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
             maxNumber = firstNumber;
-        } else if (secondNumber >= firstNumber && secondNumber >= thirdNumber) {
+        } else if (  secondNumber >= thirdNumber) {
             maxNumber = secondNumber;
         } else {
             maxNumber = thirdNumber;
-        }//TODO Con ifs
+        }
 
         System.out.printf("El número mayor es: %d \n", maxNumber);
     }
