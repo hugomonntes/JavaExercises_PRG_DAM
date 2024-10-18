@@ -36,8 +36,8 @@ public class Ex6_b3 {
      */
     public static double progresionGeometrica(double base, int exponente){
         double acumulador = 0;
-        for (int i = 1; i <= exponente; i++) {
-            acumulador = (acumulador * base) + 1;
+        for (int i = 1; i <= exponente; i++){
+            acumulador += calcularPotencia(base, i);
         }
         return acumulador;
     } 
@@ -47,8 +47,8 @@ public class Ex6_b3 {
         int base = sc.nextInt();
         System.out.print("Dime el exponente: ");
         int exponente = sc.nextInt();
-        System.out.printf("El resultado es: %f \n", calcularPotencia(base, exponente));
-        mostrarPotencias(base, exponente);
+        // System.out.printf("El resultado es: %f \n", calcularPotencia(base, exponente));
+        // mostrarPotencias(base, exponente);
         System.out.println(progresionGeometrica(base, exponente));
     }
 }
