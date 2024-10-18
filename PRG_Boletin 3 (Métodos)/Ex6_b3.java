@@ -18,6 +18,10 @@ public class Ex6_b3 {
         }
         return acumulador;
     }
+
+    public static void mostrarPotencias(int n, int a){
+        System.out.println(calcularPotencia(a, n));
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Dime la base: ");
@@ -29,14 +33,14 @@ public class Ex6_b3 {
 }
 
 /*
-6. 
+6.
 a) Realizar una función que halle y devuelva la potencia de un número ( No se
 permite usar funciones de Math). La base puede ser real y el exponente entero
 puede ser negativo (recuerda que a-b = (1/a)b
 ).
 Parámetros del método: la base y el exponente. Valor devuelto: la potencia
 
-b) Realiza un nuevo método (en la misma clase) que muestre en pantalla las n
+b) Realiza un nuevo método = función (en la misma clase) que muestre en pantalla las n
 primeras potencias de un número a (n y a serán parámetros del método).
 Por ejemplo, si los parámetros son a=2 y n=4 mostrará: 1, 2, 4, 8.
 Para hacerlo deberás llamar al creado en el apartado anterior para calcular las

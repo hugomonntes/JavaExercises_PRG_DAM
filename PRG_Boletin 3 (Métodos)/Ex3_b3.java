@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex3_b3 {
+public class Ex3_b3 {//TODO comentar
     public static int pedirDato() {
         Scanner sc = new Scanner(System.in);
         int number;
@@ -16,7 +16,7 @@ public class Ex3_b3 {
     }
 
     public static void mostrarDato(String msg, double resultadoArea) {
-        System.out.printf(msg + "%.3f \n", resultadoArea);
+        System.out.printf("%s %.3f \n", msg, resultadoArea);
     }
 
     public static void main(String[] args) {

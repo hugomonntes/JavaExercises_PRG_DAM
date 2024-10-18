@@ -53,6 +53,7 @@ public class Ex16_b2 {
                         }
                         if (contadorIntentos == 0) {
                             System.out.printf("🔄¡Inténtalo de nuevo!💪🔥\n");
+                            System.out.printf("Perdiste te has quedado sin intentos! El número era: %d \n", numeroIncognita);
                         }
                     }
                 }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Ex1_b3 {
-    public static void lineasEnBlanco(int numeroLineas){
+    public static void lineasEnBlanco(int numeroLineas){//coment
         for (int i = 0; i <= numeroLineas; i++){
             System.out.println("");
         }
@@ -12,7 +12,7 @@ public class Ex1_b3 {
      * @return true si es par, false si es impar.
      */
     public static boolean isPar(int number){
-        return number % 2 == 0 ? true : false;
+        return number % 2 == 0  ;
     }
 
     /**
@@ -20,7 +20,7 @@ public class Ex1_b3 {
      * @param number2
      * @return "P" si es positivo, "N" si es negativo.
      */
-    public static String isPositive(int number2){
+    public static String isPositive(int number2){//char no string
         return number2 <= 0 ? "P" : "N";
     }
     public static void main(String[] args) {
