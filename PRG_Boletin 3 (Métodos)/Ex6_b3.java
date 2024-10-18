@@ -19,16 +19,28 @@ public class Ex6_b3 {
         return acumulador;
     }
 
-    public static void mostrarPotencias(int n, int a){
-        System.out.println(calcularPotencia(a, n));
+    public static void mostrarPotencias(double base, int exponente){
+        for (int i = 0; i < exponente; i++) {
+            System.out.println(calcularPotencia(base, i));
+        }
     }
+
+    public static double progresionGeometrica(double base, int exponente){
+        int acumulador = 0;
+        for (int i = 0; i < exponente; i++) {
+            acumulador += exponente;
+        }
+        return acumulador;
+    } 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Dime la base: ");
         int base = sc.nextInt();
         System.out.print("Dime el exponente: ");
         int exponente = sc.nextInt();
-        System.out.printf("El resultado es: %f \n", calcularPotencia(base, exponente));
+        //System.out.printf("El resultado es: %f \n", calcularPotencia(base, exponente));
+        //mostrarPotencias(base, exponente);
+        System.out.println(progresionGeometrica(base, exponente));
     }
 }
 
