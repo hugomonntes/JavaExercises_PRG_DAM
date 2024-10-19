@@ -40,7 +40,7 @@ public class Ex6_b3 {
             acumulador += calcularPotencia(base, exponente - i);//FIXME
         }
         return acumulador;
-    } 
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Dime la base: ");
