@@ -35,9 +35,9 @@ public class Ex6_b3 {
      * @return Suma de las potencias
      */
     public static double progresionGeometrica(double base, int exponente){
-        double acumulador = 0;
-        for (int i = 1; i <= exponente; i++){
-            acumulador += calcularPotencia(base, i);
+        double acumulador = 1;
+        for (int i = 1; i < exponente; i++){
+            acumulador += calcularPotencia(base, exponente - i);//FIXME
         }
         return acumulador;
     } 
