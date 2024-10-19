@@ -1,11 +1,45 @@
 import java.util.Scanner;
 public class Ex8_b3 {
+    /**
+     * Averigua si el numero es primo o no.
+     * @param number
+     * @return true (Si es primo) o false (Si no es primo)
+     */
     public static boolean isPrimo(int number){
-            return number % 2 == 0 ? false : number % 3 == 0 ? false : true;
+        boolean isPrimo = true;
+        if (number <= 1) {
+            isPrimo = false;
+        }
+        if (number == 2 || number == 3) {
+            isPrimo = true;
+        } else if (number % 2 == 0 || number % 3 == 0) {
+            isPrimo = false;
+        }
+        for (int i = 2; i < number; i++){
+            if (number % i == 0) {
+                isPrimo = false;
+            }
+        }
+        return isPrimo;
+    }
+    /**
+     * Imprime todos los números primos hasta X número.
+     * @param number
+     */
+    public static void mostrarPrimos(int number){
+        for (int i = 2; i <= number; i++) {
+            if (isPrimo(i)) {
+                System.out.println(i);
+            }
+        }
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println(isPrimo(102));
+        int number;
+        System.out.println("Introduce un número: ");
+        number = sc.nextInt();
+        System.out.println(isPrimo(number)); //Print si es Primo o No.
+        mostrarPrimos(number); //Print los números primos hasta X número.
     }
 }
 
