@@ -22,9 +22,9 @@ public class Ex11_b3 {
         return acumulador;
     }
 
-    public static double calcularCoseno(int numerCos){
-        return 
-    }
+    // public static double calcularCoseno(int numerCos){
+    //     return 
+    // }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
