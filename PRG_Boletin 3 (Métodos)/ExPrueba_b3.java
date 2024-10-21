@@ -15,9 +15,10 @@ public class ExPrueba_b3 {
         return msg;
     }
 
-    public static void main(String[] args) {
-        int numbers;
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
+
+        int numbers;
         System.out.println("Introduce un numero: ");
         numbers = sc.nextInt();
         System.out.println(sumNumbers(numbers));
