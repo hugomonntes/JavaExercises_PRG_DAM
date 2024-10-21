@@ -5,7 +5,7 @@ public class EscrituraArchivo {
         PrintWriter f = new PrintWriter("prueba.txt");
 
         //Escritura
-        f.print("Prueba de archivos");
+        f.print(Math.PI);
 
         //Cierre
         f.close();
