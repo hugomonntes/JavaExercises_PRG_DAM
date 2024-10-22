@@ -1,6 +1,5 @@
 import java.io.File;
 import java.util.Scanner;
-import java.util.function.DoubleToLongFunction;
 public class LecturaArchivo {
     public static void main(String[] args) throws Exception {
         Scanner f = new Scanner(new File("prueba.txt"));
