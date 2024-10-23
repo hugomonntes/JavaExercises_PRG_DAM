@@ -7,14 +7,14 @@ public class Ex8_b3 {
      */
     public static boolean isPrimo(int number){
         boolean isPrimo = true;
-        if (number <= 1) {
+        if (number <= 1) { //Quitar numeros menores igual a 1.
             isPrimo = false;
         }
-        if (number == 2 || number == 3) {
+        if (number == 2 || number == 3) { //Son primos
             isPrimo = true;
         } else if (number % 2 == 0 || number % 3 == 0) {
             isPrimo = false;
-        }
+        } //FIXME cambiar por solo utilizar for con if else;s
         for (int i = 2; i < number; i++){
             if (number % i == 0) {
                 isPrimo = false;
@@ -27,7 +27,7 @@ public class Ex8_b3 {
      * @param number
      */
     public static void mostrarPrimos(int number){
-        for (int i = 2; i <= number; i++) {
+        for (int i = 3; i <= number; i++) {
             if (isPrimo(i)) {
                 System.out.println(i);
             }
