@@ -14,7 +14,7 @@ public class Ex8_b3 {
             isPrimo = true;
         } else if (number % 2 == 0 || number % 3 == 0) {
             isPrimo = false;
-        } //FIXME cambiar por solo utilizar for con if else;s
+        } //FIXME cambiar por solo utilizar for con if else;
         for (int i = 2; i < number; i++){
             if (number % i == 0) {
                 isPrimo = false;

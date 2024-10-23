@@ -1,16 +1,19 @@
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Ex7_b3 {
     public static String saveFile(String fileName) throws Exception {
-        Scanner f = new Scanner(new File("Ex2_b3.txt"));
+        Scanner f = new Scanner(fileName);
         String auxiliar;
         auxiliar = f.nextLine();
         f.close();
         return auxiliar;
     }
     public static void main(String[] args) throws Exception {
-        saveFile("Ex2_b3.txt");
+        PrintWriter f = new PrintWriter("Ex7_b3.txt");
+        f.print(saveFile("Ex2_b3.txt"));
+        f.close();
     }
 }
 

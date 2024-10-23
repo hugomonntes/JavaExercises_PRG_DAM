@@ -40,7 +40,7 @@ public class Ex2_b3 {
         PrintWriter f = new PrintWriter("Ex2_b3.txt");
         f.printf("%s \n", userName);
         f.printf("%d \n", userNumber);
-        if (isPar(userNumber) && isPositive(userNumber).equals("P")) {
+        if (isPar(userNumber) && isPositive(userNumber).equals("P")) {//TODO reducir el código
             f.printf("El número %d es par y positivo", userNumber);
         } else if (!isPar(userNumber) && isPositive(userNumber).equals("P")){
             f.printf("El número %d es impar y positivo", userNumber);
