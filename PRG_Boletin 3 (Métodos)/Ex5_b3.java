@@ -3,29 +3,20 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Ex5_b3 {
-    /**
-     * Es bisiesto o no
-     * 
-     * @param year Introducir el año
-     * @return si es bisiesto(true) o no (false)
-     */
-    public static boolean isBisiesto(int year) {
-        return year % 400 == 0 ? true : year % 100 == 0 ? false : year % 4 == 0;
-    }
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         PrintWriter f = new PrintWriter("Ex5_b3.txt");
         int userYear;
         System.out.println("Introduce un año: ");
         userYear = sc.nextInt();
-        if (isBisiesto(userYear)) {
+        if (Ex4_b3.isBisiesto(userYear)) {
             f.printf("%d Si es bisiesto \n", userYear);
         } else {
             f.printf("%d No es bisiesto \n", userYear);
         }
         //Escribir numeros bisiestos hasta año actual.
         for(int i = userYear; i <= 2024; i++){
-            if (isBisiesto(i)){
+            if (Ex4_b3.isBisiesto(userYear)){
                 f.println(i);
             }
         }

@@ -150,8 +150,8 @@ public class Ex21_b2 {
 
             //APUESTAS
             if (ganador == caballoSeleccionado) {
-                saldoInicial += saldoApostado * 2;
-                System.out.println("¡Felicidades! Has ganado " + (saldoApostado * 2) + "€.");
+                saldoInicial += saldoApostado;
+                System.out.println("¡Felicidades! Has ganado " + (saldoInicial) + "€.");
             } else {
                 saldoInicial -= saldoApostado;
                 System.out.println("Lo siento, has perdido " + saldoApostado + "€. Saldo restante: " + saldoInicial + "€.");

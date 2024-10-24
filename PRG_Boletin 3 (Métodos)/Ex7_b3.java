@@ -10,9 +10,13 @@ public class Ex7_b3 {
         f.close();
         return auxiliar;
     }
+
+    public static void appendFile(String fileName, String msg){
+        
+    }
     public static void main(String[] args) throws Exception {
         PrintWriter f = new PrintWriter("Ex7_b3.txt");
-        f.print(saveFile("Ex2_b3.txt"));
+        f.print(saveFile("Ex7_b3.txt"));
         f.close();
     }
 }
