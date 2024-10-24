@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Ex7_b3 {
     public static String saveFile(String fileName){
         Scanner f = new Scanner(fileName);
-        String auxiliar;
-        auxiliar = f.nextLine();
+        String auxiliar = "";
         while (f.hasNext()) {
             auxiliar = f.nextLine();
             System.out.println(auxiliar);
