@@ -45,15 +45,15 @@ public class Ex16_b2 {
                         System.out.println("❌ Error, el número debe estar entre 1 y 100;");
                     } else {
                         contadorIntentos--;
-                        System.out.printf("❌ ¡Fallaste! Te quedan %d intentos. \n", contadorIntentos);
-                        if (numeroIncognita > numeroIntroducido) {
+                        if (numeroIncognita > numeroIntroducido && contadorIntentos > 0) {
+                            System.out.printf("❌ ¡Fallaste! Te quedan %d intentos. \n", contadorIntentos);
                             System.out.printf("💡 ¡PISTA! El numero es MAYOR al que introduciste! \n");
-                        } else if (numeroIncognita < numeroIntroducido) {
+                        } else if (numeroIncognita < numeroIntroducido && contadorIntentos > 0) {
+                            System.out.printf("❌ ¡Fallaste! Te quedan %d intentos. \n", contadorIntentos);
                             System.out.printf("💡 ¡PISTA! El numero es MENOR al que introduciste! \n");
                         }
                         if (contadorIntentos == 0) {
-                            System.out.printf("🔄¡Inténtalo de nuevo!💪🔥\n");
-                            System.out.printf("Perdiste te has quedado sin intentos! El número era: %d \n", numeroIncognita);
+                            System.out.printf("❌ Perdiste te has quedado sin intentos! El número era: %d \n", numeroIncognita);
                         }
                     }
                 }
