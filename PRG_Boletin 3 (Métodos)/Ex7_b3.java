@@ -15,7 +15,7 @@ public class Ex7_b3 {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(saveFile("Ex2_b3.txt"));
+        System.out.println(saveFile("PRG_Archivos/Ex2_b3.txt"));
     }
 }
 
