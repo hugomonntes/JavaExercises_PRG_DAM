@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Ex8_b3 {
+public class Ex9_b3 {
     /**
      * Averigua si el numero es primo o no.
      * @param number
