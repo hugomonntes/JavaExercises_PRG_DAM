@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
-public class Ex3_b3 {//TODO comentar
+public class Ex3_b3 {//TODO comentar(Comentado)
+    /**
+     * Pide un dato  lo devuelve
+     * @return dato introducido por el usuario
+     */
     public static int pedirDato() {
         Scanner sc = new Scanner(System.in);
         int number;
@@ -11,14 +15,23 @@ public class Ex3_b3 {//TODO comentar
         return number;
     }
 
+    /**
+     * Calcula la superficie de un Cilindro
+     * @param radio
+     * @param altura
+     * @return el resultado del area
+     */
     public static double superficieCilindro(int radio, int altura) {
         return 2 * radio * altura * Math.PI;
     }
-
+    /**
+     * Muestra el resultado un mensaje más el resultado del area
+     * @param msg
+     * @param resultadoArea
+     */
     public static void mostrarDato(String msg, double resultadoArea) {
         System.out.printf("%s %.3f \n", msg, resultadoArea);
     }
-
     public static void main(String[] args) {
         int altura = pedirDato();
         int radio = pedirDato();

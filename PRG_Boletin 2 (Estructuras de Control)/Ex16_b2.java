@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Ex16_b2 {
-    public static void main(String[] args) {// TODO  informar de nº si se pierde
+    public static void main(String[] args) {// TODO  informar de nº si se pierde(ARREGLADO)
         Scanner sc = new Scanner(System.in);
         int numeroIncognita;
         int numeroIntroducido;
