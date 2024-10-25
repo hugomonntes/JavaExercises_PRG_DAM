@@ -18,12 +18,26 @@ public class Ex5_b3 {
         }
         f.close();
     }
+
+    public static String leerBisiestosFile(String fileName) throws Exception{
+        Scanner file = new Scanner(new File(fileName));
+        String contentFile = "";
+        file.nextLine();
+        while (file.hasNext()) {
+            contentFile = file.nextLine();
+            System.out.print(contentFile + ";");
+        }
+        System.out.println();
+        file.close();
+        return contentFile;
+    }
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int userYear;
         System.out.print("Introduce un año: ");
         userYear = sc.nextInt();
         escribirBisiestosFile(userYear);
+        leerBisiestosFile("PRG_Archivos/Ex5_b3.txt");
     }
 }
 
