@@ -3,12 +3,8 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Ex5_b3 {
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        PrintWriter f = new PrintWriter("Ex5_b3.txt");
-        int userYear;
-        System.out.println("Introduce un año: ");
-        userYear = sc.nextInt();
+    public static void escribirBisiestosFile(int userYear) throws Exception {
+        PrintWriter f = new PrintWriter("PRG_Archivos/Ex5_b3.txt");
         if (Ex4_b3.isBisiesto(userYear)) {
             f.printf("%d Si es bisiesto \n", userYear);
         } else {
@@ -16,12 +12,18 @@ public class Ex5_b3 {
         }
         //Escribir numeros bisiestos hasta año actual.
         for(int i = userYear; i <= 2024; i++){
-            if (Ex4_b3.isBisiesto(userYear)){
+            if (Ex4_b3.isBisiesto(i)){
                 f.println(i);
             }
         }
-
         f.close();
+    }
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int userYear;
+        System.out.print("Introduce un año: ");
+        userYear = sc.nextInt();
+        escribirBisiestosFile(userYear);
     }
 }
 
@@ -35,6 +37,7 @@ Un ejemplo de como puede quedar el archivo:
 2016
 2020
 2024
+
 A continuación lee el archivo y muestra en pantalla todos los años menos el
 primero. Debe estar separados por comas en la misma linea y ocupando 6
 caracteres.
