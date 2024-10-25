@@ -3,6 +3,11 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Ex5_b3 {
+    /**
+     * Escribe datos en un archivo nuevo.
+     * @param userYear
+     * @throws Exception
+     */
     public static void escribirBisiestosFile(int userYear) throws Exception {
         PrintWriter f = new PrintWriter("PRG_Archivos/Ex5_b3.txt");
         if (Ex4_b3.isBisiesto(userYear)) {
@@ -18,16 +23,21 @@ public class Ex5_b3 {
         }
         f.close();
     }
-
+    /**
+     * Lee Archivo indicado en el parametro
+     * @param fileName
+     * @return el contenido del archivo
+     * @throws Exception
+     */
     public static String leerBisiestosFile(String fileName) throws Exception{
         Scanner file = new Scanner(new File(fileName));
-        String contentFile = "";
-        file.nextLine();
-        while (file.hasNext()) {
+        String contentFile = ""; // Almacena los datos del archivo 
+        file.nextLine(); // Salto de la primera línea para que no la lea
+        while (file.hasNext()) { // Bucle que lee todas las líneas de archivo (Excepto la primera)
             contentFile = file.nextLine();
-            System.out.print(contentFile + ";");
+            System.out.printf("%6s;", contentFile);
         }
-        System.out.println();
+        System.out.println(); // Salto de línea
         file.close();
         return contentFile;
     }

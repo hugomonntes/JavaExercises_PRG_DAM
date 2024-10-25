@@ -3,8 +3,8 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Ex7_b3 {
-    public static String saveFile(String fileName){ //TODO preguntar a Curro que hacer
-        Scanner f = new Scanner(fileName);
+    public static String readFile(String fileName) throws Exception{
+        Scanner f = new Scanner(new File(fileName));
         String contentFile = "";
         while (f.hasNext()) {
             contentFile = f.nextLine();
@@ -14,8 +14,21 @@ public class Ex7_b3 {
         return contentFile;
     }
 
+    public static String appendFile(String fileName, String msg) throws Exception {
+        String content = "";
+        content = readFile(fileName) + msg;
+        return content;
+    }
     public static void main(String[] args) throws Exception {
-        System.out.println(saveFile("PRG_Archivos/Ex2_b3.txt"));
+        Scanner sc = new Scanner(System.in);
+        PrintWriter fwritter = new PrintWriter("PRG_Archivos/Ex7_b3.txt");
+        String msg; // Almacena mensaje del user
+        System.out.println("Introduce un mensaje");
+        msg = sc.nextLine();
+        System.out.println(readFile("PRG_Archivos/Ex2_b3.txt")); // Mostrar en la consola los datos del archivo
+        appendFile("PRG_Archivos/Ex7_b3.txt", msg);
+        // fwritter.print(appendFile("PRG_Archivos/Ex7_b3.txt", msg));
+        // fwritter.close();
     }
 }
 
