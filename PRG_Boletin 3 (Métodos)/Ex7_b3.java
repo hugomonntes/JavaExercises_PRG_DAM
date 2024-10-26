@@ -16,18 +16,27 @@ public class Ex7_b3 {
 
     public static String appendFile(String fileName, String msg) throws Exception {
         PrintWriter fwritter = new PrintWriter(fileName);
-        String content = readFile(fileName) + msg; // Leer contenido y añadir el msg
-        fwritter.print(content); // ReEscribir el archivo
+        String content = readFile(fileName) + "\n" +  msg; // Leer contenido y añadir el msg
+        fwritter.print(content + msg); // ReEscribir el archivo
         fwritter.close();
         return content;
     }
+
+    public static void writeFile(String fileName, String msg) throws Exception {
+        PrintWriter fwritter = new PrintWriter(fileName);
+        String content = appendFile(fileName, msg);
+        fwritter.print(content);
+        fwritter.close();
+    }
+    
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         String msg; // Almacena mensaje del user
         System.out.print("Introduce un mensaje: ");
         msg = sc.nextLine();
-        readFile("PRG_Archivos/Ex2_b3.txt");
-        appendFile("PRG_Archivos/Ex7_b3.txt", msg);
+        System.out.println(readFile("PRG_Archivos/Ex2_b3.txt") + appendFile("PRG_Archivos/Ex7_b3.txt", msg));
+        writeFile("PRG_Archivos/Ex7_b3.txt", msg);
+        //appendFile("PRG_Archivos/Ex7_b3.txt", msg);
     }
 }
 
