@@ -21,22 +21,15 @@ public class Ex7_b3 {
         fwritter.close();
         return content;
     }
-
-    public static void writeFile(String fileName, String msg) throws Exception {
-        PrintWriter fwritter = new PrintWriter(fileName);
-        String content = appendFile(fileName, msg);
-        fwritter.print(content);
-        fwritter.close();
-    }
     
     public static void main(String[] args) throws Exception {
+        PrintWriter fwritter = new PrintWriter("PRG_Archivos/Ex7_b3.txt");
         Scanner sc = new Scanner(System.in);
         String msg; // Almacena mensaje del user
         System.out.print("Introduce un mensaje: ");
         msg = sc.nextLine();
-        System.out.println(readFile("PRG_Archivos/Ex2_b3.txt") + appendFile("PRG_Archivos/Ex7_b3.txt", msg));
-        writeFile("PRG_Archivos/Ex7_b3.txt", msg);
-        //appendFile("PRG_Archivos/Ex7_b3.txt", msg);
+        fwritter.print(readFile("PRG_Archivos/Ex2_b3.txt") + appendFile("PRG_Archivos/Ex7_b3.txt", msg));
+        fwritter.close();
     }
 }
 
