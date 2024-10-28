@@ -1,8 +1,9 @@
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Ex9_b3 {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int number;
         int opcion;
@@ -16,7 +17,7 @@ public class Ex9_b3 {
             System.out.printf("4.Salir \n");
             opcion = sc.nextInt();
 
-            switch (opcion){
+            switch (opcion) {
                 case 1:
                     Ex8_b3.mostrarPrimos(number);
                     break;
@@ -26,9 +27,14 @@ public class Ex9_b3 {
                     int contenido;
                     while (freader.hasNext()) {
                         contenido = freader.nextInt();
-                        System.out.printf(Ex8_b3.isPrimo(contenido) ? "%d es primo \n" : "%d no es primo \n", contenido);
+                        System.out.printf(Ex8_b3.isPrimo(contenido) ? "%d es primo \n" : "%d no es primo \n",
+                                contenido);
                     }
                     freader.close();
+                    break;
+                case 3:
+                    PrintWriter fWriter = new PrintWriter("PRG_Archivos/Ex9_b3_case3.txt");
+                    Ex8_b3.mostrarPrimos(number);
                     break;
                 default:
                     break;
@@ -38,7 +44,7 @@ public class Ex9_b3 {
 }
 
 /*
- ** 9. Modifica el ejercicio anterior de los números primos (solo el main) de
+ * 9. Modifica el ejercicio anterior de los números primos (solo el main) de
  * forma
  * que hagas un menú clásico con estas opciones:
  * 1. Mostrar primos menores que uno dado: Esto es lo que ya estaba del
