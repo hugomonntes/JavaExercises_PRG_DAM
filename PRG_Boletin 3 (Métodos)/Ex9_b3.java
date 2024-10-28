@@ -28,6 +28,7 @@ public class Ex9_b3 {
                         contenido = freader.nextInt();
                         System.out.printf(Ex8_b3.isPrimo(contenido) ? "%d es primo \n" : "%d no es primo \n", contenido);
                     }
+                    freader.close();
                     break;
                 default:
                     break;
