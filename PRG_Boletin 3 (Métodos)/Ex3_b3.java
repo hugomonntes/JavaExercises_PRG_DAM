@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class Ex3_b3 {//TODO comentar(Comentado)
+public class Ex3_b3 { 
     /**
-     * Pide un dato  lo devuelve
+     * Pide un dato compr que sea pos  lo devuelve
      * @return dato introducido por el usuario
      */
     public static int pedirDato() {
@@ -17,15 +17,15 @@ public class Ex3_b3 {//TODO comentar(Comentado)
 
     /**
      * Calcula la superficie de un Cilindro
-     * @param radio
-     * @param altura
+     * @param radio Radio del cil
+     * @param altura Alt del cil
      * @return el resultado del area
      */
     public static double superficieCilindro(int radio, int altura) {
         return 2 * radio * altura * Math.PI;
     }
     /**
-     * Muestra el resultado un mensaje más el resultado del area
+     * Muestra el resultado un mensaje más un dato real con 2 decimales
      * @param msg
      * @param resultadoArea
      */

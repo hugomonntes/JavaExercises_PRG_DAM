@@ -1,30 +1,5 @@
 import java.util.Scanner;
 public class Ex9_b3 {
-    /**
-     * Averigua si el numero es primo o no.
-     * @param number
-     * @return true (Si es primo) o false (Si no es primo)
-     */
-    public static boolean isPrimo(int number){
-        if (number <= 1) return false; //Si es menor que uno no es primo
-        if (number == 2 || number == 3) return true; //Si es 2 / 3 es primo
-        if (number % 2 == 0 || number % 3 == 0) return false; // Si es divisible entre 2 / 3 no es primo
-        for (int i = 2; i < number; i++){
-            if (number % i == 0) return false;
-        }
-        return true;
-    }
-    /**
-     * Imprime todos los números primos hasta X número.
-     * @param number
-     */
-    public static void mostrarPrimos(int number){
-        for (int i = 3; i <= number; i++) {
-            if (isPrimo(i)) {
-                System.out.println(i);
-            }
-        }
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int number;
@@ -32,8 +7,8 @@ public class Ex9_b3 {
         String fileUser;
         System.out.println("Introduce un número: ");
         number = sc.nextInt();
-        System.out.println(isPrimo(number)); //Print si es Primo o No.
-        mostrarPrimos(number); //Print los números primos hasta X número.
+        System.out.println(Ex8_b2.isPrimo(number)); //Print si es Primo o No.
+        Ex8_b2.mostrarPrimos(number); //Print los números primos hasta X número.
         do{
             System.out.printf("1.Mostrar numeros primos menores a %d", number);
             System.out.printf("2.Primos en archivo");
@@ -42,7 +17,7 @@ public class Ex9_b3 {
             opcion = sc.nextInt();
 
             switch (opcion) {
-                case 1: isPrimo(number);
+                case 1: Ex8_b2.mostrarPrimos(number);
                 break;
                 case 2: System.out.println("Introduce el nombre de un archivos");
                         fileUser = sc.nextLine();
