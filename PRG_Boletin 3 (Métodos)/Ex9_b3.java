@@ -26,10 +26,9 @@ public class Ex9_b3 {
                     int contenido;
                     while (freader.hasNext()) {
                         contenido = freader.nextInt();
-                        Ex8_b3.isPrimo(contenido) ? System.out.println(contenido + "Es primo") : System.out.println(contenido + "No es primo");
+                        System.out.printf(Ex8_b3.isPrimo(contenido) ? "%d es primo \n" : "%d no es primo \n", contenido);
                     }
                     break;
-
                 default:
                     break;
             }
