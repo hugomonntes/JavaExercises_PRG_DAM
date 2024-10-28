@@ -8,17 +8,17 @@ public class Ex9_b3 {
         int number;
         int opcion;
         String fileUser;
-        System.out.println("Introduce un número: ");
-        number = sc.nextInt();
         do {
-            System.out.printf("1.Mostrar numeros primos menores a %d \n", number);
-            System.out.printf("2.Primos en archivo \n");
-            System.out.printf("3.Archivo con primos \n");
-            System.out.printf("4.Salir \n");
+            System.out.println("1.Mostrar numeros primos");
+            System.out.println("2.Primos en archivo");
+            System.out.println("3.Archivo con primos");
+            System.out.println("4.Salir");
             opcion = sc.nextInt();
 
             switch (opcion) {
                 case 1:
+                    System.out.println("Introduce un número: ");
+                    number = sc.nextInt();
                     Ex8_b3.mostrarPrimos(number);
                     break;
                 case 2:
@@ -33,13 +33,19 @@ public class Ex9_b3 {
                     freader.close();
                     break;
                 case 3:
+                    System.out.println("Introduce un número mayor que 2: ");
+                    number = sc.nextInt();
                     PrintWriter fWriter = new PrintWriter("PRG_Archivos/Ex9_b3_case3.txt");
-                    Ex8_b3.mostrarPrimos(number);
+                    fWriter.println(Ex8_b3.mostrarPrimos(number));
+                    fWriter.close();
+                    break;
+                case 4:
+                    System.out.println("Adiós");
                     break;
                 default:
                     break;
             }
-        } while (true);
+        } while (opcion != 4);
     }
 }
 
