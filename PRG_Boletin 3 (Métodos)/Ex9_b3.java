@@ -36,7 +36,7 @@ public class Ex9_b3 {
                     System.out.println("Introduce un número mayor que 2: ");
                     number = sc.nextInt();
                     PrintWriter fWriter = new PrintWriter("PRG_Archivos/Ex9_b3_case3.txt");
-                    fWriter.print(Ex8_b3.mostrarPrimos(number));
+                    //fWriter.print(Ex8_b3.mostrarPrimos(number));
                     fWriter.close();
                     break;
                 case 4:
