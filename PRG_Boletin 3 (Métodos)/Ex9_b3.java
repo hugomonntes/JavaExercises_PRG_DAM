@@ -13,6 +13,7 @@ public class Ex9_b3 {
             System.out.println("2.Primos en archivo");
             System.out.println("3.Archivo con primos");
             System.out.println("4.Salir");
+            System.out.print("Introduce una opción: ");
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -36,7 +37,11 @@ public class Ex9_b3 {
                     System.out.println("Introduce un número mayor que 2: ");
                     number = sc.nextInt();
                     PrintWriter fWriter = new PrintWriter("PRG_Archivos/Ex9_b3_case3.txt");
-                    //fWriter.print(Ex8_b3.mostrarPrimos(number));
+                    for (int i = 2; i <= number; i++) {
+                        if (Ex8_b3.isPrimo(i)) {
+                            fWriter.print(i + "; ");
+                        }
+                    }
                     fWriter.close();
                     break;
                 case 4:

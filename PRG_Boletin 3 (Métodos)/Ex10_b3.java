@@ -38,30 +38,27 @@ public class Ex10_b3 {
             switch (opcion) {
                 case 1:
                     System.out.println("Area de un triángulo");
-                    flag = false;
                     System.out.print("Indica el tamaño de la base: ");
                     base = sc.nextInt();
                     System.out.print("Indica el tamaño de la altura: ");
                     altura = sc.nextInt();
-                    System.out.println(calcularArea(base, altura, flag));
+                    System.out.println(calcularArea(base, altura, false));
                     break;
 
                 case 2:
                     System.out.println("Area de un rectángulo");
-                    flag = true;
                     System.out.print("Indica el tamaño de la base: ");
                     base = sc.nextInt();
                     System.out.print("Indica el tamaño de la altura: ");
                     altura = sc.nextInt();
-                    System.out.println(calcularArea(base, altura, flag));
+                    System.out.println(calcularArea(base, altura, true));
                     break;
 
                 case 3:
                     System.out.println("Area de un cuadrado");
-                    flag = true;
                     System.out.print("Indica el tamaño del lado: ");
                     base = sc.nextInt();
-                    System.out.println(calcularArea(base, base, flag));
+                    System.out.println(calcularArea(base, base, true));
                     break;
 
                 case 4:
