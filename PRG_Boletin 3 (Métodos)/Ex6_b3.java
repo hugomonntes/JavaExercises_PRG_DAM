@@ -43,7 +43,7 @@ public class Ex6_b3 {
     public static double progresionGeometrica(double base, int exponente) {
         double acumulador = 1;
         for (int i = 1; i < exponente; i++) {
-            acumulador += calcularPotencia(base, exponente - i);// FIXME revisar
+            acumulador += calcularPotencia(base, exponente - i);
         }
         return acumulador;
     }

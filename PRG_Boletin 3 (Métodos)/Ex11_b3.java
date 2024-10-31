@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex11_b3 {
+public class Ex11_b3 { //FIXME
     public static double calcularFactorial(int number){
         double acumulador = 1;
         for(double i = 1; i <= number; i++){
@@ -22,9 +22,9 @@ public class Ex11_b3 {
         return acumulador;
     }
 
-    // public static double calcularCoseno(int numerCos){
-    //     return 
-    // }
+    public static double calcularCoseno(int numerCos){
+        return 3.14;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
