@@ -49,22 +49,3 @@ ocupando 4 posiciones (debes guardar usando printf todo en una nueva línea).
 Cuando el usuario decida finalizar, antes de terminar el programa se mostrará el
 archivo de récords entero.
 */
-
-/*
-Bienvenido al juego de los dados de 20 caras.
-Por favor, introduce tu nombre: Hugo
-
-Hola, Hugo. Por favor, introduce 3 números diferentes entre 1 y 20.
-Número 1: 7
-Número 2: 15
-Número 3: 19
-
-El ordenador tira los dados...
-
-Dado 1: 12
-Dado 2: 15
-
-¡Has acertado 1 número!
-
-¿Quieres jugar otra vez? (s/n): s
-*/
