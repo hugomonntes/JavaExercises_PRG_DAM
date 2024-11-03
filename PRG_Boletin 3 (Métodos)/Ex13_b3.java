@@ -1,19 +1,24 @@
 import java.util.Scanner;
 
 public class Ex13_b3 {
-    public static double tirarDado(){
-        double randomNumber = Math.ceil(Math.random()*20);
+    public static double tirarDado(int numeroCarasDado){
+        double randomNumber = Math.ceil(Math.random()*numeroCarasDado);
         return randomNumber;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String userName;
+        int numeroCarasDado;
         double userNumber;
-        double dado1 = tirarDado();
-        double dado2 = tirarDado();
-        int contadorNumerosAcertados = 0;
+        String volverJugar;
         System.out.print("Introduce tu nombre: ");
         userName = sc.nextLine();
+        do{
+        System.out.print("Introduce el número de caras del dado: ");
+        numeroCarasDado = sc.nextInt();
+        double dado1 = tirarDado(numeroCarasDado);
+        double dado2 = tirarDado(numeroCarasDado);
+        int contadorNumerosAcertados = 0;
         for (int i = 0; i < 3; i++) {
             System.out.print("Introduce un número: ");
             userNumber = sc.nextInt();
@@ -22,6 +27,10 @@ public class Ex13_b3 {
             }
         }
         System.out.printf("%s has acertado %d números \n",userName,contadorNumerosAcertados);
+        System.out.println("Quieres volver a jugar? (S/N)");
+        sc.nextLine();
+        volverJugar = sc.nextLine().toUpperCase();
+        } while(volverJugar.equals("S"));
     }
 }
 
