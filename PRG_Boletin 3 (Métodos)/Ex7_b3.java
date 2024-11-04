@@ -30,14 +30,14 @@ public class Ex7_b3 {
     }
     
     public static void main(String[] args) throws Exception {
-        PrintWriter fwritter = new PrintWriter("PRG_Archivos/Ex7_b3.txt");
+        PrintWriter fwriter = new PrintWriter("PRG_Archivos/Ex7_b3.txt");
         Scanner sc = new Scanner(System.in);
         String msg; // Almacena mensaje del user
         System.out.print("Introduce un mensaje: ");
         msg = sc.nextLine();
-        fwritter.print(readFile("PRG_Archivos/Ex2_b3.txt") + appendFile("PRG_Archivos/Ex7_b3.txt", msg));
+        fwriter.print(readFile("PRG_Archivos/Ex2_b3.txt") + appendFile("PRG_Archivos/Ex7_b3.txt", msg));
         appendFile2("PRG_Archivos/Ex7_b3.txt", true);
-        fwritter.close();
+        fwriter.close();
     }
 }
 
