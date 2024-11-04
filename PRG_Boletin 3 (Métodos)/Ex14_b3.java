@@ -1,25 +1,37 @@
 public class Ex14_b3 {
-    public static void tirarDadosPlayer(){
+    public static double tirarDadosPlayer(){
         double dado1 = Ex13_b3.tirarDado(6);
         double dado2 = Ex13_b3.tirarDado(6);
         double resultadoDados = dado1 + dado2;
         System.out.println("Jugador tira los dados...");
         System.out.printf("Dado 1: %f \n", dado1);
         System.out.printf("Dado 2: %f \n", dado2);
-        System.out.printf("Suma : %f \n", resultadoDados);
+        System.out.printf("Suma: %f \n", resultadoDados);
+        return resultadoDados;
     }
-    public static void tirarDadosCPU(){
+    public static double tirarDadosCPU(){
         double dado1 = Ex13_b3.tirarDado(6);
         double dado2 = Ex13_b3.tirarDado(6);
         double resultadoDados = dado1 + dado2;
         System.out.println("CPU tira los dados...");
         System.out.printf("Dado 1: %f \n", dado1);
         System.out.printf("Dado 2: %f \n", dado2);
-        System.out.printf("Suma : %f \n", resultadoDados);
-    }
+        System.out.printf("Suma: %f \n", resultadoDados);
+        return resultadoDados;
+}
     public static void main(String[] args) {
-        tirarDadosPlayer();
-        tirarDadosCPU();
+        double dado1 = tirarDadosPlayer();
+        double dado2 = tirarDadosCPU();
+        System.out.println("Marcador");
+        System.out.printf("Jugador: %f \n", dado1);
+        System.out.printf("CPU: %f \n", dado2);
+        if (dado2 > dado1) {
+            System.out.println("CPU Gana \n");
+        } else if (dado2 < dado1) {
+            System.out.println("Jugador Gana \n");
+        } else {
+            System.out.println("Empate \n");
+        }
     }
 }
 
