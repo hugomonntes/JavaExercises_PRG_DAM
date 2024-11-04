@@ -1,14 +1,25 @@
 public class Ex14_b3 {
-    public static void main(String[] args) {
+    public static void tirarDadosPlayer(){
         double dado1 = Ex13_b3.tirarDado(6);
         double dado2 = Ex13_b3.tirarDado(6);
         double resultadoDados = dado1 + dado2;
-        if (resultadoDados == 7 || resultadoDados == 11) {
-            System.out.println("Has ganado");
-        }
-        if (resultadoDados == 2 || resultadoDados == 3 || resultadoDados == 12) {
-            System.out.println("Has perdido gana la CPU");
-        }
+        System.out.println("Jugador tira los dados...");
+        System.out.printf("Dado 1: %f \n", dado1);
+        System.out.printf("Dado 2: %f \n", dado2);
+        System.out.printf("Suma : %f \n", resultadoDados);
+    }
+    public static void tirarDadosCPU(){
+        double dado1 = Ex13_b3.tirarDado(6);
+        double dado2 = Ex13_b3.tirarDado(6);
+        double resultadoDados = dado1 + dado2;
+        System.out.println("CPU tira los dados...");
+        System.out.printf("Dado 1: %f \n", dado1);
+        System.out.printf("Dado 2: %f \n", dado2);
+        System.out.printf("Suma : %f \n", resultadoDados);
+    }
+    public static void main(String[] args) {
+        tirarDadosPlayer();
+        tirarDadosCPU();
     }
 }
 
