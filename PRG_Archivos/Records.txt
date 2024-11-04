@@ -1,0 +1,1 @@
+Nombre: Hugo,  Numero Caras Dado: 6, Numero Aciertos: 0
