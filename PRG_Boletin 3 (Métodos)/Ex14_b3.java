@@ -28,7 +28,7 @@ public class Ex14_b3 {
             System.out.println("¡El jugador gana en la primera tirada!");
             return;
         } else if (puntuacionJugador == -1) {
-            System.out.println("Craps. El jugador pierde. Gana la CPU.");
+            System.out.println("El jugador pierde. Gana la CPU.");
             return;
         }
 
@@ -38,15 +38,15 @@ public class Ex14_b3 {
         if (puntuacionCPU == 0) {
             System.out.println("¡La CPU gana en la primera tirada!");
         } else if (puntuacionCPU == -1) {
-            System.out.println("Craps. La CPU pierde. Gana el Jugador.");
+            System.out.println("La CPU pierde! Gana el Jugador.");
         } else {
             if (puntuacionJugador > puntuacionCPU) {
-                System.out.println("¡El Jugador gana con mayor puntuación!");
+                System.out.println("¡El Jugador gana!");
             } else if (puntuacionJugador < puntuacionCPU) {
-                System.out.println("¡La CPU gana con mayor puntuación!");
+                System.out.println("¡La CPU gana!");
             } else {
-                System.out.println("Empate en puntuaciones.");
+                System.out.println("Empate");
             }
         }
     }
-}
+} 
