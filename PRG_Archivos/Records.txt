@@ -1,1 +1,1 @@
-Nombre: Hugo,  Numero Caras Dado: 6, Numero Aciertos: 3
+Nombre: curro,  Numero Caras Dado: 4, Numero Aciertos: 1

@@ -27,12 +27,11 @@ public class Ex7_b3 { //FIXME Arreglar
      * @return devuelve el contenido del Archivo más el mensaje
      * @throws Exception
      */
-    public static String appendFile(String fileName, String msg) throws Exception {
+    public static void appendFile(String fileName, String msg) throws Exception {
         PrintWriter fwritter = new PrintWriter(fileName);
         String content = readFile(fileName) + "\n" +  msg; // Leer contenido y añadir el msg
         fwritter.print(content + msg); // ReEscribir el archivo
         fwritter.close();
-        return content;
     }
     /**
      * 
@@ -53,7 +52,7 @@ public class Ex7_b3 { //FIXME Arreglar
         msg = sc.nextLine();
         sc.close();
         PrintWriter fwriter = new PrintWriter("PRG_Archivos/Ex7_b3.txt");
-        fwriter.print(readFile("PRG_Archivos/Ex2_b3.txt") + appendFile("PRG_Archivos/Ex7_b3.txt", msg));
+        //fwriter.print(readFile("PRG_Archivos/Ex2_b3.txt") + appendFile("PRG_Archivos/Ex7_b3.txt", msg));
         appendFile2("PRG_Archivos/Ex7_b3.txt", true);
         fwriter.close();
     }

@@ -12,7 +12,7 @@ public class Ex13_b3 {
         return randomNumber;
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {//TODO  Comprobacion  neg y rangos
         Scanner sc = new Scanner(System.in);
         String userName;
         int numeroCarasDado;
@@ -38,7 +38,7 @@ public class Ex13_b3 {
             sc.nextLine();
             volverJugar = sc.nextLine().toUpperCase();
         } while (volverJugar.equals("S"));
-        sc.close();
+        sc.close();//TODO añadir record y en cada juego
         
         PrintWriter fwriter = new PrintWriter("JavaExercises-PRG_Boletin2/PRG_Archivos/Records.txt");
         fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d", userName, numeroCarasDado,

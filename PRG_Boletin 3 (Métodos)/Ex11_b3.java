@@ -22,8 +22,13 @@ public class Ex11_b3 { //FIXME
         return acumulador;
     }
 
-    public static double calcularCoseno(int numerCos){
-        return 3.14;
+    //Aproximación de Taylor con funcion factorial y potencia
+    public static double aproximacionTaylor(int x, double n) {
+        double resultado = 0;
+        for (int i = 0; i <= n; i = i+2) {
+            resultado = 1 - (Ex6_b3.calcularPotencia(x, i) / calcularFactorial(i));
+        }
+        return resultado;
     }
 
     public static void main(String[] args) {
@@ -32,6 +37,8 @@ public class Ex11_b3 { //FIXME
         System.out.print("Introduce un numero: ");
         number = sc.nextInt();
         System.out.println(calcularFactorial(number));
+        System.out.println(aproximacionTaylor(number, number));
+        sc.close();
     }
 }
 /*
