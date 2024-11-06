@@ -49,6 +49,7 @@ public class Ex2_b3 {
         f.printf("El número %d es %s y %s", userNumber, isPar, isPositive);
 
         f.close();
+        sc.close();
     }
 }
 /*

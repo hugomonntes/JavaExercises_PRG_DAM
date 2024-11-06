@@ -1,11 +1,19 @@
 import java.util.Scanner;
 
 public class Ex12_b3 {
+    /**
+     * Genera un carácter aleatorio entre 1, X o 2
+     * @return 1 X 2
+     */
     public static char generarQuinielaNormal() {
         double numeroAleatorio = Math.ceil(Math.random() * 3);
         return numeroAleatorio == 1 ? '1' : numeroAleatorio == 2 ? '2' : 'X';
     }
 
+    /**
+     * Genera un carácter aleatorio pero con probalidades diferentes
+     * @return 1 (60% de posibilidades), 2 (25% de posibilidades), X (15% de posibilidades)
+     */
     public static char generarQuinielaPonderada() {
         double numeroAleatorio = Math.ceil(Math.random() * 100);
         return numeroAleatorio <= 60 ? '1' : numeroAleatorio > 61 && numeroAleatorio <= 85 ? '2' : 'X';

@@ -26,7 +26,6 @@ public class Ex10_b3 {
         int base;
         int altura;
         int radio;
-        boolean flag;
         do {
             System.out.println("1.Area de un triángulo");
             System.out.println("2.Area de un rectángulo");

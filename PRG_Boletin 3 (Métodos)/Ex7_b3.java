@@ -4,6 +4,12 @@ import java.util.Scanner;
 import java.io.FileWriter;
 
 public class Ex7_b3 {
+    /**
+     * Lee el archivo indicado en el parametro
+     * @param fileName Ruta del archivo que necesitas leer
+     * @return  el contenido del Archivo.
+     * @throws Exception
+     */
     public static String readFile(String fileName) throws Exception{
         Scanner f = new Scanner(new File(fileName));
         String contentFile = "";
@@ -14,7 +20,13 @@ public class Ex7_b3 {
         f.close();
         return contentFile;
     }
-
+    /**
+     * Lee el archivo y reescribe el archivo añadiendole el mensaje
+     * @param fileName Ruta del archivo que necesitas leer
+     * @param msg Mensaje a añadir al final del Archivo
+     * @return devuelve el contenido del Archivo más el mensaje
+     * @throws Exception
+     */
     public static String appendFile(String fileName, String msg) throws Exception {
         PrintWriter fwritter = new PrintWriter(fileName);
         String content = readFile(fileName) + "\n" +  msg; // Leer contenido y añadir el msg
@@ -22,19 +34,25 @@ public class Ex7_b3 {
         fwritter.close();
         return content;
     }
-
+    /**
+     * 
+     * @param fileName Ruta del archivo que necesitas leer
+     * @param isAdd Boolean si el mensaje se añade si es true o no si es false
+     * @throws Exception
+     */
     public static void appendFile2(String fileName, boolean isAdd) throws Exception{
         PrintWriter f = new PrintWriter(new FileWriter(fileName, isAdd));
-        f.println("Add text in to the final of the file");
+        f.println("Añade texto al final del archivo");
         f.close();
     }
     
     public static void main(String[] args) throws Exception {
-        PrintWriter fwriter = new PrintWriter("PRG_Archivos/Ex7_b3.txt");
         Scanner sc = new Scanner(System.in);
         String msg; // Almacena mensaje del user
         System.out.print("Introduce un mensaje: ");
         msg = sc.nextLine();
+        sc.close();
+        PrintWriter fwriter = new PrintWriter("PRG_Archivos/Ex7_b3.txt");
         fwriter.print(readFile("PRG_Archivos/Ex2_b3.txt") + appendFile("PRG_Archivos/Ex7_b3.txt", msg));
         appendFile2("PRG_Archivos/Ex7_b3.txt", true);
         fwriter.close();

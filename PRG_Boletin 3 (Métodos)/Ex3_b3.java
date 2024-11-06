@@ -12,6 +12,7 @@ public class Ex3_b3 {
             System.out.print("Introduce un numero: ");
             number = sc.nextInt();
         } while (number < 0);
+        sc.close();
         return number;
     }
 

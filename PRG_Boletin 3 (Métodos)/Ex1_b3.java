@@ -34,6 +34,7 @@ public class Ex1_b3 {
         userNumber = sc.nextInt();
         System.out.println(isPar(userNumber));
         System.out.println(isPositive(userNumber));
+        sc.close();
     }
 }
 /*
