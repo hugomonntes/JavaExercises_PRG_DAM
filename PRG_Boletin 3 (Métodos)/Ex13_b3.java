@@ -2,6 +2,11 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Ex13_b3 {
+    /**
+     * Genera un número del 1 al numero de caras indicado por el usuario
+     * @param numeroCarasDado Numero de caras del dado
+     * @return un numero aleatorio entre 1 y el numero máximo de caras
+     */
     public static double tirarDado(int numeroCarasDado) {
         double randomNumber = Math.ceil(Math.random() * numeroCarasDado);
         return randomNumber;
