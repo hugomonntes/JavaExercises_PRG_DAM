@@ -42,11 +42,12 @@ public class Ex13_b3 {
             sc.nextLine();
             volverJugar = sc.nextLine().toUpperCase();
             PrintWriter fwriter = new PrintWriter("JavaExercises-PRG_Boletin2/PRG_Archivos/Records.txt");
-            while () {
+            while (volverJugar.equals("S")) {
+                sc.nextLine();
                 fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d", userName, numeroCarasDado,
                         contadorNumerosAcertados);
+                        fwriter.close();
                     }
-            fwriter.close();
         } while (volverJugar.equals("S")); //TODO añadir record y en cada juego
     }
 }
