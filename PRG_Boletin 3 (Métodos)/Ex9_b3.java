@@ -23,7 +23,7 @@ public class Ex9_b3 {
                     Ex8_b3.mostrarPrimos(number);
                     break;
                 case 2:
-                    fileUser = "PRG_Archivos/Ex9_b3_Numeros.txt";
+                    fileUser = "./PRG_Archivos/Ex9_b3_Numeros.txt";
                     Scanner freader = new Scanner(new File(fileUser));
                     int contenido;
                     while (freader.hasNext()) {

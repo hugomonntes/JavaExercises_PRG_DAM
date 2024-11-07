@@ -12,7 +12,7 @@ public class Ex13_b3 {
         return randomNumber;
     }
 
-    public static void main(String[] args) throws Exception {//TODO Comprobacion  neg y rangos
+    public static void main(String[] args) throws Exception {//TODO Comprobacion  neg y rangos(✔)
         Scanner sc = new Scanner(System.in);
         String userName;
         int numeroCarasDado;
@@ -32,25 +32,25 @@ public class Ex13_b3 {
                 do{
                     System.out.printf("Introduce un número del 1 al %d: ", numeroCarasDado);
                     userNumber = sc.nextInt();
-                    if (userNumber == dado1 || userNumber == dado2) {
-                        contadorNumerosAcertados++;
-                    }
-                } while(!(userNumber > numeroCarasDado) || !(userNumber < 1));
+                } while((userNumber > numeroCarasDado) || (userNumber < 1));
+                if (userNumber == dado1 || userNumber == dado2) {
+                    contadorNumerosAcertados++;
+                }
             }
             System.out.printf("%s has acertado %d números \n", userName, contadorNumerosAcertados);
             System.out.println("Quieres volver a jugar? (S/N)");
             sc.nextLine();
             volverJugar = sc.nextLine().toUpperCase();
             PrintWriter fwriter = new PrintWriter("JavaExercises-PRG_Boletin2/PRG_Archivos/Records.txt");
-            fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d", userName, numeroCarasDado,
-                    contadorNumerosAcertados);
+            while () {
+                fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d", userName, numeroCarasDado,
+                        contadorNumerosAcertados);
+                    }
             fwriter.close();
-        } while (volverJugar.equals("S"));
-        sc.close(); //TODO añadir record y en cada juego
-        
+        } while (volverJugar.equals("S")); //TODO añadir record y en cada juego
     }
 }
-
+//TODO examen archivos varios
 /*
 Dados d20. Realizar un programa que pida al usuario su nombre y 3
 números distintos al usuario entre 1 y 20 (usar 3 variables) y luego que el
