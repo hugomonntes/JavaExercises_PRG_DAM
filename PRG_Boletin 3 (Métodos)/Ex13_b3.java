@@ -29,11 +29,13 @@ public class Ex13_b3 {
             double dado1 = tirarDado(numeroCarasDado);
             double dado2 = tirarDado(numeroCarasDado);
             for (int i = 0; i < 3; i++) {
-                System.out.printf("Introduce un número del 1 al %d: ", numeroCarasDado);
-                userNumber = sc.nextInt();
-                if (userNumber == dado1 || userNumber == dado2) {
-                    contadorNumerosAcertados++;
-                }
+                do{
+                    System.out.printf("Introduce un número del 1 al %d: ", numeroCarasDado);
+                    userNumber = sc.nextInt();
+                    if (userNumber == dado1 || userNumber == dado2) {
+                        contadorNumerosAcertados++;
+                    }
+                } while(!(userNumber > numeroCarasDado) || !(userNumber < 1));
             }
             System.out.printf("%s has acertado %d números \n", userName, contadorNumerosAcertados);
             System.out.println("Quieres volver a jugar? (S/N)");
