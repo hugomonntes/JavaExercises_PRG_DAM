@@ -12,22 +12,24 @@ public class Ex13_b3 {
         return randomNumber;
     }
 
-    public static void main(String[] args) throws Exception {//TODO  Comprobacion  neg y rangos
+    public static void main(String[] args) throws Exception {//TODO Comprobacion  neg y rangos
         Scanner sc = new Scanner(System.in);
         String userName;
         int numeroCarasDado;
         double userNumber;
         String volverJugar;
         int contadorNumerosAcertados = 0;
-        System.out.print("Introduce tu nombre: ");
+        System.out.print("\n Introduce tu nombre: ");
         userName = sc.nextLine();
         do {
-            System.out.print("Introduce el número de caras del dado: ");
-            numeroCarasDado = sc.nextInt();
+            do{
+                System.out.print("Introduce el número de caras del dado: ");
+                numeroCarasDado = sc.nextInt();
+            } while (numeroCarasDado < 1);
             double dado1 = tirarDado(numeroCarasDado);
             double dado2 = tirarDado(numeroCarasDado);
             for (int i = 0; i < 3; i++) {
-                System.out.print("Introduce un número: ");
+                System.out.printf("Introduce un número del 1 al %d: ", numeroCarasDado);
                 userNumber = sc.nextInt();
                 if (userNumber == dado1 || userNumber == dado2) {
                     contadorNumerosAcertados++;
@@ -37,13 +39,13 @@ public class Ex13_b3 {
             System.out.println("Quieres volver a jugar? (S/N)");
             sc.nextLine();
             volverJugar = sc.nextLine().toUpperCase();
+            PrintWriter fwriter = new PrintWriter("JavaExercises-PRG_Boletin2/PRG_Archivos/Records.txt");
+            fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d", userName, numeroCarasDado,
+                    contadorNumerosAcertados);
+            fwriter.close();
         } while (volverJugar.equals("S"));
-        sc.close();//TODO añadir record y en cada juego
+        sc.close(); //TODO añadir record y en cada juego
         
-        PrintWriter fwriter = new PrintWriter("JavaExercises-PRG_Boletin2/PRG_Archivos/Records.txt");
-        fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d", userName, numeroCarasDado,
-                contadorNumerosAcertados);
-        fwriter.close();
     }
 }
 
