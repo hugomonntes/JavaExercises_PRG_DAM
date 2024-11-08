@@ -40,7 +40,8 @@ public class Ex11_b3 { //FIXME
             number = aproximacionTaylor(i, 4);
             System.out.printf("Coseno de %.1f es %.5f \n", i, number);
         }
-        sc.close();
+        sc.close();    
+
     }
 }
 /*
