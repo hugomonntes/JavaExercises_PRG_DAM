@@ -23,7 +23,7 @@ public class Ex11_b3 { //FIXME
     }
 
     //Aproximación de Taylor con funcion factorial y potencia
-    public static double aproximacionTaylor(int x, double n) {
+    public static double aproximacionTaylor(double x, int n) {
         double resultado = 0;
         for (int i = 0; i <= n; i = i+2) {
             resultado = 1 - (Ex6_b3.calcularPotencia(x, i) / calcularFactorial(i));
@@ -33,11 +33,13 @@ public class Ex11_b3 { //FIXME
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int number;
+        double number;
         System.out.print("Introduce un numero: ");
-        number = sc.nextInt();
-        System.out.println(calcularFactorial(number));
-        System.out.println(aproximacionTaylor(number, number));
+        number = sc.nextDouble();
+        for (double i = 0.1; i <= 1; i = i+0.1) {
+            number = aproximacionTaylor(i, 4);
+            System.out.printf("Coseno de %.1f es %.5f \n", i, number);
+        }
         sc.close();
     }
 }
