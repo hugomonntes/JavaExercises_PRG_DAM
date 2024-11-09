@@ -27,7 +27,7 @@ public class Ex7_b3 { //FIXME Arreglar
      * @return devuelve el contenido del Archivo más el mensaje
      * @throws Exception
      */
-    public static void appendFile(String fileName, String msg) throws Exception {
+    public static void appendFile(String fileName, String msg) throws Exception { //TODO esta como el culo putoburro
         PrintWriter fwritter = new PrintWriter(fileName);
         String content = readFile(fileName) + "\n" +  msg; // Leer contenido y añadir el msg
         fwritter.print(content + msg); // ReEscribir el archivo
