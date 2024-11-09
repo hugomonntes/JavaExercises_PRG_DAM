@@ -52,7 +52,6 @@ public class Ex13_b3 {
         } while (volverJugar.equals("S")); // TODO añadir record y en cada juego
     }
 }
-// TODO examen archivos varios
 /*
  * Dados d20. Realizar un programa que pida al usuario su nombre y 3
  * números distintos al usuario entre 1 y 20 (usar 3 variables) y luego que el
