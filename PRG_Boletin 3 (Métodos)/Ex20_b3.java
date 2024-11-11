@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+
 public class Ex20_b3 {
     public static String partidosJornada(){
+        ArrayList<String> equiposLaLiga = new ArrayList<String>();
         String[] equiposLaLiga = {"FC Barcelona", "Real Madrid", "Celta De Vigo", "Atlético de Madrid", "Athletic Club", "Real Sociedad", "Villareal", "Valencia", "Sevilla", "Espanyol", "Rayo Vallecano", "Betis", "Deportivo De A Coruña", "Ourense CF"};
         int numeroAleatorio = 0;
         int numeroAleatorio2 = 0;
