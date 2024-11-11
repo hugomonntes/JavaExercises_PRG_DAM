@@ -1,17 +1,21 @@
 public class Ex20_b3 {
-    public static int numeroAleatorio(){
-        int numero = (int)(Math.random()*14);
-        return numero;
-    }
-    public static void main(String[] args) {
-        int numeroAleatorio = numeroAleatorio();
-        int numeroAleatorio2 = numeroAleatorio();
+    public static String partidosJornada(){
         String[] equiposLaLiga = {"FC Barcelona", "Real Madrid", "Celta De Vigo", "Atlético de Madrid", "Athletic Club", "Real Sociedad", "Villareal", "Valencia", "Sevilla", "Espanyol", "Rayo Vallecano", "Betis", "Deportivo De A Coruña", "Ourense CF"};
+        int numeroAleatorio = 0;
+        int numeroAleatorio2 = 0;
+        do{
+            numeroAleatorio = (int)(Math.random()*equiposLaLiga.length);
+            numeroAleatorio2 = (int)(Math.random()*equiposLaLiga.length);
+            equiposLaLiga.remove(numeroAleatorio);
+        } while(numeroAleatorio == numeroAleatorio2);
         String partido1 = "";
         String equipo1 = equiposLaLiga[numeroAleatorio];
         String equipo2 = equiposLaLiga[numeroAleatorio2];
         partido1 = equipo1 + " vs " + equipo2;
-        System.out.println(partido1);
+        return partido1;
+    }
+    public static void main(String[] args) {
+        System.out.println(partidosJornada());
     }
 }
 
