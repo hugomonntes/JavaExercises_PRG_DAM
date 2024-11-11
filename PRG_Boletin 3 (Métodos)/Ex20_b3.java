@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Ex20_b3 {
     public static ArrayList<String> generarJornada(){
@@ -21,11 +22,15 @@ public class Ex20_b3 {
         return partidosJornada;
     }
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         ArrayList<String> jornadaCompleta = generarJornada();
+        String opcion;
 
         System.out.println("Partidos de la jornada:");
+        System.out.println("Introduce 1 (Gana el equipo Local) X (Empate) 2 (Gana el equipo Visitante)");
         for (int i = 0; i < 7; i++) {
-            System.out.println(jornadaCompleta.get(i));
+            System.out.print(jornadaCompleta.get(i) + ": ");
+            opcion = sc.nextLine();
         }
     }
 }
