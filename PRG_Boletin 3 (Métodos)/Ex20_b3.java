@@ -1,33 +1,40 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Ex20_b3 {
-    public static double numeroAleatorio(){
-        double numero = Math.ceil(Math.random()*10);
-        return numero;
+    public static ArrayList<String> generarJornada(){
+        ArrayList<String> equiposLaLiga = new ArrayList<String>(Arrays.asList("FC Barcelona", "Real Madrid", "Celta De Vigo", "Atlético de Madrid", "Athletic Club", "Real Sociedad", "Villareal", "Valencia", "Sevilla", "Espanyol", "Rayo Vallecano", "Betis", "Deportivo De A Coruña", "Ourense CF"));
+
+        ArrayList<String> partidosJornada = new ArrayList<>();
+
+        while (equiposLaLiga.size() > 1) {
+            int numeroAleatorio = (int) (Math.random() * equiposLaLiga.size()); //Numero aleatorio hasta la longitud máxima del array
+            String equipo1 = equiposLaLiga.get(numeroAleatorio);
+            equiposLaLiga.remove(numeroAleatorio); //Borra del Array el equipo que salió
+
+            int numeroAleatorio2 = (int) (Math.random() * equiposLaLiga.size());
+            String equipo2 = equiposLaLiga.get(numeroAleatorio2);
+            equiposLaLiga.remove(numeroAleatorio2);
+
+            partidosJornada.add(equipo1 + " vs " + equipo2);  //Añade el partido al ArrayList de partidosJornada
+        }
+        return partidosJornada;
     }
     public static void main(String[] args) {
-        int tamañoBarco = 2;
-        int tamañoTablero = 10;
-        double numeroAleatorio = numeroAleatorio();
-        String[] columnaLetras = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
-        int[] columnaNumeros = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        for (int i = 0; i <= columnaNumeros.length; i++) {
-            System.out.println(columnaNumeros[i]);
-            if (columnaNumeros[i] == numeroAleatorio) {
-                System.out.println("Ganaste");
-                System.out.println(numeroAleatorio);
-            }
+        ArrayList<String> jornadaCompleta = generarJornada();
+
+        System.out.println("Partidos de la jornada:");
+        for (int i = 0; i < 7; i++) {
+            System.out.println(jornadaCompleta.get(i));
         }
     }
 }
 
 /*
-20. Programar un juego “mini-hundir-la-flota” contra el ordenador. Se hará con un
-barco de 2 casillas en un tablero de 10x10 posiciones. Las columnas con una letra
-de la A a la J y la fila con un número del 1 al 10.
-La CPU sacará coordenadas aleatorias y dirección aleatoria (horizontal/vertical).
-Se debe sacar una coordenada aleatoria, y una dirección aleatoria (horizontal o
-vertical). A partir de ahí se crean las 2 coordenadas del barco.
-Si el ordenador acierta una casilla no sigue tirando aleatoriamente si no que lo
-intenta en las coordenadas de alrededor en horizontal o vertical (no diagonal).
-Si sabes algo de arrays, puedes hacerlo más completo con estas estructuras.
-También puedes usar archivos para marcar tiradas.
+partidos almacenados en un array []
+sacar 6 partidos ramdon 
+generar resultados ramdon de los partidos 
+Hacer menu con 1 X 2 
+Saldo Inicial de 10€
+incrementa 1€ por partido acertado, si fallas -1€
 */
