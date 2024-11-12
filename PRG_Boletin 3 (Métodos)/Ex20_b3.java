@@ -36,52 +36,54 @@ public class Ex20_b3 {
         boolean jugarDeNuevo = true;
         int contadorJornadas = 1;
 
-        while (jugarDeNuevo) {
-            ArrayList<String> jornadaCompleta = generarJornada(); // Almacena todos los partidos
-            System.out.println("\n--- Jornada " + contadorJornadas + " ---");
-            System.out.println("Saldo: " + saldoInicial + "€");
-            System.out.println("Instrucciones: Escribe '1' si crees que gana el equipo local, 'X' si es empate, o '2' si gana el visitante.");
+        do{
+            while (jugarDeNuevo) {
+                ArrayList<String> jornadaCompleta = generarJornada(); // Almacena todos los partidos
+                System.out.println("\n--- Jornada " + contadorJornadas + " ---");
+                System.out.println("Saldo: " + saldoInicial + "€");
+                System.out.println("Instrucciones: Escribe '1' si crees que gana el equipo local, 'X' si es empate, o '2' si gana el visitante.");
 
-            for (int i = 0; i < 7; i++) {
-                System.out.println("\nPartido " + (i + 1) + ": " + jornadaCompleta.get(i));
-                System.out.print("Tu predicción (1/X/2): ");
-                opcion = sc.nextLine().toUpperCase();
+                for (int i = 0; i < 7; i++) {
+                    System.out.println("\nPartido " + (i + 1) + ": " + jornadaCompleta.get(i));
+                    System.out.print("Tu predicción (1/X/2): ");
+                    opcion = sc.nextLine().toUpperCase();
 
-                String resultadoFinal = generarQuiniela();
-                System.out.println("Resultado real: " + resultadoFinal);
+                    String resultadoFinal = generarQuiniela();
+                    System.out.println("Resultado real: " + resultadoFinal);
 
-                if (resultadoFinal.equals("1")) {
-                    System.out.println("¡El equipo local ganó!");
-                    if (opcion.equals("1")) {
-                        System.out.println("¡Acertaste! El equipo local ganó.");
-                        saldoInicial++;
+                    if (resultadoFinal.equals("1")) {
+                        System.out.println("¡El equipo local ganó!");
+                        if (opcion.equals("1")) {
+                            System.out.println("¡Acertaste! El equipo local ganó.");
+                            saldoInicial++;
+                        } else {
+                            System.out.println("Lo siento, perdiste. El equipo local ganó.");
+                            saldoInicial--;
+                        }
+                    } else if (resultadoFinal.equals("X")) {
+                        System.out.println("¡Empate!");
+                        if (opcion.equals("X")) {
+                            System.out.println("¡Acertaste! El partido terminó en empate.");
+                            saldoInicial++;
+                        } else {
+                            System.out.println("Lo siento, perdiste. No hubo empate.");
+                            saldoInicial--;
+                        }
                     } else {
-                        System.out.println("Lo siento, perdiste. El equipo local ganó.");
-                        saldoInicial--;
+                        System.out.println("¡El equipo visitante ganó!");
+                        if (opcion.equals("2")) {
+                            System.out.println("¡Acertaste! El equipo visitante ganó.");
+                            saldoInicial++;
+                        } else {
+                            System.out.println("Lo siento, perdiste. El equipo visitante ganó.");
+                            saldoInicial--;
+                        }
                     }
-                } else if (resultadoFinal.equals("X")) {
-                    System.out.println("¡Empate!");
-                    if (opcion.equals("X")) {
-                        System.out.println("¡Acertaste! El partido terminó en empate.");
-                        saldoInicial++;
-                    } else {
-                        System.out.println("Lo siento, perdiste. No hubo empate.");
-                        saldoInicial--;
+                    System.out.println("Tu saldo actual es: " + saldoInicial + "€");
+                    System.out.println("---------------------------------------------------------");
                     }
-                } else {
-                    System.out.println("¡El equipo visitante ganó!");
-                    if (opcion.equals("2")) {
-                        System.out.println("¡Acertaste! El equipo visitante ganó.");
-                        saldoInicial++;
-                    } else {
-                        System.out.println("Lo siento, perdiste. El equipo visitante ganó.");
-                        saldoInicial--;
-                    }
-                }
-                System.out.println("Tu saldo actual es: " + saldoInicial + "€");
-                System.out.println("---------------------------------------------------------");
-            }
-
+                } 
+        } while(saldoInicial > 0);
             System.out.print("\n¿Quieres jugar otra vez? (sí/no): ");
             String respuesta = sc.nextLine().toLowerCase();
 
@@ -93,10 +95,9 @@ public class Ex20_b3 {
                 jugarDeNuevo = false;
             }
             contadorJornadas++;
-        }
         sc.close();
+        }
     }
-}
 
 /*
  * partidos almacenados en un array []
