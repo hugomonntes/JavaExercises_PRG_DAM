@@ -10,8 +10,6 @@ public class Ex8_b3 {
             return false; //Si es menor que uno no es primo
         }
         if (number == 2 || number == 3) return true; //Si es 2 / 3 es primo
-
-        if (number % 2 == 0 || number % 3 == 0) return false; // Si es divisible entre 2 / 3 no es primo
         
         for (int i = 2; i < number; i++){
             if (number % i == 0) return false;
