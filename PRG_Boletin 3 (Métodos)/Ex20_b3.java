@@ -83,7 +83,8 @@ public class Ex20_b3 {
                     System.out.println("---------------------------------------------------------");
                     }
                 } 
-        } while(saldoInicial > 0);
+        } while(saldoInicial > 0); // Cerrar programa si el saldo es 0
+        
         while (jugarDeNuevo) {
             ArrayList<String> jornadaCompleta = generarJornada(); // Almacena todos los partidos
             System.out.println("\n--- Jornada " + contadorJornadas + " ---");
