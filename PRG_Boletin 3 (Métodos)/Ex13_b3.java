@@ -29,6 +29,9 @@ public class Ex13_b3 {
             } while (numeroCarasDado < 1);
             double dado1 = tirarDado(numeroCarasDado);
             double dado2 = tirarDado(numeroCarasDado);
+            while (dado1 == dado2) {
+                dado1 = tirarDado(numeroCarasDado);
+            }
             for (int i = 0; i < 3; i++) {
                 do {
                     System.out.printf("Introduce un número del 1 al %d: ", numeroCarasDado);
@@ -39,16 +42,13 @@ public class Ex13_b3 {
                 }
             }
             System.out.printf("%s has acertado %d números \n", userName, contadorNumerosAcertados);
+            PrintWriter fwriter = new PrintWriter("JavaExercises-PRG_Boletin2/PRG_Archivos/Records.txt");
+            fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d", userName, numeroCarasDado,
+            contadorNumerosAcertados);
+            fwriter.close();
             System.out.println("Quieres volver a jugar? (S/N)");
             sc.nextLine();
             volverJugar = sc.nextLine().toUpperCase();
-            PrintWriter fwriter = new PrintWriter("JavaExercises-PRG_Boletin2/PRG_Archivos/Records.txt");
-            while (volverJugar.equals("S")) {
-                sc.nextLine();
-                fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d", userName, numeroCarasDado,
-                        contadorNumerosAcertados);
-                fwriter.close();
-            }
         } while (volverJugar.equals("S")); // TODO añadir record y en cada juego
     }
 }
