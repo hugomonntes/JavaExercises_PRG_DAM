@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex11_b3 { //FIXME
+public class Ex11_b3 {
     public static double calcularFactorial(int number){
         double acumulador = 1;
         for(double i = 1; i <= number; i++){
