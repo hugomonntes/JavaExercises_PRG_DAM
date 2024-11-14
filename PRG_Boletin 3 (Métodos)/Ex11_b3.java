@@ -39,9 +39,9 @@ public class Ex11_b3 {
         for (double i = 0.1; i <= 1; i = i+0.1) {
             number = aproximacionTaylor(i, 4);
             System.out.printf("Coseno de %.1f es %.5f \n", i, number);
+            System.out.println(Math.cos(number) + " = " + number);
         }
         sc.close();    
-
     }
 }
 /*

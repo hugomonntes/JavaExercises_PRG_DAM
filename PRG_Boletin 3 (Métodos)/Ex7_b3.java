@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.FileWriter;
 
-public class Ex7_b3 { //FIXME Arreglar
+public class Ex7_b3 {
     /**
      * Lee el archivo indicado en el parametro
      * @param fileName Ruta del archivo que necesitas leer
