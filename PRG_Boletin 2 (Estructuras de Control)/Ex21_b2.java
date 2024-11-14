@@ -5,12 +5,12 @@ public class Ex21_b2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //#region VARIABLES INICIALES 
-        int posNuria, posCalorina, posIago, posAndrea;
+        int posSpirit, posSombra, posTornado, posBucefalo;
         int lineaDeMeta = 50;
-        String NuriaDibujo = ":--:º";
-        String CalorinaDibujo = ":--:º";
-        String IagoDibujo = ":--:º";
-        String AndreaDibujo = ":--:º";
+        String SpiritDibujo = ":--:º";
+        String SombraDibujo = ":--:º";
+        String TornadoDibujo = ":--:º";
+        String BucefaloDibujo = ":--:º";
         String espaciosAvanzar = " ";
         String circuito = "================================================================";
         //#endregion
@@ -29,10 +29,10 @@ public class Ex21_b2 {
         System.out.println("╚══════════════════════════════════════════════════════════╝");
 
         do {
-            posNuria = 0;
-            posCalorina = 0;
-            posIago = 0;
-            posAndrea = 0;
+            posSpirit = 0;
+            posSombra = 0;
+            posTornado = 0;
+            posBucefalo = 0;
 
             if (saldoInicial <= 0) {
                 System.out.println("Te has quedado sin saldo. ¡Gracias por jugar!");
@@ -40,10 +40,10 @@ public class Ex21_b2 {
             }
 
             System.out.println("\nElige tu caballo:");
-            System.out.println("1. Nuria (Dorsal 13)");
-            System.out.println("2. Calorina (Dorsal 45)");
-            System.out.println("3. Iago (Dorsal 98)");
-            System.out.println("4. Andrea (Dorsal 66)");
+            System.out.println("1. Spirit (Dorsal 13)");
+            System.out.println("2. Sombra (Dorsal 45)");
+            System.out.println("3. Tornado (Dorsal 98)");
+            System.out.println("4. Bucefalo (Dorsal 66)");
             System.out.println("5. Salir del hipódromo.");
             System.out.print("Selecciona tu caballo (1/4) o Pulsa (5) para Salir: ");
             opcion = sc.nextInt();
@@ -51,19 +51,19 @@ public class Ex21_b2 {
             switch (opcion) {
                 case 1:
                     caballoSeleccionado = 1;
-                    System.out.println("Has seleccionado a Nuria ¡Suerte!");
+                    System.out.println("Has seleccionado a Spirit ¡Suerte!");
                     break;
                 case 2:
                     caballoSeleccionado = 2;
-                    System.out.println("Has seleccionado a Calorina ¡Suerte!");
+                    System.out.println("Has seleccionado a Sombra ¡Suerte!");
                     break;
                 case 3:
                     caballoSeleccionado = 3;
-                    System.out.println("Has seleccionado a Iago ¡Suerte!");
+                    System.out.println("Has seleccionado a Tornado ¡Suerte!");
                     break;
                 case 4:
                     caballoSeleccionado = 4;
-                    System.out.println("Has seleccionado a Andrea ¡Suerte!");
+                    System.out.println("Has seleccionado a Bucefalo ¡Suerte!");
                     break;
 
                 case 5:
@@ -93,37 +93,37 @@ public class Ex21_b2 {
             } while (opcionVerificarApuesta.equals("N"));
 
 
-            while (posNuria < lineaDeMeta && posCalorina < lineaDeMeta && posIago < lineaDeMeta && posAndrea < lineaDeMeta) {
+            while (posSpirit < lineaDeMeta && posSombra < lineaDeMeta && posTornado < lineaDeMeta && posBucefalo < lineaDeMeta) {
                 for (int i = 0; i < 50; i++) {
                     System.out.println();
                 }
 
-                posNuria += (int) (Math.ceil(Math.random() * 3));
-                posCalorina += (int) (Math.ceil(Math.random() * 3));
-                posIago += (int) (Math.ceil(Math.random() * 3));
-                posAndrea += (int) (Math.ceil(Math.random() * 3));
+                posSpirit += (int) (Math.ceil(Math.random() * 3));
+                posSombra += (int) (Math.ceil(Math.random() * 3));
+                posTornado += (int) (Math.ceil(Math.random() * 3));
+                posBucefalo += (int) (Math.ceil(Math.random() * 3));
 
                 System.out.println(circuito);
 
-                for (int i = 0; i < posNuria; i++) {
+                for (int i = 0; i < posSpirit; i++) {
                     System.out.print(espaciosAvanzar);
                 }
-                System.out.println("(Nuria) " + NuriaDibujo);
+                System.out.println("(Spirit) " + SpiritDibujo);
 
-                for (int i = 0; i < posCalorina; i++) {
+                for (int i = 0; i < posSombra; i++) {
                     System.out.print(espaciosAvanzar);
                 }
-                System.out.println("(Calorina) " + CalorinaDibujo);
+                System.out.println("(Sombra) " + SombraDibujo);
 
-                for (int i = 0; i < posIago; i++) {
+                for (int i = 0; i < posTornado; i++) {
                     System.out.print(espaciosAvanzar);
                 }
-                System.out.println("(Iago) " + IagoDibujo);
+                System.out.println("(Tornado) " + TornadoDibujo);
 
-                for (int i = 0; i < posAndrea; i++) {
+                for (int i = 0; i < posBucefalo; i++) {
                     System.out.print(espaciosAvanzar);
                 }
-                System.out.println("(Andrea) " + AndreaDibujo);
+                System.out.println("(Bucefalo) " + BucefaloDibujo);
 
                 System.out.println(circuito);
 
@@ -134,18 +134,18 @@ public class Ex21_b2 {
 
             // Caballo Ganador
             int ganador = 0;
-            if (posNuria >= lineaDeMeta) {
+            if (posSpirit >= lineaDeMeta) {
                 ganador = 1;
-                System.out.println("¡Nuria ha ganado la carrera!");
-            } else if (posCalorina >= lineaDeMeta) {
+                System.out.println("¡Spirit ha ganado la carrera!");
+            } else if (posSombra >= lineaDeMeta) {
                 ganador = 2;
-                System.out.println("¡Calorina ha ganado la carrera!");
-            } else if (posIago >= lineaDeMeta) {
+                System.out.println("¡Sombra ha ganado la carrera!");
+            } else if (posTornado >= lineaDeMeta) {
                 ganador = 3;
-                System.out.println("¡Iago ha ganado la carrera!");
-            } else if (posAndrea >= lineaDeMeta) {
+                System.out.println("¡Tornado ha ganado la carrera!");
+            } else if (posBucefalo >= lineaDeMeta) {
                 ganador = 4;
-                System.out.println("¡Andrea ha ganado la carrera!");
+                System.out.println("¡Bucefalo ha ganado la carrera!");
             }
 
             //APUESTAS
