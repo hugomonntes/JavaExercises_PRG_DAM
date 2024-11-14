@@ -1,6 +1,21 @@
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class Ex16_b3 {
     public static void main(String[] args) {
-        
+        Scanner sc = new Scanner(System.in);
+        int mes;
+        int año;
+        System.out.print("Introduce el año: ");
+        año = sc.nextInt();
+        System.out.print("Introduce el mes: ");
+        mes = sc.nextInt();
+        LocalDate fechaActual = LocalDate.now();
+        LocalDate fechaEspecifica = LocalDate.of(año, mes, 1);
+        LocalDate meses = LocalDate.of(año, mes, 1);
+        for (int i = 0; i <= mes; i++) {
+            System.out.println(meses);
+        }
     }
 }
 
