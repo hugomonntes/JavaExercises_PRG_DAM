@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ex20_b3 {
+public class Ex15_b3 {
     public static ArrayList<String> generarJornada() {
         ArrayList<String> equiposLaLiga = new ArrayList<String>(Arrays.asList("FC Barcelona", "Real Madrid",
                 "Celta De Vigo", "Atlético de Madrid", "Athletic Club", "Real Sociedad", "Villareal", "Valencia",
