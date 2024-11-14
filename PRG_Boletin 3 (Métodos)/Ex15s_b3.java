@@ -1,24 +1,34 @@
 import java.util.Scanner;
 
 public class Ex15s_b3 {
+    /**
+     * Genera el tipo de Personaje de modo aleatorio
+     * @return PJ es bandido o PJ es cliente
+     */
     public static String generarPj(){
         int numeroAleatorio = (int) (Math.random()*2);
         return numeroAleatorio == 0 ? "Bandido" : "Cliente";
     }
+    /**
+     * Genera la probabilidad del 50% para perder una vida
+     * @return un número 0 o 1;
+     */
     public static int probabilidadMedia(){
         return (int) (Math.random()*2);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        //#region VARIABLES DE INICIO
         int opcionPuerta;
         String opcionDisparo;
         boolean shoot;
         int contadorDinero = 5;
         int numeroVidas = 3;
         int contadorClientes = 0;
-        int probabilidad = probabilidadMedia();
-        String caracterPj = generarPj();
+        //#endregion
         while (contadorDinero > 0) {
+            int probabilidad = probabilidadMedia();
+            String caracterPj = generarPj();
             System.out.print("Elige una puerta 1 o 2: ");
             opcionPuerta = sc.nextInt();
             sc.nextLine();
