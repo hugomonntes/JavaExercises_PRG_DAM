@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class Ex13_b3 {
         return randomNumber;
     }
 
-    public static void main(String[] args) throws Exception {// TODO Comprobacion neg y rangos(✔)
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         String userName;
         int numeroCarasDado;
@@ -42,18 +43,17 @@ public class Ex13_b3 {
                 }
             }
             System.out.printf("%s has acertado %d números \n", userName, contadorNumerosAcertados);
-            PrintWriter fwriter = new PrintWriter("JavaExercises-PRG_Boletin2/PRG_Archivos/Records.txt");
-            fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d", userName, numeroCarasDado,
+            PrintWriter fwriter = new PrintWriter(new FileWriter("C:\\Users\\Hugo Montes\\Documents\\PRG\\JavaExercises-PRG_Boletin2\\PRG_Archivos\\Records.txt", true));
+            fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d \n", userName, numeroCarasDado,
             contadorNumerosAcertados);
             fwriter.close();
             System.out.println("Quieres volver a jugar? (S/N)");
             sc.nextLine();
             volverJugar = sc.nextLine().toUpperCase();
-        } while (volverJugar.equals("S")); // TODO añadir record y en cada juego
+        } while (volverJugar.equals("S"));
     }
 }
-/*
- * Dados d20. Realizar un programa que pida al usuario su nombre y 3
+/* * Dados d20. Realizar un programa que pida al usuario su nombre y 3
  * números distintos al usuario entre 1 y 20 (usar 3 variables) y luego que el
  * ordenador “tira” dos dados de 20 caras. Si el segundo dado sale repetido,
  * debe
