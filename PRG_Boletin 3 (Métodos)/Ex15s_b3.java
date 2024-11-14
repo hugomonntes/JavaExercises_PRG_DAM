@@ -5,12 +5,19 @@ public class Ex15s_b3 {
         int numeroAleatorio = (int) (Math.random()*2);
         return numeroAleatorio == 0 ? "Bandido" : "Cliente";
     }
+    public static int probabilidadMedia(){
+        return (int) (Math.random()*2);
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int opcionPuerta;
         String opcionDisparo;
         boolean shoot;
         int contadorDinero = 5;
+        int numeroVidas = 3;
+        int contadorClientes = 0;
+        int probabilidad = probabilidadMedia();
+        String caracterPj = generarPj();
         while (contadorDinero > 0) {
             System.out.print("Elige una puerta 1 o 2: ");
             opcionPuerta = sc.nextInt();
@@ -18,13 +25,27 @@ public class Ex15s_b3 {
             System.out.print("Quieres disparar(s/n): ");
             opcionDisparo = sc.nextLine();
             shoot = opcionDisparo.equals("s") ? true : false;
-            System.out.printf("En la puerta había: %s \n", generarPj());
-            if (shoot && generarPj().equals("Cliente")) {
+            System.out.printf("En la puerta había: %s \n", caracterPj);
+            if (shoot && caracterPj.equals("Cliente")) {
+                if (probabilidad == 1) {
+                    numeroVidas--;
+                }
                 contadorDinero--;
-            } else {
+            } else if (!shoot && caracterPj.equals("Bandido")){
+                if (probabilidad == 1) {
+                    numeroVidas--;
+                }
+            } else if (!shoot && caracterPj.equals("Cliente")) {
+                contadorClientes++;
+                if (contadorClientes % 3 == 0) {
+                    System.out.println("Has ganado una vida extra");
+                    numeroVidas++;
+                }
+            } else if (shoot && caracterPj.equals("Bandido")) {
                 contadorDinero++;
             }
-            System.out.println(contadorDinero);
+            System.out.println(contadorDinero + " Puntos");
+            System.out.println(numeroVidas  + " Vidas");
         }
     }
 }
