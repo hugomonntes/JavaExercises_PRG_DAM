@@ -15,10 +15,10 @@ public class Ex7_b3 {
         String contentFile = "";
         while (f.hasNext()) {
             contentFile = f.nextLine();
-            System.out.println(contentFile);
+         //   System.out.println(contentFile);
         }
         f.close();
-        return contentFile;
+        return contentFile;  //TODO devuoleve solo la última linea
     }
     /**
      * Lee el archivo y reescribe el archivo añadiendole el mensaje
@@ -39,8 +39,8 @@ public class Ex7_b3 {
      * @param isAdd Boolean si el mensaje se añade si es true o no si es false
      * @throws Exception
      */
-    public static void appendFile2(String fileName, boolean isAdd) throws Exception{
-        PrintWriter f = new PrintWriter(new FileWriter(fileName, isAdd));
+    public static void appendFile2(String fileName) throws Exception{//TODO no añade el parametro
+        PrintWriter f = new PrintWriter(new FileWriter(fileName, true));
         f.println("Añade texto al final del archivo");
         f.close();
     }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex11_b3 {
+public class Ex11_b3 { //TODO docs
     public static double calcularFactorial(int number){
         double acumulador = 1;
         for(double i = 1; i <= number; i++){
@@ -9,24 +9,24 @@ public class Ex11_b3 {
         return acumulador;
     }
 
-    public static double calcularPotencia(double base, int exponente){
-        double acumulador = 1;
-        if ((exponente < 0)) {
-            for (int i = 0; i > exponente; i--) {
-                acumulador *= (1/base);
-            }
-        }
-        for (int i = 1; i <= exponente; i++) {
-            acumulador *= base;
-        }
-        return acumulador;
-    }
+    // public static double calcularPotencia(double base, int exponente){
+    //     double acumulador = 1;
+    //     if ((exponente < 0)) {
+    //         for (int i = 0; i > exponente; i--) {
+    //             acumulador *= (1/base);
+    //         }
+    //     }
+    //     for (int i = 1; i <= exponente; i++) {
+    //         acumulador *= base;
+    //     }
+    //     return acumulador;
+    // }
 
     //Aproximación de Taylor con funcion factorial y potencia
     public static double aproximacionTaylor(double x, int n) {
         double resultado = 0;
         for (int i = 0; i <= n; i = i+2) {
-            resultado = 1 - (Ex6_b3.calcularPotencia(x, i) / calcularFactorial(i));
+            resultado = 1 - (Ex6_b3.calcularPotencia(x, i) / calcularFactorial(i));//Ojo, se alterna + y -
         }
         return resultado;
     }
@@ -39,7 +39,7 @@ public class Ex11_b3 {
         for (double i = 0.1; i <= 1; i = i+0.1) {
             number = aproximacionTaylor(i, 4);
             System.out.printf("Coseno de %.1f es %.5f \n", i, number);
-            System.out.println(Math.cos(number) + " = " + number);
+            System.out.println(Math.cos(number) + " = " + number);// Mejor mostrando la diferencia de ambas
         }
         sc.close();    
     }

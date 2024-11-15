@@ -33,7 +33,7 @@ public class Ex12_b3 {
             switch (opcion) { // TODO alinear columnas(✔)
                 case 1:
                     for (int i = 1; i <= 14; i++) {
-                        System.out.printf("Partido %d: %c \n", contador, generarQuinielaNormal());
+                        System.out.printf("Partido %2d: %c \n", contador, generarQuinielaNormal());
                         contador++;
                     }
                     break;
