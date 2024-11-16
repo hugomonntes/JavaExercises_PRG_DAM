@@ -39,9 +39,8 @@ public class Ex7_b3 {
      * @param isAdd Boolean si el mensaje se añade si es true o no si es false
      * @throws Exception
      */
-    public static void appendFile2(String fileName) throws Exception{//TODO no añade el parametro
+    public static void appendFile2(String fileName, String msg) throws Exception{//TODO no añade el parametro
         PrintWriter f = new PrintWriter(new FileWriter(fileName, true));
-        f.println("Añade texto al final del archivo");
         f.close();
     }
     
@@ -51,10 +50,7 @@ public class Ex7_b3 {
         System.out.print("Introduce un mensaje: ");
         msg = sc.nextLine();
         sc.close();
-        PrintWriter fwriter = new PrintWriter("PRG_Archivos/Ex7_b3.txt");
-        //fwriter.print(readFile("PRG_Archivos/Ex2_b3.txt") + appendFile("PRG_Archivos/Ex7_b3.txt", msg));
-        appendFile2("PRG_Archivos/Ex7_b3.txt", true);
-        fwriter.close();
+        appendFile2("PRG_Archivos/Ex7_b3.txt", "hola");
     }
 }
 

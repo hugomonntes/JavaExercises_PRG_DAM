@@ -30,7 +30,7 @@ public class Ex12_b3 {
             System.out.println("3. Salir");
             System.out.print("Introduce tu opción: ");
             opcion = sc.nextInt();
-            switch (opcion) { // TODO alinear columnas(✔)
+            switch (opcion) {
                 case 1:
                     for (int i = 1; i <= 14; i++) {
                         System.out.printf("Partido %2d: %c \n", contador, generarQuinielaNormal());

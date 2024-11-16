@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
 public class Ex11_b3 { //TODO docs
+    /**
+     * Calcula el factorial de un número
+     * @param number numero para calcular el factorial
+     * @return el factorial
+     */
     public static double calcularFactorial(int number){
         double acumulador = 1;
         for(double i = 1; i <= number; i++){
@@ -8,19 +13,6 @@ public class Ex11_b3 { //TODO docs
         }
         return acumulador;
     }
-
-    // public static double calcularPotencia(double base, int exponente){
-    //     double acumulador = 1;
-    //     if ((exponente < 0)) {
-    //         for (int i = 0; i > exponente; i--) {
-    //             acumulador *= (1/base);
-    //         }
-    //     }
-    //     for (int i = 1; i <= exponente; i++) {
-    //         acumulador *= base;
-    //     }
-    //     return acumulador;
-    // }
 
     //Aproximación de Taylor con funcion factorial y potencia
     public static double aproximacionTaylor(double x, int n) {
