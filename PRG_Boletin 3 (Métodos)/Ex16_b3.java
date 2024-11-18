@@ -11,6 +11,7 @@ public class Ex16_b3 {
         System.out.print("Introduce el mes: ");
         mes = sc.nextInt();
         LocalDate fechaActual = LocalDate.now();
+        LocalDate fechaActual = LocalDate.now();
         LocalDate fechaEspecifica = LocalDate.of(año, mes, 1);
         LocalDate meses = LocalDate.of(año, mes, 1);
         for (int i = 0; i <= mes; i++) {
