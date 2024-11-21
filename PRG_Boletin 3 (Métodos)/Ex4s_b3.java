@@ -15,8 +15,7 @@ public class Ex4s_b3 {
     }
     public static void mostrarPiramide(){
         for (int i = 10; i >= 1; i--) {
-            System.out.printf("%2d", i);
-            for (int j = i - 1; j >= 1; j--) {
+            for (int j = i; j >= 1; j--) {
                 System.out.printf("%2d", j);
             }
             System.out.println();
@@ -24,6 +23,6 @@ public class Ex4s_b3 {
     }
     public static void main(String[] args) {
         mostrarPiramide();
-        bucles();
+        //bucles();
     }
 }

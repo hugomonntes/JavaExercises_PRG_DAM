@@ -43,7 +43,7 @@ public class Ex14_b3 {
 
         double resultadoCPU = tirarDados("CPU");
         double puntuacionCPU = comprobacion(resultadoCPU);
-
+        
         if (puntuacionCPU == 0) {
             System.out.println("¡La CPU gana en la primera tirada!");
         } else if (puntuacionCPU == -1) {
