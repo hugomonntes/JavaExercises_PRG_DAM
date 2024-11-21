@@ -20,6 +20,16 @@ public class Ex4s_b3 {
             }
             System.out.println();
         }
+
+        for (int i = 1; i <= 10; i++) {
+            for (int j = i; j <= 10; j++) {
+                System.out.printf(" ");
+            }
+            for (int a = i; a <= 10; a++) {
+                System.out.printf("*");
+            }
+            System.out.println();
+        }
     }
     public static void main(String[] args) {
         mostrarPiramide();
