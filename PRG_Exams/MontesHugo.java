@@ -1,5 +1,3 @@
-// HUGO MONTES FERNÁNDEZ 21118633X
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
