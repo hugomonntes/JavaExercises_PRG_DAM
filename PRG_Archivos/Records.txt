@@ -1,1 +1,2 @@
 Nombre: j,  Numero Caras Dado: 6, Numero Aciertos: 1 
+Nombre: hugo,  Numero Caras Dado: 5, Numero Aciertos: 0 

@@ -33,7 +33,7 @@ public class Ex13_b3 {
             while (dado1 == dado2) {
                 dado1 = tirarDado(numeroCarasDado);
             }
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 3; i++) {//TODO usuario no repite nums(do whiles) 
                 do {
                     System.out.printf("Introduce un número del 1 al %d: ", numeroCarasDado);
                     userNumber = sc.nextInt();
@@ -43,9 +43,11 @@ public class Ex13_b3 {
                 }
             }
             System.out.printf("%s has acertado %d números \n", userName, contadorNumerosAcertados);
-            PrintWriter fwriter = new PrintWriter(new FileWriter("C:\\Users\\Hugo Montes\\Documents\\PRG\\JavaExercises-PRG_Boletin2\\PRG_Archivos\\Records.txt", true));
+            PrintWriter fwriter = new PrintWriter(new FileWriter(
+                    "C:\\Users\\Hugo Montes\\Documents\\PRG\\JavaExercises-PRG_Boletin2\\PRG_Archivos\\Records.txt",
+                    true));
             fwriter.printf("Nombre: %s,  Numero Caras Dado: %d, Numero Aciertos: %d \n", userName, numeroCarasDado,
-            contadorNumerosAcertados);
+                    contadorNumerosAcertados);
             fwriter.close();
             System.out.println("Quieres volver a jugar? (S/N)");
             sc.nextLine();
@@ -53,7 +55,8 @@ public class Ex13_b3 {
         } while (volverJugar.equals("S"));
     }
 }
-/* * Dados d20. Realizar un programa que pida al usuario su nombre y 3
+/*
+ * * Dados d20. Realizar un programa que pida al usuario su nombre y 3
  * números distintos al usuario entre 1 y 20 (usar 3 variables) y luego que el
  * ordenador “tira” dos dados de 20 caras. Si el segundo dado sale repetido,
  * debe

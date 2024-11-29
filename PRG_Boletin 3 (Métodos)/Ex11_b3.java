@@ -13,7 +13,12 @@ public class Ex11_b3 { //TODO docs
         }
         return acumulador;
     }
-
+    /**
+     * 
+     * @param x
+     * @param n
+     * @return
+     */
     //Aproximación de Taylor con funcion factorial y potencia
     public static double aproximacionTaylor(double x, int n) {
         double resultado = 0;

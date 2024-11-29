@@ -14,12 +14,12 @@ public class Ex4s_b3 {
         }
     }
     public static void mostrarPiramide(){
-        for (int i = 10; i >= 1; i--) {
-            for (int j = i; j >= 1; j--) {
-                System.out.printf("%2d", j);
-            }
-            System.out.println();
-        }
+        // for (int i = 10; i >= 1; i--) {
+        //     for (int j = i; j >= 1; j--) {
+        //         System.out.printf("%2d", j);
+        //     }
+        //     System.out.println();
+        // }
 
         for (int i = 1; i <= 10; i++) {
             for (int j = i; j <= 10; j++) {
