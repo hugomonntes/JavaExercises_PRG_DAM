@@ -19,5 +19,7 @@ public class Ex17_b3 {
     }
     public static void main(String[] args) {
         conversion(100, true);
+        conversion(100, true);
+        conversion(100, true);
     }
 }
