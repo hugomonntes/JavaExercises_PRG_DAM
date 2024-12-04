@@ -2,13 +2,14 @@ public class Perro { // Planos a partir de ellos puedes construir objetos tipo P
     public String raza;
     public String nombre;
     private int edad;
+    int a;
 
     public int getEdad() {
         return edad;
     }
 
     public void setEdad(int a) {
-        edad = a;
+        edad = this.a;
     }
 
     public boolean setTemperatura(int fiebre){
