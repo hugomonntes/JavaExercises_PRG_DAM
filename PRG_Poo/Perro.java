@@ -10,4 +10,8 @@ public class Perro { // Planos a partir de ellos puedes construir objetos tipo P
     public void setEdad(int a) {
         edad = a;
     }
+
+    public boolean setTemperatura(int fiebre){
+        return fiebre > 39 ? true : false;
+    }
 }
