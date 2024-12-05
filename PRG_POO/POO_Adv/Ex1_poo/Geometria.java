@@ -39,7 +39,20 @@ public class Geometria {
         this.base = base;
     }
 
-    public int Area() {
-        return 1;
+    public double area() {
+        return figura ? base * altura : base * altura / 2;
+    }
+
+    public double perimetro(){
+        return base + altura + diagonal();
+    }
+
+    public double diagonal(){
+        double calcularHipotenusa = Math.sqrt(base * base + altura * altura);
+        return calcularHipotenusa;
+    }
+
+    public String tipo(){
+        return figura ? "Rectángulo" : "Triangulo";
     }
 }
