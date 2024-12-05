@@ -1,4 +1,4 @@
-package PRG_POO (Orientación a Objetos).POO_Adv.Ex1_poo;
+package PRG_POO.POO_Adv.Ex1_poo;
 
 public class Geometria {
     private boolean figura;

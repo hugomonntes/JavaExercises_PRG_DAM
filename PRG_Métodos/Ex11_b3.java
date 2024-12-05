@@ -1,3 +1,5 @@
+package PRG_Métodos;
+
 import java.util.Scanner;
 
 public class Ex11_b3 { //TODO docs
