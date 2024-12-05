@@ -1,3 +1,5 @@
+package PRG_Métodos;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -16,7 +18,6 @@ public class Ex16_b3 {
         for (int i = 0; i <= mes; i++) {
             System.out.println(meses);
         }
-        
     }
 }
 
