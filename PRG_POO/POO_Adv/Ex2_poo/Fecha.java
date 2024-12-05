@@ -54,10 +54,10 @@ public class Fecha {
     //#region MÉTODOS
     public String fechaFormateada(boolean formatoFecha){
         if (formatoFecha) {
-            return "dia";
+            return "";
         } else {
-            return "dia";
+            return "";
         }
     }
-
+    //#endregion
 }
