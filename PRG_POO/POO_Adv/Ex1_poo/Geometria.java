@@ -23,12 +23,23 @@ public class Geometria {
 
     public Geometria(){
         figura = false;
-        setAltura(2);
-        setBase(2);
+        this.altura = 2;
+        this.base = 2;
     }
+    
     public Geometria(double base, double altura){
         figura = false;
-        setAltura(base);
-        setBase(altura);
+        this.altura = altura;
+        this.base = base;
+    }
+    
+    public Geometria(boolean figura,double base, double altura){
+        this.figura = figura;
+        this.altura = altura;
+        this.base = base;
+    }
+
+    public int Area() {
+        return 1;
     }
 }
