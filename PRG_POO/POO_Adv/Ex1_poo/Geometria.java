@@ -20,4 +20,15 @@ public class Geometria {
     public double getBase() {
         return base;
     }
+
+    public Geometria(){
+        figura = false;
+        setAltura(2);
+        setBase(2);
+    }
+    public Geometria(double base, double altura){
+        figura = false;
+        setAltura(base);
+        setBase(altura);
+    }
 }
