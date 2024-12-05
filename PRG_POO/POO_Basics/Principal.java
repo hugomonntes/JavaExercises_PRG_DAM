@@ -1,12 +1,14 @@
 public class Principal {
     public static void main(String[] args) {
         Pelota pelota = new Pelota();
-        Pelota pelota2 = new Pelota();
-        Pelota pelota3 = new Pelota("Futbol", 22);
         pelota.tipo = "Baloncesto";
-        pelota.radio = 20;
-        System.out.printf("Tipo: %s, Radio: %f", pelota.tipo, pelota.radio);
-        // System.out.printf("Tipo: %s, Radio: %f", pelota.tipo, pelota.radio);
-        // System.out.printf("Tipo: %s, Radio: %f", pelota.tipo, pelota.radio);
+        pelota.setRadio(20);
+        System.out.println("Tengo una pelota de "+pelota.tipo+" de "+ pelota.getRadio()+" cm de radio");
+        Pelota pelota2 = new Pelota();
+        pelota2.tipo = "Playa";
+        pelota2.getRadio();
+        System.out.println("Tengo una pelota de "+pelota2.tipo+" de "+ pelota2.getRadio()+" cm de radio");
+        Pelota pelota3 = new Pelota("Futbol", 22);
+        System.out.println("Tengo una pelota de "+pelota3.tipo+" de "+ pelota3.getRadio()+" cm de radio");
     }
 }

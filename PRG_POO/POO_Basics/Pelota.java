@@ -1,7 +1,13 @@
 public class Pelota {
     public String tipo;
-    public double radio;
+    private double radio;
 
+    public double getRadio(){
+        return radio;
+    }
+    public void setRadio(double radio){
+        this.radio = radio;
+    }
     public Pelota(){
         tipo = "Playa";
         radio = 40;
