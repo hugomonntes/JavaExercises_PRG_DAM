@@ -16,4 +16,12 @@ public class Pelota {
         this.tipo = tipo;
         this.radio = radio;
     }
+
+    public void inflar(){
+        this.radio += 1;  
+    }
+
+    public void inflar(int cantidadInflar){
+        this.radio += cantidadInflar;  
+    }
 }
