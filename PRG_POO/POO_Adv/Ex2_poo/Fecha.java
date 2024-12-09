@@ -54,8 +54,9 @@ public class Fecha {
     //#region MÉTODOS
     public String fechaFormateada(boolean formatoFecha){
         if (formatoFecha) {
-            return "";
+            return dia + "/" + mes + "/" + año;
         } else {
+            //Realizar SWITCH para localizar el mes en cada caso.
             return "";
         }
     }
