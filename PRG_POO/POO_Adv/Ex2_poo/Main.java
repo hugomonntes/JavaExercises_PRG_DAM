@@ -36,5 +36,6 @@ public class Main {
         año2 = sc.nextInt();
         fecha2.setDia(año2);
         System.out.println(Fecha.diferenciaFechas(fecha, fecha2));
+        sc.close();
     }
 }

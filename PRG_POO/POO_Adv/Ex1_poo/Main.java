@@ -17,5 +17,6 @@ public class Main {
         triangulo.setBase(base);
         System.out.println(rectangulo.getAltura() + " // " + rectangulo.getBase());
         System.out.println(triangulo.getAltura() + " // " + triangulo.getBase());
+        sc.close();
     }
 }

@@ -23,8 +23,8 @@ public class Geometria {
 
     public Geometria(){
         figura = false;
-        this.altura = 2;
-        this.base = 2;
+        altura = 2;
+        base = 2;
     }
     
     public Geometria(double base, double altura){
@@ -44,7 +44,7 @@ public class Geometria {
     }
 
     public double perimetro(){
-        return base + altura + diagonal();
+        return figura ? base * 2 + altura * 2 : base + altura + diagonal();
     }
 
     public double diagonal(){
