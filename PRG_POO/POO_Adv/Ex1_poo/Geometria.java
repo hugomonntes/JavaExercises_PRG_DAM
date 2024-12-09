@@ -48,8 +48,7 @@ public class Geometria {
     }
 
     public double diagonal(){
-        double calcularHipotenusa = Math.sqrt(base * base + altura * altura);
-        return calcularHipotenusa;
+        return Math.sqrt(base * base + altura * altura);
     }
 
     public String tipo(){
