@@ -1,6 +1,7 @@
 package PRG_POO.POO_Adv.Ex1_poo;
+
 public class Geometria {
-    private boolean figura;//TODO get (✔)
+    private boolean figura;
     private double altura;
     private double base;
 
