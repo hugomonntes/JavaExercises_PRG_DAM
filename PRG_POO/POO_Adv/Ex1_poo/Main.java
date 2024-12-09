@@ -11,12 +11,12 @@ public class Main {
         base = sc.nextInt();
         System.out.println("Introduce la altura: ");
         altura = sc.nextInt();
-        Geometria rectangulo = new Geometria(20, 13);
+        Geometria rectangulo = new Geometria(true, 20, 13);
         Geometria triangulo = new Geometria();
         triangulo.setAltura(altura);
         triangulo.setBase(base);
-        System.out.println(rectangulo.getAltura() + " // " + rectangulo.getBase());
-        System.out.println(triangulo.getAltura() + " // " + triangulo.getBase());
+        System.out.printf("Perímetro: %.2f, Área: %.2f, Figura: %s, Base: %.2f, Altura: %.2f", rectangulo.perimetro(), rectangulo.area(), rectangulo.tipo(), rectangulo.getAltura(), rectangulo.getBase()); //TODO perim, area, fig...(✔)
+        System.out.printf("\nPerímetro: %.2f, Área: %.2f, Figura: %s, Base: %.2f, Altura: %.2f, Diagonal: %.2f", triangulo.perimetro(), triangulo.area(), triangulo.tipo(), triangulo.getAltura(), triangulo.getBase(), triangulo.diagonal());
         sc.close();
     }
 }

@@ -1,9 +1,12 @@
 package PRG_POO.POO_Adv.Ex1_poo;
-
 public class Geometria {
-    private boolean figura;
+    private boolean figura;//TODO get (✔)
     private double altura;
     private double base;
+
+    public boolean getFigura() {
+        return figura;
+    }
 
     public void setAltura(double altura) {
         this.altura = altura;
