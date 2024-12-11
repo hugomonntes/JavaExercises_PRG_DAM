@@ -47,9 +47,9 @@ public class Fecha {
     }
 
     public Fecha(int dia, int mes, int año) {
-        this.dia = dia;
-        this.mes = mes;
-        this.año = año;
+        setAño(año);
+        setMes(mes);
+        setDia(dia);
     }
 
     // #endregion
@@ -85,17 +85,17 @@ public class Fecha {
                     return fechaMod = getDia() + " de Noviembre " + getAño();
                 case 12:
                     return fechaMod = getDia() + " de Diciembre " + getAño();
-            }
+            } 
             return fechaMod;
         }
     }
 
     public static int diferenciaFechas(Fecha a, Fecha b) {
-        int aux;
-        if (a.getAño() < b.getAño()) {
-            aux = a.getAño();
+        if (a.getAño() > b.getAño()) {
+            return a.getAño() - b.getAño();
+        } else {
+            return b.getAño() - a.getAño();
         }
-        return a.getAño() - b.getAño();
     }
     // #endregion
 }
