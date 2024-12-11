@@ -19,6 +19,8 @@ public class Main {
         System.out.print("Introduce el año: ");
         año = sc.nextInt();
         fecha.setDia(año);
+        System.out.println(fecha.fechaFormateada(true));
+        System.out.println(fecha.fechaFormateada(false));
 
 
         Fecha fecha2 = new Fecha();
@@ -35,6 +37,8 @@ public class Main {
         System.out.print("Introduce el año: ");
         año2 = sc.nextInt();
         fecha2.setDia(año2);
+        System.out.println(fecha2.fechaFormateada(true));
+        System.out.println(fecha2.fechaFormateada(false));
         System.out.println(Fecha.diferenciaFechas(fecha, fecha2));
         sc.close();
     }

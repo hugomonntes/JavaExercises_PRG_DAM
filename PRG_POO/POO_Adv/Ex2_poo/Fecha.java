@@ -46,50 +46,55 @@ public class Fecha {
         año = 2023;
     }
 
-    public Fecha(Fecha dia, Fecha mes, Fecha año) {
-        this.dia = 17;
-        this.mes = 8;
-        this.año = 2023;
+    public Fecha(int dia, int mes, int año) {
+        this.dia = dia;
+        this.mes = mes;
+        this.año = año;
     }
 
     // #endregion
     // #region MÉTODOS
     public String fechaFormateada(boolean formatoFecha) {
+        String fechaMod = "";
         if (formatoFecha) {
             return dia + "/" + mes + "/" + año;
         } else {
             // Realizar SWITCH para localizar el mes en cada caso.
             switch (mes) {
                 case 1:
-                    return "Enero";
+                    return fechaMod = getDia() + " de Enero " + getAño();
                 case 2:
-                    return "Febrero";
+                    return fechaMod = getDia() + " de Febrero " + getAño();
                 case 3:
-                    return "Marzo";
+                    return fechaMod = getDia() + " de Marzo " + getAño();
                 case 4:
-                    return "Abril";
+                    return fechaMod = getDia() + " de Abril " + getAño();
                 case 5:
-                    return "Mayo";
+                    return fechaMod = getDia() + " de Mayo " + getAño();
                 case 6:
-                    return "Junio";
+                    return fechaMod = getDia() + " de Junio " + getAño();
                 case 7:
-                    return "Julio";
+                    return fechaMod = getDia() + " de Julio " + getAño();
                 case 8:
-                    return "Agosto";
+                    return fechaMod = getDia() + " de Agosto " + getAño();
                 case 9:
-                    return "Septiembre";
+                    return fechaMod = getDia() + " de Septiembre " + getAño();
                 case 10:
-                    return "Octubre";
+                    return fechaMod = getDia() + " de Octubre " + getAño();
                 case 11:
-                    return "Noviembre";
+                    return fechaMod = getDia() + " de Noviembre " + getAño();
                 case 12:
-                    return "Diciembre";
+                    return fechaMod = getDia() + " de Diciembre " + getAño();
             }
-            return "";
+            return fechaMod;
         }
     }
 
     public static int diferenciaFechas(Fecha a, Fecha b) {
+        int aux;
+        if (a.getAño() < b.getAño()) {
+            aux = a.getAño();
+        }
         return a.getAño() - b.getAño();
     }
     // #endregion
