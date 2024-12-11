@@ -5,7 +5,7 @@ public class Fecha {
     private int mes;
     private int año;
 
-    //#region SET & GET
+    // #region SET & GET
     public void setAño(int año) {
         this.año = año;
     }
@@ -15,7 +15,7 @@ public class Fecha {
     }
 
     public void setDia(int dia) {
-        if (dia < 1 || dia > 31 ) {
+        if (dia < 1 || dia > 31) {
             this.dia = 1;
         } else {
             this.dia = dia;
@@ -27,7 +27,7 @@ public class Fecha {
     }
 
     public void setMes(int mes) {
-        if (dia < 1 || dia > 31 ) {
+        if (dia < 1 || dia > 31) {
             this.mes = 1;
         } else {
             this.mes = mes;
@@ -37,32 +37,60 @@ public class Fecha {
     public int getMes() {
         return mes;
     }
-    //#endregion
-    //#region CONSTRUCTORES
-    public Fecha(){
+
+    // #endregion
+    // #region CONSTRUCTORES
+    public Fecha() {
         dia = 17;
         mes = 8;
         año = 2023;
     }
 
-    public Fecha(Fecha dia, Fecha mes, Fecha año){
+    public Fecha(Fecha dia, Fecha mes, Fecha año) {
         this.dia = 17;
         this.mes = 8;
         this.año = 2023;
     }
-    //#endregion
-    //#region MÉTODOS
-    public String fechaFormateada(boolean formatoFecha){
+
+    // #endregion
+    // #region MÉTODOS
+    public String fechaFormateada(boolean formatoFecha) {
         if (formatoFecha) {
             return dia + "/" + mes + "/" + año;
         } else {
-            //Realizar SWITCH para localizar el mes en cada caso.
+            // Realizar SWITCH para localizar el mes en cada caso.
+            switch (mes) {
+                case 1:
+                    return "Enero";
+                case 2:
+                    return "Febrero";
+                case 3:
+                    return "Marzo";
+                case 4:
+                    return "Abril";
+                case 5:
+                    return "Mayo";
+                case 6:
+                    return "Junio";
+                case 7:
+                    return "Julio";
+                case 8:
+                    return "Agosto";
+                case 9:
+                    return "Septiembre";
+                case 10:
+                    return "Octubre";
+                case 11:
+                    return "Noviembre";
+                case 12:
+                    return "Diciembre";
+            }
             return "";
         }
     }
 
-    public static int diferenciaFechas(Fecha a, Fecha b){
+    public static int diferenciaFechas(Fecha a, Fecha b) {
         return a.getAño() - b.getAño();
     }
-    //#endregion
+    // #endregion
 }
