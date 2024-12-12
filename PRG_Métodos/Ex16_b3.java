@@ -1,5 +1,3 @@
-package PRG_Métodos;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 

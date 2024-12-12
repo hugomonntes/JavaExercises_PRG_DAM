@@ -57,6 +57,7 @@ public class Empleado {
         } else {
             irpf = 30;
         }
+        return irpf;
     }
     //#endregion
 }

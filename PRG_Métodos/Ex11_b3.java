@@ -1,8 +1,6 @@
-package PRG_Métodos;
-
 import java.util.Scanner;
 
-public class Ex11_b3 { //TODO docs
+public class Ex11_b3 {
     /**
      * Calcula el factorial de un número
      * @param number numero para calcular el factorial
