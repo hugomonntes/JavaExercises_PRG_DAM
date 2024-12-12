@@ -60,4 +60,27 @@ public class Empleado {
         return irpf;
     }
     //#endregion
+    //#region CONSTRUCTORES
+    public Empleado(){
+        nombre = "";
+        apellido = "";
+        edad = 0;
+        dni = "";
+        salarioAnual = 0;
+        irpf = 0;
+    }
+
+    public Empleado(String nombre, String apellido, int edad, String dni, double salarioAnual) { //IRPF va sin parametro ya que no tiene set
+        setApellido(apellido);
+        setNombre(nombre);
+        setEdad(edad);
+        setDni(dni);
+        setSalarioAnual(salarioAnual);
+    }
+    //#endregion
+    //#region MÉTODOS
+    public double calcularHacienda(){
+        return getSalarioAnual() * (getIrpf() / 100);
+    }
+    //#endregion
 }
