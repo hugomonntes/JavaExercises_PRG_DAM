@@ -13,7 +13,7 @@ public class Directivo {
         this.nombre = nombre.toUpperCase();
     }
     public String getNombre() {
-        return nombre;
+        return "\"" + nombre + "\"";
     }
     public void setApellido(String apellido) {
         this.apellido = apellido;
@@ -43,7 +43,31 @@ public class Directivo {
         this.beneficios = beneficios;
     }
     public double getBeneficios() {
-        return beneficios;
+        return !(beneficios < 0 || beneficios > 100) ? beneficios : 0;
     }
     // #endregion
+    //#region CONSTRUCTORES
+    public Directivo(){
+        nombre = "";
+        apellido = "";
+        edad = 0;
+        dni = "";
+        nombreDepartamento = "";
+        beneficios = 0;
+    }
+
+    public Directivo(String nombre, String apellido, int edad, String dni, String nombreDepartamento, double beneficios){
+        setNombre(nombre);
+        setApellido(apellido);
+        setEdad(edad);
+        setDni(dni);
+        setNombreDepartamento(nombreDepartamento);
+        setBeneficios(beneficios);
+    }
+    //#endregion
+    //#region MÉTODOS
+    public double calcularBeneficio(){
+        return getBeneficios() < 0 ? 0 : getBeneficios();
+    }
+    //#endregion
 }
