@@ -62,7 +62,7 @@ public class Fecha {
             // Realizar SWITCH para localizar el mes en cada caso.
             switch (mes) {
                 case 1:
-                    return fechaMod = getDia() + " de Enero " + getAño();
+                    return  getDia() + " de Enero " + getAño();
                 case 2:
                     return fechaMod = getDia() + " de Febrero " + getAño();
                 case 3:

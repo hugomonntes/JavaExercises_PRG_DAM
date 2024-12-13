@@ -36,9 +36,9 @@ public class Main {
         System.out.println(fecha.fechaFormateada(false));
 
         Fecha fecha2 = new Fecha(dia2, mes2, año2);
-        fecha.setDia(dia2);
-        fecha.setMes(mes2);
-        fecha.setAño(año2);
+        fecha2.setDia(dia2);
+        fecha2.setMes(mes2);
+        fecha2.setAño(año2);
         System.out.println(fecha2.fechaFormateada(true));
         System.out.println(fecha2.fechaFormateada(false));
         System.out.println(Fecha.diferenciaFechas(fecha, fecha2));
