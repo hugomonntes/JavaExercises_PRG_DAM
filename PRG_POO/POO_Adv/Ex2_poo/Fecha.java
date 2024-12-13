@@ -27,7 +27,7 @@ public class Fecha {
     }
 
     public void setMes(int mes) {
-        if (dia < 1 || dia > 31) {
+        if (mes < 1 || mes > 12) {
             this.mes = 1;
         } else {
             this.mes = mes;

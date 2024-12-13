@@ -28,14 +28,14 @@ public class Main {
         año2 = sc.nextInt();
         //#endregion
         //#region OBJ
-        Fecha fecha = new Fecha();
+        Fecha fecha = new Fecha(dia, mes, año);
         fecha.setDia(dia);
         fecha.setMes(mes);
         fecha.setAño(año);
         System.out.println(fecha.fechaFormateada(true));
         System.out.println(fecha.fechaFormateada(false));
 
-        Fecha fecha2 = new Fecha();
+        Fecha fecha2 = new Fecha(dia2, mes2, año2);
         fecha.setDia(dia2);
         fecha.setMes(mes2);
         fecha.setAño(año2);

@@ -17,7 +17,7 @@ public class IUEmpleado {
         System.out.println("DNI: " + empleado.getDni());
         System.out.println("Salario Anual: " + empleado.getSalarioAnual());
         System.out.println("IRPF: " + empleado.getIrpf());
-        // System.out.println("Hacienda: " + empleado.calcularHacienda());
+        System.out.println("Hacienda: " + empleado.calcularHacienda());
     }
 
     public void pedir(){
