@@ -16,7 +16,16 @@ public class Empresa {
     //#endregion
 
     //#region CONSTRUCTORES
-    public Empresa(Directivo directivo, Empleado empleados, Empleado empleados2){
-
+    public Empresa(Directivo directivo, Empleado empleados){
+        this.directivo = directivo;
+        this.empleados = empleados;
+        setGanancias(ganancias);
     }
+
+    public Empresa(Directivo directivo, Empleado empleados, int ganancias){
+        this.directivo = directivo;
+        this.empleados = empleados;
+        setGanancias(ganancias);
+    }
+    //#endregion
 }
