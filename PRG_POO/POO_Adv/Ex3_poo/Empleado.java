@@ -41,22 +41,22 @@ public class Empleado {
         return dni;
     }
 
-    public void setSalarioAnual(double salarioAnual) {
+    public void setSalarioAnual(double salarioAnual) {//TODO cambio de irpf
         this.salarioAnual = salarioAnual;
+        if (salarioAnual < 6000) {
+            irpf = 7.5;   
+        } else if (salarioAnual >= 6000 && salarioAnual < 30000) {
+            irpf = 15;
+        } else {
+            irpf = 20;
+        }
     }
 
     public double getSalarioAnual() {
         return salarioAnual;
     }
 
-    public double getIrpf() {
-        if (getSalarioAnual() < 6000) {
-            return irpf = 7.5;   
-        } else if (getSalarioAnual() > 6000 && getSalarioAnual() < 30000) {
-            irpf = 15;
-        } else {
-            irpf = 30;
-        }
+    public double getIrpf() {//TODO si salrio es 6000 
         return irpf;
     }
     //#endregion
@@ -67,7 +67,7 @@ public class Empleado {
         edad = 0;
         dni = "";
         salarioAnual = 0;
-        irpf = 0;
+        irpf = 7.5;
     }
 
     public Empleado(String nombre, String apellido, int edad, String dni, double salarioAnual) { //IRPF va sin parametro ya que no tiene set
