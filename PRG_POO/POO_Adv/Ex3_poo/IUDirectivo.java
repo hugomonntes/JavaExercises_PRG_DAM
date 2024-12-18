@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class IUDirectivo {
     Scanner sc = new Scanner(System.in);
-    Directivo directivo = new Directivo();
+    public Directivo directivo;// = new Directivo();
 
     public IUDirectivo(Directivo directivo) {
         this.directivo = directivo;
