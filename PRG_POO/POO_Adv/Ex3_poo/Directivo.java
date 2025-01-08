@@ -43,7 +43,7 @@ public class Directivo {
         this.beneficios = beneficios;
     }
     public double getBeneficios() {
-        return !(beneficios < 0 || beneficios > 100) ? beneficios : 0;
+        return (beneficios >= 0 && beneficios <= 100) ? beneficios : 0;
     }
     // #endregion
     //#region CONSTRUCTORES

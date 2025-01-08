@@ -41,7 +41,7 @@ public class Empleado {
         return dni;
     }
 
-    public void setSalarioAnual(double salarioAnual) {//TODO cambio de irpf
+    public void setSalarioAnual(double salarioAnual) {
         this.salarioAnual = salarioAnual;
         if (salarioAnual < 6000) {
             irpf = 7.5;   
@@ -56,7 +56,7 @@ public class Empleado {
         return salarioAnual;
     }
 
-    public double getIrpf() {//TODO si salrio es 6000 
+    public double getIrpf() { 
         return irpf;
     }
     //#endregion

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class IUEmpleado {
     Scanner sc = new Scanner(System.in);
-    Empleado empleado = new Empleado();
+    public Empleado empleado;// = new Empleado();
 
     public IUEmpleado(Empleado empleado) {
         this.empleado = empleado;
