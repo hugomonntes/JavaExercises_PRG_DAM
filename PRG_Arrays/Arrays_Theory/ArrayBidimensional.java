@@ -23,10 +23,18 @@ public class ArrayBidimensional {
         System.out.println("Número de filas: " + temperaturas.length);
         System.out.println("Número de columnas: "+ temperaturas[0].length);
 
-        //Recorrer Arrays bidimensionales
+        //Recorrer Arrays bidimensionales.
         for (int i = 0; i < tabla.length; i++) {
             for (int j = 0; j < tabla.length; j++) {
                 System.out.printf("%3d ", tabla[i][j]);
+            }
+            System.out.println();
+        }
+
+        //Recorrer Array con bucle foreach.
+        for (int[] fila : temperaturas) {
+            for (int valor : fila) {
+                System.out.printf("%3d", valor);
             }
             System.out.println();
         }
