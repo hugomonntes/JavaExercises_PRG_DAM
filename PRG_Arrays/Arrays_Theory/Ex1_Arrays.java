@@ -1,4 +1,4 @@
-package PRG_Arrays;
+package PRG_Arrays.Arrays_Theory;
 
 import java.util.Scanner;
 

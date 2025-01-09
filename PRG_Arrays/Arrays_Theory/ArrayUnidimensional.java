@@ -1,4 +1,4 @@
-package PRG_Arrays;
+package PRG_Arrays.Arrays_Theory;
 
 public class ArrayUnidimensional {
     public static void main(String[] args) {
