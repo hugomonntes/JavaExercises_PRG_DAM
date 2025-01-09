@@ -1,8 +1,20 @@
 package PRG_Arrays.Arrays_Exercises;
 
 public class Ex1_Arrays {
+    public static int creaArrayNumeros(int n){
+        int[] numerosUsuario = new int[n];
+        int numeroAleatorio;
+        for (int i = 0; i < numerosUsuario.length; i++) {
+            numeroAleatorio = (int)(Math.random()*1000);
+            while (numeroAleatorio >= 1000 && numeroAleatorio <= 5000) {
+                numerosUsuario[i] = numeroAleatorio;
+            }
+            return numerosUsuario[i];
+        }
+        return 1;
+    }
     public static void main(String[] args) {
-        
+        System.out.println(creaArrayNumeros(5));
     }
 }
 
