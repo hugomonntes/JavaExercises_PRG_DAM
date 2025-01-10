@@ -1,13 +1,30 @@
 package PRG_Arrays.Arrays_Theory;
 
 public class Ex2_Arrays {
-    public static int[][] crearBidimensional(int numeroFilas, int numeroColumnas){
-        int[][] numerosReales = new int[numeroFilas][numeroColumnas];
-        // numerosReales[][] = (int)(Math.random()*10 + 20);
-        return numerosReales;
+    public static double[][] crearBidimensional(int numeroFilas, int numeroColumnas){
+        double[][] numbers = new double[numeroFilas][numeroColumnas];
+        for (int i = 0; i < numeroFilas; i++) {
+            for (int j = 0; j < numeroColumnas; j++) {
+                numbers[i][j] = Math.random() * 10 + 20;
+            }
+        }
+        return numbers;
+    }
+
+    public static void mostrarBidimensional(double[][] numbers){
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers[i].length; j++) {
+                System.out.printf("%.2f ", numbers[i][j]);
+            }
+            System.out.println();
+        }
     }
     public static void main(String[] args) {
-        
+        double[][] array1 = crearBidimensional(4, 3);
+        mostrarBidimensional(array1);
+
+        double[][] array2 = crearBidimensional(3, 4);
+        mostrarBidimensional(array2);
     }
 }
 
