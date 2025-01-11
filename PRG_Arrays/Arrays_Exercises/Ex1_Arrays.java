@@ -14,22 +14,34 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
             System.out.println(numero);
         }
     }
+
+    public static int maximo(int[] numeros){
+        int auxiliar = numeros[0];
+        for (int i = 1; i < numeros.length; i++) {
+            if (numeros[i] > auxiliar) {
+                auxiliar = numeros[i];
+            }
+        }
+        return auxiliar;
+    }
+    public static int minimo(int[] numeros){
+        int auxiliar = numeros[0];
+        for (int i = 1; i < numeros.length; i++) {
+            if (numeros[i] < auxiliar) {
+                auxiliar = numeros[i];
+            }
+        }
+        return auxiliar;
+    }
     public static void main(String[] args) {
         int[] numeros = creaArrayNumeros(10);
         muestraArray(numeros);
+        System.out.println("Número mayor: " + maximo(numeros));
+        System.out.println("Número mínimo: " + minimo(numeros));
     }
 }
 
 /*
-1. Realiza los métodos estáticos que se citan a continuación. Realiza en el
-programa principal una prueba de los mismos con un vector de tamaño 10 (Ojo, el
-tamaño 10 es solo en el principal, las funciones han de ser genéricas y válidas para
-vectores de cualquier tamaño).
-a) Función que crea y devuelva un vector con n números enteros con valores
-aleatorios entre 1000 y 5000 ambos incluidos (n es un parámetros de la función).
-b) Función a la que se le pasa un vector cualquiera de números enteros y muestra
-sus elementos por pantalla. Debes usar un for mejorado mostrando elemento a
-elemento.
 c) Función a la que se le pasa un vector cualquiera de enteros (no tiene porque ser
 el del apartado a) y devuelve el valor máximo que contiene. Usa for clásico.
 d) Función a la que se le pasa un vector cualquiera de enteros y devuelve el valor
