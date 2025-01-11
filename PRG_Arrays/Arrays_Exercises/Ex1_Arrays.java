@@ -14,7 +14,6 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
             System.out.println(numero);
         }
     }
-
     public static int maximo(int[] numeros){
         int auxiliar = numeros[0];
         for (int i = 1; i < numeros.length; i++) {
@@ -42,10 +41,6 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
 }
 
 /*
-c) Función a la que se le pasa un vector cualquiera de enteros (no tiene porque ser
-el del apartado a) y devuelve el valor máximo que contiene. Usa for clásico.
-d) Función a la que se le pasa un vector cualquiera de enteros y devuelve el valor
-mínimo que contiene. Usa for mejorado.
 e) Función a la que se le pasa como parámetros un vector cualquiera de enteros y
 dos índices (son dos números enteros) e intercambia los datos que hay en las
 posiciones indicadas por los índices. Si hay un error de rango devuelve false si no
