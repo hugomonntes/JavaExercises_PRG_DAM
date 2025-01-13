@@ -33,7 +33,15 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
         return auxiliar;
     }
     public static boolean intercambiarDatos(int[] numeros, int indice1, int indice2){
-        return true;
+        if (indice1 < 0 || indice1 > numeros.length || indice2 < 0 || indice2 > numeros.length){
+            System.out.println("Error de rango");
+            return false;
+        } else {
+            int auxiliar = numeros[indice1];
+            numeros[indice1] = numeros[indice2];
+            numeros[indice2] = auxiliar;
+            return true;
+        }
     }
     public static void main(String[] args) {
         int[] numeros = creaArrayNumeros(10);
