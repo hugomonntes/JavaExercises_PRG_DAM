@@ -27,8 +27,8 @@ public class Colecciones {
 
         System.out.println();
 
-        for (String nombres : names) {
-            System.out.println(nombres);
+        for (String name : names) {
+            System.out.println(name);
         }
     }
 }
