@@ -5,7 +5,7 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
         int[] numerosUsuario = new int[n];
         int numeroAleatorio;
         for (int i = 0; i < numerosUsuario.length; i++){
-            numerosUsuario[i] = numeroAleatorio = (int)(Math.random() * (5000 - 1000 + 1)) + 1000;
+            numerosUsuario[i] = numeroAleatorio = (int)(Math.random() * (4001)) + 1000;
         }
         return numerosUsuario;
     }
