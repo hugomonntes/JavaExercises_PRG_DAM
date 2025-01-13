@@ -32,6 +32,9 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
         }
         return auxiliar;
     }
+    public static boolean intercambiarDatos(int[] numeros, int indice1, int indice2){
+        return true;
+    }
     public static void main(String[] args) {
         int[] numeros = creaArrayNumeros(10);
         muestraArray(numeros);
