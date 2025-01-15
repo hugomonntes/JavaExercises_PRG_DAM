@@ -13,14 +13,19 @@ public class Ex2_Arrays {
     }
 
     public static void mostrarTabla(char[][] tabla){
-        for (char[] fila : tabla) {
-            for (char col : fila) {
-                System.out.print(col + " ");
+        for (int i = 0; i < tabla[0].length; i++) {
+            System.out.printf(" %2d", i);
+        }
+        System.out.println();
+        for (int i = 0; i < tabla.length; i++) {
+            System.out.printf("%d ", i);
+            for (int j = 0; j < tabla[i].length; j++) {
+                System.out.printf("%2c ", tabla[i][j]);
             }
             System.out.println();
         }
     }
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         char[][] tabla1 = matrizChar(3, 4);
         mostrarTabla(tabla1);
     }
