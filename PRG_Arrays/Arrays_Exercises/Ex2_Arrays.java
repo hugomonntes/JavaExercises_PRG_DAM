@@ -1,7 +1,29 @@
 package PRG_Arrays.Arrays_Exercises;
 
 public class Ex2_Arrays {
-    
+    public static char[][] matrizChar(int n, int m){
+        char[][] tabla = new char[n][m];
+        char[] letras = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                tabla[i][j] = letras[(int)(Math.random() * letras.length)];
+            }
+        }
+        return tabla;
+    }
+
+    public static void mostrarTabla(char[][] tabla){
+        for (char[] fila : tabla) {
+            for (char col : fila) {
+                System.out.print(col + " ");
+            }
+            System.out.println();
+        }
+    }
+        public static void main(String[] args) {
+        char[][] tabla1 = matrizChar(3, 4);
+        mostrarTabla(tabla1);
+    }
 }
 
 /*
