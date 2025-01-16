@@ -11,8 +11,8 @@ public class Ex3_Arrays {
         return numerosAleatorios;
     }
     public static void muestraArray(ArrayList<Integer> numeros){
-        for (int numero : numeros) {
-            System.out.println(numero);
+        for (int i = 0; i < numeros.size(); i++) {
+            System.out.println(numeros.get(i));
         }
     }
     public static void main(String[] args) {
