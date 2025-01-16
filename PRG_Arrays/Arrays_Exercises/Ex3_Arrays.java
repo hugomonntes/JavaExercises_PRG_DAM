@@ -1,23 +1,34 @@
 package PRG_Arrays.Arrays_Exercises;
 
 import java.util.ArrayList;
-
 public class Ex3_Arrays {
     public static ArrayList<Integer> creaArrayNumeros(int n){
         ArrayList<Integer> numerosAleatorios = new ArrayList<>();
-        for (int i = 0; i < numerosAleatorios.size(); i++){
+        for (int i = 0; i < n; i++){
             numerosAleatorios.add(i, (int)(Math.random() * (4001)) + 1000);
         }
         return numerosAleatorios;
     }
     public static void muestraArray(ArrayList<Integer> numeros){
-        for (int i = 0; i < numeros.size(); i++) {
-            System.out.println(numeros.get(i));
+        for (Integer numero : numeros) {
+            System.out.println(numero);
         }
+    }
+    public static ArrayList<Integer> añadeMenores(ArrayList<Integer> numeros, int limite){
+        ArrayList<Integer> numerosMenores = new ArrayList<>();
+        for (Integer numero : numeros) {
+            if (numero <= limite) {
+                numerosMenores.add(numero);
+            }
+        }
+        return numerosMenores;
     }
     public static void main(String[] args) {
         ArrayList<Integer> numeros = creaArrayNumeros(10);
+        ArrayList<Integer> numerosMenores = añadeMenores(numeros,3500);
         muestraArray(numeros);
+        System.out.println();
+        muestraArray(numerosMenores);
     }
 }
 
