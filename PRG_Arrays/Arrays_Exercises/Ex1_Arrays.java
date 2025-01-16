@@ -5,7 +5,7 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
         int[] numerosUsuario = new int[n];
         int numeroAleatorio;
         for (int i = 0; i < numerosUsuario.length; i++){
-            numerosUsuario[i] = numeroAleatorio = (int)(Math.random() * (4001)) + 1000;
+            numerosUsuario[i] = numeroAleatorio = (int)(Math.random() * 4001) + 1000;
         }
         return numerosUsuario;
     }
@@ -23,18 +23,18 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
         }
         return auxiliar;
     }
-    public static int minimo(int[] numeros){
+    public static int minimo(int[] numeros){//TODO foreach (Check)
         int auxiliar = numeros[0];
-        for (int i = 1; i < numeros.length; i++) {
-            if (numeros[i] < auxiliar) {
-                auxiliar = numeros[i];
+        for (int numero : numeros) {
+            if (numero < auxiliar) {
+                auxiliar = numero;
             }
         }
         return auxiliar;
     }
-    public static boolean intercambiarDatos(int[] numeros, int indice1, int indice2){
-        if (indice1 < 0 || indice1 > numeros.length || indice2 < 0 || indice2 > numeros.length){
-            System.out.println("Error de rango");
+    public static boolean intercambiarDatos(int[] numeros, int indice1, int indice2){//TODO revisar comprobación
+        if (indice1 < 0 || indice1 >= numeros.length || indice2 < 0 || indice2 >= numeros.length){
+           // System.out.println("Error de rango");
             return false;
         } else {
             int auxiliar = numeros[indice1];
@@ -48,6 +48,7 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
         muestraArray(numeros);
         System.out.println("Número mayor: " + maximo(numeros));
         System.out.println("Número mínimo: " + minimo(numeros));
+        intercambiarDatos(numeros, 1, 10);
     }
 }
 
