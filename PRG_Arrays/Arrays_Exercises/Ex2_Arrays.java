@@ -3,24 +3,24 @@ package PRG_Arrays.Arrays_Exercises;
 public class Ex2_Arrays {
     public static char[][] matrizChar(int n, int m){
         char[][] tabla = new char[n][m];
-        char[] letras = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                tabla[i][j] = letras[(int)(Math.random() * letras.length)];
+                tabla[i][j] = (char)((Math.random() * 26) + 65);
             }
         }
         return tabla;
     }
 
     public static void mostrarTabla(char[][] tabla){
+        System.out.print("   ");
         for (int i = 0; i < tabla[0].length; i++) {
-            System.out.printf(" %2d", i);
+            System.out.printf("%4d", i);
         }
         System.out.println();
         for (int i = 0; i < tabla.length; i++) {
-            System.out.printf("%d ", i);
+            System.out.printf("%3d", i);
             for (int j = 0; j < tabla[i].length; j++) {
-                System.out.printf("%2c ", tabla[i][j]);
+                System.out.printf("%4c", tabla[i][j]);
             }
             System.out.println();
         }
