@@ -14,10 +14,10 @@ public class Ex3_Arrays {
             System.out.println(numero);
         }
     }
-    public static ArrayList<Integer> añadeMenores(ArrayList<Integer> numeros, int limite){
-        ArrayList<Integer> numerosMenores = new ArrayList<>();
+    public static ArrayList<Integer> eliminaMayores(ArrayList<Integer> numeros, int limite){
+        ArrayList <Integer> numerosMenores = new ArrayList<>();
         for (Integer numero : numeros) {
-            if (numero <= limite) {
+            if (numero < limite) {
                 numerosMenores.add(numero);
             }
         }
@@ -25,12 +25,12 @@ public class Ex3_Arrays {
     }
     public static void main(String[] args) {
         ArrayList<Integer> numeros = creaArrayNumeros(10);
-        ArrayList<Integer> numerosMenores = añadeMenores(numeros,3500);
         muestraArray(numeros);
         System.out.println();
-        muestraArray(numerosMenores);
+        muestraArray(eliminaMayores(numeros,2500));
     }
 }
+
 
 /*
 3. Repite el primer ejercicio adaptándolo a un ArrayList<Integer>. Pruébalo con
