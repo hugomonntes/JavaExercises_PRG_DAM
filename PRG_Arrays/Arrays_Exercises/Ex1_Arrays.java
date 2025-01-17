@@ -23,7 +23,7 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
         }
         return auxiliar;
     }
-    public static int minimo(int[] numeros){//TODO foreach (Check)
+    public static int minimo(int[] numeros){
         int auxiliar = numeros[0];
         for (int numero : numeros) {
             if (numero < auxiliar) {
@@ -32,9 +32,8 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
         }
         return auxiliar;
     }
-    public static boolean intercambiarDatos(int[] numeros, int indice1, int indice2){//TODO revisar comprobación
+    public static boolean intercambiarDatos(int[] numeros, int indice1, int indice2){
         if (indice1 < 0 || indice1 >= numeros.length || indice2 < 0 || indice2 >= numeros.length){
-           // System.out.println("Error de rango");
             return false;
         } else {
             int auxiliar = numeros[indice1];
