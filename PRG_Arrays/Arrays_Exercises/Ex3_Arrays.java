@@ -14,10 +14,13 @@ public class Ex3_Arrays {
             System.out.println(numero);
         }
     }
-    public static ArrayList<Integer> eliminaMayores(ArrayList<Integer> numeros, int limite){
+    //TODO max, min interc
+
+    public static ArrayList<Integer> eliminaMayores(ArrayList<Integer> numeros, int limite){//TODO eliminar
         ArrayList <Integer> numerosMenores = new ArrayList<>();
         for (Integer numero : numeros) {
             if (numero < limite) {
+                numeros.add(5);
                 numerosMenores.add(numero);
             }
         }

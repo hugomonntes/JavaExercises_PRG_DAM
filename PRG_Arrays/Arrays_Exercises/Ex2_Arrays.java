@@ -25,9 +25,34 @@ public class Ex2_Arrays {
             System.out.println();
         }
     }
+
+    public static int maximo(char[][] tabla){
+        int auxiliar = tabla[0][0];
+        for (int i = 1; i < tabla.length; i++) {
+            for (int j = 0; j < tabla.length; j++) {
+                if (tabla[i][j] > auxiliar) {
+                    auxiliar = tabla[i][j];
+                }
+            }
+        }
+        return auxiliar;
+    }
+    
+    // public static int minimo(int[][] tabla){
+    //     int auxiliar = tabla[0];
+    //     for (int numero : tabla) {
+    //         if (numero < auxiliar) {
+    //             auxiliar = numero;
+    //         }
+    //     }
+    //     return auxiliar;
+    // }
+
+    //TODO max, min interc
     public static void main(String[] args) {
         char[][] tabla1 = matrizChar(3, 4);
         mostrarTabla(tabla1);
+        System.out.println(maximo(tabla1));
     }
 }
 
