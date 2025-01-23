@@ -48,6 +48,45 @@ public class Ex2_Arrays {
     //     return auxiliar;
     // }
 
+    public static char devolverLetraMayor(char[][] tabla){
+        int auxiliar = tabla[0][0];
+        char letraMayor = tabla[0][0];
+        for (int i = 1; i < tabla.length; i++) {
+            for (int j = 0; j < tabla[i].length; j++) {
+                if (tabla[i][j] > auxiliar) {
+                    auxiliar = tabla[i][j];
+                    letraMayor = tabla[i][j];
+                }
+            }
+        }
+        return letraMayor;
+    }
+
+    public static char devolverLetraMenor(char[][] tabla){
+        int auxiliar = tabla[0][0];
+        char letraMenor = tabla[0][0];
+        for (int i = 1; i < tabla.length; i++) {
+            for (int j = 0; j < tabla[i].length; j++) {
+                if (tabla[i][j] < auxiliar) {
+                    auxiliar = tabla[i][j];
+                    letraMenor = tabla[i][j];
+                }
+            }
+        }
+        return letraMenor;
+    }
+
+    public static char intercambiarDatos(char[][] tabla, int indice1, int indice2){
+        if (indice1 < 0 || indice1 >= tabla.length || indice2 < 0 || indice2 >= tabla.length){
+            return 0;
+        } else {
+            char auxiliar = tabla[indice1][indice2];
+            tabla[indice1][indice2] = tabla[indice2][indice1];
+            tabla[indice2][indice1] = auxiliar;
+            return auxiliar;
+        }
+    }
+
     //TODO max, min interc
     public static void main(String[] args) {
         char[][] tabla1 = matrizChar(3, 4);
