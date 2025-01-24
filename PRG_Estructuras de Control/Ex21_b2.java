@@ -5,14 +5,14 @@ public class Ex21_b2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //#region VARIABLES INICIALES 
-        int posSpirit, posSombra, posTornado, posBucefalo;
-        int lineaDeMeta = 50;
+        int posSpirit, posAndrea, posCarla, posMaripi;
+        int lineaDeMeta = 260;
         String SpiritDibujo = ":--:º";
-        String SombraDibujo = ":--:º";
-        String TornadoDibujo = ":--:º";
-        String BucefaloDibujo = ":--:º";
+        String AndreaDibujo = ":--:º";
+        String CarlaDibujo = ":--:º";
+        String MaripiDibujo = ":--:º";
         String espaciosAvanzar = " ";
-        String circuito = "================================================================";
+        String circuito = "========================================================================================================================================================================";
         //#endregion
         //#region VARIABLES APUESTAS.
         int saldoInicial = 500;
@@ -30,9 +30,9 @@ public class Ex21_b2 {
 
         do {
             posSpirit = 0;
-            posSombra = 0;
-            posTornado = 0;
-            posBucefalo = 0;
+            posAndrea = 0;
+            posCarla = 0;
+            posMaripi = 0;
 
             if (saldoInicial <= 0) {
                 System.out.println("Te has quedado sin saldo. ¡Gracias por jugar!");
@@ -41,9 +41,9 @@ public class Ex21_b2 {
 
             System.out.println("\nElige tu caballo:");
             System.out.println("1. Spirit (Dorsal 13)");
-            System.out.println("2. Sombra (Dorsal 45)");
-            System.out.println("3. Tornado (Dorsal 98)");
-            System.out.println("4. Bucefalo (Dorsal 66)");
+            System.out.println("2. Andrea (Dorsal 45)");
+            System.out.println("3. Carla (Dorsal 98)");
+            System.out.println("4. Maripi (Dorsal 66)");
             System.out.println("5. Salir del hipódromo.");
             System.out.print("Selecciona tu caballo (1/4) o Pulsa (5) para Salir: ");
             opcion = sc.nextInt();
@@ -55,15 +55,15 @@ public class Ex21_b2 {
                     break;
                 case 2:
                     caballoSeleccionado = 2;
-                    System.out.println("Has seleccionado a Sombra ¡Suerte!");
+                    System.out.println("Has seleccionado a Andrea ¡Suerte!");
                     break;
                 case 3:
                     caballoSeleccionado = 3;
-                    System.out.println("Has seleccionado a Tornado ¡Suerte!");
+                    System.out.println("Has seleccionado a Carla ¡Suerte!");
                     break;
                 case 4:
                     caballoSeleccionado = 4;
-                    System.out.println("Has seleccionado a Bucefalo ¡Suerte!");
+                    System.out.println("Has seleccionado a Maripi ¡Suerte!");
                     break;
 
                 case 5:
@@ -93,15 +93,15 @@ public class Ex21_b2 {
             } while (opcionVerificarApuesta.equals("N"));
 
 
-            while (posSpirit < lineaDeMeta && posSombra < lineaDeMeta && posTornado < lineaDeMeta && posBucefalo < lineaDeMeta) {
+            while (posSpirit < lineaDeMeta && posAndrea < lineaDeMeta && posCarla < lineaDeMeta && posMaripi < lineaDeMeta) {
                 for (int i = 0; i < 50; i++) {
                     System.out.println();
                 }
 
-                posSpirit += (int) (Math.ceil(Math.random() * 3));
-                posSombra += (int) (Math.ceil(Math.random() * 3));
-                posTornado += (int) (Math.ceil(Math.random() * 3));
-                posBucefalo += (int) (Math.ceil(Math.random() * 3));
+                posSpirit += (int) (Math.ceil(Math.random() * 5));
+                posAndrea += (int) (Math.ceil(Math.random() * 5));
+                posCarla += (int) (Math.ceil(Math.random() * 5));
+                posMaripi += (int) (Math.ceil(Math.random() * 5));
 
                 System.out.println(circuito);
 
@@ -110,20 +110,20 @@ public class Ex21_b2 {
                 }
                 System.out.println("(Spirit) " + SpiritDibujo);
 
-                for (int i = 0; i < posSombra; i++) {
+                for (int i = 0; i < posAndrea; i++) {
                     System.out.print(espaciosAvanzar);
                 }
-                System.out.println("(Sombra) " + SombraDibujo);
+                System.out.println("(Andrea) " + AndreaDibujo);
 
-                for (int i = 0; i < posTornado; i++) {
+                for (int i = 0; i < posCarla; i++) {
                     System.out.print(espaciosAvanzar);
                 }
-                System.out.println("(Tornado) " + TornadoDibujo);
+                System.out.println("(Carla) " + CarlaDibujo);
 
-                for (int i = 0; i < posBucefalo; i++) {
+                for (int i = 0; i < posMaripi; i++) {
                     System.out.print(espaciosAvanzar);
                 }
-                System.out.println("(Bucefalo) " + BucefaloDibujo);
+                System.out.println("(Maripi) " + MaripiDibujo);
 
                 System.out.println(circuito);
 
@@ -137,15 +137,15 @@ public class Ex21_b2 {
             if (posSpirit >= lineaDeMeta) {
                 ganador = 1;
                 System.out.println("¡Spirit ha ganado la carrera!");
-            } else if (posSombra >= lineaDeMeta) {
+            } else if (posAndrea >= lineaDeMeta) {
                 ganador = 2;
-                System.out.println("¡Sombra ha ganado la carrera!");
-            } else if (posTornado >= lineaDeMeta) {
+                System.out.println("¡Andrea ha ganado la carrera!");
+            } else if (posCarla >= lineaDeMeta) {
                 ganador = 3;
-                System.out.println("¡Tornado ha ganado la carrera!");
-            } else if (posBucefalo >= lineaDeMeta) {
+                System.out.println("¡Carla ha ganado la carrera!");
+            } else if (posMaripi >= lineaDeMeta) {
                 ganador = 4;
-                System.out.println("¡Bucefalo ha ganado la carrera!");
+                System.out.println("¡Maripi ha ganado la carrera!");
             }
 
             //APUESTAS

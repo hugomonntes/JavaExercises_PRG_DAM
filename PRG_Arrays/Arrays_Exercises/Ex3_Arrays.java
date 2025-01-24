@@ -16,21 +16,18 @@ public class Ex3_Arrays {
     }
     //TODO max, min interc
 
-    public static ArrayList<Integer> eliminaMayores(ArrayList<Integer> numeros, int limite){//TODO eliminar
-        ArrayList <Integer> numerosMenores = new ArrayList<>();
-        for (Integer numero : numeros) {
-            if (numero < limite) {
-                numeros.add(5);
-                numerosMenores.add(numero);
+    public static ArrayList<Integer> eliminaMayores(ArrayList<Integer> numeros, int limite){
+        for (int i = numeros.size() - 1; i >= 0; i--) {
+            if (numeros.get(i) > limite) {
+                numeros.remove(i);
             }
         }
-        return numerosMenores;
+        return numeros;
     }
     public static void main(String[] args) {
         ArrayList<Integer> numeros = creaArrayNumeros(10);
         muestraArray(numeros);
-        System.out.println();
-        muestraArray(eliminaMayores(numeros,2500));
+        System.out.println(eliminaMayores(numeros, 2000));
     }
 }
 

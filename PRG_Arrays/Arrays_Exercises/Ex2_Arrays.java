@@ -25,29 +25,6 @@ public class Ex2_Arrays {
             System.out.println();
         }
     }
-
-    public static int maximo(char[][] tabla){
-        int auxiliar = tabla[0][0];
-        for (int i = 1; i < tabla.length; i++) {
-            for (int j = 0; j < tabla.length; j++) {
-                if (tabla[i][j] > auxiliar) {
-                    auxiliar = tabla[i][j];
-                }
-            }
-        }
-        return auxiliar;
-    }
-    
-    // public static int minimo(int[][] tabla){
-    //     int auxiliar = tabla[0];
-    //     for (int numero : tabla) {
-    //         if (numero < auxiliar) {
-    //             auxiliar = numero;
-    //         }
-    //     }
-    //     return auxiliar;
-    // }
-
     public static char devolverLetraMayor(char[][] tabla){
         int auxiliar = tabla[0][0];
         char letraMayor = tabla[0][0];
@@ -61,7 +38,6 @@ public class Ex2_Arrays {
         }
         return letraMayor;
     }
-
     public static char devolverLetraMenor(char[][] tabla){
         int auxiliar = tabla[0][0];
         char letraMenor = tabla[0][0];
@@ -76,14 +52,14 @@ public class Ex2_Arrays {
         return letraMenor;
     }
 
-    public static char intercambiarDatos(char[][] tabla, int indice1, int indice2){
+    public static boolean intercambiarDatos(char[][] tabla, int indice1, int indice2){
         if (indice1 < 0 || indice1 >= tabla.length || indice2 < 0 || indice2 >= tabla.length){
-            return 0;
+            return false;
         } else {
             char auxiliar = tabla[indice1][indice2];
             tabla[indice1][indice2] = tabla[indice2][indice1];
             tabla[indice2][indice1] = auxiliar;
-            return auxiliar;
+            return true;
         }
     }
 
@@ -91,7 +67,9 @@ public class Ex2_Arrays {
     public static void main(String[] args) {
         char[][] tabla1 = matrizChar(3, 4);
         mostrarTabla(tabla1);
-        System.out.println(maximo(tabla1));
+        System.out.println(devolverLetraMayor(tabla1));
+        System.out.println(devolverLetraMenor(tabla1));
+        System.out.println(intercambiarDatos(tabla1, 1, 2));
     }
 }
 
