@@ -1,8 +1,13 @@
 package PRG_Arrays.Arrays_Exercises;
 
 public class Ex4_Arrays {
+    public static void mostrarCaracteres(String letras){
+        for (int i = 0; i < letras.length(); i++) {
+            System.out.println(letras.charAt(i));
+        }
+    }
     public static void main(String[] args) {
-        
+        mostrarCaracteres("Nuria");
     }
 }
 
