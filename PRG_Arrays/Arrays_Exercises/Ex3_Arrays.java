@@ -14,8 +14,37 @@ public class Ex3_Arrays {
             System.out.println(numero);
         }
     }
-    //TODO max, min interc
+    public static int numeroMayor(ArrayList<Integer> numeros){
+        int auxiliar = numeros.get(0);
+        for (Integer numero : numeros) {
+            if (numero >= auxiliar) {
+                auxiliar = numero;
+            }
+        }
+        return auxiliar;
+    }
 
+    public static int numeroMenor(ArrayList<Integer> numeros){
+        int auxiliar = numeros.get(0);
+        for (Integer numero : numeros) {
+            if (numero <= auxiliar) {
+                auxiliar = numero;
+            }
+        }
+        return auxiliar;
+    }
+
+    public static boolean swapNums(ArrayList<Integer> numeros, int indice1, int indice2){
+        if (indice1 < 0 || indice1 >= numeros.size() || indice2 < 0 || indice2 >= numeros.size()){
+            return false;
+        } else {
+            int auxiliar = numeros.get(indice1);
+            numeros.set(indice1, numeros.get(indice2));
+            numeros.set(indice2, auxiliar);
+            return true;
+        }
+    }
+    
     public static ArrayList<Integer> eliminaMayores(ArrayList<Integer> numeros, int limite){
         for (int i = numeros.size() - 1; i >= 0; i--) {
             if (numeros.get(i) > limite) {
@@ -24,9 +53,13 @@ public class Ex3_Arrays {
         }
         return numeros;
     }
+    //TODO max, min interc
     public static void main(String[] args) {
         ArrayList<Integer> numeros = creaArrayNumeros(10);
         muestraArray(numeros);
+        System.out.println("Mayor: " + numeroMayor(numeros));
+        System.out.println("Menor: " + numeroMenor(numeros));
+        System.out.println("Cambio: " + swapNums(numeros, 1, 12));
         System.out.println(eliminaMayores(numeros, 2000));
     }
 }
