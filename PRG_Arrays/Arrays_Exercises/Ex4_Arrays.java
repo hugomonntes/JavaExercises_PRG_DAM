@@ -6,19 +6,20 @@ public class Ex4_Arrays {
             System.out.println(letras.charAt(i));
         }
     }
+    public static String subCadena(String cadena, int inicio, int cantidadCaracteres){
+        if (cadena == null || inicio < 0 || cantidadCaracteres < 0 || cantidadCaracteres > cadena.length()) {
+            return "";
+        } else {
+            return cadena.substring(inicio, cantidadCaracteres);
+        }
+    }
     public static void main(String[] args) {
-        mostrarCaracteres("Nuria");
+        mostrarCaracteres("nh");
+        System.out.println(subCadena("HolaMundo", 0, 9));
     }
 }
 
-/*
-4. Crea una clase con los siguientes métodos estáticos públicos que serán
-realizados usando sólo los métodos charAt() y length():
-a) muestraEnLinea: Método que muestre cada letra de una cadena que se pasa
-como parámetro en una línea distinta.
-b) subCadena: Método al que se le pase una cadena, una posición de inicio y una
-cantidad de caracteres y devuelve el fragmento indicado. Si se le pasan parámetros
-no válidos (indices fuera de rango o cadena null) devuelve cadena vacía.
+/*2
 c) muestraCentrado: Función que se le pasa un string y lo muestra centrado en a
 consola (supón consola de 80 caracteres de ancho).
 d) cadenaAVector: Función a la que se le pasa una cadena y devuelve un vector

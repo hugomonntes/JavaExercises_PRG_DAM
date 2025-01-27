@@ -38,13 +38,12 @@ public class Ex2_Arrays {
         }
         return letraMayor;
     }
-    public static char devolverLetraMenor(char[][] tabla){
-        int auxiliar = tabla[0][0];
+    public static char devolverLetraMenor(char[][] tabla){// TODO foreach
         char letraMenor = tabla[0][0];
         for (int i = 1; i < tabla.length; i++) {
             for (int j = 0; j < tabla[i].length; j++) {
-                if (tabla[i][j] < auxiliar) {
-                    auxiliar = tabla[i][j];
+                if (tabla[i][j] < letraMenor) {
+                    
                     letraMenor = tabla[i][j];
                 }
             }
@@ -52,24 +51,24 @@ public class Ex2_Arrays {
         return letraMenor;
     }
 
-    public static boolean intercambiarDatos(char[][] tabla, int indice1, int indice2){
-        if (indice1 < 0 || indice1 >= tabla.length || indice2 < 0 || indice2 >= tabla.length){
+    public static boolean intercambiarDatos(char[][] tabla, int indice1, int indice2, int indice3, int indice4){
+        if (indice1 < 0 || indice1 >= tabla.length || indice2 < 0 || indice2 >= tabla.length){  //TODO  3 y 4 y comparar 2 con cols
             return false;
         } else {
             char auxiliar = tabla[indice1][indice2];
-            tabla[indice1][indice2] = tabla[indice2][indice1];
-            tabla[indice2][indice1] = auxiliar;
+            tabla[indice1][indice2] = tabla[indice3][indice4];
+            tabla[indice3][indice4] = auxiliar;
             return true;
         }
     }
 
-    //TODO max, min interc
+    
     public static void main(String[] args) {
         char[][] tabla1 = matrizChar(3, 4);
         mostrarTabla(tabla1);
         System.out.println(devolverLetraMayor(tabla1));
         System.out.println(devolverLetraMenor(tabla1));
-        System.out.println(intercambiarDatos(tabla1, 1, 2));
+        System.out.println(intercambiarDatos(tabla1, 1, 2, 6, 8));
     }
 }
 
