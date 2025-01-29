@@ -38,13 +38,12 @@ public class Ex2_Arrays {
         }
         return letraMayor;
     }
-    public static char devolverLetraMenor(char[][] tabla){// TODO foreach
+    public static char devolverLetraMenor(char[][] tabla){// TODO foreach (Check)
         char letraMenor = tabla[0][0];
-        for (int i = 1; i < tabla.length; i++) {
-            for (int j = 0; j < tabla[i].length; j++) {
-                if (tabla[i][j] < letraMenor) {
-                    
-                    letraMenor = tabla[i][j];
+        for (char[] fila : tabla) {
+            for (char letra : fila) {
+                if (letra < letraMenor) {
+                    letraMenor = letra;
                 }
             }
         }
@@ -52,8 +51,8 @@ public class Ex2_Arrays {
     }
 
     public static boolean intercambiarDatos(char[][] tabla, int indice1, int indice2, int indice3, int indice4){
-        if (indice1 < 0 || indice1 >= tabla.length || indice2 < 0 || indice2 >= tabla.length){  //TODO  3 y 4 y comparar 2 con cols
-            return false;
+        if (indice1 < 0 || indice1 >= tabla.length || indice2 < 0 || indice2 >= tabla.length || indice3 < 0 || indice3 >= tabla.length || indice4 < 0 || indice4 >= tabla.length){//TODO  3 y 4 y comparar 2 con cols(Check)
+        return false;
         } else {
             char auxiliar = tabla[indice1][indice2];
             tabla[indice1][indice2] = tabla[indice3][indice4];

@@ -14,11 +14,11 @@ public class Ex3_Arrays {
             System.out.println(numero);
         }
     }
-    public static int numeroMayor(ArrayList<Integer> numeros){//TODO for clasico
+    public static int numeroMayor(ArrayList<Integer> numeros){//TODO for clasico (Check)
         int auxiliar = numeros.get(0);
-        for (Integer numero : numeros) {
-            if (numero >= auxiliar) {
-                auxiliar = numero;
+        for (int i = 0; i < numeros.size(); i++) {
+            if (numeros.get(i) >= auxiliar) {
+                auxiliar = numeros.get(i);
             }
         }
         return auxiliar;
@@ -53,7 +53,7 @@ public class Ex3_Arrays {
         }
         return numeros;
     }
-    //TODO max, min interc
+    //TODO max, min interc (Check)indice1 < 0 || indice1 >= tabla.length || indice2 < 0 || indice2 >= tabla.length || indice3 < 0 || indice3 >= tabla.length || indice4 < 0 || indice4 >= tabla.length
     public static void main(String[] args) {
         ArrayList<Integer> numeros = creaArrayNumeros(10);
         muestraArray(numeros);
