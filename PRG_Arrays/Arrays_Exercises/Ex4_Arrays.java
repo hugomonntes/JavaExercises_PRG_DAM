@@ -7,15 +7,12 @@ public class Ex4_Arrays {
         }
     }
     public static void main(String[] args) {
-        mostrarCaracteres("Nuria");
+        mostrarCaracteres("aaa");
     }
 }
 
+
 /*
-4. Crea una clase con los siguientes métodos estáticos públicos que serán
-realizados usando sólo los métodos charAt() y length():
-a) muestraEnLinea: Método que muestre cada letra de una cadena que se pasa
-como parámetro en una línea distinta.
 b) subCadena: Método al que se le pase una cadena, una posición de inicio y una
 cantidad de caracteres y devuelve el fragmento indicado. Si se le pasan parámetros
 no válidos (indices fuera de rango o cadena null) devuelve cadena vacía.
