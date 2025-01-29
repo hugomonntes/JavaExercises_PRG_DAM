@@ -5,7 +5,7 @@ public class Ex3_Arrays {
     public static ArrayList<Integer> creaArrayNumeros(int n){
         ArrayList<Integer> numerosAleatorios = new ArrayList<>();
         for (int i = 0; i < n; i++){
-            numerosAleatorios.add(i, (int)(Math.random() * (4001)) + 1000);
+            numerosAleatorios.add((int)(Math.random() * (4001)) + 1000);
         }
         return numerosAleatorios;
     }
@@ -14,7 +14,7 @@ public class Ex3_Arrays {
             System.out.println(numero);
         }
     }
-    public static int numeroMayor(ArrayList<Integer> numeros){
+    public static int numeroMayor(ArrayList<Integer> numeros){//TODO for clasico
         int auxiliar = numeros.get(0);
         for (Integer numero : numeros) {
             if (numero >= auxiliar) {
