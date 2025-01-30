@@ -38,7 +38,7 @@ public class Ex2_Arrays {
         }
         return letraMayor;
     }
-    public static char devolverLetraMenor(char[][] tabla){// TODO foreach (Check)
+    public static char devolverLetraMenor(char[][] tabla){
         char letraMenor = tabla[0][0];
         for (char[] fila : tabla) {
             for (char letra : fila) {

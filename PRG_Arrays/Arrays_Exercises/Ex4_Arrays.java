@@ -1,5 +1,8 @@
 package PRG_Arrays.Arrays_Exercises;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Ex4_Arrays {//TODO comentarios (Check)
     /**
      * Muestra caracteres de un String
@@ -15,12 +18,16 @@ public class Ex4_Arrays {//TODO comentarios (Check)
      * @param cadena
      * @return 
      */
-    public static String subCadena(String cadena, int inicio, int cantidadCaracteres){ //TODO no se puede usar substring y revisar condición 
-        if (cadena == null || inicio < 0 || cantidadCaracteres < 0 || cantidadCaracteres > cadena.length()) {
+    public static String subCadena(String cadena, int inicio, int cantidadCaracteres){ //TODO no se puede usar substring y revisar condición(Check menos condicion)
+        String cadenaFinal = "";
+        if (cadena == null || inicio < 0 || cantidadCaracteres < 0 || inicio + cantidadCaracteres > cadena.length()) {
             return "";
         } else {
-            return cadena.substring(inicio, cantidadCaracteres);
+            for (int i = inicio; i < inicio + cantidadCaracteres; i++) {
+                cadenaFinal += cadena.charAt(i);
+            }
         }
+        return cadenaFinal;
     }
     /**
      * Muestra un String centrado en la terminal
@@ -28,13 +35,10 @@ public class Ex4_Arrays {//TODO comentarios (Check)
      */
     public static void mostrarCentrado(String cadena){
         int anchoTerminal = (80 - cadena.length()); 
-        for (int i = 0; i < anchoTerminal; i++) {//TODO recolocar condición
+        for (int i = 0; i < anchoTerminal / 2; i++) {//TODO recolocar condición(check)
             System.out.print(" ");
-            if (i == anchoTerminal / 2) {
-                System.out.print(cadena);
-            }
         }
-        System.out.println();
+        System.out.printf("%s \n", cadena);
     }
     /**
      * Devuelve una lista de caracteres de una cadena
@@ -53,29 +57,37 @@ public class Ex4_Arrays {//TODO comentarios (Check)
      * @param cadena
      * @return cadena del reves
      */
-    public static char listaReverse(String cadena){
-        char auxiliar = ' ';
+    public static String listaReverse(String cadena){
+        String auxiliar = "";
         for (int i = cadena.length() - 1; i >= 0; i--) {
             auxiliar += cadena.charAt(i);
         }
         return auxiliar;
     }
+
+    public static String concatenarCadenas(String... cadenas){
+        String fraseFinal = "";
+        for (String cadena : cadenas) {
+            for (int i = 0; i < cadena.length(); i++) {
+                if (cadena.charAt(i) == '_') {
+                    cadena[i] = " ";
+                }
+            }
+            fraseFinal += cadena;
+        }
+        return fraseFinal;
+    }
     public static void main(String[] args) {
         mostrarCaracteres("Hola");
-        System.out.println(listaReverse("Casa"));
+        mostrarCentrado("AAAAAAAAAAAAAAA");
+        System.out.println(listaReverse("Curro"));
+        System.out.println(subCadena("Hola Curro", 1, 5));
+        System.out.println(concatenarCadenas("Hola_", "Curro_", "ke"));
     }
 }
 
 
 /*
-b) subCadena: Método al que se le pase una cadena, una posición de inicio y una
-cantidad de caracteres y devuelve el fragmento indicado. Si se le pasan parámetros
-no válidos (indices fuera de rango o cadena null) devuelve cadena vacía.
-c) muestraCentrado: Función que se le pasa un string y lo muestra centrado en a
-consola (supón consola de 80 caracteres de ancho).
-d) cadenaAVector: Función a la que se le pasa una cadena y devuelve un vector
-de char con cada uno de los caracteres de la cadena.
-e) alReves: Función a la que se le pasa una frase y la devuelve en orden inverso.
 f ) pasoAMayusculas: Función a la que se le pasa un número indeterminado de
 cadenas como parámetros y las devuelve concatenadas y todo en mayúsculas
 dentro del ASCII estándar de 7 bits (es decir, no tengas en cuenta vocales con tilde

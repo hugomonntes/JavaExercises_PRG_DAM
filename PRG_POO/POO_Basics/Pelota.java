@@ -1,4 +1,4 @@
-public class Pelota {
+public class Pelota {@SuppressWarnings("unused")
     public String tipo;
     private double radio;
 
