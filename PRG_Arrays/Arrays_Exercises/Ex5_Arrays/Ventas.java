@@ -18,7 +18,7 @@ public class Ventas {
     }
     
     public Ventas(int año) {
-        
+        int[] mesesAño = new int[] {(int) (Math.random()*999)};
     }
 }
 
