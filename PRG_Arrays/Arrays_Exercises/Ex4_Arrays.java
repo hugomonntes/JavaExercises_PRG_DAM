@@ -64,18 +64,12 @@ public class Ex4_Arrays {//TODO comentarios (Check)
         }
         return auxiliar;
     }
-
-    public static String concatenarCadenas(String... cadenas){
-        String fraseFinal = "";
+    public static String concatenarCadenas(String... cadenas) {
+        StringBuilder fraseFinal = new StringBuilder();
         for (String cadena : cadenas) {
-            for (int i = 0; i < cadena.length(); i++) {
-                if (cadena.charAt(i) == '_') {
-                    cadena[i] = " ";
-                }
-            }
-            fraseFinal += cadena;
+            fraseFinal.append(cadena.replace('_', ' '));
         }
-        return fraseFinal;
+        return fraseFinal.toString();
     }
     public static void main(String[] args) {
         mostrarCaracteres("Hola");
