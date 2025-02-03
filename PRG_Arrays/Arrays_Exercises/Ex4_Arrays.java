@@ -1,8 +1,5 @@
 package PRG_Arrays.Arrays_Exercises;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Ex4_Arrays {//TODO comentarios (Check)
     /**
      * Muestra caracteres de un String
@@ -64,12 +61,18 @@ public class Ex4_Arrays {//TODO comentarios (Check)
         }
         return auxiliar;
     }
+
     public static String concatenarCadenas(String... cadenas) {
-        StringBuilder fraseFinal = new StringBuilder();
-        for (String cadena : cadenas) {
-            fraseFinal.append(cadena.replace('_', ' '));
+        String fraseFinal = "";
+        for (int i = 0; i < cadenas.length; i++) { // Hugo
+            for (int j = 0; j < cadenas[i].length(); j++) { // H0 U1 G2 O3
+                fraseFinal += fraseFinal + cadenas[j];
+                if (fraseFinal.charAt(j) == '_') {
+                    
+                }
+            }
         }
-        return fraseFinal.toString();
+        return fraseFinal;
     }
     public static void main(String[] args) {
         mostrarCaracteres("Hola");
