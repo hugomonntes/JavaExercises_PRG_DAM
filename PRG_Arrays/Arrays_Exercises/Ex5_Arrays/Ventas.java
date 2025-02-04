@@ -3,34 +3,57 @@ package PRG_Arrays.Arrays_Exercises.Ex5_Arrays;
 import java.time.LocalDate;
 
 public class Ventas {
-    public int[] mesesAño = new int[12];
-    private int año;
+    public int[] ventasDelMes = new int[12];
 
-    public void setAño(int año) {
-        this.año = año;
-        if (año >= LocalDate.now().getYear()) {
-            this.año = (LocalDate.now().getYear()) - 1;
-        }
-    }
+    private int año;
 
     public int getAño() {
         return año;
     }
-    
+
+    public void setAño(int año) {
+        int añoActual = LocalDate.now().getYear();
+        if (año >= añoActual) {
+            this.año = añoActual - 1;
+        } else {
+            this.año = año;
+        }
+    }
+
     public Ventas(int año) {
-        int[] mesesAño = new int[] {(int) (Math.random()*999)};
+        setAño(año);
+        for (int i = 0; i < ventasDelMes.length; i++) {
+            this.ventasDelMes[i] = (int) (Math.random() * 999 + 1);
+        }
+
+    }
+
+    public Ventas(int año, int[] ventasDelMes) {
+        setAño(año);
+        if (ventasDelMes.length != 12) {
+            for (int i = 0; i < ventasDelMes.length; i++) {
+                this.ventasDelMes[i] = (int) (Math.random() * 999 + 1);
+            }
+        } else {
+            this.ventasDelMes = ventasDelMes;
+        }
+    }
+
+    public int calcularMedia() {
+        int acu = 0;
+        for (int i = 0; i < ventasDelMes.length; i++) {
+            acu = acu + ventasDelMes[i];
+        }
+        int mediaVentas = acu / ventasDelMes.length;
+        return mediaVentas;
+    }
+
+    public void mostrarGrafica(int año, int[] ventasDelMes) {
+        setAño(año);
+        System.out.println("Año ");
+        String unidades = "#";
+        for (int i = 1; i < ventasDelMes.length + 1; i++) {
+            System.out.printf("Mes %d (%d): %s", i, ventasDelMes, unidades);
+        }
     }
 }
-
-/*
-- Un constructor que inicialice el vector con números aleatorios entre 0 y 999
-(ambos incluidos) y el año con un parámetro.
-- Un constructor sobrecargado con dos parámetros: el año y el array de
-tamaño 12 con el que inicializa el vector de ventas. Si no fuera de tamaño 12
-lo crea automáticamente como en el otro constructor.
-- Un método denominado media que devuelve la media de valores del vector.
-- Un método denominado grafica que muestra en pantalla un gráfico de
-barras de forma que cada 100 unidades vendidas aparezca un nuevo bloque
-# aumentado a la barra de ese mes. Será algo así (fíjate que quede bien
-formateado):
-*/
