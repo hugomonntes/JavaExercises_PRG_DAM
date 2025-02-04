@@ -3,7 +3,7 @@ package PRG_Arrays.Arrays_Exercises.Ex5_Arrays;
 import java.time.LocalDate;
 
 public class Ventas {
-    public int[] ventasDelMes = new int[12];
+    public int[] ventasMes = new int[12];
 
     private int año;
 
@@ -22,29 +22,29 @@ public class Ventas {
 
     public Ventas(int año) {
         setAño(año);
-        for (int i = 0; i < ventasDelMes.length; i++) {
-            this.ventasDelMes[i] = (int) (Math.random() * 999 + 1);
+        for (int i = 0; i < ventasMes.length; i++) {
+            this.ventasMes[i] = (int) (Math.random() * 999 + 1);
         }
 
     }
 
-    public Ventas(int año, int[] ventasDelMes) {
+    public Ventas(int año, int[] ventasMes) {
         setAño(año);
-        if (ventasDelMes.length != 12) {
-            for (int i = 0; i < ventasDelMes.length; i++) {
-                this.ventasDelMes[i] = (int) (Math.random() * 999 + 1);
+        if (ventasMes.length != 12) {
+            for (int i = 0; i < ventasMes.length; i++) {
+                this.ventasMes[i] = (int) (Math.random() * 999 + 1);
             }
         } else {
-            this.ventasDelMes = ventasDelMes;
+            this.ventasMes = ventasMes;
         }
     }
 
     public int calcularMedia() {
         int acu = 0;
-        for (int i = 0; i < ventasDelMes.length; i++) {
-            acu = acu + ventasDelMes[i];
+        for (int i = 0; i < ventasMes.length; i++) {
+            acu = acu + ventasMes[i];
         }
-        int mediaVentas = acu / ventasDelMes.length;
+        int mediaVentas = acu / ventasMes.length;
         return mediaVentas;
     }
 
