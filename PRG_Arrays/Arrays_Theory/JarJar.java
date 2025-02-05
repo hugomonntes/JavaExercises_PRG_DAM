@@ -5,22 +5,13 @@ public class JarJar {
         String fraseJar = "Jar-Jar is the Big Boss";
         System.out.println(fraseJar.length());
         System.out.println(fraseJar.charAt(0) + fraseJar.charAt(fraseJar.length() - 1));
+        String fraseMod = fraseJar.toUpperCase();
+        System.out.println(fraseJar.equals(fraseMod));
+        System.out.println(fraseJar.equalsIgnoreCase(fraseMod));
+        System.out.println(fraseJar.toLowerCase());
     }
 }
 /*
-Declara e inicializa una variable de tipo String con la frase: “Jar-Jar is the Big
-Boss”
-Utilizando las funciones citadas anteriormente y viendo como se usan
-mediante la documentación:
-https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
-En el main realiza las siguientes tareas (deben funcionar aunque se cambie la
-frase):
-• Muestra la longitud de la cadena
-• Muestra el primer carácter, el último y comprueba lo que pasa al acceder
-al carácter de la posición 100.
-• Crea una segunda cadena a partir de la primera pasándola a mayúsculas
-y observa el resultado de equals y equalsIgnoreCase.
-• Muestra la cadena en minúsculas.
 • Comprueba si la cadena acaba por “Boss” y por “Jar”.
 • Muestra la posición de la primera y la última vez que aparece la palabra
 “Jar”.
