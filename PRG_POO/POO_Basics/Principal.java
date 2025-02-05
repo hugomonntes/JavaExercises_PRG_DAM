@@ -1,4 +1,4 @@
-public class Principal {@SuppressWarnings("unused")
+public class Principal {
     public static void intercambiaRadios(Pelota a, Pelota b){
         double aux;
         aux = a.getRadio();

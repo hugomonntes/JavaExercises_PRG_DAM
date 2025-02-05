@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 public class Ventas {
     public int[] ventasMes = new int[12];
-
     private int año;
 
     public int getAño() {
@@ -47,12 +46,12 @@ public class Ventas {
         return mediaVentas;
     }
 
-    public void mostrarGrafica(int año, int[] ventasDelMes) {
+    public void mostrarGrafica() {
         setAño(año);
         System.out.println("Año ");
         String unidades = "#";
-        for (int i = 1; i < ventasDelMes.length + 1; i++) {
-            System.out.printf("Mes %d (%d): %s", i, ventasDelMes, unidades);
+        for (int i = 1; i < ventasMes.length + 1; i++) {
+            System.out.printf("Mes %d (%d): %s", i, ventasMes, unidades);
         }
     }
 }
