@@ -31,7 +31,7 @@ public class Matriz {
         }
         return acumulador;
     }
-    public int sumarElementosMatriz2(boolean flag){
+    public static int sumarElementosMatriz2(int[][] numerosEnteros,boolean flag){
         int acumuladorDiagonal = 0;
         int acumuladorTotal = 0;
             for (int i = 0; i < numerosEnteros.length; i++) {
@@ -39,10 +39,10 @@ public class Matriz {
                 if (flag) {
                     return acumuladorDiagonal;
                 } else {
-                    acumuladorTotal += numerosEnteros[i][i+1];
-                    return acumuladorTotal;
+                    acumuladorTotal += numerosEnteros[i][i];
                 }
             }
+            return acumuladorTotal;
     }
     public static void main(String[] args) {
         int[][] numerosEnteros = new int[5][5];
@@ -52,7 +52,7 @@ public class Matriz {
             }
         }
         mostrarMatriz(numerosEnteros);
-        // sumarElementosMatriz2(numerosEnteros, false);
+        System.out.println(sumarElementosMatriz2(numerosEnteros, false));
     }
 }
 
