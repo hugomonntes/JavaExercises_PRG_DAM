@@ -24,7 +24,6 @@ public class Ventas {
         for (int i = 0; i < ventasMes.length; i++) {
             this.ventasMes[i] = (int) (Math.random() * 999 + 1);
         }
-
     }
 
     public Ventas(int año, int[] ventasMes) {

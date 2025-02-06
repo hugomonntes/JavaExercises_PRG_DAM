@@ -11,12 +11,34 @@ public class Matriz {
 
     //MÉTODOS
     public static void mostrarMatriz(int[][] tabla){
-        for (int[] fila : tabla) {
-            System.out.println(fila);
-            for (int[] columna : tabla) {
-                System.out.println(columna);
+        for (int i = 0; i <= tabla.length; i++) {
+            System.out.printf("%3d", i);
+        }
+        System.out.println();
+        for (int i = 0; i < tabla.length; i++) {
+            System.out.printf("%3d", i);
+            for (int j = 0; j < tabla[i].length; j++) {
+                System.out.printf("%3d", tabla[i][j]);
+            }
+            System.out.println();
+        } 
+    }
+
+    public int sumarElementosMatriz(){
+        int acumulador = 0;
+        for (int i = 0; i < numerosEnteros.length; i++) {
+            for (int j = 0; j < numerosEnteros[i].length; j++) {
+                acumulador += numerosEnteros[i][j];
             }
         }
+        return acumulador;
+    }
+
+    public int sumarElementosMatriz2(boolean flag){
+        for (int i = 0; i < numerosEnteros.length; i++) {
+            
+        }
+        return 0;
     }
 
     public static void main(String[] args) {
