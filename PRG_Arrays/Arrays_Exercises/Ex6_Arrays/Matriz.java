@@ -10,12 +10,12 @@ public class Matriz {
     }
     //MÉTODOS
     public static void mostrarMatriz(int[][] tabla){
-        // for (int i = 0; i <= tabla.length; i++) {
-        //     System.out.printf("%4d", i);
-        // }
-        // System.out.println();
+        for (int i = 0; i <= tabla.length; i++) {
+            System.out.printf("%4d", i);
+        }
+        System.out.println();
         for (int i = 0; i < tabla.length; i++) {
-            // System.out.printf("%4d", i);
+            System.out.printf("%4d", i);
             for (int j = 0; j < tabla[i].length; j++) {
                 System.out.printf("%4d", tabla[i][j]);
             }
@@ -31,18 +31,40 @@ public class Matriz {
         }
         return acumulador;
     }
-    public static int sumarElementosMatriz2(int[][] numerosEnteros,boolean flag){
-        int acumuladorDiagonal = 0;
-        int acumuladorTotal = 0;
-            for (int i = 0; i < numerosEnteros.length; i++) {
-                acumuladorDiagonal += numerosEnteros[i][i];
-                if (flag) {
-                    return acumuladorDiagonal;
-                } else {
-                    acumuladorTotal += numerosEnteros[i][i];
+    public int sumarElementosMatriz2(boolean flag){
+        int acumulador = 0;
+        for (int i = 0; i < numerosEnteros.length; i++) {
+            if (flag) {
+                acumulador += numerosEnteros[i][i];
+            }
+            for (int j = 0; j < numerosEnteros[i].length; j++) {
+                if (!flag) {
+                    acumulador += numerosEnteros[i][j];
                 }
             }
-            return acumuladorTotal;
+        }
+        return acumulador;
+    }
+    public int sumarElementosMatriz3(int fila){
+        int acumulador = 0;
+        if (fila < 0 || fila > numerosEnteros.length) {
+            return -1;
+        } else{
+            for (int i = 0; i < numerosEnteros[fila].length; i++) {
+                acumulador += numerosEnteros[fila][i];
+            }
+            return acumulador;
+        }
+    }
+    public int[][] borrarFila(int filaBorrar){
+        int[][] tablaOriginal = new int[5][5];
+        int[][] tablaModificada = new int[numerosEnteros.length - 1][numerosEnteros.length];
+        for (int i = 0; i < numerosEnteros.length; i++){
+            if (i == filaBorrar) {
+                // numerosEnteros = numerosEnteros[filaBorrar+1][i];
+            }
+        }
+        return tablaOriginal;
     }
     public static void main(String[] args) {
         int[][] numerosEnteros = new int[5][5];
@@ -52,16 +74,12 @@ public class Matriz {
             }
         }
         mostrarMatriz(numerosEnteros);
-        System.out.println(sumarElementosMatriz2(numerosEnteros, false));
     }
 }
 
 /*
-Un parámetro boolean: Si está a true devuelve la suma de los
-elementos de la diagonal principal de la matriz (la que va de 0,0 a
-n,n). Si está a false la suma del resto de los elementos (todos menos
-la diagonal)
-Trata de hacerlo con solo un bucle para la diagonal y ninguno para los
-que no son de la diagonal (si no te sale hazlo con varios bucles, se te
-dará pista en la validación).
+Función denominada borraFila a la cual se le pasa un entero y devuelve la
+matriz pero sin la fila indicada por el número del parámetro (debes crear una
+matriz con una fila menos). Si el número está fuera del rango válido devuelve
+la matriz completa.
 */
