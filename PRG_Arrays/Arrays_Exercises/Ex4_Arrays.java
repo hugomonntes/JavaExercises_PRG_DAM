@@ -61,18 +61,27 @@ public class Ex4_Arrays {//TODO comentarios (Check)
         }
         return auxiliar;
     }
-
-    public static String concatenarCadenas(String... cadenas) {
-        String fraseFinal = "";
-        for (int i = 0; i < cadenas.length; i++) { // Hugo
-            for (int j = 0; j < cadenas[i].length(); j++) { // H0 U1 G2 O3
-                fraseFinal += fraseFinal + cadenas[j];
-                if (fraseFinal.charAt(j) == '_') {
-                    
+    /**
+     * Sustituye guiones bajos por espacios 
+     * @param cadenas
+     * @return frase bien formateada y en mayúsculas
+     */
+    public static String concatenarCadenas(String... frase) {
+        String fraseConcatenada = "";
+        char letra;
+        for (int i = 0; i < frase.length; i++) {
+            for (int j = 0; j < frase[i].length(); j++) {
+                if (frase[i].charAt(j) == '_') {
+                    fraseConcatenada += " "; 
+                }else if(frase[i].charAt(j) >= 'a' && frase[i].charAt(j) <= 'z' ){
+                    letra = (char)(frase[i].charAt(j) - 32);
+                    fraseConcatenada += letra ;
+                } else{
+                    fraseConcatenada += frase[i].charAt(j);
                 }
             }
         }
-        return fraseFinal;
+        return fraseConcatenada;
     }
     public static void main(String[] args) {
         mostrarCaracteres("Hola");

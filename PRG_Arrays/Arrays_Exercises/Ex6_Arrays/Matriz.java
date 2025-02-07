@@ -10,12 +10,12 @@ public class Matriz {
     }
     //MÉTODOS
     public static void mostrarMatriz(int[][] tabla){
-        for (int i = 0; i <= tabla.length; i++) {
-            System.out.printf("%4d", i);
-        }
+        // for (int i = 0; i <= tabla.length; i++) {
+        //     System.out.printf("%4d", i);
+        // }
         System.out.println();
         for (int i = 0; i < tabla.length; i++) {
-            System.out.printf("%4d", i);
+            // System.out.printf("%4d", i);
             for (int j = 0; j < tabla[i].length; j++) {
                 System.out.printf("%4d", tabla[i][j]);
             }
@@ -56,15 +56,17 @@ public class Matriz {
             return acumulador;
         }
     }
-    public int[][] borrarFila(int filaBorrar){
-        int[][] tablaOriginal = new int[5][5];
-        int[][] tablaModificada = new int[numerosEnteros.length - 1][numerosEnteros.length];
-        for (int i = 0; i < numerosEnteros.length; i++){
-            if (i == filaBorrar) {
-                // numerosEnteros = numerosEnteros[filaBorrar+1][i];
+    public static int[][] borrarFila(int[][] numerosEnteros,int filaBorrar){
+        int[][] tablaModificada = new int[numerosEnteros.length][numerosEnteros.length];
+        int columnas = 0;
+        for (int filas = 0; filas < numerosEnteros.length; filas++){
+            if(columnas == filaBorrar){
+                filas++;
+                columnas++;
             }
+            tablaModificada[filas][columnas] = numerosEnteros[filas][columnas];
         }
-        return tablaOriginal;
+        return tablaModificada;
     }
     public static void main(String[] args) {
         int[][] numerosEnteros = new int[5][5];
@@ -74,6 +76,8 @@ public class Matriz {
             }
         }
         mostrarMatriz(numerosEnteros);
+        System.out.println();
+        mostrarMatriz(borrarFila(numerosEnteros, 2));
     }
 }
 
