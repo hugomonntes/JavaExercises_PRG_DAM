@@ -13,7 +13,7 @@ public class Matriz {
         }
     }
     //MÉTODOS
-    public static void mostrarMatriz(int[][] tabla){
+    public void mostrarMatriz(int[][] tabla){
         // for (int i = 0; i <= tabla.length; i++) {
         //     System.out.printf("%4d", i);
         // }
@@ -61,19 +61,13 @@ public class Matriz {
         }
     }
     public static int[][] borrarFila(int[][] numerosEnteros,int filaBorrar){
-        int[][] tablaModificada = new int[numerosEnteros.length][numerosEnteros.length];
+        int[][] tablaModificada = new int[numerosEnteros.length-1][numerosEnteros.length];
         int j = 0;
         for (int i = 0; i < numerosEnteros.length; i++){
             tablaModificada[i][j] = numerosEnteros[i][j];
             j++;
         }
         return tablaModificada;
-    }
-    public static void main(String[] args) {
-        int[][] numerosEnteros = new int[5][5];
-        mostrarMatriz(numerosEnteros);
-        System.out.println();
-        mostrarMatriz(borrarFila(numerosEnteros, 2));
     }
 }
 
