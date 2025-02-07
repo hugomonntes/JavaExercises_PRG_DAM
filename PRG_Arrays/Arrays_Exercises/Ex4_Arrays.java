@@ -1,9 +1,9 @@
 package PRG_Arrays.Arrays_Exercises;
 
-public class Ex4_Arrays {//TODO comentarios (Check)
+public class Ex4_Arrays {//TODO mejorarcomentarios 
     /**
      * Muestra caracteres de un String
-     * @param letras
+     * @param letras 
      */
     public static void mostrarCaracteres(String letras){//ok
         for (int i = 0; i < letras.length(); i++) {
@@ -15,7 +15,7 @@ public class Ex4_Arrays {//TODO comentarios (Check)
      * @param cadena
      * @return 
      */
-    public static String subCadena(String cadena, int inicio, int cantidadCaracteres){ //TODO no se puede usar substring y revisar condición(Check menos condicion)
+    public static String subCadena(String cadena, int inicio, int cantidadCaracteres){  
         String cadenaFinal = "";
         if (cadena == null || inicio < 0 || cantidadCaracteres < 0 || inicio + cantidadCaracteres > cadena.length()) {
             return "";
@@ -32,7 +32,7 @@ public class Ex4_Arrays {//TODO comentarios (Check)
      */
     public static void mostrarCentrado(String cadena){
         int anchoTerminal = (80 - cadena.length()); 
-        for (int i = 0; i < anchoTerminal / 2; i++) {//TODO recolocar condición(check)
+        for (int i = 0; i < anchoTerminal / 2; i++) { 
             System.out.print(" ");
         }
         System.out.printf("%s \n", cadena);
@@ -88,7 +88,7 @@ public class Ex4_Arrays {//TODO comentarios (Check)
         mostrarCentrado("AAAAAAAAAAAAAAA");
         System.out.println(listaReverse("Curro"));
         System.out.println(subCadena("Hola Curro", 1, 5));
-        System.out.println(concatenarCadenas("Hola_", "Curro_", "ke"));
+        System.out.println(concatenarCadenas("Hola_", "Curro_", "ke", "1233(){}¿?ñÑABCabc  __"));
     }
 }
 
