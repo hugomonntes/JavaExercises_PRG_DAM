@@ -5,7 +5,7 @@ public class Matriz {
     public int[][] numerosEnteros;
     //CONSTRUCTORES
     public Matriz(int n){
-        int[][] numerosEnteros = new int[n][n];
+        this.numerosEnteros = new int[n][n];
         for (int i = 0; i < numerosEnteros.length; i++) {
             for (int j = 0; j < numerosEnteros[i].length; j++) {
                 numerosEnteros[i][j] = (int)((Math.random() * 10));
@@ -14,12 +14,12 @@ public class Matriz {
     }
     //MÉTODOS
     public void mostrarMatriz(int[][] tabla){
-        // for (int i = 0; i <= tabla.length; i++) {
-        //     System.out.printf("%4d", i);
-        // }
+        for (int i = 0; i <= tabla.length; i++) {
+            System.out.printf("%4d", i);
+        }
         System.out.println();
         for (int i = 0; i < tabla.length; i++) {
-            // System.out.printf("%4d", i);
+            System.out.printf("%4d", i);
             for (int j = 0; j < tabla[i].length; j++) {
                 System.out.printf("%4d", tabla[i][j]);
             }
@@ -60,11 +60,19 @@ public class Matriz {
             return acumulador;
         }
     }
-    public static int[][] borrarFila(int[][] numerosEnteros,int filaBorrar){
-        int[][] tablaModificada = new int[numerosEnteros.length-1][numerosEnteros.length];
+    public int[][] borrarFila(int[][] numerosEnteros,int filaBorrar){
+        if (filaBorrar < 0 || filaBorrar >= numerosEnteros.length) {
+            return numerosEnteros;
+        }
+        int[][] tablaModificada = new int[numerosEnteros.length -1][numerosEnteros[0].length];
         int j = 0;
         for (int i = 0; i < numerosEnteros.length; i++){
-            tablaModificada[i][j] = numerosEnteros[i][j];
+            if (i == filaBorrar) {
+                continue;
+            }
+            for (int k = 0; k < numerosEnteros[i].length; k++) {
+                tablaModificada[j][k] = numerosEnteros[i][k];
+            }
             j++;
         }
         return tablaModificada;
