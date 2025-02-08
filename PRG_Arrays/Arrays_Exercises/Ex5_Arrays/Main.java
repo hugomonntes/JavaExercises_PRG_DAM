@@ -11,7 +11,7 @@ public class Main {
         Scanner freader = new Scanner(new File("Ventas.txt"));
         File fwriter = new File("archivo.txt");
         if (fwriter.exists()){
-
+            
         }
     }
 }

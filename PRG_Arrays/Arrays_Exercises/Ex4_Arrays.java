@@ -1,6 +1,6 @@
 package PRG_Arrays.Arrays_Exercises;
 
-public class Ex4_Arrays {//TODO mejorarcomentarios 
+public class Ex4_Arrays {//TODO mejorar comentarios 
     /**
      * Muestra caracteres de un String
      * @param letras 
