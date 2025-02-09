@@ -4,9 +4,10 @@ import java.util.ArrayList;
 
 public class Ex7_Arrays {
     public static void rellenaCol(ArrayList<Integer> numerosLoteria){
-        for (int i = 0; i < numerosLoteria.size(); i++) {
-            numerosLoteria.add((int)(Math.random()*50));
+        for (int i = 0; i < 6; i++) {
+            numerosLoteria.add((int)(Math.random()*20));
         }
+        System.out.println(numerosLoteria);
     }
     public static int comparaValores(ArrayList<Integer> numerosLoteria, ArrayList<Integer> numerosLoteria2){
         ArrayList<Integer> numerosRepetidos = new ArrayList<>();
@@ -14,8 +15,9 @@ public class Ex7_Arrays {
         for (int i = 0; i < numerosLoteria.size(); i++) {
             numeroComparar = numerosLoteria.get(i);
             for (int j = 0; j < numerosLoteria2.size(); j++) {
-                if (numeroComparar == numerosLoteria2.get(i)) {
-                    numerosRepetidos.add(numerosLoteria2.get(i));
+                if (numeroComparar == numerosLoteria2.get(j)) {
+                    numerosRepetidos.add(numeroComparar);
+                    continue;
                 }
             }
         }
@@ -23,8 +25,10 @@ public class Ex7_Arrays {
     }
     public static void main(String[] args) {
         ArrayList<Integer> numeros = new ArrayList<>(6);
-        rellenaCol(numeros); 
-        System.out.println(numeros);
+        ArrayList<Integer> numeros2 = new ArrayList<>(6);
+        rellenaCol(numeros);
+        rellenaCol(numeros2);
+        System.out.println(comparaValores(numeros, numeros2));
     }
 }
 
