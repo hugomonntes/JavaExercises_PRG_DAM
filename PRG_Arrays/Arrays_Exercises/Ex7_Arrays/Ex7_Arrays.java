@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ex7_Arrays {
+    /**
+     * Muestra 6 numeros aleatorios entre 1 y 49
+     * @param numerosLoteria Colección en la que se almacenan los numeros
+     */
     public static void rellenaCol(ArrayList<Integer> numerosLoteria){
         for (int i = 0; i < 6; i++) {
             boolean isUnique;
@@ -21,11 +25,17 @@ public class Ex7_Arrays {
         }
         System.out.println(numerosLoteria);
     }
-    public static int comparaValores(ArrayList<Integer> numerosLoteriaAleatorio, ArrayList<Integer> numerosLoteriaUsuario){
+    /**
+     * Compara si los numeros aleatorios del user coinciden con los obtenidos por la CPU
+     * @param numerosLoteriaCPU numeros de la CPU
+     * @param numerosLoteriaUsuario numeros introducidos por el User
+     * @return numero de coincidencias que existen entre User y CPU
+     */
+    public static int comparaValores(ArrayList<Integer> numerosLoteriaCPU, ArrayList<Integer> numerosLoteriaUsuario){
         ArrayList<Integer> numerosRepetidos = new ArrayList<>();
         int numeroComparar;
-        for (int i = 0; i < numerosLoteriaAleatorio.size(); i++) {
-            numeroComparar = numerosLoteriaAleatorio.get(i);
+        for (int i = 0; i < numerosLoteriaCPU.size(); i++) {
+            numeroComparar = numerosLoteriaCPU.get(i);
             for (int j = 0; j < numerosLoteriaUsuario.size(); j++) {
                 if (numeroComparar == numerosLoteriaUsuario.get(j)) {
                     numerosRepetidos.add(numeroComparar);
@@ -38,7 +48,10 @@ public class Ex7_Arrays {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> numerosUser = new ArrayList<>(6);
+        ArrayList<Integer> numerosGanadores = new ArrayList<>(6);
         rellenaCol(numerosUser);
+        rellenaCol(numerosGanadores);
+        System.out.println(comparaValores(numerosUser, numerosGanadores));
         // System.out.println("Introduce seis numeros");
         // for (int i = 0; i < 6; i++) {
         //     System.out.print("Introduce un numero: ");
