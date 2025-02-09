@@ -6,7 +6,18 @@ import java.util.Scanner;
 public class Ex7_Arrays {
     public static void rellenaCol(ArrayList<Integer> numerosLoteria){
         for (int i = 0; i < 6; i++) {
-            numerosLoteria.add((int)(Math.random()*48 + 1));
+            boolean isUnique;
+            int numeroAleatorioCandidato;
+            do {
+                numeroAleatorioCandidato = (int)(Math.random()*10 + 1);
+                isUnique = true;
+                for (int j = 0; j < numerosLoteria.size() && isUnique; j++) {
+                    if (numeroAleatorioCandidato == numerosLoteria.get(j)) {
+                        isUnique = false;
+                    }
+                }
+            } while (!isUnique);
+            numerosLoteria.add(numeroAleatorioCandidato);
         }
         System.out.println(numerosLoteria);
     }
@@ -27,11 +38,12 @@ public class Ex7_Arrays {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> numerosUser = new ArrayList<>(6);
-        System.out.println("Introduce seis numeros");
-        for (int i = 0; i < 6; i++) {
-            System.out.print("Introduce un numero: ");
-            numerosUser.add(sc.nextInt());
-        }
+        rellenaCol(numerosUser);
+        // System.out.println("Introduce seis numeros");
+        // for (int i = 0; i < 6; i++) {
+        //     System.out.print("Introduce un numero: ");
+        //     numerosUser.add(sc.nextInt());
+        // }
     }
 }
 
