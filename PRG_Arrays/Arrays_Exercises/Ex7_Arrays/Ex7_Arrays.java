@@ -9,7 +9,7 @@ public class Ex7_Arrays {
             boolean isUnique;
             int numeroAleatorioCandidato;
             do {
-                numeroAleatorioCandidato = (int)(Math.random()*10 + 1);
+                numeroAleatorioCandidato = (int)(Math.random()*48 + 1);
                 isUnique = true;
                 for (int j = 0; j < numerosLoteria.size() && isUnique; j++) {
                     if (numeroAleatorioCandidato == numerosLoteria.get(j)) {
