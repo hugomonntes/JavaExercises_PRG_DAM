@@ -13,7 +13,7 @@ public class Matriz {
         }
     }
     //MÉTODOS
-    public void mostrarMatriz(int[][] tabla){
+    public static void mostrarMatriz(int[][] tabla){
         for (int i = 0; i <= tabla.length; i++) {
             System.out.printf("%4d", i);
         }
