@@ -39,13 +39,12 @@ public class Ex7_Arrays {
             for (int j = 0; j < numerosLoteriaUsuario.size(); j++) {
                 if (numeroComparar == numerosLoteriaUsuario.get(j)) {
                     numerosRepetidos.add(numeroComparar);
-                    continue;
                 }
             }
         }
         return numerosRepetidos.size();
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {                                                                                                                                                                                                                                         
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> numerosUser = new ArrayList<>(6);
         ArrayList<Integer> numerosGanadores = new ArrayList<>(6);
