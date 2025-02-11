@@ -66,25 +66,7 @@ public class Ex7_Arrays {
         } while (!isChecked);
         return numerosUser;
     }
-    // public static boolean validarNumeros(ArrayList<Integer> numerosUsuario){ //Comprobar tamaño y que no se repitan numeros
-    //     if (numerosUsuario.size() < 6 || numerosUsuario.size() > 6) {
-    //         return false;
-    //     }
-    //     int numeroAuxiliar;
-    //     // for (Integer numero : numerosUsuario) {
-    //     //     if (numerpublic static boolean validarNumeros(ArrayList<Integer> numerosUsuario){ //Comprobar tamaño y que no se repitan numeros
-    //     if (numerosUsuario.size() < 6 || numerosUsuario.size() > 6) {
-    //         return false;
-    //     }
-    //     int numeroAuxiliar;
-    //     // for (Integer numero : numerosUsuario) {
-    //     //     if (numeroAuxiliar ) {
-                
-    //     //     }
-    //     // }
-             
-    //     //     }
-    //     // }
+    // public static boolean validarNumeros(ArrayList<Integer> numerosUsuario){ //Comprobar tamaño 
     // }
     public static void main(String[] args) {
         pedirNumerosUsuario();
