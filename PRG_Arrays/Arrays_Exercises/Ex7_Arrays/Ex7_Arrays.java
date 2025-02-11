@@ -66,7 +66,7 @@ public class Ex7_Arrays {
         } while (!isChecked);
         return numerosUser;
     }
-    // public static boolean validarNumeros(ArrayList<Integer> numerosUsuario){ //Comprobar tamaño 
+    // public static boolean validarNumeros(ArrayList<Integer> numerosUsuario){ //Comprobar tamaño y numeros repetidos
     // }
     public static void main(String[] args) {
         pedirNumerosUsuario();
