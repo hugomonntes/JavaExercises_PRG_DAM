@@ -39,36 +39,59 @@ public class Ex7_Arrays {
             for (int j = 0; j < numerosLoteriaUsuario.size(); j++) {
                 if (numeroComparar == numerosLoteriaUsuario.get(j)) {
                     numerosRepetidos.add(numeroComparar);
+                    continue;
                 }
             }
         }
         return numerosRepetidos.size();
     }
-    public static void main(String[] args) {                                                                                                                                                                                                                                         
+    public static ArrayList<Integer> pedirNumerosUsuario(){
         Scanner sc = new Scanner(System.in);
-        ArrayList<Integer> numerosUser = new ArrayList<>(6);
-        ArrayList<Integer> numerosGanadores = new ArrayList<>(6);
-        rellenaCol(numerosUser);
-        rellenaCol(numerosGanadores);
-        System.out.println(comparaValores(numerosUser, numerosGanadores));
-        // System.out.println("Introduce seis numeros");
-        // for (int i = 0; i < 6; i++) {
-        //     System.out.print("Introduce un numero: ");
-        //     numerosUser.add(sc.nextInt());
-        // }
+        ArrayList<Integer> numerosUser = new ArrayList<>();
+        String numeros;
+        boolean isChecked;
+        do {
+            System.out.println("Introduce seis numeros separados por comas: ");
+            numeros = sc.nextLine();
+            String[] numerosSeparados = numeros.split(",");
+            try {
+                for (String numero : numerosSeparados) {
+                    numerosUser.add(Integer.parseInt(numero));
+                }
+                isChecked = true;
+            } catch(Exception e){
+                System.out.println("Introduce bien los valores separados por comas y sin caracteres especiales");
+                isChecked = false;
+            };
+        } while (!isChecked);
+        return numerosUser;
+    }
+    // public static boolean validarNumeros(ArrayList<Integer> numerosUsuario){ //Comprobar tamaño y que no se repitan numeros
+    //     if (numerosUsuario.size() < 6 || numerosUsuario.size() > 6) {
+    //         return false;
+    //     }
+    //     int numeroAuxiliar;
+    //     // for (Integer numero : numerosUsuario) {
+    //     //     if (numerpublic static boolean validarNumeros(ArrayList<Integer> numerosUsuario){ //Comprobar tamaño y que no se repitan numeros
+    //     if (numerosUsuario.size() < 6 || numerosUsuario.size() > 6) {
+    //         return false;
+    //     }
+    //     int numeroAuxiliar;
+    //     // for (Integer numero : numerosUsuario) {
+    //     //     if (numeroAuxiliar ) {
+                
+    //     //     }
+    //     // }
+             
+    //     //     }
+    //     // }
+    // }
+    public static void main(String[] args) {
+        pedirNumerosUsuario();
     }
 }
 
 /*
-7. Realiza una simulación de aciertos en el juego de la lotería primitiva usando
-colecciones. Para ello haz las siguientes funciones:
-Realiza una función (denominada rellenaCol) que tenga como parámetro una
-colección de enteros. Debe limpiarla y rellenarla con 6 valores aleatorios distintos
-entre 1 y 49 ambos inclusive.
-Otra función (denominada compara) a la que se le pasan dos colecciones de
-enteros y comprueba cuantos elementos de una colección están en la otra.
-Devuelve dicho valor. 
-
 En el main el usuario introducirá 6 números diferentes entre 1 y 49 separados por
 comas y se guardarán en una colección (se deben hacer las comprobaciones
 pertinentes). Si quieres haz alguna función más para modularizar esta parte.
