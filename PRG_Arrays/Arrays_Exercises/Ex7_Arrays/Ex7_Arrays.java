@@ -66,24 +66,31 @@ public class Ex7_Arrays {
         } while (!isChecked);
         return numerosUser;
     }
-    // public static boolean validarNumeros(ArrayList<Integer> numerosUsuario){ //Comprobar tamaño y numeros repetidos
-    // }if (numerosUsuario.size() < 6 || numerosUsuario.size() > 6) {
-    //         return false;
-    //     }
-    //     int numeroAuxiliar;
-    //     // for (Integer numero : numerosUsuario) {
-    //     //     if (numerpublic static boolean validarNumeros(ArrayList<Integer> numerosUsuario){ //Comprobar tamaño y que no se repitan numeros
-    //     if (numerosUsuario.size() < 6 || numerosUsuario.size() > 6) {
-    //         return false;
-    //     }
-    //     int numeroAuxiliar;
-    //     // for (Integer numero : numerosUsuario) {
-    //     //     if (numeroAuxiliar ) {
-                
-    //     //     }
-    //     // }
+    public static boolean validarNumeros(ArrayList<Integer> numerosUsuario){
+        if (numerosUsuario.size() < 6 || numerosUsuario.size() > 6) {
+            return false;
+        }
+        int numeroAuxiliar;
+        for (int i = 0; i < numerosUsuario.size(); i++) {
+            numeroAuxiliar = numerosUsuario.get(i);
+            for (int j = 0; j < numerosUsuario.size(); j++) {
+                if (numeroAuxiliar == numerosUsuario.get(j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
     public static void main(String[] args) {
-        pedirNumerosUsuario();
+        // boolean isChecked;
+        // do {
+        //     if (validarNumeros(pedirNumerosUsuario())) {
+        //         isChecked = true;
+        //     } else {
+        //         isChecked = false;
+        //     }
+        // } while (!isChecked);
+        System.out.println(validarNumeros(pedirNumerosUsuario()));
     }
 }
 
