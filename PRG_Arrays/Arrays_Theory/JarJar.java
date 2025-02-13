@@ -2,26 +2,36 @@ package PRG_Arrays.Arrays_Theory;
 
 public class JarJar {
     public static void main(String[] args) {
-        String fraseJar = "Jar-Jar is the Big Boss";
-        System.out.println(fraseJar.length());
-        System.out.println(fraseJar.charAt(0) + fraseJar.charAt(fraseJar.length() - 1));
-        String fraseMod = fraseJar.toUpperCase();
-        System.out.println(fraseJar.equals(fraseMod));
-        System.out.println(fraseJar.equalsIgnoreCase(fraseMod));
-        System.out.println(fraseJar.toLowerCase());
+        String fraseEjercicio = "Jar-Jar is the Big Boss";
+        System.out.println(fraseEjercicio.length());
+        
+        System.out.println(fraseEjercicio.charAt(0));
+        
+        System.out.println(fraseEjercicio.charAt(fraseEjercicio.length() - 1));
+        
+        System.out.println(fraseEjercicio.toUpperCase());
+        String fraseEjercicio2 = fraseEjercicio.toUpperCase();
+        
+        fraseEjercicio.equals(fraseEjercicio2);
+        fraseEjercicio.equalsIgnoreCase(fraseEjercicio2);
+        
+        System.out.println(fraseEjercicio.toLowerCase());
+        
+        System.out.println(fraseEjercicio.endsWith("Jar"));
+        System.out.println(fraseEjercicio.endsWith("Boss"));
+        
+        System.out.println(fraseEjercicio.indexOf("Jar"));
+        System.out.println(fraseEjercicio.lastIndexOf("Jar"));
+        
+        String fraseEjercicio3 = fraseEjercicio2.substring(7, 15);
+        System.out.println(fraseEjercicio3);
+        
+        System.out.println(fraseEjercicio3.trim());
+        
+        String[] frase = fraseEjercicio.split("[ -]");
+        
+        for (int i = 0; i < frase.length; i++) {
+            System.out.printf("%3.3s\n", frase[i]);
+        }
     }
 }
-/*
-• Comprueba si la cadena acaba por “Boss” y por “Jar”.
-• Muestra la posición de la primera y la última vez que aparece la palabra
-“Jar”.
-• Crea otra variable String a partir del fragmento de la cadena anterior
-que empieza en la posición 7 y acaba en la 14 (ambos incluidos).
-• Quita los espacios de los extremos de la anterior cadena creada y
-muéstrala.
-• Crea un array de Strings con las palabras de la primera cadena (los
-separadores son el espacio y el guion).
-• Muestra cada palabra del array anterior en una linea ocupando 3
-caracteres (cortala si es mayor). Esto no lo hagas con substring si no
-jugando con el formateo de printf.
-*/

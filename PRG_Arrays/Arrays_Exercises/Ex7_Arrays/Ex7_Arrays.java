@@ -91,14 +91,14 @@ public class Ex7_Arrays {
         return true;
     }
     public static void main(String[] args) {
-        // boolean isChecked;
-        // do {
-        //     if (validarNumeros(pedirNumerosUsuario())) {
-        //         isChecked = true;
-        //     } else {
-        //         isChecked = false;
-        //     }
-        // } while (!isChecked);
+        boolean isChecked;
+        do {
+            if (validarNumeros(pedirNumerosUsuario())) {
+                isChecked = true;
+            } else {
+                isChecked = false;
+            }
+        } while (!isChecked);
         System.out.println(validarNumeros(pedirNumerosUsuario()));
     }
 }

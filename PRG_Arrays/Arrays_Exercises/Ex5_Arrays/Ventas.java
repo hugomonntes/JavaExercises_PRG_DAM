@@ -2,7 +2,7 @@ package PRG_Arrays.Arrays_Exercises.Ex5_Arrays;
 
 import java.time.LocalDate;
 
-public class Ventas {
+public class Ventas {//TODO comentarios
     public int[] ventasAnuales = new int[12]; //12 por los meses de año
     private int año;
 
@@ -25,7 +25,7 @@ public class Ventas {
         }
     }
     
-    public Ventas(int año, int[] ventasAnuales){
+    public Ventas(int año, int[] ventasAnuales){//TODO revisar
         setAño(año);
         if (this.ventasAnuales.length != 12) {
             for (int i = 0; i < ventasAnuales.length; i++) {
@@ -44,7 +44,7 @@ public class Ventas {
         return acumulador / ventasAnuales.length;
     }
 
-    public void mostrarGrafica(){
+    public void mostrarGrafica(){ //TODO revisar nº de # y paréntesisf("%d ; 
         System.out.printf("Año %d:\n", getAño());
         for (int i = 1; i <= ventasAnuales.length; i++) {
             int calculoHastags = ventasAnuales[i - 1] / 100;
