@@ -71,9 +71,9 @@ public class Ex7_Arrays {
             return false;
         }
         int numeroAuxiliar;
-        for (int i = 0; i < numerosUsuario.size(); i++) {
+        for (int i = 0; i < 6; i++) {
             numeroAuxiliar = numerosUsuario.get(i);
-            for (int j = 0; j < numerosUsuario.size(); j++) {
+            for (int j = 0; j < 6; j++) {
                 if (numeroAuxiliar == numerosUsuario.get(j)) {
                     return false;
                 }
