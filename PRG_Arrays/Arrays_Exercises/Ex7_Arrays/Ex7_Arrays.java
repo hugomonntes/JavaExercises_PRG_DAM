@@ -45,6 +45,10 @@ public class Ex7_Arrays {
         }
         return numerosRepetidos.size();
     }
+    /**
+     * Pide y alamacena numeros al usuario en una coleccion
+     * @return la colección de numeros del usuario
+     */
     public static ArrayList<Integer> pedirNumerosUsuario(){
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> numerosUser = new ArrayList<>();
@@ -66,14 +70,19 @@ public class Ex7_Arrays {
         } while (!isChecked);
         return numerosUser;
     }
+    /**
+     * Valida que los numeros de usuario estén bien introducidos y que sean 6 
+     * @param numerosUsuario colección que almacena los numeros del usuario
+     * @return true si estan bien introducidos o false si no.
+     */
     public static boolean validarNumeros(ArrayList<Integer> numerosUsuario){
         if (numerosUsuario.size() < 6 || numerosUsuario.size() > 6) {
             return false;
         }
         int numeroAuxiliar;
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < numerosUsuario.size(); i++) {
             numeroAuxiliar = numerosUsuario.get(i);
-            for (int j = 0; j < 6; j++) {
+            for (int j = 0; j < numerosUsuario.size(); j++) {
                 if (numeroAuxiliar == numerosUsuario.get(j)) {
                     return false;
                 }
