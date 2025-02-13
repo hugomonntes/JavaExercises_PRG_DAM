@@ -43,6 +43,12 @@ public class Magos {
         }
         return sumaPoderes;
     }
+
+    public static void intercambioDePoder(int[][] matriz, int indiceFilaOrigen, int indiceFilaDestino){
+        int[] auxiliar = matriz[indiceFilaOrigen];
+        matriz[indiceFilaOrigen] = matriz[indiceFilaDestino];
+        matriz[indiceFilaDestino] = auxiliar;
+    }
 }
 
 /*
