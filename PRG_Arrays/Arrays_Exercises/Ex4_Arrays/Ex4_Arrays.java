@@ -1,4 +1,4 @@
-package PRG_Arrays.Arrays_Exercises;
+package PRG_Arrays.Arrays_Exercises.Ex4_Arrays;
 
 public class Ex4_Arrays {//TODO mejorar comentarios 
     /**

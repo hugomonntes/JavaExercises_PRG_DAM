@@ -1,4 +1,4 @@
-package PRG_Arrays.Arrays_Exercises;
+package PRG_Arrays.Arrays_Exercises.Ex2_Arrays;
 
 public class Ex2_Arrays {
     public static char[][] matrizChar(int n, int m){
