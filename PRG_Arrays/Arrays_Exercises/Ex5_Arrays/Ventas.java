@@ -36,8 +36,8 @@ public class Ventas {
     }
 
     //MÉTODOS
-    public int calcularMedia(){
-        int acumulador = 0;
+    public double calcularMedia(){
+        double acumulador = 0;
         for (int i = 0; i < ventasAnuales.length; i++) {
             acumulador += ventasAnuales[i];
         }
