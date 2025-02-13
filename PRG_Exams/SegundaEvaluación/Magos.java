@@ -1,7 +1,5 @@
 package SegundaEvaluación;
 
-import java.text.StringCharacterIterator;
-
 public class Magos {
     public static int[][] creaMatriz(int cantidadMagos){
         int[][] matrizMagos = new int[cantidadMagos][4]; //4 porque son el numero de elementos (aire, fuego, tierra y agua)
