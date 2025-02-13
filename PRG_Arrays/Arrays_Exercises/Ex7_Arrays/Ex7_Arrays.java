@@ -100,7 +100,7 @@ public class Ex7_Arrays {
             }
         } while (!isChecked);
         System.out.println(validarNumeros(pedirNumerosUsuario()));
-    }
+        }
 }
 
 /*
