@@ -46,6 +46,7 @@ public class Magos {
         int[] auxiliar = matriz[indiceFilaOrigen];
         matriz[indiceFilaOrigen] = matriz[indiceFilaDestino];
         matriz[indiceFilaDestino] = auxiliar;
+        muestraMatriz(matriz);
     }
 }
 

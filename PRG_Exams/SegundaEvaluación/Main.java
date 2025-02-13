@@ -6,6 +6,7 @@ public class Main {
         int[][] matrizMagos;
         matrizMagos = magos.creaMatriz(10);
         magos.muestraMatriz(matrizMagos);
-        System.out.println(magos.poderDeMago(matrizMagos, 1));
+        System.out.println("Suma de poderes:"+ magos.poderDeMago(matrizMagos, 1));
+        magos.intercambioDePoder(matrizMagos, 1, 4);
     }
 }
