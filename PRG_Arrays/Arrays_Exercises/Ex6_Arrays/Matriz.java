@@ -78,10 +78,3 @@ public class Matriz {
         return tablaModificada;
     }
 }
-
-/*
-Función denominada borraFila a la cual se le pasa un entero y devuelve la
-matriz pero sin la fila indicada por el número del parámetro (debes crear una
-matriz con una fila menos). Si el número está fuera del rango válido devuelve
-la matriz completa.
-*/
