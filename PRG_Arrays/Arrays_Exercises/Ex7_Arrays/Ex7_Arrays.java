@@ -9,6 +9,7 @@ public class Ex7_Arrays {
      * @param numerosLoteria Colección en la que se almacenan los numeros
      */
     public static void rellenaCol(ArrayList<Integer> numerosLoteria){
+        numerosLoteria.clear();
         for (int i = 0; i < 6; i++) {
             boolean isUnique;
             int numeroAleatorioCandidato;
@@ -92,9 +93,16 @@ public class Ex7_Arrays {
     }
     public static void main(String[] args) {
         boolean isChecked;
+        int contadorAciertos;
+        ArrayList <Integer> numerosLoteriaCPU;
+        ArrayList <Integer> numerosLoteriaUsuario;
         do {
             if (validarNumeros(pedirNumerosUsuario())) {
                 isChecked = true;
+                for (int i = 0; i < 1000000; i++) {
+                    numerosLoteriaUsuario = pedirNumerosUsuario();
+                    
+                }
             } else {
                 isChecked = false;
             }
