@@ -94,14 +94,17 @@ public class Ex7_Arrays {
     public static void main(String[] args) {
         boolean isChecked;
         int contadorAciertos;
-        ArrayList <Integer> numerosLoteriaCPU;
+        int[] listaAciertos = new int[7];
+        ArrayList <Integer> numerosLoteriaCPU = new ArrayList<>();
         ArrayList <Integer> numerosLoteriaUsuario;
         do {
             if (validarNumeros(pedirNumerosUsuario())) {
                 isChecked = true;
+                numerosLoteriaUsuario = pedirNumerosUsuario();
                 for (int i = 0; i < 1000000; i++) {
-                    numerosLoteriaUsuario = pedirNumerosUsuario();
-                    
+                    rellenaCol(numerosLoteriaCPU);
+                    contadorAciertos = comparaValores(numerosLoteriaCPU, numerosLoteriaUsuario);
+                    listaAciertos[contadorAciertos]++;
                 }
             } else {
                 isChecked = false;
