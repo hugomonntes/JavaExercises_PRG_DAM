@@ -24,7 +24,6 @@ public class Ex7_Arrays {
             } while (!isUnique);
             numerosLoteria.add(numeroAleatorioCandidato);
         }
-        System.out.println(numerosLoteria);
     }
     /**
      * Compara si los numeros aleatorios del user coinciden con los obtenidos por la CPU
@@ -53,22 +52,25 @@ public class Ex7_Arrays {
     public static ArrayList<Integer> pedirNumerosUsuario(){
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> numerosUser = new ArrayList<>();
-        String numeros;
-        boolean isChecked;
-        do {
-            System.out.println("Introduce seis numeros separados por comas: ");
-            numeros = sc.nextLine();
+        boolean isChecked = false;
+        while (!isChecked) {
+            numerosUser = new ArrayList<>();
+            System.out.println("Introduce seis números separados por comas: ");
+            String numeros = sc.nextLine();
             String[] numerosSeparados = numeros.split(",");
+
             try {
                 for (String numero : numerosSeparados) {
                     numerosUser.add(Integer.parseInt(numero));
                 }
-                isChecked = true;
-            } catch(Exception e){
-                System.out.println("Introduce bien los valores separados por comas y sin caracteres especiales");
-                isChecked = false;
-            };
-        } while (!isChecked);
+                isChecked = validarNumeros(numerosUser);
+                if (!isChecked) {
+                    System.out.println("Los números no son válidos.");
+                }
+            } catch (Exception e) {
+                System.out.println("Introduce solo números separados por comas.");
+            }
+        }
         return numerosUser;
     }
     /**
@@ -77,14 +79,18 @@ public class Ex7_Arrays {
      * @return true si estan bien introducidos o false si no.
      */
     public static boolean validarNumeros(ArrayList<Integer> numerosUsuario){
-        if (numerosUsuario.size() < 6 || numerosUsuario.size() > 6) {
+        if (numerosUsuario.size() != 6) {
             return false;
         }
-        int numeroAuxiliar;
         for (int i = 0; i < numerosUsuario.size(); i++) {
-            numeroAuxiliar = numerosUsuario.get(i);
-            for (int j = 0; j < numerosUsuario.size(); j++) {
-                if (numeroAuxiliar == numerosUsuario.get(j)) {
+            int num = numerosUsuario.get(i);
+
+            if (num < 1 || num > 49) {
+                return false;
+            }
+
+            for (int j = i + 1; j < numerosUsuario.size(); j++) {
+                if (num == numerosUsuario.get(j)) {
                     return false;
                 }
             }
@@ -92,26 +98,23 @@ public class Ex7_Arrays {
         return true;
     }
     public static void main(String[] args) {
-        boolean isChecked;
-        int contadorAciertos;
         int[] listaAciertos = new int[7];
-        ArrayList <Integer> numerosLoteriaCPU = new ArrayList<>();
-        ArrayList <Integer> numerosLoteriaUsuario;
-        do {
-            if (validarNumeros(pedirNumerosUsuario())) {
-                isChecked = true;
-                numerosLoteriaUsuario = pedirNumerosUsuario();
-                for (int i = 0; i < 1000000; i++) {
-                    rellenaCol(numerosLoteriaCPU);
-                    contadorAciertos = comparaValores(numerosLoteriaCPU, numerosLoteriaUsuario);
-                    listaAciertos[contadorAciertos]++;
-                }
-            } else {
-                isChecked = false;
-            }
-        } while (!isChecked);
-        System.out.println(validarNumeros(pedirNumerosUsuario()));
+        ArrayList<Integer> numerosLoteriaCPU = new ArrayList<>();
+        ArrayList<Integer> numerosLoteriaUsuario = pedirNumerosUsuario();
+
+        for (int i = 0; i < 1000000; i++) {
+            rellenaCol(numerosLoteriaCPU);
+            int contadorAciertos = comparaValores(numerosLoteriaCPU, numerosLoteriaUsuario);
+            listaAciertos[contadorAciertos]++;
         }
+
+        System.out.println("Resultados:");
+        int i = 0;
+        while (i < listaAciertos.length) {
+            System.out.println(i + " aciertos: " + listaAciertos[i]);
+            i++;
+        }
+    }
 }
 
 /*
