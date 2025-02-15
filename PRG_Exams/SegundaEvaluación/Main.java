@@ -29,6 +29,10 @@ public class Main {
                 isChecked = false;
                 sc.nextLine();
             }
+            int[] primeraPosicion = matrizMagos[0];
+            int[] ultimaPosicion = matrizMagos[matrizMagos.length - 1];
+            magos.intercambioDePoder(matrizMagos, primeraPosicion[0], ultimaPosicion[0]);
+            magos.muestraMatriz(matrizMagos);
         } while(!isChecked);
     }
 }
