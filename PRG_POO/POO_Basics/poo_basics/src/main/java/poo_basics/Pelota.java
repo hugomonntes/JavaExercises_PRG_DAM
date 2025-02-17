@@ -1,3 +1,5 @@
+package poo_basics;
+
 public class Pelota {
     public String tipo;
     private double radio;
