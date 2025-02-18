@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Coleccion {
-    private static ArrayList<Videojuego> videojuegos;
+    private ArrayList<Videojuego> coleccionVideojuegos; // PREGUNTAR CURRO SI TIENE QUE SER STATIC
 
-    public void setVideojuegos(ArrayList<Videojuego> videojuegos) {
-        this.videojuegos = videojuegos;
+    public void setColeccionVideojuegos(ArrayList<Videojuego> coleccionVideojuegos) {
+        this.coleccionVideojuegos = coleccionVideojuegos;
     }
 
-    public ArrayList<Videojuego> getVideojuegos() {
-        return videojuegos;
+    public ArrayList<Videojuego> getColeccionVideojuegos() {
+        return coleccionVideojuegos;
     }
 
     public static void menu() {
@@ -30,16 +30,20 @@ public class Coleccion {
                 case 1:
                     System.out.print("Introduce el nombre del videojuego: ");
                     String nombreVideojuego = sc.nextLine();
-                    System.out.print("Lo quieres añadir al principio o al final (I (Inicio) / F (Final))");
+                    System.out.print("Lo quieres añadir al principio o al final? (I (Inicio) / F (Final))");
                     String posicionVideojuego = sc.nextLine();
+                    Videojuego videojuegosNuevos = new Videojuego();
+                    sc.nextLine();
                     if (posicionVideojuego.equals("I")) {
-                        // videojuegos.add(0, nombreVideojuego);
-                    } else {
-                        // videojuegos.add(nombreVideojuego);
+                        // videojuegosNuevos.getColeccionVideojuegos().add(0, nombreVideojuego);
+                    } else if (posicionVideojuego.equals("F")){
+                        // videojuegosNuevos.getColeccionVideojuegos().add(nombreVideojuego);
                     }
                     break;
                 case 2:
+                // for (int i = 0; i < coleccionVideojuegos.getColeccionVideojuegos().size(); i++) {
                     
+                // }
                     ;
                     break;
                 case 3:
