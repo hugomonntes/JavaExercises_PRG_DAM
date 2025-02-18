@@ -1,15 +1,50 @@
 package PRG_Arrays.Arrays_Exercises.Ex6_Arrays;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //Objeto
-        Matriz matriz = new Matriz(5);
-        matriz.mostrarMatriz(matriz.numerosEnteros); //Mostrar matriz
-        matriz.sumarElementosMatriz(); //Mostrar suma de todos los elementos
-        System.out.println(matriz.sumarElementosMatriz2(true)); //Mostrar suma diagonal
-        System.out.println(matriz.sumarElementosMatriz3(2)); //Mostrar suma de elementos de una fila
-        matriz.numerosEnteros = matriz.borrarFila(matriz.numerosEnteros, 2);//Mostrar matriz sin una fila
-        System.out.println();
-        matriz.mostrarMatriz(matriz.numerosEnteros);//Mostrar matriz sin una fila
+        Scanner sc = new Scanner(System.in);
+        Matriz matriz = new Matriz(2);
+        int opcion;
+        do {
+                System.out.println("\nElija una de las siguiente:");
+                System.out.println("1.- Mostrar matriz.");
+                System.out.println("2.- Mostrar suma de todos los elementos.");
+                System.out.println("3.- Mostrar suma de la diagonal.");
+                System.out.println("4.- Mostrar suma de los elementos salvo diagonal ");
+                System.out.println("5.- Mostrar suma de elementos de una fila.");
+                System.out.println("6.- Mostrar matriz sin una fila.");
+                System.out.println("7.- Salir");
+                System.out.print("Introduce una opcion: ");
+                opcion = sc.nextInt();
+                switch (opcion) {
+                    case 1:
+                        matriz.mostrarMatriz(matriz.numerosEnteros);
+                        break;
+                    case 2:
+                        System.out.printf("Suma de todo: %d \n", matriz.sumarElementosMatriz());
+                        break;
+                    case 3:
+                        System.out.printf("Suma de la diagonal: %d \n", matriz.sumarDiagonal(true));
+                        break;
+                    case 4:
+                        System.out.printf("Suma de todos los elementos restando la diagonal: %d \n", matriz.sumarDiagonal(false));
+                        break;
+                    case 5:
+                        System.out.print("Introduce la fila de la que quieres sumar sus datos: ");
+                        System.out.printf("Suma de elementos de la fila: %d \n", matriz.sumarElementosFila(sc.nextInt() - 1));
+                        break;
+                    case 6:
+                        System.out.print("\n ¿Que fila quieres eliminar de la matriz?: ");
+                        int[][] matrizModificada = matriz.borrarFila(matriz.numerosEnteros, sc.nextInt());
+                        Matriz.mostrarMatriz(matrizModificada);
+                        break;
+                    default:
+                        System.out.println("Fin");
+                        break;
+                }
+        } while (opcion != 7);
+        sc.close();
     }
 }

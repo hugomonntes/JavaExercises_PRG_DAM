@@ -26,6 +26,10 @@ public class Matriz {
             System.out.println();
         } 
     }
+    /**
+     * Suma cada elemento de la matriz
+     * @return el resultado de la suma
+     */
     public int sumarElementosMatriz(){
         int acumulador = 0;
         for (int i = 0; i < numerosEnteros.length; i++) {
@@ -35,32 +39,45 @@ public class Matriz {
         }
         return acumulador;
     }
-    public int sumarElementosMatriz2(boolean flag){
+    /**
+     * Fn sobrecargada que suma la diagonal de la matriz
+     * @param flag true suma la diagonal, false suma el resto de elementos
+     * @return la suma de la diagonal o la suma del resto de elementos
+     */
+    public int sumarDiagonal(boolean flag){
         int acumulador = 0;
         for (int i = 0; i < numerosEnteros.length; i++) {
             if (flag) {
                 acumulador += numerosEnteros[i][i];
-            }
-            for (int j = 0; j < numerosEnteros[i].length; j++) {
-                if (!flag) {
-                    acumulador += numerosEnteros[i][j];
-                }
+            } else {
+                return  sumarElementosMatriz() - sumarDiagonal(false);
             }
         }
         return acumulador;
     }
-    public int sumarElementosMatriz3(int fila){
+    /**
+     * Suma los elementos de la fila seleccionada
+     * @param numeroFila numero de fila de la que quieres sumar los elementos
+     * @return la suma de los elementos de dicha fila
+     */
+    public int sumarElementosFila(int numeroFila){
         int acumulador = 0;
-        if (fila < 0 || fila > numerosEnteros.length) {
+        if (numeroFila < 0 || numeroFila > numerosEnteros.length) {
             return -1;
         } else{
-            for (int i = 0; i < numerosEnteros[fila].length; i++) {
-                acumulador += numerosEnteros[fila][i];
+            for (int i = 0; i < numerosEnteros[numeroFila].length; i++) {
+                acumulador += numerosEnteros[numeroFila][i];
             }
             return acumulador;
         }
     }
-    public int[][] borrarFila(int[][] numerosEnteros,int filaBorrar){
+    /**
+     * Elimina de la matriz la fila seleccionada
+     * @param numerosEnteros matriz de numeros enteros
+     * @param filaBorrar numero de la fila a eliminar
+     * @return la matriz modificada sin la fila correspondiente
+     */
+    public int[][] borrarFila(int[][] numerosEnteros, int filaBorrar){
         if (filaBorrar < 0 || filaBorrar >= numerosEnteros.length) {
             return numerosEnteros;
         }
