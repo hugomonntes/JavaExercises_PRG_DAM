@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Coleccion {
-    private ArrayList<Videojuego> videojuegos;
+    private static ArrayList<Videojuego> videojuegos;
 
     public void setVideojuegos(ArrayList<Videojuego> videojuegos) {
         this.videojuegos = videojuegos;
@@ -14,7 +14,7 @@ public class Coleccion {
         return videojuegos;
     }
 
-    public static void menu(){
+    public static void menu() {
         Scanner sc = new Scanner(System.in);
         int option;
         do {
@@ -33,26 +33,29 @@ public class Coleccion {
                     System.out.print("Lo quieres añadir al principio o al final (I (Inicio) / F (Final))");
                     String posicionVideojuego = sc.nextLine();
                     if (posicionVideojuego.equals("I")) {
-                        
+                        // videojuegos.add(0, nombreVideojuego);
+                    } else {
+                        // videojuegos.add(nombreVideojuego);
                     }
                     break;
                 case 2:
+                    
                     ;
-                        break;
+                    break;
                 case 3:
                     ;
-                        break;
+                    break;
                 case 4:
                     ;
-                        break;
+                    break;
                 case 5:
                     ;
-                        break;
+                    break;
                 default:
-                    
-                        break;
+
+                    break;
             }
-        
+
         } while (option != 6);
     }
 }
