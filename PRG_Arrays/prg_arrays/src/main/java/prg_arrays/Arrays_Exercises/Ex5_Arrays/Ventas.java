@@ -1,4 +1,4 @@
-package PRG_Arrays.Arrays_Exercises.Ex5_Arrays;
+package prg_arrays.Arrays_Exercises.Ex5_Arrays;
 
 import java.time.LocalDate;
 

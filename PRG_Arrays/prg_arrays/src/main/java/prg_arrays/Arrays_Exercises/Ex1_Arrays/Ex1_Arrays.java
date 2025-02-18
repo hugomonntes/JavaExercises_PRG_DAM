@@ -1,4 +1,4 @@
-package PRG_Arrays.Arrays_Exercises.Ex1_Arrays;
+package prg_arrays.Arrays_Exercises.Ex1_Arrays;
 
 public class Ex1_Arrays { @SuppressWarnings("unused")
     public static int[] creaArrayNumeros(int n){

@@ -1,4 +1,4 @@
-package PRG_Arrays.Arrays_Theory;
+package prg_arrays.Arrays_Theory;
 
 public class JarJar {
     public static void main(String[] args) {

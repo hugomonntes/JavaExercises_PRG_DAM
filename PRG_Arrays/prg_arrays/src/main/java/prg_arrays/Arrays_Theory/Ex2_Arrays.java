@@ -1,4 +1,4 @@
-package PRG_Arrays.Arrays_Theory;
+package prg_arrays.Arrays_Theory;
 
 public class Ex2_Arrays {
     public static double[][] crearBidimensional(int numeroFilas, int numeroColumnas){

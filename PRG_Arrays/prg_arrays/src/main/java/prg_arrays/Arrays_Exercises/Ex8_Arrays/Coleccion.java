@@ -1,4 +1,4 @@
-package PRG_Arrays.Arrays_Exercises.Ex8_Arrays;
+package prg_arrays.Arrays_Exercises.Ex8_Arrays;
 
 import java.util.ArrayList;
 import java.util.Scanner;

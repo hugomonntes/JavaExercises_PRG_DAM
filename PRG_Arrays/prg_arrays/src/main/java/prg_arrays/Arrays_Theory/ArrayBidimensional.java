@@ -1,4 +1,4 @@
-package PRG_Arrays.Arrays_Theory;
+package prg_arrays.Arrays_Theory;
 
 public class ArrayBidimensional {
     @SuppressWarnings("unused") //Quitar warnings de variables no utilizadas.
