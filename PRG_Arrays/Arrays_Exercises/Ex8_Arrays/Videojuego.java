@@ -15,11 +15,20 @@ public class Videojuego {
         }
         this.año = año;
     }
+    public int getAño() {
+        return año;
+    }
     public void setFabricante(String fabricante) {
         this.fabricante = fabricante.toUpperCase();
     }
+    public String getFabricante() {
+        return fabricante;
+    }
     public void setTitulo(String titulo) {
         this.titulo = titulo.toUpperCase();
+    }
+    public String getTitulo() {
+        return titulo;
     }
 }
 
