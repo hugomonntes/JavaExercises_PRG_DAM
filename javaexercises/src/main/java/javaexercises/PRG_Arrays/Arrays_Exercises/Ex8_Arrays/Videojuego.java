@@ -30,6 +30,43 @@ public class Videojuego {
     public String getTitulo() {
         return titulo;
     }
+
+    // CONSTRUCTORES
+    public Videojuego(){
+        setTitulo(this.titulo);
+        setFabricante(this.fabricante);
+        setAño(this.año);
+    }
+    
+    public Videojuego(String titulo){
+        this.titulo = titulo;
+        setFabricante(this.fabricante);
+        setAño(this.año);
+    }
+    
+    public Videojuego(int año){
+        setTitulo(this.titulo);
+        setFabricante(this.fabricante);
+        this.año = año;
+    }
+    
+    public Videojuego(String titulo, String fabricante){
+        this.titulo = titulo;
+        this.fabricante = fabricante;
+        setAño(this.año);
+    }
+    
+    public Videojuego(String titulo, int año){
+        this.titulo = titulo;
+        setFabricante(this.fabricante);
+        this.año = año;
+    }
+    
+    public Videojuego(int año, String fabricante){
+        setTitulo(this.titulo);
+        this.fabricante = fabricante;
+        this.año = año;
+    }
 }
 
 // // 8. Diseño de una colección (ArrayList) de videojuegos.

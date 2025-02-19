@@ -14,12 +14,16 @@ public class Matriz {
     }
     //MÉTODOS
     public static void mostrarMatriz(int[][] tabla){
+        String espacio = "";
+        System.out.printf("%4s", espacio);
         for (int i = 0; i <= tabla.length; i++) {
-            System.out.printf("%4d", i);
+            System.out.printf("%4d", i+1);
         }
         System.out.println();
+        int k = 1;
         for (int i = 0; i < tabla.length; i++) {
-            System.out.printf("%4d", i);
+            System.out.printf("%4d", k);
+            k++;
             for (int j = 0; j < tabla[i].length; j++) {
                 System.out.printf("%4d", tabla[i][j]);
             }
@@ -85,12 +89,13 @@ public class Matriz {
         int j = 0;
         for (int i = 0; i < numerosEnteros.length; i++){
             if (i == filaBorrar) {
-                continue;
+                
+            } else{
+                for (int k = 0; k < numerosEnteros[i].length; k++) {
+                    tablaModificada[j][k] = numerosEnteros[i][k];
+                }
+                j++;
             }
-            for (int k = 0; k < numerosEnteros[i].length; k++) {
-                tablaModificada[j][k] = numerosEnteros[i][k];
-            }
-            j++;
         }
         return tablaModificada;
     }
