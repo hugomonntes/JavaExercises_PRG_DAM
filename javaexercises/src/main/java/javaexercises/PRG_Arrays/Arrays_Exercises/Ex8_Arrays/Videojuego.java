@@ -33,9 +33,9 @@ public class Videojuego {
 
     // CONSTRUCTORES
     public Videojuego(){
-        setTitulo(this.titulo);
-        setFabricante(this.fabricante);
-        setAño(this.año);
+        setTitulo("");
+        setFabricante("");
+        setAño("");
     }
     
     public Videojuego(String titulo){

@@ -14,7 +14,7 @@ public class Coleccion {
         return coleccionVideojuegos;
     }
 
-    public static void menu() {
+    public void menu() {
         Scanner sc = new Scanner(System.in);
         int option;
         do {
@@ -30,20 +30,27 @@ public class Coleccion {
                 case 1:
                     System.out.print("Introduce el nombre del videojuego: ");
                     String nombreVideojuego = sc.nextLine();
+                    nuevoVideojuego.setTitulo(nombreVideojuego);
                     System.out.print("Lo quieres añadir al principio o al final? (I (Inicio) / F (Final))");
                     String posicionVideojuego = sc.nextLine();
-                    Videojuego videojuegosNuevos = new Videojuego();
+                    Videojuego videojuegosNuevos = new Videojuego(nombreVideojuego);
                     sc.nextLine();
                     if (posicionVideojuego.equals("I")) {
-                        // videojuegosNuevos.getColeccionVideojuegos().add(0, nombreVideojuego);
+                        videojuegosNuevos.add(0, nombreVideojuego);
                     } else if (posicionVideojuego.equals("F")){
-                        // videojuegosNuevos.getColeccionVideojuegos().add(nombreVideojuego);
+                        videojuegosNuevos.add(nombreVideojuego);
                     }
                     break;
                 case 2:
-                // for (int i = 0; i < coleccionVideojuegos.getColeccionVideojuegos().size(); i++) {
-                    
-                // }
+                    int indice = 1;
+                    for (Videojuego videojuego : videojuegosNuevos.videojuego) {
+                        if (videojuego.getTitulo().length() > 23 || videojuego.getFabricante().length() > 23) {
+                            System.out.printf("%4d título: %20s..., fabricante: %20s..., año: %4d", indice, videojuego.getTitulo().substring(0,19),videojuego.getFabricante().substring(0, 19), videojuego.getAño(), videojuego.getAño());
+                        } else {
+                            System.out.printf("%4d título: %23s, fabricante: %23s, año: %4d", indice, videojuego.getTitulo(),videojuego.getFabricante(), videojuego.getAño(), videojuego.getAño());
+                        }
+                        indice++;
+                    }
                     ;
                     break;
                 case 3:
@@ -61,6 +68,8 @@ public class Coleccion {
             }
 
         } while (option != 6);
+    }
+    public static void main(String[] args) {
     }
 }
 

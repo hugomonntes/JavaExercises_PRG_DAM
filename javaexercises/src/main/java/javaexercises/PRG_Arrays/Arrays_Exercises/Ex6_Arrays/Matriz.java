@@ -2,7 +2,7 @@ package javaexercises_prg_dam.PRG_Arrays.Arrays_Exercises.Ex6_Arrays;
 
 public class Matriz {
 
-    public int[][] numerosEnteros;
+    public int[][] numerosEnteros;//TODO comentarios
     //CONSTRUCTORES
     public Matriz(int n){
         this.numerosEnteros = new int[n][n];
