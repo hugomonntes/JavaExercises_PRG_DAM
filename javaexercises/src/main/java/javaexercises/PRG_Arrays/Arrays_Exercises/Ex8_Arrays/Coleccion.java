@@ -16,34 +16,38 @@ public class Coleccion {
 
     public void menu() {
         Scanner sc = new Scanner(System.in);
+        Videojuego nuevoVideojuego = new Videojuego(2020, "Hugo");
         int option;
         do {
-            System.out.println("1.- Insertar nuevo videojuego");
-            System.out.println("2.- Visualizar lista videojuegos");
+            System.out.println("1.- Añadir nuevo videojuego");
+            System.out.println("2.- Visualizar la lista videojuegos");
             System.out.println("3.- Buscar videojuegos");
-            System.out.println("4.- Eliminar videojuegos por posición");
+            System.out.println("4.- Eliminar videojuegos eligiendo una posición");
             System.out.println("5.- Borrar videojuego según el año");
             System.out.println("6.- Salir");
-            System.out.println("Introduce una opción: ");
+            System.out.print("Introduce una opción: ");
             option = sc.nextInt();
             switch (option) {
                 case 1:
                     System.out.print("Introduce el nombre del videojuego: ");
                     String nombreVideojuego = sc.nextLine();
+                    sc.next();
                     nuevoVideojuego.setTitulo(nombreVideojuego);
-                    System.out.print("Lo quieres añadir al principio o al final? (I (Inicio) / F (Final))");
+                    System.out.print("Lo quieres añadir al principio o al final (P (Principio) / F (Final)): ");
+
                     String posicionVideojuego = sc.nextLine();
-                    Videojuego videojuegosNuevos = new Videojuego(nombreVideojuego);
+                    nuevoVideojuego.setTitulo(nombreVideojuego);
                     sc.nextLine();
-                    if (posicionVideojuego.equals("I")) {
-                        videojuegosNuevos.add(0, nombreVideojuego);
-                    } else if (posicionVideojuego.equals("F")){
-                        videojuegosNuevos.add(nombreVideojuego);
+
+                    if (posicionVideojuego.equals("P")) {
+                        this.coleccionVideojuegos.add(0, nuevoVideojuego);
+                    } else if (posicionVideojuego.equals("F")) {
+                        this.coleccionVideojuegos.add(nuevoVideojuego);
                     }
                     break;
                 case 2:
                     int indice = 1;
-                    for (Videojuego videojuego : videojuegosNuevos.videojuego) {
+                    for (Videojuego videojuego : nuevoVideojuego) {
                         if (videojuego.getTitulo().length() > 23 || videojuego.getFabricante().length() > 23) {
                             System.out.printf("%4d título: %20s..., fabricante: %20s..., año: %4d", indice, videojuego.getTitulo().substring(0,19),videojuego.getFabricante().substring(0, 19), videojuego.getAño(), videojuego.getAño());
                         } else {
@@ -68,8 +72,6 @@ public class Coleccion {
             }
 
         } while (option != 6);
-    }
-    public static void main(String[] args) {
     }
 }
 

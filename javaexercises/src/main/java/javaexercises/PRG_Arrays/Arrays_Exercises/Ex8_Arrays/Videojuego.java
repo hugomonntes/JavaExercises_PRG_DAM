@@ -35,37 +35,38 @@ public class Videojuego {
     public Videojuego(){
         setTitulo("");
         setFabricante("");
-        setAño("");
+        setAño(0);
     }
     
     public Videojuego(String titulo){
-        this.titulo = titulo;
-        setFabricante(this.fabricante);
-        setAño(this.año);
+        setTitulo(titulo);
+        setFabricante("");
+        setAño(0);
     }
     
     public Videojuego(int año){
-        setTitulo(this.titulo);
-        setFabricante(this.fabricante);
-        this.año = año;
+        setTitulo("");
+        setFabricante("");
+        setAño(año);
     }
     
     public Videojuego(String titulo, String fabricante){
-        this.titulo = titulo;
-        this.fabricante = fabricante;
-        setAño(this.año);
+        setTitulo(titulo);
+        setFabricante(fabricante);
+        setAño(0);
     }
     
     public Videojuego(String titulo, int año){
-        this.titulo = titulo;
-        setFabricante(this.fabricante);
-        this.año = año;
+        setTitulo(titulo);
+        setFabricante("");
+        setAño(año);
+        
     }
     
     public Videojuego(int año, String fabricante){
-        setTitulo(this.titulo);
-        this.fabricante = fabricante;
-        this.año = año;
+        setTitulo("");
+        setFabricante(fabricante);
+        setAño(año);
     }
 }
 
