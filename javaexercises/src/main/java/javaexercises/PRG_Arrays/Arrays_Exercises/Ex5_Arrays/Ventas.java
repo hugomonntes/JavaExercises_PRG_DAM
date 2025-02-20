@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Arrays.Arrays_Exercises.Ex5_Arrays;
+package javaexercises.PRG_Arrays.Arrays_Exercises.Ex5_Arrays;
 
 import java.time.LocalDate;
 
@@ -84,9 +84,9 @@ public class Ventas {// TODO comentarios (Check)
     public void mostrarGrafica() { // TODO revisar nº de # y paréntesisf("%d ; (Check)
         System.out.print("Año: " + getAño());
         int unidades;
-        for (int i = 0; i < ventasDelMes.length; i++) {
-            unidades = ventasDelMes[i] / 100 + 1;
-            System.out.printf("\n Mes %2d): ", i + 1, "(" + ventasDelMes[i]);
+        for (int i = 0; i < ventasAnuales.length; i++) {
+            unidades = ventasAnuales[i] / 100 + 1;
+            System.out.printf("\n Mes %2d): ", i + 1, "(" + ventasAnuales[i]);
             for (int j = 0; j < unidades; j++) {
                 System.out.print("#");
             }

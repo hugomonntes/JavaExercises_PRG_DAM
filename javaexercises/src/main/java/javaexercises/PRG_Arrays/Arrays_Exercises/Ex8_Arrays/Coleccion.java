@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Arrays.Arrays_Exercises.Ex8_Arrays;
+package javaexercises.PRG_Arrays.Arrays_Exercises.Ex8_Arrays;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -37,16 +37,16 @@ public class Coleccion {
                     String posicionVideojuego = sc.nextLine();
                     nuevoVideojuego.setTitulo(nombreVideojuego);
                     sc.nextLine();
-                    boolean isCheck;
+                    boolean isCheck = true;
                     do {
                         try {
                             isCheck = true;
                             if (posicionVideojuego.equals("P")) {
                                 isCheck = true;
-                                this.videojuegos.add(0, nuevoVideojuego);
+                                this.coleccionVideojuegos.add(0, nuevoVideojuego);
                             } else if (posicionVideojuego.equals("F")) {
                                 isCheck = true;
-                                this.videojuegos.add(nuevoVideojuego);
+                                this.coleccionVideojuegos.add(nuevoVideojuego);
                             }
                             if (posicionVideojuego != "P" || posicionVideojuego != "F") {
                                 isCheck = false;
