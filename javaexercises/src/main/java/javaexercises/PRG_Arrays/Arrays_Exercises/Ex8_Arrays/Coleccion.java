@@ -47,7 +47,7 @@ public class Coleccion {
                     break;
                 case 2:
                     int indice = 1;
-                    for (Videojuego videojuego : nuevoVideojuego) {
+                    for (Videojuego videojuego : getColeccionVideojuegos()) {
                         if (videojuego.getTitulo().length() > 23 || videojuego.getFabricante().length() > 23) {
                             System.out.printf("%4d título: %20s..., fabricante: %20s..., año: %4d", indice, videojuego.getTitulo().substring(0,19),videojuego.getFabricante().substring(0, 19), videojuego.getAño(), videojuego.getAño());
                         } else {
