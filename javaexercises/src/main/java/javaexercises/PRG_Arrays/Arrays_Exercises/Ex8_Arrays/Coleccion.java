@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class Coleccion {
     private ArrayList<Videojuego> coleccionVideojuegos;
 
+    public Coleccion(){
+        this.coleccionVideojuegos = new ArrayList<>();
+    }
+
     public void setColeccionVideojuegos(ArrayList<Videojuego> coleccionVideojuegos) {
         this.coleccionVideojuegos = coleccionVideojuegos;
     }
@@ -30,29 +34,25 @@ public class Coleccion {
             sc.nextLine();
             switch (option) {
                 case 1:
-                    boolean isCheck = true;
+                    boolean isCheck = false;
                     String nombreVideojuego;
                     String posicionVideojuego;
+
                     do {
                         System.out.println("Introduce el nombre del videojuego: ");
                         nombreVideojuego = sc.nextLine();
                         nuevoVideojuego.setTitulo(nombreVideojuego);
+
                         System.out.print("Lo quieres añadir al principio o al final (P (Principio) / F (Final)): ");
                         posicionVideojuego = sc.nextLine().toLowerCase();
-                        nuevoVideojuego.setTitulo(nombreVideojuego);
-                        try {
-                            if (posicionVideojuego != "p" || posicionVideojuego != "f") {
-                                isCheck = false;
-                                throw new Exception("Letra incorrecta");
-                            }
-                            if (posicionVideojuego == "p") {
-                                isCheck = true;
-                                this.coleccionVideojuegos.add(0, nuevoVideojuego);
-                            } else if (posicionVideojuego == "f") {
-                                isCheck = true;
-                                this.coleccionVideojuegos.add(nuevoVideojuego);
-                            }
-                        } catch (Exception e) {
+
+                        if (posicionVideojuego.equals("p")) {
+                            this.coleccionVideojuegos.add(0, nuevoVideojuego);
+                            isCheck = true;
+                        } else if (posicionVideojuego.equals("f")) {
+                            this.coleccionVideojuegos.add(nuevoVideojuego);
+                            isCheck = true;
+                        } else {
                             System.out.println("Introduce \"p\" o \"f\" en minúscula");
                         }
                     } while (!isCheck);
