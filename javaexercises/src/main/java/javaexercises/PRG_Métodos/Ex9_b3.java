@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Métodos;
+package javaexercises.PRG_Métodos;
 
 import java.io.File;
 import java.io.PrintWriter;

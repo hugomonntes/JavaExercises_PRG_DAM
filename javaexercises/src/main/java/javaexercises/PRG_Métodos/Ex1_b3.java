@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Métodos;
+package javaexercises.PRG_Métodos;
 
 import java.util.Scanner;
 public class Ex1_b3 {

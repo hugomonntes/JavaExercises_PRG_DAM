@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Métodos;
+package javaexercises.PRG_Métodos;
 
 import java.time.LocalDate;
 import java.util.Scanner;

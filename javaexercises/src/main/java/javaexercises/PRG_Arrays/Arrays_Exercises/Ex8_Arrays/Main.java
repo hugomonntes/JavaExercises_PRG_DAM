@@ -1,4 +1,4 @@
-package main.java.javaexercises.PRG_Arrays.Arrays_Exercises.Ex8_Arrays;
+package javaexercises.PRG_Arrays.Arrays_Exercises.Ex8_Arrays;
 
 public class Main {
     public static void main(String[] args) throws Exception {

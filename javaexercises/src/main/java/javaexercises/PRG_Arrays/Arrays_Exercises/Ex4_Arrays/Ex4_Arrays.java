@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Arrays.Arrays_Exercises.Ex4_Arrays;
+package javaexercises.PRG_Arrays.Arrays_Exercises.Ex4_Arrays;
 
 public class Ex4_Arrays {//TODO mejorar comentarios 
     /**

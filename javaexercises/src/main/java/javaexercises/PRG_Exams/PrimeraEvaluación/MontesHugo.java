@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Exams.PrimeraEvaluación;
+package javaexercises.PRG_Exams.PrimeraEvaluación;
 
 import java.io.File;
 import java.io.FileWriter;

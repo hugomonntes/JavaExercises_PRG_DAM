@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Arrays.Arrays_Exercises.Ex5_Arrays;
+package javaexercises.PRG_Arrays.Arrays_Exercises.Ex5_Arrays;
 
 import java.io.File;
 import java.io.PrintWriter;

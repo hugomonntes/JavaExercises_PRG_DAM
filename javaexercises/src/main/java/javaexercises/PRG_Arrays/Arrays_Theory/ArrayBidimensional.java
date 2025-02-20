@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Arrays.Arrays_Theory;
+package javaexercises.PRG_Arrays.Arrays_Theory;
 
 public class ArrayBidimensional {
     @SuppressWarnings("unused") //Quitar warnings de variables no utilizadas.

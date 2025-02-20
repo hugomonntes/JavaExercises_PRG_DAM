@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Métodos;
+package javaexercises.PRG_Métodos;
 
 public class Ex14_b3 {
     /**

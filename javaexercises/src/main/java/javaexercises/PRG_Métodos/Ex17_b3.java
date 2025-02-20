@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Métodos;
+package javaexercises.PRG_Métodos;
 
 public class Ex17_b3 {
     public static void conversion(int limit, boolean flag){

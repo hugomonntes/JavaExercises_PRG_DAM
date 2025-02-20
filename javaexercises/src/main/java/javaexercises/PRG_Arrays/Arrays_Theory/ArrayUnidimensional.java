@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Arrays.Arrays_Theory;
+package javaexercises.PRG_Arrays.Arrays_Theory;
 
 public class ArrayUnidimensional {
     public static void main(String[] args) {

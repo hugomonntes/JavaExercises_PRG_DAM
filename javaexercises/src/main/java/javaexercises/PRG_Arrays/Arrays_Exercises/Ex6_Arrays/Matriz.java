@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Arrays.Arrays_Exercises.Ex6_Arrays;
+package javaexercises.PRG_Arrays.Arrays_Exercises.Ex6_Arrays;
 
 public class Matriz {
 

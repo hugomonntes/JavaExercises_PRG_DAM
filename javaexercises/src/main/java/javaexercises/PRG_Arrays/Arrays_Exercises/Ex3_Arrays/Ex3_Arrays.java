@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Arrays.Arrays_Exercises.Ex3_Arrays;
+package javaexercises.PRG_Arrays.Arrays_Exercises.Ex3_Arrays;
 
 import java.util.ArrayList;
 public class Ex3_Arrays {

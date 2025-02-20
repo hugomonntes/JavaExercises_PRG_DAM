@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_POO.POO_Adv.Ex2_poo;
+package javaexercises.PRG_POO.POO_Adv.Ex2_poo;
 
 import java.util.Scanner;
 

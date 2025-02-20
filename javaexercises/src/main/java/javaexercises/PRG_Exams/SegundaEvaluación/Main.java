@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_Exams.SegundaEvaluación;
+package javaexercises.PRG_Exams.SegundaEvaluación;
 
 import java.util.Scanner;
 

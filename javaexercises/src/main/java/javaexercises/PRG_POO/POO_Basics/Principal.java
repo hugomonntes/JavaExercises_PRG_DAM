@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_POO.POO_Basics;
+package javaexercises.PRG_POO.POO_Basics;
 
 public class Principal {
     public static void intercambiaRadios(Pelota a, Pelota b){

@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_POO.POO_Theory;
+package javaexercises.PRG_POO.POO_Theory;
 public class Principal {
     public static void main(String[] args) {
         //Perro p = new Perro();

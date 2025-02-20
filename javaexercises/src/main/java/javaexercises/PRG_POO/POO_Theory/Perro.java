@@ -1,4 +1,4 @@
-package javaexercises_prg_dam.PRG_POO.POO_Theory;
+package javaexercises.PRG_POO.POO_Theory;
 public class Perro { // Planos a partir de ellos puedes construir objetos tipo Perro
     public String raza;
     public String nombre;
