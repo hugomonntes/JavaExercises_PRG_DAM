@@ -1,4 +1,3 @@
-
 package javaexercises_prg_dam.PRG_Arrays.Arrays_Exercises.Ex8_Arrays;
 
 import java.time.LocalDate;
