@@ -27,33 +27,33 @@ public class Coleccion {
             System.out.println("6.- Salir");
             System.out.print("Introduce una opción: ");
             option = sc.nextInt();
+            sc.nextLine();
             switch (option) {
                 case 1:
-                    System.out.print("Introduce el nombre del videojuego: ");
-                    String nombreVideojuego = sc.nextLine();
-                    sc.next();
-                    nuevoVideojuego.setTitulo(nombreVideojuego);
-                    System.out.print("Lo quieres añadir al principio o al final (P (Principio) / F (Final)): ");
-                    String posicionVideojuego = sc.nextLine();
-                    nuevoVideojuego.setTitulo(nombreVideojuego);
-                    sc.nextLine();
                     boolean isCheck = true;
+                    String nombreVideojuego;
+                    String posicionVideojuego;
                     do {
+                        System.out.println("Introduce el nombre del videojuego: ");
+                        nombreVideojuego = sc.nextLine();
+                        nuevoVideojuego.setTitulo(nombreVideojuego);
+                        System.out.print("Lo quieres añadir al principio o al final (P (Principio) / F (Final)): ");
+                        posicionVideojuego = sc.nextLine().toLowerCase();
+                        nuevoVideojuego.setTitulo(nombreVideojuego);
                         try {
-                            isCheck = true;
-                            if (posicionVideojuego.equals("P")) {
-                                isCheck = true;
-                                this.coleccionVideojuegos.add(0, nuevoVideojuego);
-                            } else if (posicionVideojuego.equals("F")) {
-                                isCheck = true;
-                                this.coleccionVideojuegos.add(nuevoVideojuego);
-                            }
-                            if (posicionVideojuego != "P" || posicionVideojuego != "F") {
+                            if (posicionVideojuego != "p" || posicionVideojuego != "f") {
                                 isCheck = false;
                                 throw new Exception("Letra incorrecta");
                             }
+                            if (posicionVideojuego == "p") {
+                                isCheck = true;
+                                this.coleccionVideojuegos.add(0, nuevoVideojuego);
+                            } else if (posicionVideojuego == "f") {
+                                isCheck = true;
+                                this.coleccionVideojuegos.add(nuevoVideojuego);
+                            }
                         } catch (Exception e) {
-                            System.out.println("Introduce \"P\" o \"F\"");
+                            System.out.println("Introduce \"p\" o \"f\" en minúscula");
                         }
                     } while (!isCheck);
                     break;
