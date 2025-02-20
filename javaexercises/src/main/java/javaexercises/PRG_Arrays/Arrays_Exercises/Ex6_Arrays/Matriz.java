@@ -2,8 +2,13 @@ package javaexercises_prg_dam.PRG_Arrays.Arrays_Exercises.Ex6_Arrays;
 
 public class Matriz {
 
-    public int[][] numerosEnteros;//TODO comentarios
+    public int[][] numerosEnteros;//TODO comentarios (Check)
     //CONSTRUCTORES
+    /**
+     * Constructor que inicializa un matriz con un numero aleatorio
+     * en cada posición
+     * @param n Determina la longitud de la matriz
+     */
     public Matriz(int n){
         this.numerosEnteros = new int[n][n];
         for (int i = 0; i < numerosEnteros.length; i++) {
@@ -13,6 +18,10 @@ public class Matriz {
         }
     }
     //MÉTODOS
+    /**
+     * Muestra la matriz en forma de tabla
+     * @param tabla matriz a mostrar
+     */
     public static void mostrarMatriz(int[][] tabla){
         String espacio = "";
         System.out.printf("%4s", espacio);
@@ -51,10 +60,10 @@ public class Matriz {
     public int sumarDiagonal(boolean flag){
         int acumulador = 0;
         for (int i = 0; i < numerosEnteros.length; i++) {
-            if (flag) {
+            if (!flag) {
                 acumulador += numerosEnteros[i][i];
             } else {
-                return  sumarElementosMatriz() - sumarDiagonal(false);
+                return sumarElementosMatriz() - sumarDiagonal(false);
             }
         }
         return acumulador;
