@@ -12,7 +12,7 @@ public class Main {
                 System.out.println("1.- Mostrar matriz.");
                 System.out.println("2.- Mostrar suma de todos los elementos.");
                 System.out.println("3.- Mostrar suma de la diagonal.");
-                System.out.println("4.- Mostrar suma de los elementos salvo diagonal "); //TODO falla
+                System.out.println("4.- Mostrar suma de los elementos salvo diagonal "); //TODO falla (Check)
                 System.out.println("5.- Mostrar suma de elementos de una fila."); //TODO revisar rangos
                 System.out.println("6.- Mostrar matriz sin una fila.");
                 System.out.println("7.- Salir");
@@ -33,7 +33,7 @@ public class Main {
                         break;
                     case 5:
                         System.out.print("Introduce la fila de la que quieres sumar sus datos: ");
-                        System.out.printf("Suma de elementos de la fila: %d \n", matriz.sumarElementosFila(sc.nextInt() - 1));
+                        System.out.printf("Suma de elementos de la fila: %d \n", matriz.sumarElementosFila(sc.nextInt()));
                         break;
                     case 6:
                         System.out.print("\n ¿Que fila quieres eliminar de la matriz?: ");
