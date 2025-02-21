@@ -59,18 +59,17 @@ public class Coleccion {
                     break;
                 case 2:
                     int indice = 1;
-                    for (Videojuego videojuego : getColeccionVideojuegos()) {
-                        
-                        // if (videojuego.getTitulo().length() > 23 || videojuego.getFabricante().length() > 23) {
-                        //     System.out.printf("\n%4d título: %20s..., fabricante: %20s..., año: %4d \n", indice,
-                        //             videojuego.getTitulo().substring(0, 19),
-                        //             videojuego.getFabricante().substring(0, 19), videojuego.getAño(),
-                        //             videojuego.getAño());
-                        // } else {
-                        //     System.out.printf("%4d título: %23s, fabricante: %23s, año: %4d \n", indice,
-                        //             videojuego.getTitulo(), videojuego.getFabricante(), videojuego.getAño(),
-                        //             videojuego.getAño());
-                        // }
+                    for (Videojuego videojuego : this.coleccionVideojuegos) {
+                        if (videojuego.getTitulo().length() > 23 || videojuego.getFabricante().length() > 23) {
+                            System.out.printf("\n%4d título: %20s..., fabricante: %20s..., año: %4d \n", indice,
+                                    videojuego.getTitulo().substring(0, 19),
+                                    videojuego.getFabricante().substring(0, 19), videojuego.getAño(),
+                                    videojuego.getAño());
+                        } else {
+                            System.out.printf("%4d título: %23s, fabricante: %23s, año: %4d \n", indice,
+                                    videojuego.getTitulo(), videojuego.getFabricante(), videojuego.getAño(),
+                                    videojuego.getAño());
+                        }
                         indice++;
                     };
                     break;
