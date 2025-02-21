@@ -51,7 +51,7 @@ public class Ex2_Arrays {
     }
 
     public static boolean intercambiarDatos(char[][] tabla, int indice1, int indice2, int indice3, int indice4){
-        if (indice1 >= tabla.length || indice3 >= tabla.length || indice1 < 0 || indice3 < 0 || indice2 >= tabla.length || indice4 >= tabla.length|| indice2 < 0 || indice4 < 0){//TODO  3 y 4 y comparar 2 con cols
+        if (indice1 >= tabla.length || indice3 >= tabla.length || indice1 < 0 || indice3 < 0 || indice2 >= tabla[0].length || indice4 >= tabla[0].length|| indice2 < 0 || indice4 < 0){//TODO  3 y 4 y comparar 2 con cols
         return false;
         } else {
             char auxiliar = tabla[indice1][indice2];

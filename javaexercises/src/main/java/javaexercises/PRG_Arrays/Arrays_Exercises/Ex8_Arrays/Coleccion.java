@@ -39,6 +39,7 @@ public class Coleccion {
                     String posicionVideojuego;
 
                     do {
+                        nuevoVideojuego = new Videojuego(2020, "Hugo");
                         System.out.println("Introduce el nombre del videojuego: ");
                         nombreVideojuego = sc.nextLine();
                         nuevoVideojuego.setTitulo(nombreVideojuego);
