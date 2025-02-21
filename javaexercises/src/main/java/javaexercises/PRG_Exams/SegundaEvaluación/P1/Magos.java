@@ -1,4 +1,4 @@
-package javaexercises.PRG_Exams.SegundaEvaluación;
+package javaexercises.PRG_Exams.SegundaEvaluación.P1;
 
 public class Magos {
     public static int[][] creaMatriz(int cantidadMagos){
