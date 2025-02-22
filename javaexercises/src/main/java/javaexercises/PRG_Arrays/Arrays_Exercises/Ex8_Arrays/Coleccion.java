@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Coleccion {
     private ArrayList<Videojuego> coleccionVideojuegos;
 
-    public Coleccion(){
+    public Coleccion() {
         this.coleccionVideojuegos = new ArrayList<>();
     }
 
@@ -16,6 +16,10 @@ public class Coleccion {
 
     public ArrayList<Videojuego> getColeccionVideojuegos() {
         return coleccionVideojuegos;
+    }
+
+    public String formatearString(String cadenaOriginal) {
+        return cadenaOriginal.length() > 23 ? cadenaOriginal.substring(0, 19) + "..." : cadenaOriginal;
     }
 
     public void menu() throws Exception {
@@ -61,21 +65,15 @@ public class Coleccion {
                 case 2:
                     int indice = 1;
                     for (Videojuego videojuego : this.coleccionVideojuegos) {
-                        if (videojuego.getTitulo().length() > 23 || videojuego.getFabricante().length() > 23) {
-                            System.out.printf("\n%4d título: %20s..., fabricante: %20s..., año: %4d \n", indice,
-                                    videojuego.getTitulo().substring(0, 19),
-                                    videojuego.getFabricante().substring(0, 19), videojuego.getAño(),
-                                    videojuego.getAño());
-                        } else {
-                            System.out.printf("%4d título: %23s, fabricante: %23s, año: %4d \n", indice,
-                                    videojuego.getTitulo(), videojuego.getFabricante(), videojuego.getAño(),
-                                    videojuego.getAño());
-                        }
+                        System.out.printf("\n%4d título: %20s, fabricante: %20s, año: %4d \n", indice,
+                                formatearString(videojuego.getTitulo()),
+                                formatearString(videojuego.getFabricante()), videojuego.getAño(),
+                                videojuego.getAño());
                         indice++;
-                    };
+                    }
                     break;
                 case 3:
-                    ;
+
                     break;
                 case 4:
                     ;
