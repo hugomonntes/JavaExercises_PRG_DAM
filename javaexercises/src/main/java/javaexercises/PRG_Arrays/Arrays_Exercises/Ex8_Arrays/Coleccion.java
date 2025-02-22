@@ -64,7 +64,7 @@ public class Coleccion {
                     break;
                 case 2:
                     int indice = 1;
-                    for (Videojuego videojuego : this.coleccionVideojuegos) {
+                    for (Videojuego videojuego : coleccionVideojuegos) {
                         System.out.printf("\n%4d título: %20s, fabricante: %20s, año: %4d \n", indice,
                                 formatearString(videojuego.getTitulo()),
                                 formatearString(videojuego.getFabricante()), videojuego.getAño(),
