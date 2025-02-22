@@ -1,12 +1,20 @@
 package javaexercises.PRG_Exams.SegundaEvaluación.P2;
 
-public class Planeta {
+public class Planeta extends Astro { // Herencia de la clase Astro
     public boolean habitabilidad;
+
+    public Planeta(String nombre, double radio, boolean habitabilidad){
+        super("", 1.3);
+        setNombre(nombre);
+        this.radio = radio;
+        this.habitabilidad = habitabilidad;
+    }
+
+    public Planeta(){
+        this("", 0, false);
+    }
 }
 
 /*
-Clase Planeta que hereda de Astro y dispone de una propiedad pública booleana denominada habitabilidad. Tendrá dos
-constructores, uno que inicialice todos los miembros (nombre, radio y habitabilidad) con parámetros y el otro sin parámetros que
-inicializa a “” nombre, 0 radio y false la habitabilidad llamando al primer constructor.
- Sobreescribe muestraDatos para que muestre los de la clase padre llamándola y luego mostrando la propiedad habitabilidad. 
+Sobreescribe muestraDatos para que muestre los de la clase padre llamándola y luego mostrando la propiedad habitabilidad. *NO SE HACERLO*
 */

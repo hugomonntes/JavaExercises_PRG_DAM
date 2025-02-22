@@ -1,7 +1,7 @@
 package javaexercises.PRG_Exams.SegundaEvaluación.P2;
 
 public class Astro {
-    private String nombre;
+    protected String nombre;
     public double radio;
 
     public void setNombre(String nombre) {
@@ -23,13 +23,16 @@ public class Astro {
         return cadenaFinal;
     }
 
+    //CONSTRUCTOR
+
+    public Astro(String nombre, double radio){
+        setNombre(nombre);
+        this.radio = radio;
+    }
+
     //MÉTODOS
     public void muestraDatos(){
         System.out.println(getNombre());
         System.out.printf("%.2f \n", radio);
     }
 }
-
-/*
-Dispondrá de la función muestraDatos que muestra el nombre (usando el getNombre normal) y el radio (con 2 decimales).
- */
