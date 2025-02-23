@@ -22,6 +22,18 @@ public class Coleccion {
         return cadenaOriginal.length() > 23 ? cadenaOriginal.substring(0, 19) + "..." : cadenaOriginal;
     }
 
+    public ArrayList<Videojuego> comienzoDeJuego(String letrasComienzo){
+        ArrayList<Videojuego> juegosEncontrados = new ArrayList<>();
+        for (Videojuego videojuego : getColeccionVideojuegos()) {
+            for (int i = 0; i < 3; i++) {
+                if (videojuego.getTitulo().startsWith(letrasComienzo)) {
+                    juegosEncontrados.add(videojuego);
+                }
+            }
+        }
+        return juegosEncontrados;
+    } 
+
     public void menu() throws Exception {
         Scanner sc = new Scanner(System.in);
         Videojuego nuevoVideojuego = new Videojuego(2020, "Hugo");
@@ -73,7 +85,14 @@ public class Coleccion {
                     }
                     break;
                 case 3:
-
+                    String letrasJuego = "";
+                    do {
+                        System.out.println("Introduce las tres primeras letras del título del juego: ");
+                        letrasJuego = sc.nextLine().toLowerCase();
+                        for (Videojuego videojuego : comienzoDeJuego(letrasJuego)) {
+                            System.out.println(videojuego);
+                        }
+                    } while (letrasJuego.length() > 3 || letrasJuego.length() < 1);
                     break;
                 case 4:
                     ;
