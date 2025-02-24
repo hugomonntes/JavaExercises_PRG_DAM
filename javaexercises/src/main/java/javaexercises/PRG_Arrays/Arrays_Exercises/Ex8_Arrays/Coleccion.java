@@ -110,7 +110,6 @@ public class Coleccion {
 
                     break;
             }
-
         } while (option != 6);
     }
 }
