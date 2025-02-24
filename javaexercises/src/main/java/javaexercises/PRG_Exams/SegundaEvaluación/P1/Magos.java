@@ -16,7 +16,7 @@ public class Magos {
             System.out.println();
         } else {
             String letras = "AFEW";
-            System.out.printf("    ");
+            System.out.printf("    "); // 4 espacios antes del primer índice
             for (int i = 0; i < letras.length(); i++) {
                 System.out.printf("%4s", letras.charAt(i));
             }
