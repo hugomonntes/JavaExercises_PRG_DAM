@@ -95,10 +95,16 @@ public class Coleccion {
                     } while (letrasJuego.length() > 3 || letrasJuego.length() < 1);
                     break;
                 case 4:
-                    ;
+                    boolean isCheckIndex;
+                    do {
+                        isCheckIndex = false;
+                        int indiceJuego;
+                        System.out.println("Introduce el índice del videojuego a borrar: ");
+                        indiceJuego = sc.nextInt();
+                    } while (!isCheckIndex);
                     break;
                 case 5:
-                    ;
+                    
                     break;
                 default:
 
