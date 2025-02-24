@@ -18,25 +18,19 @@ public class Coleccion {
         return coleccionVideojuegos;
     }
 
-    public String formatearString(String cadenaOriginal) {
-        return cadenaOriginal.length() > 23 ? cadenaOriginal.substring(0, 19) + "..." : cadenaOriginal;
-    }
-
-    public ArrayList<Videojuego> comienzoDeJuego(String letrasComienzo){
+    public ArrayList<Videojuego> buscarJuegosPorInicio(String palabraBusqueda) {
         ArrayList<Videojuego> juegosEncontrados = new ArrayList<>();
         for (Videojuego videojuego : getColeccionVideojuegos()) {
-            for (int i = 0; i < 3; i++) {
-                if (videojuego.getTitulo().startsWith(letrasComienzo)) {
-                    juegosEncontrados.add(videojuego);
-                }
+            if (videojuego.getTitulo().startsWith(palabraBusqueda)) {
+                juegosEncontrados.add(videojuego);
             }
         }
         return juegosEncontrados;
-    } 
+    }
 
     public void menu() throws Exception {
+
         Scanner sc = new Scanner(System.in);
-        Videojuego nuevoVideojuego = new Videojuego(2020, "Hugo");
         int option;
         do {
             System.out.println("1.- Añadir nuevo videojuego");
@@ -53,21 +47,22 @@ public class Coleccion {
                     boolean isCheck = false;
                     String nombreVideojuego;
                     String posicionVideojuego;
-
+                    Videojuego instanciaVideojuego = new Videojuego();
+                    System.out.println("Introduce el nombre del videojuego: ");
+                    nombreVideojuego = sc.nextLine();
+                    instanciaVideojuego.setTitulo(nombreVideojuego);
+                    System.out.println("Introduce el año del videojuego: ");
+                    int añoSalidaJuego = sc.nextInt();
+                    instanciaVideojuego.setAño(añoSalidaJuego);
                     do {
-                        nuevoVideojuego = new Videojuego(2020, "Hugo");
-                        System.out.println("Introduce el nombre del videojuego: ");
-                        nombreVideojuego = sc.nextLine();
-                        nuevoVideojuego.setTitulo(nombreVideojuego);
-
                         System.out.print("Lo quieres añadir al principio o al final (P (Principio) / F (Final)): ");
                         posicionVideojuego = sc.nextLine().toLowerCase();
 
                         if (posicionVideojuego.equals("p")) {
-                            this.coleccionVideojuegos.add(0, nuevoVideojuego);
+                            this.coleccionVideojuegos.add(0, instanciaVideojuego);
                             isCheck = true;
                         } else if (posicionVideojuego.equals("f")) {
-                            this.coleccionVideojuegos.add(nuevoVideojuego);
+                            this.coleccionVideojuegos.add(instanciaVideojuego);
                             isCheck = true;
                         } else {
                             System.out.println("Introduce \"p\" o \"f\" en minúscula");
@@ -77,34 +72,56 @@ public class Coleccion {
                 case 2:
                     int indice = 1;
                     for (Videojuego videojuego : coleccionVideojuegos) {
-                        System.out.printf("\n%4d título: %20s, fabricante: %20s, año: %4d \n", indice,
-                                formatearString(videojuego.getTitulo()),
-                                formatearString(videojuego.getFabricante()), videojuego.getAño(),
-                                videojuego.getAño());
+                        System.out.printf("\n%4d %20s\n", indice, videojuego.getDatosAgrupados());
                         indice++;
                     }
                     break;
                 case 3:
-                    String letrasJuego = "";
+                    String letrasBusquedaUser = "";
                     do {
                         System.out.println("Introduce las tres primeras letras del título del juego: ");
-                        letrasJuego = sc.nextLine().toLowerCase();
-                        for (Videojuego videojuego : comienzoDeJuego(letrasJuego)) {
-                            System.out.println(videojuego);
-                        }
-                    } while (letrasJuego.length() > 3 || letrasJuego.length() < 1);
+                        letrasBusquedaUser = sc.nextLine().toUpperCase();
+                    } while (letrasBusquedaUser.length() > 3 || letrasBusquedaUser.length() < 1);
+                    for (Videojuego videojuego : buscarJuegosPorInicio(letrasBusquedaUser)) {
+                        System.out.println(videojuego);
+                    }
                     break;
                 case 4:
                     boolean isCheckIndex;
+                    int indiceJuego = 0;
+                    // Validación de datos de entrada
                     do {
                         isCheckIndex = false;
-                        int indiceJuego;
                         System.out.println("Introduce el índice del videojuego a borrar: ");
                         indiceJuego = sc.nextInt();
+                        if (indiceJuego > 0 && indiceJuego < coleccionVideojuegos.size()) {
+                            isCheckIndex = true;
+                        }
                     } while (!isCheckIndex);
+                    // Ejecución de los datos validados
+                    coleccionVideojuegos.remove(indiceJuego);
                     break;
                 case 5:
-                    
+                boolean isCheckYear = false;
+                int añoBorrar;
+                    do {
+                        System.out.println("Introduce el año del que quieres borrar los juegos: ");
+                        añoBorrar = sc.nextInt();
+                        if (añoBorrar > 1980) {
+                            isCheckYear = true;
+                        }
+                    } while (!isCheckYear);
+                    for (int i = 0; i < getColeccionVideojuegos().size(); i++) {
+                        if (getColeccionVideojuegos().get(i).getAño() == añoBorrar) {
+                            getColeccionVideojuegos().remove(i);
+                            i--;
+                        }
+                    }
+                    // for (int i = getColeccionVideojuegos().size() - 1; i >= 0; i--) {
+                    //     if (getColeccionVideojuegos().get(i).getAño() == añoBorrar) {
+                    //         getColeccionVideojuegos().remove(i);
+                    //     }
+                    // }
                     break;
                 default:
 
@@ -115,17 +132,6 @@ public class Coleccion {
 }
 
 /*
- * Insertar nuevo videojuego (se permite decidir al usuario al principio o al
- * final de la colección si hubiera ya algún elemento).
- * • Visualizar toda las lista de videojuegos: Se muestra en cada fila un
- * videojuego bien formateado en columnas incluido el índice en la colección y
- * con cabeceras. Si el título o el fabricante ocupa más de 23 caracteres lo
- * trunca a tamaño 20 y añade puntos suspensivos (...).
- * • Buscar videojuegos: En este punto el usuario mete el principio del título y
- * mostrar todos los títulos que empiecen por dicho fragmento.
- * • Eliminar videojuego (por posiciones). Se pide un índice y borra el
- * videojuego
- * de dicha posición.
  * • Borrar videojuegos de un año determinado. Se pide un año al usuario y borra
  * todos los videojuegos de ese año.
  * • Salir del programa. Finaliza la aplicación y guarda todos los datos en un
