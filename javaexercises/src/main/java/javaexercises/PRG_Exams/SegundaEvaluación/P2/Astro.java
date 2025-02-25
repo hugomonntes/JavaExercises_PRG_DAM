@@ -1,7 +1,7 @@
 package javaexercises.PRG_Exams.SegundaEvaluación.P2;
 
 public class Astro {
-    protected String nombre;
+    private String nombre;
     public double radio;
 
     public void setNombre(String nombre) {

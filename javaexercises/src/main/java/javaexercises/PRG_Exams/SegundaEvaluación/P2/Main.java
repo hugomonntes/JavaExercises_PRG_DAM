@@ -10,7 +10,7 @@ public class Main {
         universo.add(new Planeta("Marte", 1.8, false));
 
         for (Astro elemento : universo) {
-            System.out.println("Nombre con separación: " + elemento.getNombre('.'));
+            System.out.println("Nombre con separación: " + elemento.getNombre('_'));
         }
     }
 }
