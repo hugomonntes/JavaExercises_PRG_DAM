@@ -86,12 +86,12 @@ public class Videojuego {
     }
 }
 
-// // 8. Diseño de una colección (ArrayList) de videojuegos.
-// // Se parte de una clase muy sencilla denominada Videojuego con los campos
+// 8. Diseño de una colección (ArrayList) de videojuegos.
+// Se parte de una clase muy sencilla denominada Videojuego con los campos
 // Titulo,
-// // año y fabricante. En los set de título y fabricante se hará que los textos
+// año y fabricante. En los set de título y fabricante se hará que los textos
 // se guarden
-// // en mayúsculas, y en el de año si este es anterior a 1950 se pondrá el año
+// en mayúsculas, y en el de año si este es anterior a 1950 se pondrá el año
 // actual.
 // En otra clase denominada Coleccion tendrá una propiedad privada denominada
 // videojuegos que será un ArrayList de objetos Videojuego.

@@ -24,7 +24,6 @@ public class Astro {
     }
 
     //CONSTRUCTOR
-
     public Astro(String nombre, double radio){
         setNombre(nombre);
         this.radio = radio;
