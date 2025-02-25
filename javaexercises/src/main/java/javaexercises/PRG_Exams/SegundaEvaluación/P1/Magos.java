@@ -1,7 +1,7 @@
 package javaexercises.PRG_Exams.SegundaEvaluación.P1;
 
 public class Magos {
-    public static int[][] creaMatriz(int cantidadMagos){
+    public int[][] creaMatriz(int cantidadMagos){
         int[][] matrizMagos = new int[cantidadMagos][4]; //4 porque son el numero de elementos (aire, fuego, tierra y agua)
         for (int i = 0; i < matrizMagos.length; i++) {
             for (int j = 0; j < matrizMagos[i].length; j++) {
@@ -11,7 +11,7 @@ public class Magos {
         return matrizMagos;
     }
 
-    public static void muestraMatriz(int[][] matrizMagos){
+    public void muestraMatriz(int[][] matrizMagos){
         if (matrizMagos == null) {
             System.out.println();
         } else {
@@ -31,7 +31,7 @@ public class Magos {
         }
     }
 
-    public static int poderDeMago(int[][] matriz, int filaMatriz){
+    public int poderDeMago(int[][] matriz, int filaMatriz){
         int sumaPoderes = 0;
         if (filaMatriz < 0 || filaMatriz > matriz.length){
         } else {
@@ -42,7 +42,7 @@ public class Magos {
         return sumaPoderes;
     }
 
-    public static void intercambioDePoder(int[][] matriz, int indiceFilaOrigen, int indiceFilaDestino){
+    public void intercambioDePoder(int[][] matriz, int indiceFilaOrigen, int indiceFilaDestino){
         int[] auxiliar = matriz[indiceFilaOrigen];
         matriz[indiceFilaOrigen] = matriz[indiceFilaDestino];
         matriz[indiceFilaDestino] = auxiliar;
