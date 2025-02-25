@@ -29,7 +29,6 @@ public class Coleccion {
     }
 
     public void menu() throws Exception {
-
         Scanner sc = new Scanner(System.in);
         int option;
         do {
