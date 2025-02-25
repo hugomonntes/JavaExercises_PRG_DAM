@@ -115,14 +115,9 @@ public class Coleccion {
                             i--;
                         }
                     }
-                    // for (int i = getColeccionVideojuegos().size() - 1; i >= 0; i--) {
-                    //     if (getColeccionVideojuegos().get(i).getAño() == añoBorrar) {
-                    //         getColeccionVideojuegos().remove(i);
-                    //     }
-                    // }
                     break;
-                default:
-
+                case 6:
+                    System.out.println("Cerrando programa...");
                     break;
             }
         } while (option != 6);
@@ -130,8 +125,6 @@ public class Coleccion {
 }
 
 /*
- * • Borrar videojuegos de un año determinado. Se pide un año al usuario y borra
- * todos los videojuegos de ese año.
  * • Salir del programa. Finaliza la aplicación y guarda todos los datos en un
  * archivo denominado videojuegos.txt con el formato que se explica más abajo.
  * 
