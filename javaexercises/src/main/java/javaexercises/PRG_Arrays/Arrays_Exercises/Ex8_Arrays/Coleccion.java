@@ -89,7 +89,6 @@ public class Coleccion {
                 case 4:
                     boolean isCheckIndex;
                     int indiceJuego = 0;
-                    // Validación de datos de entrada
                     do {
                         isCheckIndex = false;
                         System.out.println("Introduce el índice del videojuego a borrar: ");
@@ -98,7 +97,6 @@ public class Coleccion {
                             isCheckIndex = true;
                         }
                     } while (!isCheckIndex);
-                    // Ejecución de los datos validados
                     coleccionVideojuegos.remove(indiceJuego);
                     break;
                 case 5:
