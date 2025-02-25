@@ -1,5 +1,7 @@
 package javaexercises.PRG_Arrays.Arrays_Exercises.Ex8_Arrays;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,12 +43,12 @@ public class Coleccion {
             System.out.print("Introduce una opción: ");
             option = sc.nextInt();
             sc.nextLine();
+            Videojuego instanciaVideojuego = new Videojuego();
             switch (option) {
                 case 1:
                     boolean isCheck = false;
                     String nombreVideojuego;
                     String posicionVideojuego;
-                    Videojuego instanciaVideojuego = new Videojuego();
                     System.out.println("Introduce el nombre del videojuego: ");
                     nombreVideojuego = sc.nextLine();
                     instanciaVideojuego.setTitulo(nombreVideojuego);
@@ -99,8 +101,8 @@ public class Coleccion {
                     coleccionVideojuegos.remove(indiceJuego);
                     break;
                 case 5:
-                boolean isCheckYear = false;
-                int añoBorrar;
+                    boolean isCheckYear = false;
+                    int añoBorrar;
                     do {
                         System.out.println("Introduce el año del que quieres borrar los juegos: ");
                         añoBorrar = sc.nextInt();
@@ -117,6 +119,10 @@ public class Coleccion {
                     break;
                 case 6:
                     System.out.println("Cerrando programa...");
+                    PrintWriter fWriter = new PrintWriter(new FileWriter("videojuegos.txt"));
+                    for (Videojuego videojuego : coleccionVideojuegos) {
+                        fWriter.println(videojuego.getDatosAgrupados());
+                    }
                     break;
             }
         } while (option != 6);
