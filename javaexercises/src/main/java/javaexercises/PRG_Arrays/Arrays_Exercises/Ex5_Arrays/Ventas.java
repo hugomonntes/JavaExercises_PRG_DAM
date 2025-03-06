@@ -2,7 +2,7 @@ package javaexercises.PRG_Arrays.Arrays_Exercises.Ex5_Arrays;
 
 import java.time.LocalDate;
 
-public class Ventas {// TODO comentarios (Check)
+public class Ventas {
     public int[] ventasAnuales = new int[12]; // 12 por los meses de año
     private int año;
 
@@ -51,7 +51,7 @@ public class Ventas {// TODO comentarios (Check)
      * @param ventasAnuales Array que almacena las ventas aleatorias de cada mes en
      *                      su respectivo orden.
      */
-    public Ventas(int año, int[] ventasAnuales) {// TODO revisar (Check)
+    public Ventas(int año, int[] ventasAnuales) {
         setAño(año);
         if (this.ventasAnuales.length != 12) {
             for (int i = 0; i < ventasAnuales.length; i++) {
@@ -82,11 +82,11 @@ public class Ventas {// TODO comentarios (Check)
      * y una grafica con # para representar cada centena de unidades en las ventas.
      */
     public void mostrarGrafica() { // TODO revisar nº de # y paréntesisf("%d ; (Check)
-        System.out.print("Año: " + getAño());
+    System.out.print("Año: " +getAño());
         int unidades;
         for (int i = 0; i < ventasAnuales.length; i++) {
-            unidades = ventasAnuales[i] / 100 + 1;
-            System.out.printf("\n Mes %2d): ", i + 1, "(" + ventasAnuales[i]);
+            unidades = ventasAnuales[i]/100 + 1;
+            System.out.printf("\nMes %2d)",i + 1,"("+ ventasAnuales[i]);
             for (int j = 0; j < unidades; j++) {
                 System.out.print("#");
             }

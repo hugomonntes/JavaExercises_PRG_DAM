@@ -2,7 +2,7 @@ package javaexercises.PRG_Arrays.Arrays_Exercises.Ex6_Arrays;
 
 public class Matriz {
 
-    public int[][] numerosEnteros;//TODO comentarios (Check)
+    public int[][] numerosEnteros; 
     //CONSTRUCTORES
     /**
      * Constructor que inicializa un matriz con un numero aleatorio

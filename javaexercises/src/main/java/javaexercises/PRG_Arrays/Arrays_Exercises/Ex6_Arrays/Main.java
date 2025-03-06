@@ -3,7 +3,7 @@ package javaexercises.PRG_Arrays.Arrays_Exercises.Ex6_Arrays;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) { //TODO revisar mostrar cab col
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Matriz matriz = new Matriz(3);
         int opcion;
@@ -12,8 +12,8 @@ public class Main {
                 System.out.println("1.- Mostrar matriz.");
                 System.out.println("2.- Mostrar suma de todos los elementos.");
                 System.out.println("3.- Mostrar suma de la diagonal.");
-                System.out.println("4.- Mostrar suma de los elementos salvo diagonal "); //TODO falla (Check)
-                System.out.println("5.- Mostrar suma de elementos de una fila."); //TODO revisar rangos
+                System.out.println("4.- Mostrar suma de los elementos salvo diagonal ");
+                System.out.println("5.- Mostrar suma de elementos de una fila.");
                 System.out.println("6.- Mostrar matriz sin una fila.");
                 System.out.println("7.- Salir");
                 System.out.print("Introduce una opcion: ");

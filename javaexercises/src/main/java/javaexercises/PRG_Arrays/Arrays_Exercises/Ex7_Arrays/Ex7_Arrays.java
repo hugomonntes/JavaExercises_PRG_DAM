@@ -16,7 +16,7 @@ public class Ex7_Arrays {
             do {
                 numeroAleatorioCandidato = (int)(Math.random()*48 + 1);
                 isUnique = true;
-                for (int j = 0; j < numerosLoteria.size() && isUnique; j++) {
+                for (int j = 0; j < numerosLoteria.size() && isUnique; j++) { //Mejor contains
                     if (numeroAleatorioCandidato == numerosLoteria.get(j)) {
                         isUnique = false;
                     }
@@ -37,13 +37,13 @@ public class Ex7_Arrays {
         for (int i = 0; i < numerosLoteriaCPU.size(); i++) {
             numeroComparar = numerosLoteriaCPU.get(i);
             for (int j = 0; j < numerosLoteriaUsuario.size(); j++) {
-                if (numeroComparar == numerosLoteriaUsuario.get(j)) {
+                if (numeroComparar == numerosLoteriaUsuario.get(j)) {//TODO quitar coninue
                     numerosRepetidos.add(numeroComparar);
                     continue;
                 }
             }
         }
-        return numerosRepetidos.size();
+        return numerosRepetidos.size();//Mejor un contador
     }
     /**
      * Pide y alamacena numeros al usuario en una coleccion

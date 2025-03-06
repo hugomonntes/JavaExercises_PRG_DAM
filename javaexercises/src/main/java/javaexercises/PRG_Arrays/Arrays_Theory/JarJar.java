@@ -12,8 +12,8 @@ public class JarJar {
         System.out.println(fraseEjercicio.toUpperCase());
         String fraseEjercicio2 = fraseEjercicio.toUpperCase();
         
-        fraseEjercicio.equals(fraseEjercicio2);
-        fraseEjercicio.equalsIgnoreCase(fraseEjercicio2);
+        System.out.println(fraseEjercicio.equals(fraseEjercicio2));
+        System.out.println(fraseEjercicio.equalsIgnoreCase(fraseEjercicio2));
         
         System.out.println(fraseEjercicio.toLowerCase());
         
