@@ -32,18 +32,17 @@ public class Ex7_Arrays {
      * @return numero de coincidencias que existen entre User y CPU
      */
     public static int comparaValores(ArrayList<Integer> numerosLoteriaCPU, ArrayList<Integer> numerosLoteriaUsuario){
-        ArrayList<Integer> numerosRepetidos = new ArrayList<>();
+        int contadorNumerosRepetidos = 0;
         int numeroComparar;
         for (int i = 0; i < numerosLoteriaCPU.size(); i++) {
             numeroComparar = numerosLoteriaCPU.get(i);
             for (int j = 0; j < numerosLoteriaUsuario.size(); j++) {
                 if (numeroComparar == numerosLoteriaUsuario.get(j)) {//TODO quitar coninue
-                    numerosRepetidos.add(numeroComparar);
-                    continue;
+                    contadorNumerosRepetidos++;
                 }
             }
         }
-        return numerosRepetidos.size();//Mejor un contador
+        return contadorNumerosRepetidos;
     }
     /**
      * Pide y alamacena numeros al usuario en una coleccion
@@ -71,6 +70,7 @@ public class Ex7_Arrays {
                 System.out.println("Introduce solo números separados por comas.");
             }
         }
+        sc.close();
         return numerosUser;
     }
     /**
