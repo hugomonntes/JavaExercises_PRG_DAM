@@ -78,7 +78,7 @@
           <configuration>
             <archive>
               <manifest>
-                <mainClass>Ex4_Arrays.Ex4_Arrays</mainClass>
+                <mainClass>Ex4_Arrays.Ex4_Arrays</mainClass>Ex4_Arrays
               </manifest>
             </archive>
           </configuration>
