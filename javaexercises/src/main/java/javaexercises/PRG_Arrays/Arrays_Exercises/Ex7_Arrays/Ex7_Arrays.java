@@ -37,7 +37,7 @@ public class Ex7_Arrays {
         for (int i = 0; i < numerosLoteriaCPU.size(); i++) {
             numeroComparar = numerosLoteriaCPU.get(i);
             for (int j = 0; j < numerosLoteriaUsuario.size(); j++) {
-                if (numeroComparar == numerosLoteriaUsuario.get(j)) {//TODO quitar coninue
+                if (numeroComparar == numerosLoteriaUsuario.get(j)) {
                     contadorNumerosRepetidos++;
                 }
             }

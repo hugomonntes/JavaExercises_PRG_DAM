@@ -81,7 +81,7 @@ public class Ventas {
      * ventas,
      * y una grafica con # para representar cada centena de unidades en las ventas.
      */
-    public void mostrarGrafica() { // TODO revisar nº de # y paréntesisf("%d ; (Check)
+    public void mostrarGrafica() {
     System.out.print("Año: " +getAño());
         int unidades;
         for (int i = 0; i < ventasAnuales.length; i++) {

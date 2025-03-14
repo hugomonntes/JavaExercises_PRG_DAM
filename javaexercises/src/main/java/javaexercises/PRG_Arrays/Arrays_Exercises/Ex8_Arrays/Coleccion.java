@@ -100,7 +100,7 @@ public class Coleccion {
                     } while (!isCheckIndex);
                     coleccionVideojuegos.remove(indiceJuego);
                     break;
-                case 5:
+                case 5://TODO informa más al usuario (error)
                     boolean isCheckYear = false;
                     int añoBorrar;
                     do {
