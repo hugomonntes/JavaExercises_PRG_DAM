@@ -48,47 +48,41 @@ public class Ex15_b2 {
 
             switch (opcion) {
                 case 1:
-                boolean isChecked = true;
-                while (!isChecked) {
+                    boolean isChecked = true;
                     try {
-                        while (cantidad <= 0) {
-                            if (cantidad <= 0) {
-                                System.out.println("No puedes introducir una cantidad negativa o cero!");
-                            }
+                        do {
                             System.out.print("Introduce tu cantidad en Euros (€): ");
                             cantidad = sc.nextInt();
-                        }
-                        isChecked = true;
+                        } while (!isChecked);
                     } catch (InputMismatchException e) {
                         isChecked = false;
                         System.out.println("Introduce un número");
                     }
-                }
                     resultadoFinal = cantidad * valorEuroALibra;
                     System.out.printf("%.2f Euros (€) es equivalente a %.2f Libras (£) \n", cantidad, resultadoFinal);
-                break;
+                    break;
 
                 case 2:
-                System.out.print("Introduce tu cantidad en Libras (£): ");
-                cantidad = sc.nextInt();
-                while (cantidad <= 0) {
-                    System.out.println("No puedes introducir una cantidad negativa!");
-                    System.out.print("Introduce tu cantidad en Euros (€): ");
+                    System.out.print("Introduce tu cantidad en Libras (£): ");
                     cantidad = sc.nextInt();
-                }
-                resultadoFinal = cantidad * valorLibraAEuro;
-                System.out.printf("%.2f Libras (£) es equivalente a %.2f Euros (€) \n", cantidad, resultadoFinal);
-                break;
+                    while (cantidad <= 0) {
+                        System.out.println("No puedes introducir una cantidad negativa!");
+                        System.out.print("Introduce tu cantidad en Euros (€): ");
+                        cantidad = sc.nextInt();
+                    }
+                    resultadoFinal = cantidad * valorLibraAEuro;
+                    System.out.printf("%.2f Libras (£) es equivalente a %.2f Euros (€) \n", cantidad, resultadoFinal);
+                    break;
                 case 3:
                     System.out.println(" \n_________________ \n");
                     System.out.println("Adiós!");
                     System.out.println("_________________ \n");
                     break;
                 default:
-                if (cantidad < 0) {
-                    System.out.println("Opción no válida!");
-                }
-                break;
+                    if (cantidad < 0) {
+                        System.out.println("Opción no válida!");
+                    }
+                    break;
             }
 
         } while (opcion != 3);
