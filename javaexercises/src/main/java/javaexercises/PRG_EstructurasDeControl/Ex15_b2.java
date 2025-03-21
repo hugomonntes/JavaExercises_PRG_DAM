@@ -35,33 +35,32 @@ public class Ex15_b2 {
         double valorEuroALibra = 0.83;
         double valorLibraAEuro = 1.15;
         double resultadoFinal;
-        int opcion;
-
+        int opcion = 6;
         do {
             System.out.println("Introduce el número de la opción que deseas!");
             System.out.println("Tienes 3 opciones: ");
             System.out.println("1 --> Conversor de Euros a Libras");
             System.out.println("2 --> Conversor de Libras a Euros");
             System.out.println("3 --> Salir");
-            System.out.print("Introduce la opción: ");
-            opcion = sc.nextInt();
-
+            try {
+                System.out.print("Introduce la opción: ");
+                opcion = sc.nextInt();
+            } catch (InputMismatchException e){
+                System.out.println("Error! Introduce un número.");
+            }
             switch (opcion) {
                 case 1:
-                    boolean isChecked = true;
                     try {
                         do {
                             System.out.print("Introduce tu cantidad en Euros (€): ");
                             cantidad = sc.nextInt();
-                        } while (!isChecked);
+                        } while (cantidad < 0);
                     } catch (InputMismatchException e) {
-                        isChecked = false;
                         System.out.println("Introduce un número");
                     }
                     resultadoFinal = cantidad * valorEuroALibra;
                     System.out.printf("%.2f Euros (€) es equivalente a %.2f Libras (£) \n", cantidad, resultadoFinal);
                     break;
-
                 case 2:
                     System.out.print("Introduce tu cantidad en Libras (£): ");
                     cantidad = sc.nextInt();
@@ -84,7 +83,6 @@ public class Ex15_b2 {
                     }
                     break;
             }
-
         } while (opcion != 3);
     }
 }
