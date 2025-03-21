@@ -49,8 +49,18 @@ public class Ex15_b2 {
             }
             switch (opcion) {
                 case 1:
-                    System.out.print("Introduce tu cantidad en Euros (€): ");
-                    cantidad = sc.nextInt();
+                    boolean isChecked = true;
+                    do {
+                        try {
+                            System.out.print("Introduce tu cantidad en Euros (€): ");
+                            cantidad = sc.nextInt();
+                        } catch (InputMismatchException e) {
+                            System.out.println("Introduce un numero!");
+                            sc.nextLine();
+                            isChecked = false;
+                        }
+                    } while (!isChecked);
+                    sc.nextLine();
                     resultadoFinal = cantidad * valorEuroALibra;
                     System.out.printf("%.2f Euros (€) es equivalente a %.2f Libras (£) \n", cantidad, resultadoFinal);
                     break;
