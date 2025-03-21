@@ -37,27 +37,20 @@ public class Ex15_b2 {
         double resultadoFinal;
         int opcion = 6;
         do {
-            System.out.println("Introduce el número de la opción que deseas!");
-            System.out.println("Tienes 3 opciones: ");
             System.out.println("1 --> Conversor de Euros a Libras");
             System.out.println("2 --> Conversor de Libras a Euros");
             System.out.println("3 --> Salir");
             try {
                 System.out.print("Introduce la opción: ");
                 opcion = sc.nextInt();
-            } catch (InputMismatchException e){
-                System.out.println("Error! Introduce un número.");
+            } catch (InputMismatchException e) {
+                System.out.println("Introduce un numero!");
+                sc.nextLine();
             }
             switch (opcion) {
                 case 1:
-                    try {
-                        do {
-                            System.out.print("Introduce tu cantidad en Euros (€): ");
-                            cantidad = sc.nextInt();
-                        } while (cantidad < 0);
-                    } catch (InputMismatchException e) {
-                        System.out.println("Introduce un número");
-                    }
+                    System.out.print("Introduce tu cantidad en Euros (€): ");
+                    cantidad = sc.nextInt();
                     resultadoFinal = cantidad * valorEuroALibra;
                     System.out.printf("%.2f Euros (€) es equivalente a %.2f Libras (£) \n", cantidad, resultadoFinal);
                     break;
@@ -76,11 +69,6 @@ public class Ex15_b2 {
                     System.out.println(" \n_________________ \n");
                     System.out.println("Adiós!");
                     System.out.println("_________________ \n");
-                    break;
-                default:
-                    if (cantidad < 0) {
-                        System.out.println("Opción no válida!");
-                    }
                     break;
             }
         } while (opcion != 3);
