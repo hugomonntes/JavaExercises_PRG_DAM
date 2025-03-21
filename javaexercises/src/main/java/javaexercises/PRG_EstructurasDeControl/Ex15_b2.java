@@ -76,9 +76,7 @@ public class Ex15_b2 {
                     System.out.printf("%.2f Libras (£) es equivalente a %.2f Euros (€) \n", cantidad, resultadoFinal);
                     break;
                 case 3:
-                    System.out.println(" \n_________________ \n");
                     System.out.println("Adiós!");
-                    System.out.println("_________________ \n");
                     break;
             }
         } while (opcion != 3);
