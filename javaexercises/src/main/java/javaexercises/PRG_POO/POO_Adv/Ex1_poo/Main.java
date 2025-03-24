@@ -25,10 +25,11 @@
  */
 package javaexercises.PRG_POO.POO_Adv.Ex1_poo;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         double base = 0;
         double altura = 0;
@@ -40,8 +41,8 @@ public class Main {
                 base = sc.nextInt();
                 System.out.println("Introduce la altura: ");
                 altura = sc.nextInt();
-            } catch (Exception e) { //TODO no usar Exception
-                System.out.println("Error! Introduce un numero válido");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
                 isChecked = false;
                 sc.nextLine();
             }

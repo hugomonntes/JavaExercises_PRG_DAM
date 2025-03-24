@@ -25,6 +25,7 @@
  */
 package javaexercises.PRG_POO.POO_Adv.Ex1_poo;
 
+
 public class Geometria {
     private boolean figura;
     private double altura;
@@ -34,16 +35,24 @@ public class Geometria {
         return figura;
     }
 
-    public void setAltura(double altura) {
-        this.altura = altura;
+    public void setAltura(double altura) throws Exception {
+        if (altura > 0) {
+            this.altura = altura;
+        } else {
+            throw new Exception("IllegalArgumentException introduce un numero mayor que 0");
+        }
     }
 
     public double getAltura() {
         return altura;
     }
 
-    public void setBase(double base) {
-        this.base = base;
+    public void setBase(double base) throws Exception {
+        if (base > 0) {
+            this.base = base;
+        } else {
+            throw new Exception("IllegalArgumentException introduce un numero mayor que 0");
+        }
     }
 
     public double getBase() {

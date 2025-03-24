@@ -2,7 +2,7 @@ package javaexercises.PRG_Exceptions;
 
 public class Ex3 {
     public static void pedirDatoUser(String mensajeUser, int rangoDato){
-
+        
     }
     public static void main(String[] args) {
         
