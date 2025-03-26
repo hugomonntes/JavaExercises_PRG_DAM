@@ -15,7 +15,7 @@ public class Ex15_b2 {
             System.out.println("1 --> Conversor de Euros a Libras");
             System.out.println("2 --> Conversor de Libras a Euros");
             System.out.println("3 --> Salir");
-            try {
+            try {//TODO que no repita la ultima opcion 
                 System.out.print("Introduce la opción: ");
                 opcion = sc.nextInt();
             } catch (InputMismatchException e) {

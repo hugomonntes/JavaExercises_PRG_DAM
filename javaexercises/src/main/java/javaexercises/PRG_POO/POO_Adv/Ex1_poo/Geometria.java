@@ -39,7 +39,7 @@ public class Geometria {
         if (altura > 0) {
             this.altura = altura;
         } else {
-            throw new Exception("IllegalArgumentException introduce un numero mayor que 0");
+            throw new IllegalArgumentException();
         }
     }
 
@@ -51,7 +51,7 @@ public class Geometria {
         if (base > 0) {
             this.base = base;
         } else {
-            throw new Exception("IllegalArgumentException introduce un numero mayor que 0");
+            throw new IllegalArgumentException();
         }
     }
 
@@ -65,16 +65,15 @@ public class Geometria {
         base = 2;
     }
     
-    public Geometria(double base, double altura){
-        figura = false;
-        this.altura = altura;
-        this.base = base;
+    public Geometria(double base, double altura) throws Exception{//TODO set
+        setAltura(altura);
+        setBase(base);
     }
     
-    public Geometria(boolean figura,double base, double altura){
+    public Geometria(boolean figura,double base, double altura) throws Exception{
         this.figura = figura;
-        this.altura = altura;
-        this.base = base;
+        setAltura(altura);
+        setBase(base);
     }
 
     public double area() {

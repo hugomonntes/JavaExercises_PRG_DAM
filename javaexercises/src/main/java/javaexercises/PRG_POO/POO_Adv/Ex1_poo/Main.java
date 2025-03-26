@@ -34,14 +34,14 @@ public class Main {
         double base = 0;
         double altura = 0;
         boolean isChecked;
-        do {
+        do {//TODO no permitida Exception
             isChecked = true;
             try {
                 System.out.println("Introduce la base: ");
                 base = sc.nextInt();
                 System.out.println("Introduce la altura: ");
                 altura = sc.nextInt();
-            } catch (Exception e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 isChecked = false;
                 sc.nextLine();
@@ -49,7 +49,7 @@ public class Main {
         } while (!isChecked);
         Geometria rectangulo = new Geometria(true, 20, 13);
         Geometria triangulo = new Geometria();
-        triangulo.setAltura(altura);
+        triangulo.setAltura(altura);//TODO mñás control
         triangulo.setBase(base);
         System.out.printf("Perímetro: %.2f, Área: %.2f, Figura: %s, Base: %.2f, Altura: %.2f", rectangulo.perimetro(),
                 rectangulo.area(), rectangulo.tipo(), rectangulo.getAltura(), rectangulo.getBase());

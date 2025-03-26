@@ -5,18 +5,18 @@ import java.util.Scanner;
 public class Ex3 {
     public static void pedirDatoUser(String mensajeUser, int rangoMínimo, int rangoMáximo) {
 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce un mensaje: ");
+        mensajeUser = sc.nextLine();
+        System.out.println("Introduce el rango mínimo: ");
+        rangoMínimo = sc.nextInt();
+        System.out.println("Introduce el rango máximo: ");
+        rangoMáximo = sc.nextInt();
+        pedirDatoUser(mensajeUser, rangoMínimo, rangoMáximo);
+        sc.close();
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce un mensaje: ");
-        String mensajeUser = sc.nextLine();
-        System.out.println("Introduce el rango mínimo: ");
-        int rangoMínimo = sc.nextInt();
-        System.out.println("Introduce el rango máximo: ");
-        int rangoMáximo = sc.nextInt();
-        pedirDatoUser(mensajeUser, rangoMínimo, rangoMáximo);
-        sc.close();
     }
 }
 
