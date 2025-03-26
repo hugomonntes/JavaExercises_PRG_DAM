@@ -1,22 +1,37 @@
 package javaexercises.PRG_Exceptions;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ex3 {
-    public static void pedirDatoUser(String mensajeUser, int rangoMínimo, int rangoMáximo) {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce un mensaje: ");
-        mensajeUser = sc.nextLine();
-        System.out.println("Introduce el rango mínimo: ");
-        rangoMínimo = sc.nextInt();
-        System.out.println("Introduce el rango máximo: ");
-        rangoMáximo = sc.nextInt();
-        pedirDatoUser(mensajeUser, rangoMínimo, rangoMáximo);
-        sc.close();
+    public static void pedirDatoUser(String mensajeUser, int rangoMinimo, int rangoMaximo) {
+        if (mensajeUser == null || mensajeUser.equals("") || rangoMinimo > rangoMaximo || rangoMinimo < 0) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        boolean isChecked;
+        do {
+            isChecked = true;
+            try {
+                System.out.print("Introduce un mensaje: ");
+                String mensajeUser = sc.nextLine();
+                System.out.print("Introduce el rango mínimo: ");
+                int rangoMinimo = sc.nextInt();
+                System.out.print("Introduce el rango máximo: ");
+                int rangoMaximo = sc.nextInt();
+                pedirDatoUser(mensajeUser, rangoMinimo, rangoMaximo);
+            } catch (IllegalArgumentException e) { 
+                System.out.println("Error! Has introducido algún dato mal.");
+                isChecked = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Has introducido texto en un valor numérico");
+                isChecked = false;
+            }
+            sc.nextLine();
+        } while (!isChecked);
     }
 }
 
