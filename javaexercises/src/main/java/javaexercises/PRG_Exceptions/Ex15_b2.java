@@ -10,17 +10,18 @@ public class Ex15_b2 {
         double valorEuroALibra = 0.83;
         double valorLibraAEuro = 1.15;
         double resultadoFinal;
-        int opcion = 6;
+        int opcion;
         do {
             System.out.println("1 --> Conversor de Euros a Libras");
             System.out.println("2 --> Conversor de Libras a Euros");
             System.out.println("3 --> Salir");
-            try {//TODO que no repita la ultima opcion 
+            try {//TODO que no repita la ultima opcion (Check)
                 System.out.print("Introduce la opción: ");
                 opcion = sc.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Introduce un numero!");
                 sc.nextLine();
+                opcion = 0;
             }
             switch (opcion) {
                 case 1:

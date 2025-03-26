@@ -25,7 +25,6 @@
  */
 package javaexercises.PRG_POO.POO_Adv.Ex1_poo;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -34,7 +33,7 @@ public class Main {
         double base = 0;
         double altura = 0;
         boolean isChecked;
-        do {//TODO no permitida Exception
+        do { //TODO no permitida Exception
             isChecked = true;
             try {
                 System.out.println("Introduce la base: ");
@@ -42,15 +41,26 @@ public class Main {
                 System.out.println("Introduce la altura: ");
                 altura = sc.nextInt();
             } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
+                System.out.println("Introduce un número!");
                 isChecked = false;
                 sc.nextLine();
             }
         } while (!isChecked);
+
         Geometria rectangulo = new Geometria(true, 20, 13);
         Geometria triangulo = new Geometria();
-        triangulo.setAltura(altura);//TODO mñás control
-        triangulo.setBase(base);
+        
+        do {
+            isChecked = true;
+            try {
+                triangulo.setAltura(altura);
+                triangulo.setBase(base);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Introduce un número!");
+                sc.nextLine();
+                isChecked = false;
+            }
+        } while (!isChecked);
         System.out.printf("Perímetro: %.2f, Área: %.2f, Figura: %s, Base: %.2f, Altura: %.2f", rectangulo.perimetro(),
                 rectangulo.area(), rectangulo.tipo(), rectangulo.getAltura(), rectangulo.getBase());
         System.out.printf("\nPerímetro: %.2f, Área: %.2f, Figura: %s, Base: %.2f, Altura: %.2f, Diagonal: %.2f",
