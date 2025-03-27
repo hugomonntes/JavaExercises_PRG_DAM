@@ -93,17 +93,19 @@ public class Ex4 {
         mostrarCaracteres("Hola");
         mostrarCentrado("AAAAAAAAAAAAAAA");
         System.out.println(listaReverse("Curro"));
-        System.out.println(subCadena("Hola Curro", 1, 5));
-        System.out.println(concatenarCadenas("Hola_", "Curro_", "ke", "1233(){}¿?ñÑABCabc  __"));
+        try{
+            System.out.println(subCadena("Hola Curro", 1, 5));
+        } catch (IllegalArgumentException e){
+            System.out.println("Error!");
+        }
+        
+        try {
+            System.out.println(concatenarCadenas("Hola_", "Curro_", "ke", "1233(){}¿?ñÑABCabc  __"));            
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error!");
+        }
     }
 }
 
-// Toma el ejercicio 4 (funciones de cadenas) del tema anterior y haz las siguientes
-// modificaciones (si no lo habías hecho puedes comenzar por estos métodos):
-// a) Retoma el método subCadena y modifícalo de forma que si se le pasa
-// parámetros no válidos lanzará una excepción del tipo IllegalArgumentException.
-// b) Coge el método muestraCentrado y modifícalo de forma que si el String
-// parámetro tiene más de 80 caracteres lanzará la excepción
-// IllegalArgumentException
 // c) En el main pide datos al usuario para probar las dos funciones anteriores y
 // captura las excepciones (todas las que puedan surgir).
