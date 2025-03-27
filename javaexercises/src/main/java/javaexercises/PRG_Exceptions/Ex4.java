@@ -31,12 +31,18 @@ public class Ex4 {
      * @param cadena
      */
     public static void mostrarCentrado(String cadena){
+        if (cadena.length() > 80) {
+            throw new IllegalArgumentException(); 
+        }
         int anchoTerminal = (80 - cadena.length()); 
         for (int i = 0; i < anchoTerminal / 2; i++) { 
             System.out.print(" ");
         }
         System.out.printf("%s \n", cadena);
     }
+    // b) Coge el método muestraCentrado y modifícalo de forma que si el String
+    // parámetro tiene más de 80 caracteres lanzará la excepción
+    // IllegalArgumentException
     /**
      * Devuelve una lista de caracteres de una cadena
      * @param cadena
@@ -83,7 +89,7 @@ public class Ex4 {
         }
         return fraseConcatenada;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {//TODO try
         mostrarCaracteres("Hola");
         mostrarCentrado("AAAAAAAAAAAAAAA");
         System.out.println(listaReverse("Curro"));

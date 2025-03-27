@@ -65,7 +65,9 @@ public class Geometria {
         base = 2;
     }
     
-    public Geometria(double base, double altura) throws Exception{//TODO set
+    public Geometria(double base, double altura) throws Exception{
+        this.figura = false;
+
         setAltura(altura);
         setBase(base);
     }

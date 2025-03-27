@@ -5,9 +5,11 @@ import java.util.Scanner;
 
 public class Ex3 {
     public static void pedirDatoUser(String mensajeUser, int rangoMinimo, int rangoMaximo) {
-        if (mensajeUser == null || mensajeUser.equals("") || rangoMinimo > rangoMaximo || rangoMinimo < 0) {
+        if (mensajeUser == null || mensajeUser.equals("") || rangoMinimo > rangoMaximo ) {//TODO retocar condición
             throw new IllegalArgumentException();
         }
+
+        //TODO nucleo de la funcion
     }
 
     public static void main(String[] args) {
