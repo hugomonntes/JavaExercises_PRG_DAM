@@ -33,7 +33,7 @@ public class Main {
         double base = 0;
         double altura = 0;
         boolean isChecked;
-        do { //TODO no permitida Exception
+        do {
             isChecked = true;
             try {
                 System.out.println("Introduce la base: ");
