@@ -1,13 +1,10 @@
 package javaexercises.PRG_Exceptions.Exceptions_B2;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Ex1_Excep {
     public static String subCadena(String cadena, int inicio, int cantidadCaracteres){  
         String cadenaFinal = "";
         if (cadena == null || inicio < 0 || cantidadCaracteres < 0 || inicio + cantidadCaracteres > cadena.length()) {
-            throw new IllegalArgumentException();
+            throw new StringOutOfBoundsException("Revisa los parámetros");
         } else {
             for (int i = inicio; i < inicio + cantidadCaracteres; i++) {
                 cadenaFinal += cadena.charAt(i);
@@ -15,13 +12,9 @@ public class Ex1_Excep {
             return cadenaFinal;
         }
     }
-    /**
-     * Muestra un String centrado en la terminal
-     * @param cadena
-     */
     public static void mostrarCentrado(String cadena){
         if (cadena.length() > 80) {
-            throw new IllegalArgumentException(); 
+            throw new StringTooLongException(); 
         }
         int anchoTerminal = (80 - cadena.length()); 
         for (int i = 0; i < anchoTerminal / 2; i++) { 
@@ -31,14 +24,14 @@ public class Ex1_Excep {
     }
     public static void main(String[] args) {
         try{
-            System.out.println(subCadena("Hola Curro", 1, 5));
-        } catch (IllegalArgumentException e){
-            System.out.println("Error!");
+            System.out.println(subCadena("", 1, 5));
+        } catch (StringOutOfBoundsException e){
+            System.out.println("Error! Has introducido algún parametro mal!");
         }
         try {
-            mostrarCentrado("Hola_");            
-        } catch (IllegalArgumentException e) {
-            System.out.println("Error!");
+            mostrarCentrado("Hola Currooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");            
+        } catch (StringTooLongException e) {
+            System.out.println("Error! Has introducido más de 80 carácteres!");
         }
     }
 }

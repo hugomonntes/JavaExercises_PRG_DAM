@@ -1,4 +1,4 @@
-package javaexercises.PRG_Exceptions;
+package javaexercises.PRG_Exceptions.Exceptions_B1;
 
 public class Ex4 {
     /**

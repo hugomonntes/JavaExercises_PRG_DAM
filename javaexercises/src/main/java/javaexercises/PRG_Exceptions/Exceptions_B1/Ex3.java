@@ -1,4 +1,4 @@
-package javaexercises.PRG_Exceptions;
+package javaexercises.PRG_Exceptions.Exceptions_B1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
