@@ -23,10 +23,13 @@ public class Ex1_Excep {
         System.out.printf("%s \n", cadena);
     }
     public static void main(String[] args) {
+        String cadena = "";
+        int inicio = 1;
+        int cantidadCaracteres = 5;
         try{
-            System.out.println(subCadena("", 1, 5));
+            System.out.println(subCadena(cadena, inicio, cantidadCaracteres));
         } catch (StringOutOfBoundsException e){
-            System.out.println("Error! Has introducido algún parametro mal!");
+            System.out.printf("Error! Has introducido algún parametro mal! Cadena = %s, Inicio = %d, Cantidad de carácteres = %d \n", cadena, inicio, cantidadCaracteres);
         }
         try {
             mostrarCentrado("Hola Currooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");            
