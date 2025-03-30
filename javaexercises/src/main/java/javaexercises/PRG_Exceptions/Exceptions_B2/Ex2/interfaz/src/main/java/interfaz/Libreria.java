@@ -12,11 +12,37 @@ public class Libreria {
     do {
       isChecked = true;
       try {
-          System.out.print("Introduce un número entero: ");
-          numeroUser = sc.nextInt();
-          if (numeroUser < 0) { // Preguntar a Curro si es mejor lanzar una excepción o hacer do while hasta que introduzca un número positivo
-            throw new IllegalNegativeNumbers();
-          }
+        System.out.print("Introduce un número entero: ");
+        numeroUser = sc.nextInt();
+        if (numeroUser < 0) { // Preguntar a Curro si es mejor lanzar una excepción o hacer do while hasta que
+                              // introduzca un número positivo
+          throw new IllegalNegativeNumbers();
+        }
+      } catch (InputMismatchException e) {
+        System.out.println("ERROR! Introduce un número entero!");
+        isChecked = false;
+        sc.nextLine();
+      } catch (IllegalNegativeNumbers e) {
+        System.out.println("ERROR! Introduce un número positivo!");
+        isChecked = false;
+        sc.nextLine();
+      }
+    } while (!isChecked);
+    return numeroUser;
+  }
+
+  public static double pedirReal() {
+    Scanner sc = new Scanner(System.in);
+    boolean isChecked;
+    double numeroUser = 0;
+    do {
+      isChecked = true;
+      try {
+        System.out.print("Introduce un número real: ");
+        numeroUser = sc.nextDouble();
+        if (numeroUser < 0) {
+          throw new IllegalNegativeNumbers();
+        }
       } catch (InputMismatchException e) {
         System.out.println("ERROR! Introduce un número entero!");
         isChecked = false;
@@ -32,6 +58,7 @@ public class Libreria {
 
   public static void main(String[] args) {
     System.out.println(pedirEntero());
+    System.out.println(pedirReal());
   }
 }
 
