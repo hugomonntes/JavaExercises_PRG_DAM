@@ -55,11 +55,6 @@ public class Libreria {
     } while (!isChecked);
     return numeroUser;
   }
-
-  public static void main(String[] args) {
-    System.out.println(pedirEntero());
-    System.out.println(pedirReal());
-  }
 }
 
 /*
@@ -70,4 +65,7 @@ public class Libreria {
  * ◦ pedirReal(): Similar a pedirEntero() pero para pedir números reales.
  * ◦ Cada vez que necesites pedir un dato entero o real en el resto del
  * ejercicio usa estas funciones.
+ * 
+ * Interface InterfazUsuario: Con las funciones pedirDatos() y
+ * mostrarDatos().
  */
