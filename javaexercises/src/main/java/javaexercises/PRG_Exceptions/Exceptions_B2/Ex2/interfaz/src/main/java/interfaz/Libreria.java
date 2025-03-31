@@ -14,8 +14,7 @@ public class Libreria {
       try {
         System.out.print("Introduce un número entero: ");
         numeroUser = sc.nextInt();
-        if (numeroUser < 0) { // Preguntar a Curro si es mejor lanzar una excepción o hacer do while hasta que
-                              // introduzca un número positivo
+        if (numeroUser < 0) { // Lanzar excepcion para numeros negativos (NO HACE FALTA)
           throw new IllegalNegativeNumbers();
         }
       } catch (InputMismatchException e) {
