@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Interface {
     @SuppressWarnings("resource")
-    public static void mostrarDatos() {
+    public void mostrarDatos() {
         Scanner sc = new Scanner(System.in);
         String opcion = "";
         boolean isChecked;
@@ -29,13 +29,4 @@ public class Interface {
         } while (!isChecked);
         sc.close();
     }
-
-    public static void main(String[] args) {
-        mostrarDatos();
-    }
 }
-
-/*
- * Interface InterfazUsuario: Con las funciones pedirDatos() y
- * mostrarDatos().
- */

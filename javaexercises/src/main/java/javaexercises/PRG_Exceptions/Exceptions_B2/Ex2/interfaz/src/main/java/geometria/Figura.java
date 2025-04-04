@@ -1,6 +1,8 @@
 package javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.geometria;
 
-public class Figura {
+import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.Interface;
+
+public class Figura extends Interface {
     private int origen;
     private String nombre;
 
@@ -27,5 +29,5 @@ espacios extremos.
 que inicializa origen a (0,0) y el nombre a “” llamando al primero.
 ◦ Cumple el interface InterfazUsuario de forma que tendrá también un
 método de introducción de datos que pide al usuario el nombre y posición
-y otro que muestra ambas propiedades.  
+y otro que muestra ambas propiedades. 
 */
