@@ -1,6 +1,7 @@
 package swing;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,7 +14,8 @@ public class CorrectFormUseJFrame extends JFrame {
         JLabel label = new JLabel("Label");
         label.setToolTipText("Label");
         this.add(label);
-        
+        // setLayout(new FlowLayout()); // Style Layout
+        setLayout(null); // Style sin Layout Si no estableces tamaños no funciona
         JLabel etiqueta1 = new JLabel("Etiqueta Uno");
         JLabel etiqueta2 = new JLabel("Etiqueta Dos");
         JButton boton1 = new JButton("Aceptar");
@@ -26,5 +28,10 @@ public class CorrectFormUseJFrame extends JFrame {
         this.add(etiqueta2, BorderLayout.SOUTH);
         this.add(boton1, BorderLayout.EAST);
         this.add(boton2, BorderLayout.WEST);
+
+        etiqueta1.setSize(100, 20);
+        etiqueta2.setSize(100, 20);
+        boton1.setSize(100, 20);
+        boton2.setSize(100, 20);
     }
 }
