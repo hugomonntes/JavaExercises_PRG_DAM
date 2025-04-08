@@ -52,6 +52,12 @@ public class Figura extends Interface {
             System.out.println("Introduce un dato numérico");
         }
     }
+
+    @Override
+    public void mostrarDatos() {
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Posición: " + getOrigen());
+    }
 }
 
 /*
