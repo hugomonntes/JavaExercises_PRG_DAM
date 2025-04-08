@@ -19,6 +19,11 @@ public class Linea extends Figura {
     public void mostrarDatos() {
         super.mostrarDatos();
     }
+
+    @Override
+    public void pedirDatos() {
+        super.pedirDatos();
+    }
 }
 
 // Hereda de Figura y se le añade la propiedad privada con set/get
