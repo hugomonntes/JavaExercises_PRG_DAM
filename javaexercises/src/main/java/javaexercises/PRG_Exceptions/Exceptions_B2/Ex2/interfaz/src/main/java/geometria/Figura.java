@@ -59,9 +59,3 @@ public class Figura extends Interface {
         System.out.println("Posición: " + getOrigen());
     }
 }
-
-/*
- * ◦ Cumple el interface InterfazUsuario de forma que tendrá también un
- * método de introducción de datos que pide al usuario el nombre y posición
- * y otro que muestra ambas propiedades.
- */
