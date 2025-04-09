@@ -1,12 +1,12 @@
 package javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.geometria;
 
 public class Poligono extends Figura{
-    public int[] listaDePuntos;
+    public Punto[] listaDePuntos;
 
     public Poligono(String nombre, int origen, int cantidadPuntos){
         setNombre(nombre);
         setOrigen(origen);
-        listaDePuntos = new int[(int) (Math.random() * 1000)];
+        listaDePuntos = new Punto[(int) (Math.random() * 1000)];
         
     }
 }

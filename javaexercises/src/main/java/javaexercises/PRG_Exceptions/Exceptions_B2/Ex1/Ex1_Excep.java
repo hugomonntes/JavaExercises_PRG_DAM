@@ -1,17 +1,18 @@
 package javaexercises.PRG_Exceptions.Exceptions_B2.Ex1;
 
 public class Ex1_Excep {
-    public static String subCadena(String cadena, int inicio, int cantidadCaracteres){  
+    public static String subCadena(String frase, int posicionInicio, int cantidadCaracteres) {
         String cadenaFinal = "";
-        if (cadena == null || inicio < 0 || cantidadCaracteres < 0 || inicio + cantidadCaracteres > cadena.length()) {
-            throw new StringOutOfBoundsException("Revisa los parámetros");//TODO pasar indices a la cadena
+        if (posicionInicio < 0 || posicionInicio > frase.length() || (posicionInicio + cantidadCaracteres) > frase.length()) {
+            throw new StringOutOfBoundsException("Has hecho algo mal, tu frase es: " + frase + ", posición inicial es: " + posicionInicio + ", y la cantidad de caracteres es: " + cantidadCaracteres);
         } else {
-            for (int i = inicio; i < inicio + cantidadCaracteres; i++) {
-                cadenaFinal += cadena.charAt(i);
+            for (int i = posicionInicio; i < cantidadCaracteres + posicionInicio; i++) {
+                cadenaFinal += frase.charAt(i);
             }
-            return cadenaFinal;
         }
+        return cadenaFinal;
     }
+
     public static void mostrarCentrado(String cadena){
         if (cadena.length() > 80) {
             throw new StringTooLongException(); 
@@ -29,7 +30,7 @@ public class Ex1_Excep {
         try{
             System.out.println(subCadena(cadena, inicio, cantidadCaracteres));
         } catch (StringOutOfBoundsException e){
-            System.out.printf("Error! Has introducido algún parametro mal! Cadena = %s, Inicio = %d, Cantidad de carácteres = %d \n", cadena, inicio, cantidadCaracteres);
+            System.out.printf("Error! Has introducido algún parametro mal!");
         }
         try {
             mostrarCentrado("Hola Currooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");            

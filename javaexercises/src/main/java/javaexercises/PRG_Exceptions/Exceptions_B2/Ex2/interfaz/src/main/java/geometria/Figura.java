@@ -3,9 +3,9 @@ package javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.ge
 import java.util.Scanner;
 
 import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.IllegalNegativeNumbers;
-import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.Interface;
+import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.InterfazUsuario;
 
-public class Figura implements Interface {
+public class Figura implements InterfazUsuario {
     private int origen;
     private String nombre;
 
