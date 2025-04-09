@@ -2,6 +2,7 @@ package javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.ge
 
 import java.util.Scanner;
 
+import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.IllegalNegativeNumbers;
 import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.Interface;
 
 public class Linea extends Figura {
@@ -16,20 +17,28 @@ public class Linea extends Figura {
     }
 
     @Override
-    public void mostrarDatos() {
-        super.mostrarDatos();
+    public void pedirDatos() {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Introduce el punto final: ");
+            setPuntoFinal(sc.nextInt());
+        } catch (IllegalNegativeNumbers negativeNumbers) {
+            System.out.println("ERROR! Introduce un dato numérico positivo!");
+        } catch (NumberFormatException notNumber) {
+            System.out.println("ERROR! Introduce un dato numérico!");
+        }
     }
 
     @Override
-    public void pedirDatos() {
-        super.pedirDatos();
+    public void mostrarDatos() {
+        System.out.println("Punto final: " + getPuntoFinal());
+    }
+
+    public Linea(int firstPoint, int secondPoint){
+
     }
 }
 
-// Hereda de Figura y se le añade la propiedad privada con set/get
-// puntoFinal.
-// ◦ Sobreescribe el método pedirDatos y mostrarDatos llamando a los de la
-// clase padre y completándolos.
 // ◦ Tendrá un constructor con dos puntos como parámetro. Inicializa el origen
 // con el primer punto y el nombre a “linea” llamando al padre y con el
 // segundo punto inicializa puntoFinal.
