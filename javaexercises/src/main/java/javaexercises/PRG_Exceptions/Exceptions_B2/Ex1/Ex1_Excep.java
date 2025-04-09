@@ -4,7 +4,7 @@ public class Ex1_Excep {
     public static String subCadena(String cadena, int inicio, int cantidadCaracteres){  
         String cadenaFinal = "";
         if (cadena == null || inicio < 0 || cantidadCaracteres < 0 || inicio + cantidadCaracteres > cadena.length()) {
-            throw new StringOutOfBoundsException("Revisa los parámetros");
+            throw new StringOutOfBoundsException("Revisa los parámetros");//TODO pasar indices a la cadena
         } else {
             for (int i = inicio; i < inicio + cantidadCaracteres; i++) {
                 cadenaFinal += cadena.charAt(i);

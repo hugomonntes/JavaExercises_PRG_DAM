@@ -34,13 +34,13 @@ public class Linea extends Figura {
         System.out.println("Punto final: " + getPuntoFinal());
     }
 
-    public Linea(int firstPoint, int secondPoint){
-        setPuntoFinal(firstPoint);
+    public Linea(int firstPoint, int secondPoint) {
+        setOrigen(firstPoint);
         setNombre("Linea");
-        secondPoint = getPuntoFinal(); // FIXME Revisar especificación
+        setPuntoFinal(secondPoint);// secondPoint ; // FIXME Revisar especificación
     }
 
-    public Linea(){ // FIXME Revisar especificación
+    public Linea() { // FIXME Revisar especificación
         this(0, 0);
         setPuntoFinal(1);
     }

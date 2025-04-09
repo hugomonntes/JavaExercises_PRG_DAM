@@ -1,7 +1,14 @@
 package javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.geometria;
 
 public class Poligono extends Figura{
-    public int[] listaDePuntos; 
+    public int[] listaDePuntos;
+
+    public Poligono(String nombre, int origen, int cantidadPuntos){
+        setNombre(nombre);
+        setOrigen(origen);
+        listaDePuntos = new int[(int) (Math.random() * 1000)];
+        
+    }
 }
 
 // • Hereda de Figura y contiene un array de puntos público. El origen no forma

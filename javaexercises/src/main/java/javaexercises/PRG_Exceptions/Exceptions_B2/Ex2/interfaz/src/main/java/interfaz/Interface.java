@@ -2,7 +2,7 @@ package javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.in
 
 import java.util.Scanner;
 
-public class Interface {
-    public void mostrarDatos(){};
-    public void pedirDatos(){};
+public interface Interface {
+    public void mostrarDatos();
+    public void pedirDatos();
 }

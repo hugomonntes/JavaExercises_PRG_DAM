@@ -5,7 +5,7 @@ import java.util.Scanner;
 import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.IllegalNegativeNumbers;
 import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.Interface;
 
-public class Figura extends Interface {
+public class Figura implements Interface {
     private int origen;
     private String nombre;
 
