@@ -5,7 +5,7 @@ public class Poligono extends Figura{
 
     public Poligono(String nombre, int origen, int cantidadPuntos){
         setNombre(nombre);
-        setOrigen(origen);
+        // setOrigen(origen);
         listaDePuntos = new Punto[(int) (Math.random() * 1000)];
         
     }

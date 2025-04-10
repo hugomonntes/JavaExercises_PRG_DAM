@@ -35,7 +35,7 @@ public class Linea extends Figura {
     }
 
     public Linea(int firstPoint, int secondPoint) {
-        setOrigen(firstPoint);
+        // setOrigen(firstPoint);
         setNombre("Linea");
         setPuntoFinal(secondPoint);// secondPoint ; // FIXME Revisar especificación
     }
