@@ -16,12 +16,15 @@ public class Eventos1 extends JFrame implements ActionListener {
         // Botón
         boton1 = new JButton("¡¡Púlsame!!");
         this.add(boton1);
+        boton1.addActionListener(this); // Evento referenciado con el parametro al objeto mismo
         // Etiqueta
         etiqueta1 = new JLabel("Aún no has pulsado el botón");
         this.add(etiqueta1);
-    }
 
+    }
+    
     @Override
-    public void actionPerformed(ActionEvent evento) {
+    public void actionPerformed(ActionEvent e) {        
+        etiqueta1.setText("Botón pulsado!");
     }
 }

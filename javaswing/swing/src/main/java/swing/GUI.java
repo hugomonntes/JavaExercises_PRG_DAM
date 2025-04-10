@@ -9,6 +9,6 @@ public class GUI {
         window.setSize(300, 300);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
-
+        window.setLocationRelativeTo(null); // Centrar ventana
     }
 }
