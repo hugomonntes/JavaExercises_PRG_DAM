@@ -1,32 +1,22 @@
 package javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.geometria;
 
-import java.util.Scanner;
-
-import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.IllegalNegativeNumbers;
-import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.InterfazUsuario;
+import javaexercises.PRG_Exceptions.Exceptions_B2.Ex2.interfaz.src.main.java.interfaz.Libreria;
 
 public class Linea extends Figura {
-    private int puntoFinal;
+    private Punto puntoFinal;
 
-    public void setPuntoFinal(int puntoFinal) {
+    public void setPuntoFinal(Punto puntoFinal) {
         this.puntoFinal = puntoFinal;
     }
 
-    public int getPuntoFinal() {
+    public Punto getPuntoFinal() {
         return puntoFinal;
     }
 
     @Override
     public void pedirDatos() {
-        Scanner sc = new Scanner(System.in);
-        try {
-            System.out.print("Introduce el punto final: ");
-            setPuntoFinal(sc.nextInt());
-        } catch (IllegalNegativeNumbers negativeNumbers) {
-            System.out.println("ERROR! Introduce un dato numérico positivo!");
-        } catch (NumberFormatException notNumber) {
-            System.out.println("ERROR! Introduce un dato numérico!");
-        }
+        super.pedirDatos();
+        this.puntoFinal = new Punto(Libreria.pedirReal(), Libreria.pedirReal());
     }
 
     @Override
@@ -34,15 +24,13 @@ public class Linea extends Figura {
         System.out.println("Punto final: " + getPuntoFinal());
     }
 
-    public Linea(int firstPoint, int secondPoint) {
-        // setOrigen(firstPoint);
-        setNombre("Linea");
-        setPuntoFinal(secondPoint);// secondPoint ; // FIXME Revisar especificación
+    public Linea(Punto puntoOrigen, Punto puntoFinal) {
+        super(puntoOrigen, "aaa");
+        setPuntoFinal(puntoFinal);
     }
 
-    public Linea() { // FIXME Revisar especificación
-        this(0, 0);
-        setPuntoFinal(1);
+    public Linea() {
+        this(new Punto(0, 0),new Punto(1,1));
     }
 }
 
