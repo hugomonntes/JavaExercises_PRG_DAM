@@ -25,7 +25,7 @@ public class Linea extends Figura {
     }
 
     public Linea(Punto puntoOrigen, Punto puntoFinal) {
-        super(puntoOrigen, "aaa");
+        super(puntoOrigen, "Linea");
         setPuntoFinal(puntoFinal);
     }
 

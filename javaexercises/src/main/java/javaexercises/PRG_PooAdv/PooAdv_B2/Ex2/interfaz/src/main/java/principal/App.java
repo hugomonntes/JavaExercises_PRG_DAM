@@ -3,6 +3,7 @@ package javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.principal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria.Circunferencia;
 import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria.Figura;
 import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria.Linea;
 import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria.Poligono;
@@ -40,10 +41,10 @@ public class App {
                                     colecciónDeFiguras.add(new Poligono());
                                     break;
                                 case 3:
-                                    
+                                    colecciónDeFiguras.add(new Poligono());
                                     break;
                                 case 4:
-
+                                    colecciónDeFiguras.add(new Circunferencia());
                                     break;
                                 default:
                                     System.out.println("Opción no válida.");
@@ -53,7 +54,13 @@ public class App {
                         }
                         break;
                     case 2:
-
+                        for (Figura figura : colecciónDeFiguras) {
+                            if (figura.getNombre().equals("Circunferencia")) {
+                                System.out.println(figura.getNombre());
+                            } else {
+                                System.out.println(figura.getNombre());
+                            }
+                        }
                         break;
                     case 3:
 
