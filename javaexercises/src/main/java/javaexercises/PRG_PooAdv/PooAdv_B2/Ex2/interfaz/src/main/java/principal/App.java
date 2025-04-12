@@ -41,10 +41,10 @@ public class App {
                                     colecciónDeFiguras.add(new Poligono());
                                     break;
                                 case 3:
-                                    colecciónDeFiguras.add(new Poligono());
+                                    colecciónDeFiguras.add(new Poligono("Cuadrado",new Punto(), 4));
                                     break;
                                 case 4:
-                                    colecciónDeFiguras.add(new Circunferencia());
+                                    colecciónDeFiguras.add(new Circunferencia(new Punto(0, 0), 4));
                                     break;
                                 default:
                                     System.out.println("Opción no válida.");
@@ -57,6 +57,7 @@ public class App {
                         for (Figura figura : colecciónDeFiguras) {
                             if (figura.getNombre().equals("Circunferencia")) {
                                 System.out.println(figura.getNombre());
+                                System.out.println(((Circunferencia) figura).getRadio()); // NO Olvidar Parentesis Casting a Figura
                             } else {
                                 System.out.println(figura.getNombre());
                             }
