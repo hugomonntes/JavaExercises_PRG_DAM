@@ -1,30 +1,49 @@
 package javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria;
 
+import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.interfaz.Libreria;
+
 public class Poligono extends Figura{
     public Punto[] listaDePuntos;
 
-    public Poligono(String nombre, Punto puntoOrigen, Punto cantidadPuntos){
+    public Poligono(String nombre, Punto origenPunto, int tamañoArray){
+        listaDePuntos = new Punto[tamañoArray];
         setNombre(nombre);
-        setOrigen(puntoOrigen);
-        listaDePuntos = new Punto[(int) (Math.random() * 10)];
+        setOrigen(new Punto(0, 0));
+        for (int i = 0; i < listaDePuntos.length; i++) {
+            listaDePuntos[i] = new Punto(Math.random(), Math.random());
+        }
     }
 
     public Poligono(){
-        Figura triangulo = new Figura(new Punto(0, 0), "Triangulo");
+        this("Triangulo", new Punto(0,0),  3);
+        new Punto(0, 0);
+        new Punto(1, 1);
+        new Punto(1, 0);
+    }
+
+    @Override
+    public void pedirDatos() {
+        super.pedirDatos();
+        double puntoEjeX;
+        double puntoEjeY;
         for (int i = 0; i < listaDePuntos.length; i++) {
-            listaDePuntos[i] = new Punto((int) (Math.random() * 10), (int) (Math.random() * 10));
+            System.out.print("Introduce el punto del eje X: ");
+            puntoEjeX = Libreria.pedirReal();
+            System.out.print("Introduce el punto del eje Y: ");
+            puntoEjeY = Libreria.pedirReal();
+            listaDePuntos[i] = new Punto(puntoEjeX, puntoEjeY);
+        }
+    }
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        for (Punto punto : listaDePuntos) {
+            System.out.println(punto.toString());
         }
     }
 }
 
-// • Hereda de Figura y contiene un array de puntos público. El origen no forma
-// parte de la figura, equivaldrá a su centro.
-// • Un constructor tiene como parámetros el nombre, el origen y la cantidad de
-// puntos con lo que inicializa las propiedades correspondientes y el tamaño del
-// array. Los puntos del array los inicializas con valores aleatorios.
-// • Añade un constructor sin parámetros que inicialice un triángulo que tu
-// decidas llamando al otro constructor y luego fijando los puntos (0,0), (1,1) y
-// (1,0).
 // • Amplía pedirDatos y mostrarDatos mediante sobreescritura. No es necesario
 // realizar ninguna comprobación sobre los puntos (da igual que estén
 // repetidos, en línea…).

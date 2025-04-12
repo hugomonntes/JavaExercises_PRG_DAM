@@ -3,6 +3,7 @@ package javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria;
 import java.util.Scanner;
 
 import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.interfaz.InterfazUsuario;
+import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.interfaz.Libreria;
 
 public class Figura implements InterfazUsuario {
     private Punto origen;
@@ -36,16 +37,13 @@ public class Figura implements InterfazUsuario {
     @Override
     public void pedirDatos() {
         Scanner sc = new Scanner(System.in);
+        double x, y;
         System.out.print("Introduce el nombre: ");
-        setNombre(sc.nextLine());
-        // try {
-        //     System.out.print("Introduce la posición");
-        //     setOrigen(sc.nextInt());
-        // } catch (IllegalNegativeNumbers e) {
-        //     System.out.println("Introduce un dato numérico positivo");
-        // } catch (IllegalArgumentException e) {
-        //     System.out.println("Introduce un dato numérico");
-        // }
+        this.nombre = sc.nextLine();
+        x = Libreria.pedirReal();
+        y = Libreria.pedirReal();
+        this.origen = new Punto(x, y);
+        sc.close();
     }
 
     @Override
