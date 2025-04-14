@@ -1,13 +1,37 @@
 package javaexercises.PRG_Swing.Swing_Ex1;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.*;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SimulacionDado extends JFrame {
+public class SimulacionDado extends JFrame implements ActionListener{
+    private JButton boton;
+    private JLabel lblNumeroAleatorio;
+
     public SimulacionDado(){
-        JButton boton = new JButton();
-        JLabel lblNumeroAleatorio = new JLabel("Numero aleatorio: ");
+        this.setLayout(new FlowLayout());
+        boton = new JButton("Tirar Dado");
+        this.add(boton);
+        boton.addActionListener(this);
+        boton.setSize(100, 30);
+
+        lblNumeroAleatorio = new JLabel("");
+        this.add(lblNumeroAleatorio);
+        
+        this.setTitle("Simulación de Dado");
+        this.setSize(100, 100);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+    }
+
+    public static String sacarNumeroAleatorio(){
+        return "Resultado: " + (int)(Math.random() * 6 + 1);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        lblNumeroAleatorio.setText(sacarNumeroAleatorio());
     }
 }
 
