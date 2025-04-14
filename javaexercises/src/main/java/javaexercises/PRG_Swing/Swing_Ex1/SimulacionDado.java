@@ -40,41 +40,31 @@ public class SimulacionDado extends JFrame implements ActionListener{
         this.setVisible(true);
     }
 
-    public static String sacarNumeroAleatorio(String numberUser){
+    public String sacarNumeroAleatorio(String numberUser){
         try {
             if (Integer.parseInt(numberUser) <= 0 || Integer.parseInt(numberUser) > Integer.MAX_VALUE) {
                 throw new NumberFormatException();
             } else {
                 int numeroUserCasteado = Integer.parseInt(numberUser);
                 if (numeroUserCasteado > 1) {
+                    mostrarError.setText("");
                     return "Resultado: " + (int)(Math.random() * numeroUserCasteado + 1);
                 } else {
+                    mostrarError.setText("");
                     return "Resultado: " + (int)(Math.random() * 6 + 1); 
                 }
             }
         } catch (NumberFormatException e) {
             System.out.println("Error! Introduce un dato válido!");
+            mostrarError.setText("¡Error! Introduce un número válido.");
         }
         return "";
-    }
-
-    public static boolean checkError(String numberUser){
-        if (Integer.parseInt(numberUser) <= 0 || Integer.parseInt(numberUser) > Integer.MAX_VALUE) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
         String numberUser = textField.getText();
         lblNumeroAleatorio.setText(sacarNumeroAleatorio(numberUser));
-        if (checkError(numberUser)) {
-            mostrarError.setText("Error! Introduce un dato válido!");
-        } else {
-            mostrarError.setText("");
-        }
     }
 }
 
