@@ -64,10 +64,27 @@ public class App {
                         }
                         break;
                     case 3:
-
+                        for (int i = 0; i < colecciónDeFiguras.size(); i++) {
+                            if (colecciónDeFiguras.get(i).getNombre().equals("Circunferencia")) {
+                                System.out.println(colecciónDeFiguras.get(i).getNombre());
+                                System.out.println(((Circunferencia) colecciónDeFiguras.get(i)).getRadio());
+                            } else {
+                                System.out.println(colecciónDeFiguras.get(i).getNombre());
+                                System.out.println(colecciónDeFiguras.get(i).getOrigen());
+                            }
+                        }
                         break;
-                    case 4:
-
+                    case 4: // No Borra Tipo Linea
+                        sc.nextLine();
+                        String nombreFiguraBorrar;
+                        System.out.println("Introduce el nombre de la figura a borrar: ");
+                        nombreFiguraBorrar = sc.nextLine().toUpperCase();
+                        for (int i = 0; i < colecciónDeFiguras.size(); i++) {
+                            if (colecciónDeFiguras.get(i).getNombre().equals(nombreFiguraBorrar)) {
+                                colecciónDeFiguras.remove(i);
+                                i--;
+                            }
+                        }
                         break;
                     case 5:
                         System.out.println("Saliendo...");
