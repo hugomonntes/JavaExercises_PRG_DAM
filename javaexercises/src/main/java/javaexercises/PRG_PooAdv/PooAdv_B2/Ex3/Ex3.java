@@ -25,6 +25,12 @@ public class Ex3 {
     @Override
     public boolean equals(Object obj) { // Corregir
         obj = String.format("%s", obj);
+        if (cadena.size() == this.cadena.size()) {
+            return true;
+        }
+        for (int i = 0; i < cadena.size(); i++) {
+            
+        }
         return true;
     }
 }
