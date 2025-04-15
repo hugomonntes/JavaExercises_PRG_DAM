@@ -2,7 +2,7 @@ package javaexercises.PRG_PooAdv.PooAdv_B2.Ex3;
 
 import java.util.ArrayList;
 
-public class Ex3 {
+public class Cadena {
     private ArrayList<Character> cadena;
 
     public void setCadena(String conjuntoDeChars) {
@@ -24,14 +24,28 @@ public class Ex3 {
 
     @Override
     public boolean equals(Object obj) { // Corregir
-        obj = String.format("%s", obj);
-        if (cadena.size() == this.cadena.size()) {
+        if (obj == null) {
+            throw new IllegalArgumentException("El parámetro no puede ser null");
+        }
+
+        if (obj instanceof Cadena){
             return true;
+        } else {
+            obj = (Cadena) obj;
+            return false;
         }
+    }
+
+    public int eliminarCaracteres (char caracter){
+        int contadorEliminaciones = 0;
         for (int i = 0; i < cadena.size(); i++) {
-            
+            if (cadena.get(i) == caracter) {
+                cadena.remove(i);
+                contadorEliminaciones++;
+                i--;
+            }
         }
-        return true;
+        return contadorEliminaciones;
     }
 }
 
@@ -45,8 +59,11 @@ public class Ex3 {
 // mismas posiciones que la colección de la instancia.
 // Si se le pasa un objeto null o un parámetro que no sea tipo Cadena, String o char[]
 // lanzará la excepción IllegalArgumentException
+
+
 // - Método eliminar(char): se le pasa un carácter y elimina todas las veces que
 // aparece dicho carácter. Además devuelve la cantidad de caracteres que ha
 // eliminado.
+
 // (opcional) Implementa la interfaz Comparable<Cadena> de forma que indique
 // orden alfabético. Mira el Apéndice III de los apuntes.
