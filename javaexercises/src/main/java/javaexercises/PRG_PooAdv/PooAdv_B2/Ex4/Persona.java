@@ -5,6 +5,7 @@ abstract class Persona {
     private String apellido;
     private int edad;
     private String dni;
+    abstract String firmaMail();
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -53,7 +54,7 @@ abstract class Persona {
 // realizar esta función.
 // Amplia con la comprobación del DNI en el set correspondiente de la siguiente
 // forma:
-// • En el set se pasa un numero de dni y la letra. Puede ir sin separaci ón o
+// • En el set se pasa un numero de dni y la letra. Puede ir sin separación o
 // separado con un guión (123456789X o 123456789-X). Debe comprobar si la
 // letra corresponde al DNI. El algoritmo es el siguiente:
 // ◦ Se coge el n.º y se calcula el resto de dividirlo entre 23.
