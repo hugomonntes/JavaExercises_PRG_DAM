@@ -31,12 +31,12 @@ abstract class Persona {
         return edad;
     }
 
-    public void setDni(String dni, char letraDni) {
+    public void setDni(String dni, char letraDni) { // Corregir
         String letrasPosiblesDni = "TRWAGMYFPDXBNJZSQVHLCKE";
         int restoNumeroDni = Integer.parseInt(dni) % 23;
         char letraDniVerificada = letrasPosiblesDni.charAt(restoNumeroDni);
         if (letraDni == letraDniVerificada) {
-            
+            System.out.println("Letra Correcta");
         }
         this.dni = dni;
     }
