@@ -31,12 +31,23 @@ abstract class Persona {
         return edad;
     }
 
-    public void setDni(String dni) {
+    public void setDni(String dni, char letraDni) {
+        String letrasPosiblesDni = "TRWAGMYFPDXBNJZSQVHLCKE";
+        int restoNumeroDni = Integer.parseInt(dni) % 23;
+        char letraDniVerificada = letrasPosiblesDni.charAt(restoNumeroDni);
+        if (letraDni == letraDniVerificada) {
+            
+        }
         this.dni = dni;
     }
 
     public String getDni() {
         return dni;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Nombre: %s, Apellidos: %s", getNombre(), getApellido());
     }
 }
 
@@ -58,3 +69,9 @@ abstract class Persona {
 // separado con un guión (123456789X o 123456789-X). Debe comprobar si la
 // letra corresponde al DNI. El algoritmo es el siguiente:
 // ◦ Se coge el n.º y se calcula el resto de dividirlo entre 23.
+// Este resultado da un número entre 0 y 22 que corresponde por posición a
+// una letra de la siguiente cadena (ojo, no lo puedes meter en un vector):
+// “TRWAGMYFPDXBNJZSQVHLCKE”
+// • Si el DNI no es un número válido de 9 dígitos (o no es un número) , o no hay
+// correspondencia entre la letra y el DNI, se lanza una excepción creada por ti
+// denominada DNIExcepcion que hereda de IllegalArgumentException.
