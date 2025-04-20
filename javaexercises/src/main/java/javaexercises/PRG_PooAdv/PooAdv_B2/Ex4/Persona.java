@@ -5,6 +5,7 @@ abstract class Persona {
     private String apellido;
     private int edad;
     private String dni;
+
     abstract String firmaMail();
 
     public void setNombre(String nombre) {
@@ -31,24 +32,35 @@ abstract class Persona {
         return edad;
     }
 
-    public void setDni(String dni, char letraDni) { // Corregir
-        String letrasPosiblesDni = "TRWAGMYFPDXBNJZSQVHLCKE";
-        int restoNumeroDni = 0;
-        try{
-            restoNumeroDni = Integer.parseInt(dni) % 23;
-            if (dni.length() != 8) {
-                throw new DNIException();
-            }
-        } catch(DNIException DNIError){
-            System.out.println("Error");
+    public void setDni(String dniConLetra) { // Corregir
+        String letrasDni = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+        dniConLetra = dniConLetra.replace("-", "").toUpperCase();
+
+        if (dniConLetra.length() != 9) {
+            throw new DNIException();
         }
-        char letraDniVerificada = letrasPosiblesDni.charAt(restoNumeroDni);
-        if (letraDni == letraDniVerificada) {
-            System.out.println("Letra Correcta");
+
+        String numeroStr = dniConLetra.substring(0, 8);
+        char letra = dniConLetra.charAt(8);
+
+        int numero;
+        try {
+            numero = Integer.parseInt(numeroStr);
+        } catch (NumberFormatException e) {
+            throw new DNIException();
         }
-        this.dni = dni;
+
+        char letraEsperada = letrasDni.charAt(numero % 23);
+        if (letra != letraEsperada) {
+            throw new DNIException();
+        }
+
+        this.dni = dniConLetra;
+        System.out.println("DNI válido. Letra correcta.");
     }
-    // • Si el DNI no es un número válido de 9 dígitos (o no es un número) , o no hay
+    // • Si el DNI no es un número válido de 9 dígitos (o no es un número) , o no
+    // hay
     // correspondencia entre la letra y el DNI, se lanza una excepción creada por ti
     // denominada DNIExcepcion que hereda de IllegalArgumentException.
 
@@ -68,11 +80,14 @@ abstract class Persona {
 // de Empleado y Directivo.
 // Además dispondrá del método abstracto firmaMail. Este método lo
 // implementarás luego (no en Persona) en Empleado (devolviendo nombre y
-// apellidos del mismo) y en Directivo (devolviendo nombre apellidos y departamento
+// apellidos del mismo) y en Directivo (devolviendo nombre apellidos y
+// departamento
 // rodeado de asteriscos).
-// Revisa ambas clases de forma que minimices la repetición de código con llamadas
+// Revisa ambas clases de forma que minimices la repetición de código con
+// llamadas
 // entre constructores.
-// Sobreescribe toString() de forma que devuelva nombre y apellidos. Piensa donde
+// Sobreescribe toString() de forma que devuelva nombre y apellidos. Piensa
+// donde
 // realizar esta función.
 // Amplia con la comprobación del DNI en el set correspondiente de la siguiente
 // forma:
@@ -83,6 +98,7 @@ abstract class Persona {
 // Este resultado da un número entre 0 y 22 que corresponde por posición a
 // una letra de la siguiente cadena (ojo, no lo puedes meter en un vector):
 // “TRWAGMYFPDXBNJZSQVHLCKE”
-// • Si el DNI no es un número válido de 9 dígitos (o no es un número) , o no hay
+// • Si el DNI no es un número válido de 9 dígitos (o no es un número) , o no
+// hay
 // correspondencia entre la letra y el DNI, se lanza una excepción creada por ti
 // denominada DNIExcepcion que hereda de IllegalArgumentException.
