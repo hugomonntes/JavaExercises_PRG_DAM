@@ -37,7 +37,6 @@ public class FormUser extends JFrame implements ActionListener {
         // Añadir JoptionPane
         confirmTitle = new JOptionPane("¿Deseas poner este título de formulario?");
         this.add(confirmTitle);
-        confirmTitle.setSize(100, 30);
     }
 
     @Override
@@ -53,6 +52,7 @@ funcionar) y se le preguntará mediante una JOptionPane con icono de Pregunta si
 usuario desea poner ese texto como título del formulario principal y si contesta que
 sí, cambiar dicho título. El texto introducido debe repetirse en la JOptionPane
 como parte del mensaje y entre comillas dobles. Hazlo con FlowLayout.
+
 b) Añádele al formulario anterior un JCheckBox con el texto “Dar la vuelta” de
 forma que si está marcado, al pulsar el botón o pulsar Enter nuevamente pregunta
 si desea colocar el texto como título en el formulario principal pero al revés (Es
