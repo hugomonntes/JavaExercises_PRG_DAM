@@ -1,32 +1,41 @@
 package javaexercises.PRG_Swing.Swing_Ex2;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-public class FormUser extends JFrame {
+public class FormUser extends JFrame implements ActionListener {
     private JTextField textField;
     private JButton boton;
 
     public FormUser(){
+        this.setTitle("Formulario User");
         this.setLayout(new FlowLayout());
         this.setVisible(true);
         this.setSize(500, 500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Añadir textField y propiedades
-        textField = new JTextField("Introduce un texto");
+        textField = new JTextField("Introduce un titulo para el formulario");
         this.add(textField);
         textField.setSize(300, 50);
         textField.setLocation(100, 0);
         
         // Añadir boton y propiedades
         boton = new JButton("Enviar");
+        boton.addActionListener(this);
         this.add(boton);
         boton.setSize(100, 30);
         boton.setLocation(200, 50);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        this.setTitle(textField.getText());
     }
 }
 
