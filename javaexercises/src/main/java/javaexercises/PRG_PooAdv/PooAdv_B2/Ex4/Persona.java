@@ -40,7 +40,7 @@ abstract class Persona {
                 throw new DNIException();
             }
         } catch(DNIException DNIError){
-            System.out.println();
+            System.out.println("Error");
         }
         char letraDniVerificada = letrasPosiblesDni.charAt(restoNumeroDni);
         if (letraDni == letraDniVerificada) {
