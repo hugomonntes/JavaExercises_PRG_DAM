@@ -33,13 +33,24 @@ abstract class Persona {
 
     public void setDni(String dni, char letraDni) { // Corregir
         String letrasPosiblesDni = "TRWAGMYFPDXBNJZSQVHLCKE";
-        int restoNumeroDni = Integer.parseInt(dni) % 23;
+        int restoNumeroDni = 0;
+        try{
+            restoNumeroDni = Integer.parseInt(dni) % 23;
+            if (dni.length() != 8) {
+                throw new DNIException();
+            }
+        } catch(DNIException DNIError){
+            System.out.println();
+        }
         char letraDniVerificada = letrasPosiblesDni.charAt(restoNumeroDni);
         if (letraDni == letraDniVerificada) {
             System.out.println("Letra Correcta");
         }
         this.dni = dni;
     }
+    // • Si el DNI no es un número válido de 9 dígitos (o no es un número) , o no hay
+    // correspondencia entre la letra y el DNI, se lanza una excepción creada por ti
+    // denominada DNIExcepcion que hereda de IllegalArgumentException.
 
     public String getDni() {
         return dni;
