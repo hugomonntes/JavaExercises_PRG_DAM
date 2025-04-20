@@ -6,11 +6,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class FormUser extends JFrame implements ActionListener {
     private JTextField textField;
     private JButton boton;
+    private JOptionPane confirmTitle;
 
     public FormUser(){
         this.setTitle("Formulario User");
@@ -31,6 +33,11 @@ public class FormUser extends JFrame implements ActionListener {
         this.add(boton);
         boton.setSize(100, 30);
         boton.setLocation(200, 50);
+
+        // Añadir JoptionPane
+        confirmTitle = new JOptionPane("¿Deseas poner este título de formulario?");
+        this.add(confirmTitle);
+        confirmTitle.setSize(100, 30);
     }
 
     @Override
