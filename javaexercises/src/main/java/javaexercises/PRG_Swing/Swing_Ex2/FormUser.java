@@ -54,14 +54,10 @@ public class FormUser extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) { //TODO Corregir setVisible del textField
         String inputText = textField.getText().trim();
         String inputTextReversa = "";
-        if (checkBoxTextField.isSelected()) {
-            textField.setVisible(true);
-        } else {
-            textField.setVisible(false);
-        }
+        textField.setVisible(checkBoxTextField.isSelected());
         
         if (!inputText.isEmpty()) { // En caso de que Curro no me deje, utilizar .length() a 0
             int respuestaJOption = confirmTitle.showConfirmDialog(this,
