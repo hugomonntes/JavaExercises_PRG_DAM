@@ -14,7 +14,7 @@ public class FormUser extends JFrame implements ActionListener {
     private JButton boton;
     private JOptionPane confirmTitle;
 
-    public FormUser(){
+    public FormUser() {
         this.setTitle("Formulario User");
         this.setLayout(new FlowLayout());
         this.setVisible(true);
@@ -26,7 +26,8 @@ public class FormUser extends JFrame implements ActionListener {
         this.add(textField);
         textField.setSize(300, 50);
         textField.setLocation(100, 0);
-        
+        textField.addActionListener(this);
+
         // Añadir boton y propiedades
         boton = new JButton("Enviar");
         boton.addActionListener(this);
@@ -35,28 +36,46 @@ public class FormUser extends JFrame implements ActionListener {
         boton.setLocation(200, 50);
 
         // Añadir JoptionPane
-        confirmTitle = new JOptionPane("¿Deseas poner este título de formulario?");
-        this.add(confirmTitle);
+        confirmTitle = new JOptionPane();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.setTitle(textField.getText());
+        // this.setTitle(textField.getText());
+        String inputText = textField.getText().trim();
+        if (!inputText.isEmpty()){ // O en caso de que Curro no me deje utilizar .length() a 0
+            int respuestaJOption = confirmTitle.showConfirmDialog(this, String.format("¿Quieres utilizar \"%s\" como título?", inputText),
+            "Confirmar título",
+            confirmTitle.YES_OPTION,
+            confirmTitle.QUESTION_MESSAGE);
+            if (respuestaJOption == 0) {
+                this.setTitle(inputText);
+            }
+        } else {
+            confirmTitle.showMessageDialog(this, "El título no puede estar vacío");
+        }
     }
 }
 
 /*
-2. a) Realizar un pequeño programa que mediante un textfield pida un texto al
-usuario. Tras eso, el usuario deberá pulsar un botón o pulsar Enter (ambos deben
-funcionar) y se le preguntará mediante una JOptionPane con icono de Pregunta si el
-usuario desea poner ese texto como título del formulario principal y si contesta que
-sí, cambiar dicho título. El texto introducido debe repetirse en la JOptionPane
-como parte del mensaje y entre comillas dobles. Hazlo con FlowLayout.
-
-b) Añádele al formulario anterior un JCheckBox con el texto “Dar la vuelta” de
-forma que si está marcado, al pulsar el botón o pulsar Enter nuevamente pregunta
-si desea colocar el texto como título en el formulario principal pero al revés (Es
-decir, si el usuario escribe Hola, el título sería aloH).
-Un segundo Checkbox permite habilitar o deshabilitar el JtextField.
-Ten en cuenta que no todos los componentes tienen evento asociado.
-*/
+ * 2. a) Realizar un pequeño programa que mediante un textfield pida un texto al
+ * usuario. Tras eso, el usuario deberá pulsar un botón o pulsar Enter (ambos
+ * deben
+ * funcionar) y se le preguntará mediante una JOptionPane con icono de Pregunta
+ * si el
+ * usuario desea poner ese texto como título del formulario principal y si
+ * contesta que
+ * sí, cambiar dicho título. El texto introducido debe repetirse en la
+ * JOptionPane
+ * como parte del mensaje y entre comillas dobles. Hazlo con FlowLayout.
+ * 
+ * b) Añádele al formulario anterior un JCheckBox con el texto “Dar la vuelta”
+ * de
+ * forma que si está marcado, al pulsar el botón o pulsar Enter nuevamente
+ * pregunta
+ * si desea colocar el texto como título en el formulario principal pero al
+ * revés (Es
+ * decir, si el usuario escribe Hola, el título sería aloH).
+ * Un segundo Checkbox permite habilitar o deshabilitar el JtextField.
+ * Ten en cuenta que no todos los componentes tienen evento asociado.
+ */
