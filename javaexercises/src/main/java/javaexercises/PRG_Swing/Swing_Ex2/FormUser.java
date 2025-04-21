@@ -14,19 +14,26 @@ public class FormUser extends JFrame implements ActionListener {
     private JTextField textField;
     private JButton boton;
     private JOptionPane confirmTitle;
-    private JCheckBox checkBox;
+    private JCheckBox checkBoxReverse;
+    private JCheckBox checkBoxTextField;
 
     public FormUser() {
         this.setTitle("Formulario User");
         this.setLayout(new FlowLayout());
         this.setVisible(true);
-        this.setSize(500, 500);
+        this.setSize(400, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Añadir CheckBox TextField
+        checkBoxTextField = new JCheckBox("¿Quieres desplegar el cuadro de texto?");
+        this.add(checkBoxTextField);
+        this.setVisible(true);
+        checkBoxTextField.addActionListener(this);
 
         // Añadir textField y propiedades
         textField = new JTextField("Introduce un titulo para el formulario");
         this.add(textField);
-        textField.setSize(300, 50);
+        textField.setSize(200, 50);
         textField.setLocation(100, 0);
         textField.addActionListener(this);
 
@@ -39,10 +46,10 @@ public class FormUser extends JFrame implements ActionListener {
 
         // Añadir JoptionPane
         confirmTitle = new JOptionPane();
-        
-        // Añadir JoptionPane
-        checkBox = new JCheckBox("¿Quieres poner el título en reversa?");
-        this.add(checkBox);
+
+        // Añadir CheckBox Reversa
+        checkBoxReverse = new JCheckBox("¿Quieres poner el título en reversa?");
+        this.add(checkBoxReverse);
         this.setVisible(true);
     }
 
@@ -50,17 +57,24 @@ public class FormUser extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String inputText = textField.getText().trim();
         String inputTextReversa = "";
-        if (!inputText.isEmpty()){ // En caso de que Curro no me deje, utilizar .length() a 0
-            int respuestaJOption = confirmTitle.showConfirmDialog(this, String.format("¿Quieres utilizar \"%s\" como título?", inputText),
-            "Confirmar título",
-            confirmTitle.YES_OPTION,
-            confirmTitle.QUESTION_MESSAGE);
-            if (respuestaJOption == 0 && checkBox.isSelected()) {
+        if (checkBoxTextField.isSelected()) {
+            textField.setVisible(true);
+        } else {
+            textField.setVisible(false);
+        }
+        
+        if (!inputText.isEmpty()) { // En caso de que Curro no me deje, utilizar .length() a 0
+            int respuestaJOption = confirmTitle.showConfirmDialog(this,
+                    String.format("¿Quieres utilizar \"%s\" como título?", inputText),
+                    "Confirmar título",
+                    confirmTitle.YES_OPTION,
+                    confirmTitle.QUESTION_MESSAGE);
+            if (respuestaJOption == 0 && checkBoxReverse.isSelected()) {
                 for (int i = inputText.length() - 1; i >= 0; i--) {
                     inputTextReversa += inputText.charAt(i);
                 }
                 this.setTitle(inputTextReversa);
-            } else if (respuestaJOption == 0 && !checkBox.isSelected()) {
+            } else if (respuestaJOption == 0 && !checkBoxReverse.isSelected()) {
                 this.setTitle(inputText);
             }
         } else {
