@@ -47,7 +47,7 @@ public class Game extends JFrame implements ActionListener {
             contador++;
             timer.restart();
         } else if (e.getSource() == timer) { // Si se pasa de 3 segundos sin clickar se acaba el juego
-            JOptionPane.showMessageDialog(null, "¡Has perdido!");
+            JOptionPane.showMessageDialog(null, "Has perdido!");
             clicker.setEnabled(false);
             timer.stop();
         }
