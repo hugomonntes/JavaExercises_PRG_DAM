@@ -65,11 +65,11 @@ public class SelectColor extends JFrame implements ActionListener{
 // 3. Crea un formulario en null layout con 3 botones y de título Colores. Uno con
 // texto Amarillo, otro con texto Azul y un tercero con el texto Aleatorio.
 // Si se pulsa el amarillo o el azul el color de fondo del formulario cambiará a dicho
-// color(usa getContentPane()).
+// color(usa getContentPane()). (ok)
 
 // Si pulsa el botón Aleatorio cambiará la posición del formulario en la pantalla dentro
-// de un área de 600x400 aproximadamente (Deduce o averigua como hacerlo).
+// de un área de 600x400 aproximadamente (Deduce o averigua como hacerlo). (ok)
 
 // Si al mismo tiempo que pulsas aleatorio se está pulsando la tecla SHIFT lo que
 // cambiará de posición será el botón Aleatorio a alguna posición visible del formulario
-// (coge la altura del Content Pane para no tener en cuenta la barra de título). 
+// (coge la altura del Content Pane para no tener en cuenta la barra de título). (ok) 
