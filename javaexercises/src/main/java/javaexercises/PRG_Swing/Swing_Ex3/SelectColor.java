@@ -52,9 +52,13 @@ public class SelectColor extends JFrame implements ActionListener{
             this.getContentPane().setBackground(Color.BLUE);
         } else if (evento.getSource() == botonRamdon){
             // System.err.println("Ramdon");
-            this.getContentPane().setBackground(new Color((int)(Math.random() * 1000000)));
-            this.setLocation((int)(Math.random() * 600), (int)(Math.random() * 400)); // No esta en la especificación
+            this.getContentPane().setBackground(new Color((int)(Math.random() * 1000000))); // No esta en la especificación
+            this.setLocation((int)(Math.random() * 600), (int)(Math.random() * 400));
+            if (evento.getSource() == botonRamdon && (evento.getModifiers()) == 17) {
+                botonRamdon.setLocation((int)(Math.random() * 300), (int)(Math.random() * 300)); 
+            }
         }
+        // System.err.println(evento.getModifiers());
     }
 }
 
