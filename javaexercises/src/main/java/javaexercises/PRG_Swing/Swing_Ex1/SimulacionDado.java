@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class SimulacionDado extends JFrame implements ActionListener{
+public class SimulacionDado extends JFrame implements ActionListener{ //TODO quitar setsize, dado entree 1 y 6 si error
     private JButton boton;
     private JLabel lblNumeroAleatorio;
     private JLabel mostrarError;
@@ -21,7 +21,6 @@ public class SimulacionDado extends JFrame implements ActionListener{
         boton = new JButton("Tirar Dado");
         this.add(boton);
         boton.addActionListener(this);
-        boton.setSize(100, 30);
 
         lblNumeroAleatorio = new JLabel("");
         this.add(lblNumeroAleatorio);
@@ -31,18 +30,12 @@ public class SimulacionDado extends JFrame implements ActionListener{
         
         textField = new JTextField("Introduce un número", 10);
         this.add(textField);
-        textField.setSize(100, 100);
         textField.setText("");
-
-        this.setTitle("Simulación de Dado");
-        this.setSize(100, 100);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
     }
 
     public String sacarNumeroAleatorio(String numberUser){
         try {
-            if (Integer.parseInt(numberUser) <= 0 || Integer.parseInt(numberUser) > Integer.MAX_VALUE) {
+            if (Integer.parseInt(numberUser) <= 0  ) {
                 throw new NumberFormatException();
             } else {
                 int numeroUserCasteado = Integer.parseInt(numberUser);
