@@ -10,8 +10,11 @@ import org.junit.jupiter.api.Test;
 public class ApplicationTest {
 
   @Test
-  @DisplayName("Pointless test")
+  @DisplayName("Pointless test") // Anotaciones 
   void smokeTest() {
     assertThat(true).isEqualTo(true);
   }
 }
+
+// JUnit no necesita main 
+// Va ejecutando todas las anotaciones que tengan la anotacion @Test
