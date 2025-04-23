@@ -7,8 +7,9 @@ public class GraphicUserInterface {
         SimulacionDado windowDado = new SimulacionDado();
 
         windowDado.setTitle("Simulación de Dado");
-        windowDado.setSize(100, 100);
+        windowDado.setSize(500, 500);
         windowDado.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         windowDado.setVisible(true);
+        windowDado.setLocationRelativeTo(null);
     }
 }

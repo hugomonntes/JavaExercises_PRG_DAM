@@ -1,6 +1,5 @@
 package javaexercises.PRG_Swing.Swing_Ex2;
 
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,31 +17,22 @@ public class FormUser extends JFrame implements ActionListener {
     private JCheckBox checkBoxTextField;
 
     public FormUser() {
-        this.setTitle("Formulario User");
-        this.setLayout(new FlowLayout());
-        this.setVisible(true);
-        this.setSize(400, 400);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         // Añadir CheckBox TextField
         checkBoxTextField = new JCheckBox("¿Quieres desplegar el cuadro de texto?");
         this.add(checkBoxTextField);
         this.setVisible(true);
-        checkBoxTextField.addActionListener(this);
+        checkBoxTextField.addItemListener(null);// SI AÑADO ACTIONLISTENER FALLA 
+        //TODO itemlistenmer ()y que lo inhabilite)
 
         // Añadir textField y propiedades
         textField = new JTextField("Introduce un titulo para el formulario");
         this.add(textField);
-        textField.setSize(200, 50);
-        textField.setLocation(100, 0);
         textField.addActionListener(this);
 
         // Añadir boton y propiedades
         boton = new JButton("Enviar");
         boton.addActionListener(this);
         this.add(boton);
-        boton.setSize(100, 30);
-        boton.setLocation(200, 50);
 
         // Añadir JoptionPane
         confirmTitle = new JOptionPane();
@@ -50,11 +40,10 @@ public class FormUser extends JFrame implements ActionListener {
         // Añadir CheckBox Reversa
         checkBoxReverse = new JCheckBox("¿Quieres poner el título en reversa?");
         this.add(checkBoxReverse);
-        this.setVisible(true);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) { //TODO Corregir setVisible del textField
+    public void actionPerformed(ActionEvent e) {
         String inputText = textField.getText().trim();
         String inputTextReversa = "";
         textField.setVisible(checkBoxTextField.isSelected());

@@ -24,7 +24,7 @@ public class Cadena {
 
     @Override
     public boolean equals(Object obj) { // Corregir
-        if (obj == null) {
+        if (obj == null) { // <Si obj es un string un array o uina coolercceion sea lo que sea comparar length o size y elemento a elemento si son iguales return booleanm 
             throw new IllegalArgumentException("El parámetro no puede ser null");
         }
 

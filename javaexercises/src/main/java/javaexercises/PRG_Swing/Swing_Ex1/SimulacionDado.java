@@ -9,10 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class SimulacionDado extends JFrame implements ActionListener{ //TODO quitar setsize, dado entree 1 y 6 si error
+public class SimulacionDado extends JFrame implements ActionListener{
     private JButton boton;
     private JLabel lblNumeroAleatorio;
-    private JLabel mostrarError;
     private JTextField textField;
 
     public SimulacionDado(){
@@ -24,9 +23,6 @@ public class SimulacionDado extends JFrame implements ActionListener{ //TODO qui
 
         lblNumeroAleatorio = new JLabel("");
         this.add(lblNumeroAleatorio);
-
-        mostrarError = new JLabel("");
-        this.add(mostrarError);
         
         textField = new JTextField("Introduce un número", 10);
         this.add(textField);
@@ -35,23 +31,16 @@ public class SimulacionDado extends JFrame implements ActionListener{ //TODO qui
 
     public String sacarNumeroAleatorio(String numberUser){
         try {
-            if (Integer.parseInt(numberUser) <= 0  ) {
+            int numeroUserCasteado = Integer.parseInt(numberUser);
+            if (numeroUserCasteado <= 1) {
                 throw new NumberFormatException();
             } else {
-                int numeroUserCasteado = Integer.parseInt(numberUser);
-                if (numeroUserCasteado > 1) {
-                    mostrarError.setText("");
-                    return "Resultado: " + (int)(Math.random() * numeroUserCasteado + 1);
-                } else {
-                    mostrarError.setText("");
-                    return "Resultado: " + (int)(Math.random() * 6 + 1); 
-                }
+                return String.format("Resultado: %d", (int)(Math.random()*numeroUserCasteado) + 1);
             }
         } catch (NumberFormatException e) {
-            System.out.println("Error! Introduce un dato válido!");
-            mostrarError.setText("¡Error! Introduce un número válido.");
+            System.err.println("Introduce un dato válido");
         }
-        return "";
+        return String.format("Resultado: %d", (int)(Math.random()*6) + 1); 
     }
 
     @Override
