@@ -13,13 +13,6 @@ public class SelectColor extends JFrame implements ActionListener{
     private JButton botonRamdon;
 
     public SelectColor(){
-        //Propiedades Formulario
-        this.setTitle("Formulario Colores");
-        this.setLayout(new FlowLayout());
-        this.setVisible(true);
-        this.setSize(400, 400);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         // Boton Amarillo
         botonAmarillo = new JButton();
         botonAmarillo.setText("Amarillo");

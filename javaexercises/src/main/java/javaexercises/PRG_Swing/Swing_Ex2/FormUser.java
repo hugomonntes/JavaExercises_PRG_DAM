@@ -2,6 +2,8 @@ package javaexercises.PRG_Swing.Swing_Ex2;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -9,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class FormUser extends JFrame implements ActionListener {
+public class FormUser extends JFrame implements ActionListener, ItemListener {
     private JTextField textField;
     private JButton boton;
     private JOptionPane confirmTitle;
@@ -18,13 +20,14 @@ public class FormUser extends JFrame implements ActionListener {
 
     public FormUser() {
         // Añadir CheckBox TextField
-        checkBoxTextField = new JCheckBox("¿Quieres desplegar el cuadro de texto?");
-        this.add(checkBoxTextField);        
-        checkBoxTextField.addItemListener(null); // SI AÑADO ACTIONLISTENER FALLA 
-        //TODO itemlistenmer() y que lo inhabilite)
+        checkBoxTextField = new JCheckBox("¿Quieres habilitar el cuadro de texto?");
+        this.add(checkBoxTextField);
+        checkBoxTextField.setSelected(true);
+        checkBoxTextField.addItemListener(this);
+        // TODO itemlistenmer()
 
         // Añadir textField y propiedades
-        textField = new JTextField("Introduce un titulo para el formulario");
+        textField = new JTextField(10);
         this.add(textField);
         textField.addActionListener(this);
 
@@ -45,8 +48,7 @@ public class FormUser extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String inputText = textField.getText().trim();
         String inputTextReversa = "";
-        textField.setEnabled(checkBoxTextField.isSelected()); // TODO cambiar setVisible por Enable
-        
+
         if (!inputText.isEmpty()) { // En caso de que Curro no me deje, utilizar .length() a 0
             int respuestaJOption = confirmTitle.showConfirmDialog(this,
                     String.format("¿Quieres utilizar \"%s\" como título?", inputText),
@@ -64,6 +66,11 @@ public class FormUser extends JFrame implements ActionListener {
         } else {
             confirmTitle.showMessageDialog(this, "El título no puede estar vacío");
         }
+    }
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        textField.setEnabled(checkBoxTextField.isSelected());
     }
 }
 
