@@ -19,10 +19,9 @@ public class FormUser extends JFrame implements ActionListener {
     public FormUser() {
         // Añadir CheckBox TextField
         checkBoxTextField = new JCheckBox("¿Quieres desplegar el cuadro de texto?");
-        this.add(checkBoxTextField);
-        this.setVisible(true);
-        checkBoxTextField.addItemListener(null);// SI AÑADO ACTIONLISTENER FALLA 
-        //TODO itemlistenmer ()y que lo inhabilite)
+        this.add(checkBoxTextField);        
+        checkBoxTextField.addItemListener(null); // SI AÑADO ACTIONLISTENER FALLA 
+        //TODO itemlistenmer() y que lo inhabilite)
 
         // Añadir textField y propiedades
         textField = new JTextField("Introduce un titulo para el formulario");
@@ -46,7 +45,7 @@ public class FormUser extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String inputText = textField.getText().trim();
         String inputTextReversa = "";
-        textField.setVisible(checkBoxTextField.isSelected());
+        textField.setEnabled(checkBoxTextField.isSelected());
         
         if (!inputText.isEmpty()) { // En caso de que Curro no me deje, utilizar .length() a 0
             int respuestaJOption = confirmTitle.showConfirmDialog(this,

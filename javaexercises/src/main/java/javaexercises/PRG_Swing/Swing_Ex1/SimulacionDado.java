@@ -27,6 +27,7 @@ public class SimulacionDado extends JFrame implements ActionListener{
         textField = new JTextField("Introduce un número", 10);
         this.add(textField);
         textField.setText("");
+        textField.addActionListener(this); // Boton de acción predeterminado de un textField es el Enter
     }
 
     public String sacarNumeroAleatorio(String numberUser){

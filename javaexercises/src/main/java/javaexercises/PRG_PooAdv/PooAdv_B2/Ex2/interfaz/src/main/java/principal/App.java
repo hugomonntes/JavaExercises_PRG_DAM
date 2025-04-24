@@ -55,7 +55,7 @@ public class App {
                         break;
                     case 2:
                         for (Figura figura : colecciónDeFiguras) {
-                            if (figura.getNombre().equals("Circunferencia")) {
+                            if (figura.getClass() == Circunferencia.class) {
                                 System.out.println(figura.getNombre());
                                 System.out.println(((Circunferencia) figura).getRadio()); // NO Olvidar Parentesis Casting a Figura
                             } else {
@@ -65,7 +65,7 @@ public class App {
                         break;
                     case 3:
                         for (int i = 0; i < colecciónDeFiguras.size(); i++) {
-                            if (colecciónDeFiguras.get(i).getNombre().equals("Circunferencia")) {
+                            if (colecciónDeFiguras.get(i).getClass() == Circunferencia.class) {
                                 System.out.println(colecciónDeFiguras.get(i).getNombre());
                                 System.out.println(((Circunferencia) colecciónDeFiguras.get(i)).getRadio());
                             } else {
