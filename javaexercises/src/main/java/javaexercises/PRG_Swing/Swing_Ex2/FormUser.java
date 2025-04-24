@@ -45,7 +45,7 @@ public class FormUser extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String inputText = textField.getText().trim();
         String inputTextReversa = "";
-        textField.setEnabled(checkBoxTextField.isSelected());
+        textField.setEnabled(checkBoxTextField.isSelected()); // TODO cambiar setVisible por Enable
         
         if (!inputText.isEmpty()) { // En caso de que Curro no me deje, utilizar .length() a 0
             int respuestaJOption = confirmTitle.showConfirmDialog(this,
