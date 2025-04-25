@@ -64,7 +64,7 @@ public class FormUser extends JFrame implements ActionListener, ItemListener {
                 this.setTitle(inputText);
             }
         } else {
-            confirmTitle.showMessageDialog(this, "El título no puede estar vacío");
+            confirmTitle.showMessageDialog(this, "El título no puede estar vacío"); // No pide en expecificación
         }
     }
 

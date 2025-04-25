@@ -11,7 +11,7 @@ public class Astro {
     public String getNombre() {
         return nombre;
     }
-    
+
     public String getNombre(char charSeparador) {
         String nombreFormateado = "";
         for (int i = 0; i < nombre.length(); i++) {
@@ -24,7 +24,11 @@ public class Astro {
     }
 
     public void setRadio(double radio) {
-        this.radio = radio;
+        if (radio < 0) {
+            throw new RadioNegativoException();
+        } else {
+            this.radio = radio;
+        }    
     }
 
     public double getRadio() {
@@ -32,15 +36,17 @@ public class Astro {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) { // TODO CORREGIR
+        if (obj.getClass() == Object.class) {
+        }
         return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Nombre: %s, Radio: %.2f", getNombre(), getRadio());
     }
 }
 
-// • Al guardar el radio se comprueba que sea positivo, si no fuera así lanza la
-// excepción RadioNegativoException creada por ti.
-
 // • Sobreescribe equals de forma que se considera que dos astros son iguales si
 // son iguales sus nombres y además son de la misma clase.
-// • Sobreescribe toString de forma que devuelva el nombre según getNombre y
-// el radio con 2 decimales.
