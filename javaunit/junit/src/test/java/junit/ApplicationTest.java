@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -57,6 +58,7 @@ public class ApplicationTest {
     assertEquals(0, objFoo.superFoo());
   }
 
+  @Disabled // Desactiva una prueba y se la salta
   @Test
   public void testFactorialException() {
     try {
