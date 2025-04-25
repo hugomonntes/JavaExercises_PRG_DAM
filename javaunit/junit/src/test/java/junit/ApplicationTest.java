@@ -4,9 +4,13 @@ package junit;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
 @DisplayName("Application")
 public class ApplicationTest {
@@ -18,6 +22,10 @@ public class ApplicationTest {
   // }
 
   @Test
+  @Timeout(value = 50, unit = TimeUnit.MILLISECONDS) // Sirve para calcular el tiempo en el que tarda de ejecutar todos
+                                                     // los test (En caso de que falle hay que intentar optimizar la
+                                                     // aplicación o las funciones)
+
   public void testFactorial() {
     assertEquals(120, Operaciones.factorial(5));
     assertEquals(1, Operaciones.factorial(1));
@@ -42,6 +50,21 @@ public class ApplicationTest {
     assertFalse(Operaciones.primo(0));
     assertFalse(Operaciones.primo(-10)); // Conveniente probar más negativos
     assertTrue(Operaciones.primo(-7));
+  }
+
+  public void testSuperFoo() {
+    Foo objFoo = new Foo();
+    assertEquals(0, objFoo.superFoo());
+  }
+
+  @Test
+  public void testFactorialException() {
+    try {
+      Operaciones.factorial(-10);
+      fail("No salta excepción");
+    } catch (IllegalArgumentException e) {
+      assertTrue(true);
+    }
   }
 }
 
