@@ -24,7 +24,6 @@ public class FormUser extends JFrame implements ActionListener, ItemListener {
         this.add(checkBoxTextField);
         checkBoxTextField.setSelected(true);
         checkBoxTextField.addItemListener(this);
-        // TODO itemlistenmer()
 
         // Añadir textField y propiedades
         textField = new JTextField(10);

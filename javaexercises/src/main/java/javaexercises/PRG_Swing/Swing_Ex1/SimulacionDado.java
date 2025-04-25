@@ -46,8 +46,7 @@ public class SimulacionDado extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent event) {
-        String numberUser = textField.getText();
-        lblNumeroAleatorio.setText(sacarNumeroAleatorio(numberUser));
+        lblNumeroAleatorio.setText(sacarNumeroAleatorio(textField.getText()));
     }
 }
 
