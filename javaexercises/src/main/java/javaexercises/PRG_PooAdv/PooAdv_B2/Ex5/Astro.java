@@ -37,9 +37,11 @@ public class Astro {
 
     @Override
     public boolean equals(Object obj) { // TODO CORREGIR
-        if (obj.getClass() == Object.class) {
+        if (this == obj || obj != null) {
+            return true;
+        } else {
+            return false;
         }
-        return super.equals(obj);
     }
 
     @Override

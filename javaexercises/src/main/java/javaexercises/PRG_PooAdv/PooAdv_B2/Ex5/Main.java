@@ -1,14 +1,55 @@
 package javaexercises.PRG_PooAdv.PooAdv_B2.Ex5;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Astro sol = new Astro();
-        sol.setNombre("hugo");
-        System.out.println(sol.getNombre('_'));
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Astro> coleccionDeAstros = new ArrayList<>();
+        int option;
+        do {
+            System.out.println("1.- Añadir un planeta: ");
+            System.out.println("2.-");
+            System.out.println("3.-");
+            System.out.println("4.-");
+            System.out.println("5.- Salir.");
+            option = sc.nextInt();
+            switch (option) {
+                // • Añade Planeta: Pregunta si es gaseoso y pide el nombre y radio. También
+                // pregunta cantidad de lunas y se introducirán sus nombres y radios.
+                case 1:
+                    String isGaseoso;
+                    System.out.println("¿El planeta es gaseoso? (s/n)");
+                    isGaseoso = sc.nextLine().toLowerCase();
+                    if (isGaseoso.equals("s")) {
+                        
+                    }
+                    ;
+                    break;
+                case 2:
+                    ;
+                    break;
+                case 3:
+                    ;
+                    break;
+                case 4:
+                    ;
+                    break;
+                case 5:
+                    ;
+                    break;
+                default:
+
+                    break;
+            }
+
+        } while (option != 5);
     }
 }
 
-// c) En el programa principal (Mételo en otra clase y package distintos a las clases
+// c) En el programa principal (Mételo en otra clase y package distintos a las
+// clases
 // anteriores) se crea una colección de Astros y el siguiente menú:
 // • Añade Planeta: Pregunta si es gaseoso y pide el nombre y radio. También
 // pregunta cantidad de lunas y se introducirán sus nombres y radios.
