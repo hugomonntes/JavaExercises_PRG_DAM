@@ -23,7 +23,7 @@ public class Main {
                     System.out.println("¿El planeta es gaseoso? (s/n)");
                     isGaseoso = sc.nextLine().toLowerCase();
                     if (isGaseoso.equals("s")) {
-                        
+                        coleccionDeAstros.add(new Planeta("", 0.0, true));
                     }
                     ;
                     break;
