@@ -19,15 +19,37 @@ public class Main {
                 // • Añade Planeta: Pregunta si es gaseoso y pide el nombre y radio. También
                 // pregunta cantidad de lunas y se introducirán sus nombres y radios.
                 case 1:
-                    String isGaseoso;
-                    System.out.println("¿El planeta es gaseoso? (s/n)");
-                    isGaseoso = sc.nextLine().toLowerCase();
-                    if (isGaseoso.equals("s")) {
-                        coleccionDeAstros.add(new Planeta("", 0.0, true));
+                    System.out.print("¿El planeta es gaseoso? (s/n): ");
+                    String isGaseosoStr = sc.nextLine().trim().toLowerCase();
+                    boolean isGaseoso = isGaseosoStr.equals("s");
+                    sc.nextLine();
+
+                    System.out.print("Introduce el nombre del planeta: ");
+                    String nombrePlaneta = sc.nextLine();
+
+                    System.out.print("Introduce el radio del planeta: ");
+                    double radioPlaneta = sc.nextDouble();
+
+                    System.out.print("¿Cuántas lunas tiene el planeta?: ");
+                    int cantidadLunas = sc.nextInt();
+
+                    if (cantidadLunas > 0) {
+                        for (int i = 0; i < cantidadLunas; i++) {
+                            System.out.print("Introduce el nombre de la luna número " + (i + 1) + ": ");
+                            String nombreLuna = sc.nextLine();
+
+                            System.out.print("Introduce el radio de la luna " + (i + 1) + ": ");
+                            double radioLuna = sc.nextDouble();
+                        }
                     }
+
+                    coleccionDeAstros.add(new Planeta(nombrePlaneta, radioPlaneta, isGaseoso));
                     ;
                     break;
                 case 2:
+                    for (Astro astro : coleccionDeAstros) {
+                        System.out.println(astro.getNombre());
+                    }
                     ;
                     break;
                 case 3:
