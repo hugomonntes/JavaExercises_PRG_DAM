@@ -1,11 +1,13 @@
 package javaexercises.PRG_Swing.Swing_Ex4;
 
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class FormValidacion extends JFrame implements ActionListener{
@@ -39,26 +41,46 @@ public class FormValidacion extends JFrame implements ActionListener{
         this.add(btnGuardar);
         btnGuardar.setSize(100, 20);
         btnGuardar.setLocation(300, 0);
+        btnGuardar.addActionListener(this);
         
         // Añadir Boton Cargar
         btnCargar = new JButton("Cargar");
         this.add(btnCargar);
         btnCargar.setSize(100, 20);
         btnCargar.setLocation(400, 0);
+        // btnCargar.addActionListener(this);
     }
 
-    // public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad){
-    //     String textoNombreFormateado = textoValidarNombre.trim();
-    //     String textoValidarEdad = Integer.parseInt;
-    //     if (!textoNombreFormateado.isEmpty() || ) {
-    //         return true;
-    //     }
-        
-    // }
+    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad){
+        String textoNombreFormateado = textoValidarNombre.trim();
+        try {
+            int textoEdadFormateado = Integer.parseInt(textoValidarEdad.trim());
+            if (textoEdadFormateado <= 0) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, String.format("Error! Introduce un número positivo"),"ERROR", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        return !textoNombreFormateado.isEmpty() ? true : false;
+    }
+
+    public void escribirArchivo(String textoEscribirEnArchivo) throws FileNotFoundException {
+        PrintWriter pw = new PrintWriter("SwingEx4.txt");
+        pw.write(textoEscribirEnArchivo);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        boolean isChecked = validarDatosInput(txfNombre.getText(), txfEdad.getText());
+        String texto;
+        if (isChecked) {
+            texto = String.format("%s , %s", txfNombre.getText(), txfEdad.getText());
+            try {
+                escribirArchivo(texto);
+            } catch (FileNotFoundException e1) {
+            }
+        }
     }
 }
 
@@ -69,7 +91,7 @@ public class FormValidacion extends JFrame implements ActionListener{
 // Guardar (btnGuardar): Si los datos del los textfield son válidos (no hay cadenas
 // vacías y en edad hay un número positivo o 0) los guarda en un archivo. Si existe
 // algún tipo de problema se informará con JOptionPane.showDialog() y un icono
-// adecuado.
+// adecuado. (ok)
 
 // Cargar (btnCargar): Si existe un archivo de datos, lo lee. Si en los texfield no hay
 // nada coloca ahí los datos. Si hubiera algo en los textfield, pregunta al usuario con

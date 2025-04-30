@@ -36,12 +36,12 @@ public class SelectColor extends JFrame implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent evento) {//TODO con shift solo boton y shift con otras teclas también cambia
+    public void actionPerformed(ActionEvent evento) {
         if (evento.getSource() == botonAmarillo) {
             this.getContentPane().setBackground(Color.YELLOW);
         } else if (evento.getSource() == botonAzul) {
             this.getContentPane().setBackground(Color.BLUE);
-        } else if (evento.getSource() == botonRamdon && evento.getModifiers() == 17){ //FIXME
+        } else if (evento.getSource() == botonRamdon && (evento.getModifiers() & evento.SHIFT_MASK) == evento.SHIFT_MASK){
             this.getContentPane().setBackground(new Color((int)(Math.random() * 1000000))); // No esta en la especificación
             this.setLocation((int)(Math.random() * 600), (int)(Math.random() * 400));
         } else if (evento.getSource() == botonRamdon) {
