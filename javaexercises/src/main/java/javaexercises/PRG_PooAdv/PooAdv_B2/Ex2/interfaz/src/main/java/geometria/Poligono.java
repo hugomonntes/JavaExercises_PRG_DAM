@@ -15,7 +15,7 @@ public class Poligono extends Figura{
     }
 
     public Poligono(){
-        this("Triangulo", new Punto(0,0),  3);
+        this("Triangulo", new Punto(0,0),  3);//TODO guardar puntos
         new Punto(0, 0);
         new Punto(1, 1);
         new Punto(1, 0);

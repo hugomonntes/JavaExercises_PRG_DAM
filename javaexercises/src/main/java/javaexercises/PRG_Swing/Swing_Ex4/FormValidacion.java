@@ -19,28 +19,42 @@ public class FormValidacion extends JFrame implements ActionListener{
         // Añadir Nombre textField
         txfNombre = new JTextField(10);
         this.add(txfNombre);
-        txfNombre.setSize(50, 100);
+        txfNombre.setSize(100, 20);
+        txfNombre.setLocation(0, 0);
         
         // Añadir Edad textField
         txfEdad = new JTextField(10);
         this.add(txfEdad);
-        txfEdad.setSize(50, 100);
+        txfEdad.setSize(100, 20);
+        txfEdad.setLocation(100, 0);
         
         // Añadir Direccion textField
         txfDir = new JTextField(10);
         this.add(txfDir);
-        txfDir.setSize(50, 100);
+        txfDir.setSize(100, 20);
+        txfDir.setLocation(200, 0);
         
         // Añadir Boton Guardar
-        btnGuardar = new JButton();
+        btnGuardar = new JButton("Guardar");
         this.add(btnGuardar);
-        btnGuardar.setSize(50, 100);
-
+        btnGuardar.setSize(100, 20);
+        btnGuardar.setLocation(300, 0);
+        
         // Añadir Boton Cargar
-        btnCargar = new JButton();
+        btnCargar = new JButton("Cargar");
         this.add(btnCargar);
-        btnCargar.setSize(50, 100);
+        btnCargar.setSize(100, 20);
+        btnCargar.setLocation(400, 0);
     }
+
+    // public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad){
+    //     String textoNombreFormateado = textoValidarNombre.trim();
+    //     String textoValidarEdad = Integer.parseInt;
+    //     if (!textoNombreFormateado.isEmpty() || ) {
+    //         return true;
+    //     }
+        
+    // }
 
     @Override
     public void actionPerformed(ActionEvent e) {

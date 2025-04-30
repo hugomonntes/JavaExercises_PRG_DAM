@@ -22,7 +22,7 @@ public class App {
             System.out.println("5. Salir");
             System.out.print("Elige una opción: ");
             try {
-                opcion = sc.nextInt();
+                opcion = sc.nextInt();//TODO usar libreria
                 switch (opcion) {
                     case 1:
                         System.out.println("1. Línea");
@@ -55,15 +55,14 @@ public class App {
                         break;
                     case 2:
                         for (Figura figura : colecciónDeFiguras) {
+                            System.out.println(figura.getNombre());
                             if (figura.getClass() == Circunferencia.class) {
-                                System.out.println(figura.getNombre());
+                             //   Circunferencia aux = (Circunferencia)figura;
                                 System.out.println(((Circunferencia) figura).getRadio()); // NO Olvidar Parentesis Casting a Figura
-                            } else {
-                                System.out.println(figura.getNombre());
-                            }
+                            } 
                         }
                         break;
-                    case 3:
+                    case 3://TODO reducir (llee enunciado)
                         for (int i = 0; i < colecciónDeFiguras.size(); i++) {
                             if (colecciónDeFiguras.get(i).getClass() == Circunferencia.class) {
                                 System.out.println(colecciónDeFiguras.get(i).getNombre());
@@ -74,7 +73,7 @@ public class App {
                             }
                         }
                         break;
-                    case 4: // No Borra Tipo Linea
+                    case 4: //TODO borrar por TIPO
                         sc.nextLine();
                         String nombreFiguraBorrar;
                         System.out.println("Introduce el nombre de la figura a borrar: ");
