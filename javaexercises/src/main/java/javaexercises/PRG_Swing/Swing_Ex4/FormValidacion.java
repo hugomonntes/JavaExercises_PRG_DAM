@@ -2,10 +2,13 @@ package javaexercises.PRG_Swing.Swing_Ex4;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -50,18 +53,25 @@ public class FormValidacion extends JFrame implements ActionListener {
         this.add(btnCargar);
         btnCargar.setSize(100, 20);
         btnCargar.setLocation(400, 0);
-        // btnCargar.addActionListener(this);
+        btnCargar.addActionListener(this);
     }
 
-    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad) { // Idea dividir cada validación en una función para cada una
+    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad) { // Idea dividir cada
+                                                                                           // validación en una función
+                                                                                           // para cada una
         String textoNombreFormateado = textoValidarNombre.trim();
-        
+
         // Validación Campo Nombre
         try {
             for (int i = 0; i < textoNombreFormateado.length(); i++) {
-                if (!Character.isLetter(textoNombreFormateado.charAt(i))) {
+                if (!Character.isLetter(textoNombreFormateado.charAt(i)) || textoNombreFormateado.length() <= 1) { // (No
+                                                                                                                   // está
+                                                                                                                   // en
+                                                                                                                   // la
+                                                                                                                   // especificaión)
                     throw new IllegalArgumentException();
-                } // Preguntar Curro si es mejor hacerlo solo con el if *PROBLEMA NO SE PUEDE LANZAR JOptionPane al tener bucle*
+                } // Preguntar Curro si es mejor hacerlo solo con el if *PROBLEMA NO SE PUEDE
+                  // LANZAR JOptionPane al tener bucle*
             }
         } catch (IllegalArgumentException nombreNoValido) {
             JOptionPane.showMessageDialog(this, String.format("Error! Introduce un nombre válido"), "ERROR",
@@ -90,17 +100,52 @@ public class FormValidacion extends JFrame implements ActionListener {
         fw.close(); // ACORDARSE CERRAR FW **IMPORTANTE**
     }
 
+    public String[] leerDatosArchivo() throws FileNotFoundException {
+        String cadenaDatos = "";
+        try {
+            Scanner sc = new Scanner(new File("SwingEx4.txt"));
+            while (sc.hasNext()) {
+                String cadenaOriginal = sc.nextLine();
+                cadenaDatos += cadenaOriginal.trim();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("El archivo no existe");
+        }
+        return cadenaDatos.split(",");
+    }
+
+    public void escribirDatosInput(String[] datosArchivo){
+        if (txfNombre.getText().isEmpty() || txfEdad.getText().isEmpty() || txfDir.getText().isEmpty()) {
+            txfNombre.setText(datosArchivo[0]);
+            txfEdad.setText(datosArchivo[1]);
+            txfDir.setText(datosArchivo[2]);
+        } else {
+            JOptionPane.showMessageDialog(this, String.format("Error! Los campos no están vacíos"), "ERROR",
+            JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        boolean isChecked = validarDatosInput(txfNombre.getText(), txfEdad.getText());
-        String texto;
-        if (isChecked) {
-            texto = String.format("%s, %s, %s", txfNombre.getText(), txfEdad.getText(), txfDir.getText());
-            try {
-                escribirArchivo(texto);
-                System.err.println("texto escrito en archivo");
-            } catch (IOException excptFile) {
+        if (e.getSource() == btnGuardar) {
+            boolean isChecked = validarDatosInput(txfNombre.getText(), txfEdad.getText());
+            String texto;
+            if (isChecked) {
+                texto = String.format("%s, %s, %s", txfNombre.getText(), txfEdad.getText(), txfDir.getText());
+                try {
+                    escribirArchivo(texto);
+                    System.err.println("texto escrito en archivo");
+                } catch (IOException excptFile) {
+    
+                }
+            }
+        }
 
+        if (e.getSource() == btnCargar) {
+            try {
+                escribirDatosInput(leerDatosArchivo());
+            } catch (FileNotFoundException e1) {
+                
             }
         }
     }
@@ -123,4 +168,4 @@ public class FormValidacion extends JFrame implements ActionListener {
 // usuario con
 // JOptionPane si está seguro que quiere cargarlos. Si no existe el archivo
 // informa de
-// ello al usuario con JOptionPane y no hace nada más.
+// ello al usuario con JOptionPane y no hace nada más. (ok)
