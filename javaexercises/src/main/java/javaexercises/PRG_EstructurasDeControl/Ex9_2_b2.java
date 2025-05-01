@@ -28,7 +28,7 @@ package javaexercises.PRG_EstructurasDeControl;
 import java.util.Scanner;
 
 public class Ex9_2_b2 {
-    public static void main(String[] args) { // TODO negativos
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n;
         int n1;

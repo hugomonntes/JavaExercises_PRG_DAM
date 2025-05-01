@@ -21,19 +21,19 @@ public class FormValidacion extends JFrame implements ActionListener {
 
     public FormValidacion() {
         // Añadir Nombre textField
-        txfNombre = new JTextField(10);
+        txfNombre = new JTextField("Hugo", 10);
         this.add(txfNombre);
         txfNombre.setSize(100, 20);
         txfNombre.setLocation(0, 0);
 
         // Añadir Edad textField
-        txfEdad = new JTextField(10);
+        txfEdad = new JTextField("22", 10);
         this.add(txfEdad);
         txfEdad.setSize(100, 20);
         txfEdad.setLocation(100, 0);
 
         // Añadir Direccion textField
-        txfDir = new JTextField(10);
+        txfDir = new JTextField("Galicia", 10);
         this.add(txfDir);
         txfDir.setSize(100, 20);
         txfDir.setLocation(200, 0);
@@ -53,8 +53,23 @@ public class FormValidacion extends JFrame implements ActionListener {
         // btnCargar.addActionListener(this);
     }
 
-    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad) {
+    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad) { // Idea dividir cada validación en una función para cada una
         String textoNombreFormateado = textoValidarNombre.trim();
+        
+        // Validación Campo Nombre
+        try {
+            for (int i = 0; i < textoNombreFormateado.length(); i++) {
+                if (!Character.isLetter(textoNombreFormateado.charAt(i))) {
+                    throw new IllegalArgumentException();
+                } // Preguntar Curro si es mejor hacerlo solo con el if *PROBLEMA NO SE PUEDE LANZAR JOptionPane al tener bucle*
+            }
+        } catch (IllegalArgumentException nombreNoValido) {
+            JOptionPane.showMessageDialog(this, String.format("Error! Introduce un nombre válido"), "ERROR",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        // Validación Campo Edad
         try {
             int textoEdadFormateado = Integer.parseInt(textoValidarEdad.trim());
             if (textoEdadFormateado <= 0) {
@@ -65,13 +80,14 @@ public class FormValidacion extends JFrame implements ActionListener {
                     JOptionPane.ERROR_MESSAGE);
             return false;
         }
+
         return !textoNombreFormateado.isEmpty() ? true : false;
     }
 
-    @SuppressWarnings("resource")
     public void escribirArchivo(String textoEscribirEnArchivo) throws IOException {
         FileWriter fw = new FileWriter("SwingEx4.txt");
         fw.write(textoEscribirEnArchivo);
+        fw.close(); // ACORDARSE CERRAR FW **IMPORTANTE**
     }
 
     @Override
@@ -79,11 +95,11 @@ public class FormValidacion extends JFrame implements ActionListener {
         boolean isChecked = validarDatosInput(txfNombre.getText(), txfEdad.getText());
         String texto;
         if (isChecked) {
-            texto = String.format("%s , %s", txfNombre.getText(), txfEdad.getText());
+            texto = String.format("%s, %s, %s", txfNombre.getText(), txfEdad.getText(), txfDir.getText());
             try {
                 escribirArchivo(texto);
-                System.err.println(texto);
-            } catch (IOException e1) {
+                System.err.println("texto escrito en archivo");
+            } catch (IOException excptFile) {
 
             }
         }

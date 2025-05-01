@@ -28,12 +28,12 @@ package javaexercises.PRG_Arrays.Arrays_Exercises.Ex8_Arrays;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Videojuego {//TODO coment
+public class Videojuego {
     private String titulo;
     private String fabricante;
     private int año;
 
-    public void setAño(int año) {//TODO revisar set
+    public void setAño(int año) {
         if (año < 1950) {
             this.año = LocalDate.now().getYear();
         }

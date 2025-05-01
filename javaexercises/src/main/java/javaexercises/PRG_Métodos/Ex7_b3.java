@@ -45,7 +45,7 @@ public class Ex7_b3 {
          //   System.out.println(contentFile);
         }
         f.close();
-        return contentFile;  //TODO devuoleve solo la última linea
+        return contentFile;
     }
     /**
      * Lee el archivo y reescribe el archivo añadiendole el mensaje
@@ -66,7 +66,7 @@ public class Ex7_b3 {
      * @param isAdd Boolean si el mensaje se añade si es true o no si es false
      * @throws Exception
      */
-    public static void appendFile2(String fileName, String msg) throws Exception{//TODO no añade el parametro
+    public static void appendFile2(String fileName, String msg) throws Exception{
         PrintWriter f = new PrintWriter(new FileWriter(fileName, true));
         f.close();
     }

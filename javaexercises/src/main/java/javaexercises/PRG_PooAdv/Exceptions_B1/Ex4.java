@@ -89,7 +89,7 @@ public class Ex4 {
         }
         return fraseConcatenada;
     }
-    public static void main(String[] args) {//TODO try
+    public static void main(String[] args) {
         mostrarCaracteres("Hola");
         mostrarCentrado("AAAAAAAAAAAAAAA");
         System.out.println(listaReverse("Curro"));

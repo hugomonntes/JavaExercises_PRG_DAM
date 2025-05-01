@@ -60,7 +60,7 @@ public class Ex13_b3 {
             while (dado1 == dado2) {
                 dado1 = tirarDado(numeroCarasDado);
             }
-            for (int i = 0; i < 3; i++) {//TODO usuario no repite nums(do whiles) 
+            for (int i = 0; i < 3; i++) {
                 do {
                     System.out.printf("Introduce un número del 1 al %d: ", numeroCarasDado);
                     userNumber = sc.nextInt();

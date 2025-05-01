@@ -55,7 +55,7 @@ public class Coleccion {
         return juegosEncontrados;
     }
 
-    public void menu() throws Exception {//TODO leer archivo
+    public void menu() throws Exception {
         Scanner sc = new Scanner(System.in);
         int option;
         do {
@@ -112,7 +112,7 @@ public class Coleccion {
                         System.out.println(videojuego);
                     }
                     break;
-                case 4://TODO revisar eliminar indice 0
+                case 4:
                     boolean isCheckIndex;
                     int indiceJuego = 0;
                     do {
@@ -125,7 +125,7 @@ public class Coleccion {
                     } while (!isCheckIndex);
                     coleccionVideojuegos.remove(indiceJuego);
                     break;
-                case 5://TODO informa más al usuario (error)
+                case 5:
                     boolean isCheckYear = false;
                     int añoBorrar;
                     do {
@@ -144,7 +144,7 @@ public class Coleccion {
                     break;
                 case 6:
                     System.out.println("Cerrando programa...");
-                    PrintWriter fWriter = new PrintWriter(new FileWriter("videojuegos.txt"));//TODO falta algo
+                    PrintWriter fWriter = new PrintWriter(new FileWriter("videojuegos.txt"));
                     for (Videojuego videojuego : coleccionVideojuegos) {
                         fWriter.println(videojuego.getDatosAgrupados());
                     }
