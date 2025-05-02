@@ -2,6 +2,7 @@ package javaexercises.PRG_Swing.Swing_Ex5;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -13,6 +14,8 @@ public class Tragaperras extends JFrame implements ActionListener {
     private JTextField txfDos; 
     private JTextField txfTres;
     private JButton btnTirada;
+    private JLabel lblSaldo;
+    int saldo = 20;
 
     public Tragaperras() {
         this.setTitle("Tragaperras v1");
@@ -37,6 +40,10 @@ public class Tragaperras extends JFrame implements ActionListener {
         btnTirada = new JButton("Lanzar Tirada");
         this.add(btnTirada);
         btnTirada.addActionListener(this);
+
+        // Añadir saldo
+        lblSaldo = new JLabel("Saldo disponible: 20€");
+        this.add(lblSaldo);
     }
 
     public String createRamdonNumber(){
@@ -50,7 +57,16 @@ public class Tragaperras extends JFrame implements ActionListener {
         txfTres.setText(createRamdonNumber());
 
         if (txfUno.getText().equals(txfDos.getText()) && txfUno.getText().equals(txfTres.getText())) {
-            JOptionPane.showMessageDialog(this, "Enhorabuena! Has ganado el premio!");
+            saldo = saldo * 2;
+            JOptionPane.showMessageDialog(this, String.format("Enhorabuena! Has ganado el premio! Saldo actual de: %d€", saldo));
+            lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
+        } else if (!(txfUno.getText().equals(txfDos.getText()) && txfUno.getText().equals(txfTres.getText()))) {
+            saldo--;
+            lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
+            if (saldo == 0) {
+                JOptionPane.showMessageDialog(this, String.format("Has perdido! Saldo actual de: %d€", saldo));
+                this.dispose(); // Con esto cierro la ventana
+            }
         }
 
     }
