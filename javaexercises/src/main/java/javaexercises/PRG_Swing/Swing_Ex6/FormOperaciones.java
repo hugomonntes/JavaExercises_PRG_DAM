@@ -58,12 +58,15 @@ public class FormOperaciones extends JFrame implements ActionListener{
         }
     }
 
+    public double calculateSum(int numberInput1, int numberInput2){
+        return numberInput1 + numberInput2;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnSuma) {
+        if (e.getSource() == btnSuma && isDataVerified(txfUno.getText()) && isDataVerified(txfUno.getText())) {
             lblResultado.setText(String.format("Resultado: ", (txfUno.getText() + txfDos.getText())));
         }
-        isDataVerified(txfUno.getText());
     }
 }
 
