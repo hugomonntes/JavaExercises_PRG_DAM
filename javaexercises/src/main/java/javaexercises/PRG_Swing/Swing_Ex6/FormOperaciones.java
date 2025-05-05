@@ -2,6 +2,8 @@ package javaexercises.PRG_Swing.Swing_Ex6;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -13,6 +15,7 @@ public class FormOperaciones extends JFrame implements ActionListener{
     private JButton btnSuma;
     private JButton btnDiv;
     private JButton btnRaiz;
+    private JLabel lblResultado;
 
     public FormOperaciones(){
         this.setTitle("Formulario Operaciones");
@@ -29,6 +32,7 @@ public class FormOperaciones extends JFrame implements ActionListener{
         // Añadir btnSuma
         btnSuma = new JButton("Suma");
         this.add(btnSuma);
+        btnSuma.addActionListener(this);
 
         // Añadir btnDiv
         btnDiv = new JButton("División");
@@ -37,11 +41,29 @@ public class FormOperaciones extends JFrame implements ActionListener{
         // Añadir btnRaiz
         btnRaiz = new JButton("Raíz");
         this.add(btnRaiz);
+
+        // Añadir lblResultado
+        lblResultado = new JLabel("Resultado: ");
+        this.add(lblResultado);
+    }
+
+    public boolean isDataVerified(String dataToVerified){
+        try {
+            Integer.parseInt(dataToVerified);
+            return true;
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, String.format("Error! Los datos no son numéricos"), "ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        if (e.getSource() == btnSuma) {
+            lblResultado.setText(String.format("Resultado: ", (txfUno.getText() + txfDos.getText())));
+        }
+        isDataVerified(txfUno.getText());
     }
 }
 
