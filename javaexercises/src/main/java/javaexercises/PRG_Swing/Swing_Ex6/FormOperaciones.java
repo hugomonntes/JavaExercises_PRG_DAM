@@ -9,7 +9,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FormOperaciones extends JFrame implements ActionListener{
+public class FormOperaciones extends JFrame implements ActionListener {
     private JTextField txfUno;
     private JTextField txfDos;
     private JButton btnSuma;
@@ -17,14 +17,14 @@ public class FormOperaciones extends JFrame implements ActionListener{
     private JButton btnRaiz;
     private JLabel lblResultado;
 
-    public FormOperaciones(){
+    public FormOperaciones() {
         this.setTitle("Formulario Operaciones");
         this.setLayout(new FlowLayout());
 
         // Añadir txfUno
         txfUno = new JTextField(10);
         this.add(txfUno);
-    
+
         // Añadir txfDos
         txfDos = new JTextField(10);
         this.add(txfDos);
@@ -37,47 +37,66 @@ public class FormOperaciones extends JFrame implements ActionListener{
         // Añadir btnDiv
         btnDiv = new JButton("División");
         this.add(btnDiv);
+        btnDiv.addActionListener(this);
 
         // Añadir btnRaiz
         btnRaiz = new JButton("Raíz");
         this.add(btnRaiz);
+        btnRaiz.addActionListener(this);
 
         // Añadir lblResultado
         lblResultado = new JLabel("Resultado: ");
         this.add(lblResultado);
     }
 
-    public boolean isDataVerified(String dataToVerified){
-        try {
-            Integer.parseInt(dataToVerified);
-            return true;
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, String.format("Error! Los datos no son numéricos"), "ERROR",
-            JOptionPane.ERROR_MESSAGE);
-            return false;
-        }
+    public double isDataVerified(String dataToVerified) {
+        return Double.parseDouble(dataToVerified);
     }
 
-    public double calculateSum(int numberInput1, int numberInput2){
+    public double calculateSum(double numberInput1, double numberInput2) {
         return numberInput1 + numberInput2;
+    }
+
+    public double calculateDiv(double numberInput1, double numberInput2) {
+        return numberInput1 / numberInput2;
+    }
+
+    public double calculateRaiz(double numberInput1) {
+        return Math.sqrt(numberInput1);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnSuma && isDataVerified(txfUno.getText()) && isDataVerified(txfUno.getText())) {
-            lblResultado.setText(String.format("Resultado: ", (txfUno.getText() + txfDos.getText())));
+        try {
+            if (e.getSource() == btnSuma) {
+                lblResultado.setText(String.format("Resultado: %.2f",
+                        calculateSum(isDataVerified(txfUno.getText()), isDataVerified(txfDos.getText()))));
+            } else if (e.getSource() == btnDiv) {
+                lblResultado.setText(String.format("Resultado: %.2f",
+                        calculateDiv(isDataVerified(txfUno.getText()), isDataVerified(txfDos.getText()))));
+            } else if (e.getSource() == btnRaiz) { //FIXME RAIZ DE NUMEROS NEGATIVOS
+                lblResultado.setText(String.format("Resultado: %.2f",
+                        calculateRaiz(isDataVerified(txfUno.getText()))));
+            }
+        } catch (NumberFormatException e1) {
+            JOptionPane.showMessageDialog(this, String.format("Error! Introduce datos numéricos"), "ERROR",
+                    JOptionPane.ERROR_MESSAGE);
         }
     }
 }
 
 /*
-6. Formulario con 2 cajas de texto, una etiqueta y un botón de suma, otro de
-división y otro de raíz cuadrada. Al pulsar un botón realizará la operación
-correspondiente con las cajas de edición (la raíz actúa sólo sobre la primera) y
-mostrará el resultado en la etiqueta anteponiendo un =. Si no son valores
-numéricos, es una división entre 0 o la raíz es de un número negativo lo indicará en
-la JLabel de resultado en color rojo (NO uses JOptionPane). Hazlo con FlowLayout.
-Los resultados con 3 decimales en color negro.
-Nota: Si quieres evitar problemas con comas o puntos decimales echa un vistazo al
-apéndice 3 del tema.
-*/
+ * 6. Formulario con 2 cajas de texto, una etiqueta y un botón de suma, otro de
+ * división y otro de raíz cuadrada. Al pulsar un botón realizará la operación
+ * correspondiente con las cajas de edición (la raíz actúa sólo sobre la
+ * primera) y
+ * mostrará el resultado en la etiqueta anteponiendo un =. Si no son valores
+ * numéricos, es una división entre 0 o la raíz es de un número negativo lo
+ * indicará en
+ * la JLabel de resultado en color rojo (NO uses JOptionPane). Hazlo con
+ * FlowLayout.
+ * Los resultados con 3 decimales en color negro.
+ * Nota: Si quieres evitar problemas con comas o puntos decimales echa un
+ * vistazo al
+ * apéndice 3 del tema.
+ */
