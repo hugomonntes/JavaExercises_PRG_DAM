@@ -8,6 +8,7 @@ import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria.F
 import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria.Linea;
 import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria.Poligono;
 import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.geometria.Punto;
+import javaexercises.PRG_PooAdv.PooAdv_B2.Ex2.interfaz.src.main.java.interfaz.Libreria;
 
 public class App {
     public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class App {
             System.out.println("5. Salir");
             System.out.print("Elige una opción: ");
             try {
-                opcion = sc.nextInt();//TODO usar libreria
+                opcion = Libreria.pedirEntero();// TODO usar libreria)(ok)
                 switch (opcion) {
                     case 1:
                         System.out.println("1. Línea");
@@ -41,7 +42,7 @@ public class App {
                                     colecciónDeFiguras.add(new Poligono());
                                     break;
                                 case 3:
-                                    colecciónDeFiguras.add(new Poligono("Cuadrado",new Punto(), 4));
+                                    colecciónDeFiguras.add(new Poligono("Cuadrado", new Punto(), 4));
                                     break;
                                 case 4:
                                     colecciónDeFiguras.add(new Circunferencia(new Punto(0, 0), 4));
@@ -57,23 +58,19 @@ public class App {
                         for (Figura figura : colecciónDeFiguras) {
                             System.out.println(figura.getNombre());
                             if (figura.getClass() == Circunferencia.class) {
-                             //   Circunferencia aux = (Circunferencia)figura;
-                                System.out.println(((Circunferencia) figura).getRadio()); // NO Olvidar Parentesis Casting a Figura
-                            } 
-                        }
-                        break;
-                    case 3://TODO reducir (llee enunciado)
-                        for (int i = 0; i < colecciónDeFiguras.size(); i++) {
-                            if (colecciónDeFiguras.get(i).getClass() == Circunferencia.class) {
-                                System.out.println(colecciónDeFiguras.get(i).getNombre());
-                                System.out.println(((Circunferencia) colecciónDeFiguras.get(i)).getRadio());
-                            } else {
-                                System.out.println(colecciónDeFiguras.get(i).getNombre());
-                                System.out.println(colecciónDeFiguras.get(i).getOrigen());
+                                // Circunferencia aux = (Circunferencia)figura;
+                                System.out.println(((Circunferencia) figura).getRadio()); // NO Olvidar Parentesis
+                                                                                          // Casting a Figura
                             }
                         }
                         break;
-                    case 4: //TODO borrar por TIPO
+                    case 3:// TODO reducir (llee enunciado)(ok)
+                        int indice = 0;
+                        System.out.printf("De que elementoquieres ver sus datos:");
+                        indice = Libreria.pedirEntero();
+                        colecciónDeFiguras.get(indice - 1).mostrarDatos();
+                        break;
+                    case 4: // TODO borrar por TIPO
                         sc.nextLine();
                         String nombreFiguraBorrar;
                         System.out.println("Introduce el nombre de la figura a borrar: ");

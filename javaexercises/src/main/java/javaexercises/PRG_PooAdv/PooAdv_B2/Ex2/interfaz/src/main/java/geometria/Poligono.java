@@ -15,10 +15,10 @@ public class Poligono extends Figura{
     }
 
     public Poligono(){
-        this("Triangulo", new Punto(0,0),  3);//TODO guardar puntos
-        new Punto(0, 0);
-        new Punto(1, 1);
-        new Punto(1, 0);
+        this("Triangulo", new Punto(0,0),  3);//TODO guardar puntos (ok)
+        listaDePuntos[0] = new Punto(0, 0);
+        listaDePuntos[1] = new Punto(1, 1);
+        listaDePuntos[2] = new Punto(1, 0);
     }
 
     @Override

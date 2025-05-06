@@ -45,7 +45,7 @@ public class FormOperaciones extends JFrame implements ActionListener {
         btnRaiz.addActionListener(this);
 
         // Añadir lblResultado
-        lblResultado = new JLabel("Resultado: ");
+        lblResultado = new JLabel();
         this.add(lblResultado);
     }
 
@@ -71,12 +71,17 @@ public class FormOperaciones extends JFrame implements ActionListener {
             if (e.getSource() == btnSuma) {
                 lblResultado.setText(String.format("Resultado: %.2f",
                         calculateSum(isDataVerified(txfUno.getText()), isDataVerified(txfDos.getText()))));
-            } else if (e.getSource() == btnDiv) {
+            } 
+            if (e.getSource() == btnDiv) {
                 lblResultado.setText(String.format("Resultado: %.2f",
                         calculateDiv(isDataVerified(txfUno.getText()), isDataVerified(txfDos.getText()))));
-            } else if (e.getSource() == btnRaiz) { //FIXME RAIZ DE NUMEROS NEGATIVOS
-                lblResultado.setText(String.format("Resultado: %.2f",
+            } 
+            if (e.getSource() == btnRaiz && isDataVerified(txfUno.getText()) > 0) { //FIXME RAIZ DE NUMEROS NEGATIVOS
+                lblResultado.setText(String.format("Resultado = %.2f",
                         calculateRaiz(isDataVerified(txfUno.getText()))));
+            } else if (e.getSource() == btnRaiz && isDataVerified(txfUno.getText()) < 0){
+                JOptionPane.showMessageDialog(this, String.format("Error! Introduce datos numéricos positivos"), "ERROR",
+                JOptionPane.ERROR_MESSAGE);
             }
         } catch (NumberFormatException e1) {
             JOptionPane.showMessageDialog(this, String.format("Error! Introduce datos numéricos"), "ERROR",
