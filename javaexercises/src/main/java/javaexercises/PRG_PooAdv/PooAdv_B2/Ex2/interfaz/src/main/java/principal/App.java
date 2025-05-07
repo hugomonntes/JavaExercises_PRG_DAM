@@ -15,6 +15,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         ArrayList<Figura> colecciónDeFiguras = new ArrayList<>();
         int opcion;
+        int opcion2;
         do {
             System.out.println("1. Insertar figura (línea, triángulo, cuadrado o circunferencia)");
             System.out.println("2. Mostrar nombres de las figuras (y radio si es circunferencia)");
@@ -71,16 +72,44 @@ public class App {
                         colecciónDeFiguras.get(indice - 1).mostrarDatos();
                         break;
                     case 4: // TODO borrar por TIPO
-                        sc.nextLine();
-                        String nombreFiguraBorrar;
-                        System.out.println("Introduce el nombre de la figura a borrar: ");
-                        nombreFiguraBorrar = sc.nextLine().toUpperCase();
-                        for (int i = 0; i < colecciónDeFiguras.size(); i++) {
-                            if (colecciónDeFiguras.get(i).getNombre().equals(nombreFiguraBorrar)) {
-                                colecciónDeFiguras.remove(i);
-                                i--;
+                        do {
+                            System.out.println("1. Linea");
+                            System.out.println("2. Poligono (Triangulo y Cuadrado)");
+                            System.out.println("3. Circunfererencia");
+                            System.out.print("¿Que elementos quieres eliminar? ");
+                            opcion2 = Libreria.pedirEntero();
+                            switch (opcion2) {
+
+                                case 1:
+                                    for (int i = 0; i < colecciónDeFiguras.size(); i++) {
+                                        if (colecciónDeFiguras.get(i).getClass() == Linea.class) {
+                                            colecciónDeFiguras.remove(i);
+                                            i--;
+                                        }
+                                    }
+                                    break;
+                                case 2:
+                                    for (int i = 0; i < colecciónDeFiguras.size(); i++) {
+                                        if (colecciónDeFiguras.get(i).getClass() == Poligono.class) {
+                                            colecciónDeFiguras.remove(i);
+                                            i--;
+                                        }
+                                    }
+                                    break;
+                                case 3:
+                                    for (int i = 0; i < colecciónDeFiguras.size(); i++) {
+                                        if (colecciónDeFiguras.get(i).getClass() == Circunferencia.class) {
+                                            colecciónDeFiguras.remove(i);
+                                            i--;
+                                        }
+                                    }
+                                    break;
+
+                                default:
+                                    System.out.println("Elige una opción del 1 al 3");
+                                    break;
                             }
-                        }
+                        } while (opcion2 < 1 || opcion2 > 3);
                         break;
                     case 5:
                         System.out.println("Saliendo...");

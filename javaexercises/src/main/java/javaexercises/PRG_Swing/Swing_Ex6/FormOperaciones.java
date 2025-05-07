@@ -5,6 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -71,21 +73,21 @@ public class FormOperaciones extends JFrame implements ActionListener {
             if (e.getSource() == btnSuma) {
                 lblResultado.setText(String.format("Resultado: %.2f",
                         calculateSum(isDataVerified(txfUno.getText()), isDataVerified(txfDos.getText()))));
-            } 
+            }
             if (e.getSource() == btnDiv) {
                 lblResultado.setText(String.format("Resultado: %.2f",
                         calculateDiv(isDataVerified(txfUno.getText()), isDataVerified(txfDos.getText()))));
-            } 
-            if (e.getSource() == btnRaiz && isDataVerified(txfUno.getText()) > 0) { //FIXME RAIZ DE NUMEROS NEGATIVOS
+            }
+            if (e.getSource() == btnRaiz && isDataVerified(txfUno.getText()) > 0) { // FIXME RAIZ DE NUMEROS NEGATIVOS
                 lblResultado.setText(String.format("Resultado = %.2f",
                         calculateRaiz(isDataVerified(txfUno.getText()))));
-            } else if (e.getSource() == btnRaiz && isDataVerified(txfUno.getText()) < 0){
-                JOptionPane.showMessageDialog(this, String.format("Error! Introduce datos numéricos positivos"), "ERROR",
-                JOptionPane.ERROR_MESSAGE);
+            } else if (e.getSource() == btnRaiz && isDataVerified(txfUno.getText()) < 0) {
+                lblResultado.setText("Error! Introduce datos numéricos positivos");
+                lblResultado.setForeground(Color.RED);
             }
         } catch (NumberFormatException e1) {
-            JOptionPane.showMessageDialog(this, String.format("Error! Introduce datos numéricos"), "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
+            lblResultado.setText("Error! Introduce datos numéricos");
+            lblResultado.setForeground(Color.RED);
         }
     }
 }

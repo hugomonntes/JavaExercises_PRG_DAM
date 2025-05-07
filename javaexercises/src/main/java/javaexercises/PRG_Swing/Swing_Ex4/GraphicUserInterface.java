@@ -1,9 +1,5 @@
 package javaexercises.PRG_Swing.Swing_Ex4;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 import javax.swing.JFrame;
 
 public class GraphicUserInterface {
