@@ -54,22 +54,15 @@ public class FormValidacion extends JFrame implements ActionListener {
         btnCargar.addActionListener(this);
     }
 
-    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad) { // Idea dividir cada
-                                                                                           // validación en una función
-                                                                                           // para cada una
+    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad) { // Idea dividir validación en funciones individuales
         String textoNombreFormateado = textoValidarNombre.trim();
 
         // Validación Campo Nombre
         try {
             for (int i = 0; i < textoNombreFormateado.length(); i++) {
-                if (!Character.isLetter(textoNombreFormateado.charAt(i)) || textoNombreFormateado.length() <= 1) { // (No
-                                                                                                                   // está
-                                                                                                                   // en
-                                                                                                                   // la
-                                                                                                                   // especificaión)
+                if (!Character.isLetter(textoNombreFormateado.charAt(i)) || textoNombreFormateado.length() <= 1) { // (No esta en especificaión)
                     throw new IllegalArgumentException();
-                } // Preguntar Curro si es mejor hacerlo solo con el if *PROBLEMA NO SE PUEDE
-                  // LANZAR JOptionPane al tener bucle*
+                }
             }
         } catch (IllegalArgumentException nombreNoValido) {
             JOptionPane.showMessageDialog(this, String.format("Error! Introduce un nombre válido"), "ERROR",
@@ -95,7 +88,7 @@ public class FormValidacion extends JFrame implements ActionListener {
     public void escribirArchivo(String textoEscribirEnArchivo) throws IOException {
         FileWriter fw = new FileWriter("SwingEx4.txt");
         fw.write(textoEscribirEnArchivo);
-        fw.close(); // ACORDARSE CERRAR FW **IMPORTANTE**
+        fw.close(); 
     }
 
     public String[] leerDatosArchivo() throws FileNotFoundException {
