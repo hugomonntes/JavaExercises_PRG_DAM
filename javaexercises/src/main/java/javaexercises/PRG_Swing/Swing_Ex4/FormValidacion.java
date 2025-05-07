@@ -13,8 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class FormValidacion extends JFrame implements ActionListener {
-    private JTextField txfNombre;
+public class FormValidacion extends JFrame implements ActionListener { //TODO preguntar al cvargar. Revisar trim. Revisar que haya archivo.
+    private JTextField txfNombre; 
     private JTextField txfEdad;
     private JTextField txfDir;
     private JButton btnGuardar;
@@ -66,7 +66,7 @@ public class FormValidacion extends JFrame implements ActionListener {
             }
         } catch (IllegalArgumentException nombreNoValido) {
             JOptionPane.showMessageDialog(this, String.format("Error! Introduce un nombre válido"), "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
+            JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
@@ -78,11 +78,11 @@ public class FormValidacion extends JFrame implements ActionListener {
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, String.format("Error! Introduce un número positivo"), "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
+            JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
-        return !textoNombreFormateado.isEmpty() ? true : false;
+        return !textoNombreFormateado.isEmpty()  ;
     }
 
     public void escribirArchivo(String textoEscribirEnArchivo) throws IOException {
@@ -94,7 +94,7 @@ public class FormValidacion extends JFrame implements ActionListener {
     public String[] leerDatosArchivo() throws FileNotFoundException {
         String cadenaDatos = "";
         try {
-            Scanner sc = new Scanner(new File("SwingEx4.txt"));
+            Scanner sc = new Scanner(new File("SwingEx4.txt")); //FIXME
             while (sc.hasNext()) {
                 String cadenaOriginal = sc.nextLine();
                 cadenaDatos += cadenaOriginal.trim();
