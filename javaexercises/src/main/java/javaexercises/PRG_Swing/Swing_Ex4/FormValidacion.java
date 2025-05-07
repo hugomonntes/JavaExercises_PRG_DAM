@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class FormValidacion extends JFrame implements ActionListener { //TODO preguntar al cvargar. Revisar trim. Revisar que haya archivo.
+public class FormValidacion extends JFrame implements ActionListener { //TODO preguntar al cvargar. Revisar trim(ok). Revisar que haya archivo.
     private JTextField txfNombre; 
     private JTextField txfEdad;
     private JTextField txfDir;
@@ -54,7 +54,7 @@ public class FormValidacion extends JFrame implements ActionListener { //TODO pr
         btnCargar.addActionListener(this);
     }
 
-    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad) { // Idea dividir validación en funciones individuales
+    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad, String textoValidarDir) { // Idea dividir validación en funciones individuales
         String textoNombreFormateado = textoValidarNombre.trim();
 
         // Validación Campo Nombre
@@ -70,19 +70,32 @@ public class FormValidacion extends JFrame implements ActionListener { //TODO pr
             return false;
         }
 
-        // Validación Campo Edad
+        // Validación Campo Direccion
+        String  textoFormateadoDir = textoValidarDir.trim();
         try {
-            int textoEdadFormateado = Integer.parseInt(textoValidarEdad.trim());
+            if (textoFormateadoDir.isEmpty()) {
+                throw new IllegalArgumentException();
+            }
+        } catch (IllegalArgumentException DirNoValida) {
+            JOptionPane.showMessageDialog(this, String.format("Error! Introduce una dirección válida"), "ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+
+        // Validación Campo Edad
+        int textoEdadFormateado = Integer.parseInt(textoValidarEdad.trim());
+        try {
             if (textoEdadFormateado <= 0) {
                 throw new NumberFormatException();
             }
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException EdadNoValida) {
             JOptionPane.showMessageDialog(this, String.format("Error! Introduce un número positivo"), "ERROR",
             JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
-        return !textoNombreFormateado.isEmpty()  ;
+        return !textoNombreFormateado.isEmpty() || !textoFormateadoDir.isEmpty() || textoEdadFormateado == 0;
     }
 
     public void escribirArchivo(String textoEscribirEnArchivo) throws IOException {
@@ -99,6 +112,7 @@ public class FormValidacion extends JFrame implements ActionListener { //TODO pr
                 String cadenaOriginal = sc.nextLine();
                 cadenaDatos += cadenaOriginal.trim();
             }
+            sc.close();
         } catch (FileNotFoundException e) {
             System.out.println("El archivo no existe");
         }
@@ -119,7 +133,7 @@ public class FormValidacion extends JFrame implements ActionListener { //TODO pr
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnGuardar) {
-            boolean isChecked = validarDatosInput(txfNombre.getText(), txfEdad.getText());
+            boolean isChecked = validarDatosInput(txfNombre.getText(), txfEdad.getText(), txfDir.getText());
             String texto;
             if (isChecked) {
                 texto = String.format("%s, %s, %s", txfNombre.getText(), txfEdad.getText(), txfDir.getText());
