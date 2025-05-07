@@ -113,6 +113,9 @@ public class FormValidacion extends JFrame implements ActionListener { //TODO pr
                 cadenaDatos += cadenaOriginal.trim();
             }
             sc.close();
+            // if (cadenaDatos.length() == 0) {
+            //     throw new FileNotFoundException();
+            // } FIXME
         } catch (FileNotFoundException e) {
             System.out.println("El archivo no existe");
         }
