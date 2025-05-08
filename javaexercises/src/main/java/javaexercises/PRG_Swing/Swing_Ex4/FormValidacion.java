@@ -13,8 +13,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class FormValidacion extends JFrame implements ActionListener { //TODO preguntar al cvargar. Revisar trim(ok). Revisar que haya archivo.
-    private JTextField txfNombre; 
+public class FormValidacion extends JFrame implements ActionListener { // TODO preguntar al cvargar(ok). Revisar trim(ok).
+                                                                       // Revisar que haya archivo(ok).
+    private JTextField txfNombre;
     private JTextField txfEdad;
     private JTextField txfDir;
     private JButton btnGuardar;
@@ -54,82 +55,89 @@ public class FormValidacion extends JFrame implements ActionListener { //TODO pr
         btnCargar.addActionListener(this);
     }
 
-    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad, String textoValidarDir) { // Idea dividir validación en funciones individuales
-        String textoNombreFormateado = textoValidarNombre.trim();
-
+    public boolean validarDatosInput(String textoValidarNombre, String textoValidarEdad, String textoValidarDir) {
         // Validación Campo Nombre
         try {
+            String textoNombreFormateado = textoValidarNombre.trim();
             for (int i = 0; i < textoNombreFormateado.length(); i++) {
-                if (!Character.isLetter(textoNombreFormateado.charAt(i)) || textoNombreFormateado.length() <= 1) { // (No esta en especificaión)
+                if (!Character.isLetter(textoNombreFormateado.charAt(i)) || textoNombreFormateado.length() <= 1) {
                     throw new IllegalArgumentException();
                 }
             }
         } catch (IllegalArgumentException nombreNoValido) {
             JOptionPane.showMessageDialog(this, String.format("Error! Introduce un nombre válido"), "ERROR",
-            JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
         // Validación Campo Direccion
-        String  textoFormateadoDir = textoValidarDir.trim();
         try {
+            String textoFormateadoDir = textoValidarDir.trim();
             if (textoFormateadoDir.isEmpty()) {
                 throw new IllegalArgumentException();
             }
         } catch (IllegalArgumentException DirNoValida) {
             JOptionPane.showMessageDialog(this, String.format("Error! Introduce una dirección válida"), "ERROR",
-            JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
-
         // Validación Campo Edad
-        int textoEdadFormateado = Integer.parseInt(textoValidarEdad.trim());
         try {
+            int textoEdadFormateado = Integer.parseInt(textoValidarEdad.trim());
             if (textoEdadFormateado <= 0) {
                 throw new NumberFormatException();
             }
         } catch (NumberFormatException EdadNoValida) {
-            JOptionPane.showMessageDialog(this, String.format("Error! Introduce un número positivo"), "ERROR",
-            JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error! Introduce un número positivo", "ERROR",
+                    JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
-        return !textoNombreFormateado.isEmpty() || !textoFormateadoDir.isEmpty() || textoEdadFormateado == 0;
+        return true;
     }
 
     public void escribirArchivo(String textoEscribirEnArchivo) throws IOException {
         FileWriter fw = new FileWriter("SwingEx4.txt");
         fw.write(textoEscribirEnArchivo);
-        fw.close(); 
+        fw.close();
     }
 
     public String[] leerDatosArchivo() throws FileNotFoundException {
         String cadenaDatos = "";
         try {
-            Scanner sc = new Scanner(new File("SwingEx4.txt")); //FIXME
+            File archivo = new File("SwingEx4.txt");
+            if (!archivo.exists()) {
+                JOptionPane.showMessageDialog(this, "El archivo no existe", "ERROR", JOptionPane.ERROR_MESSAGE);
+                throw new FileNotFoundException();
+            }
+            Scanner sc = new Scanner(archivo);
             while (sc.hasNext()) {
                 String cadenaOriginal = sc.nextLine();
                 cadenaDatos += cadenaOriginal.trim();
             }
             sc.close();
-            // if (cadenaDatos.length() == 0) {
-            //     throw new FileNotFoundException();
-            // } FIXME
         } catch (FileNotFoundException e) {
             System.out.println("El archivo no existe");
         }
         return cadenaDatos.split(",");
     }
 
-    public void escribirDatosInput(String[] datosArchivo){
-        if (txfNombre.getText().isEmpty() || txfEdad.getText().isEmpty() || txfDir.getText().isEmpty()) {
+    public void escribirDatosInput(String[] datosArchivo) {
+        if (txfNombre.getText().trim().isEmpty() || txfEdad.getText().trim().isEmpty()
+                || txfDir.getText().trim().isEmpty()) {
             txfNombre.setText(datosArchivo[0]);
             txfEdad.setText(datosArchivo[1]);
             txfDir.setText(datosArchivo[2]);
         } else {
-            JOptionPane.showMessageDialog(this, String.format("Error! Los campos no están vacíos"), "ERROR",
-            JOptionPane.ERROR_MESSAGE);
+            int opcion = JOptionPane.showConfirmDialog(this,
+                    "Los campos ya contienen datos. ¿Deseas sobrescribirlos?",
+                    "Confirmación", JOptionPane.YES_NO_OPTION);
+            if (opcion == JOptionPane.YES_NO_OPTION) {
+                txfNombre.setText(datosArchivo[0]);
+                txfEdad.setText(datosArchivo[1]);
+                txfDir.setText(datosArchivo[2]);
+            }
         }
     }
 
@@ -144,7 +152,7 @@ public class FormValidacion extends JFrame implements ActionListener { //TODO pr
                     escribirArchivo(texto);
                     System.err.println("texto escrito en archivo");
                 } catch (IOException excptFile) {
-    
+
                 }
             }
         }
@@ -153,7 +161,7 @@ public class FormValidacion extends JFrame implements ActionListener { //TODO pr
             try {
                 escribirDatosInput(leerDatosArchivo());
             } catch (FileNotFoundException e1) {
-                
+
             }
         }
     }

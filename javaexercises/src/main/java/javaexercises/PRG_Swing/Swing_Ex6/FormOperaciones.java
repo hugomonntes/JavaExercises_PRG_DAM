@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,87 +21,68 @@ public class FormOperaciones extends JFrame implements ActionListener {
         this.setTitle("Formulario Operaciones");
         this.setLayout(new FlowLayout());
 
-        // Añadir txfUno
         txfUno = new JTextField(10);
         this.add(txfUno);
 
-        // Añadir txfDos
         txfDos = new JTextField(10);
         this.add(txfDos);
 
-        // Añadir btnSuma
         btnSuma = new JButton("Suma");
-        this.add(btnSuma);
         btnSuma.addActionListener(this);
+        this.add(btnSuma);
 
-        // Añadir btnDiv
         btnDiv = new JButton("División");
-        this.add(btnDiv);
         btnDiv.addActionListener(this);
+        this.add(btnDiv);
 
-        // Añadir btnRaiz
         btnRaiz = new JButton("Raíz");
-        this.add(btnRaiz);
         btnRaiz.addActionListener(this);
+        this.add(btnRaiz);
 
-        // Añadir lblResultado
         lblResultado = new JLabel();
         this.add(lblResultado);
+
+        this.setSize(300, 150);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
     }
 
-    public double isDataVerified(String dataToVerified) {
-        return Double.parseDouble(dataToVerified);
-    }
-
-    public double calculateSum(double numberInput1, double numberInput2) {
-        return numberInput1 + numberInput2;
-    }
-
-    public double calculateDiv(double numberInput1, double numberInput2) {
-        return numberInput1 / numberInput2;
-    }
-
-    public double calculateRaiz(double numberInput1) {
-        return Math.sqrt(numberInput1);
+    public double parseInput(String input) throws NumberFormatException { // Apéndice III
+        return Double.parseDouble(input.trim().replace(",", "."));
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
+            double number1 = parseInput(txfUno.getText());
+            double number2 = parseInput(txfDos.getText());
+
             if (e.getSource() == btnSuma) {
-                lblResultado.setText(String.format("Resultado: %.2f",
-                        calculateSum(isDataVerified(txfUno.getText()), isDataVerified(txfDos.getText()))));
+                double resultSuma = number1 + number2;
+                lblResultado.setText(String.format("= %.3f", resultSuma));
+                lblResultado.setForeground(Color.BLACK);
+            } else if (e.getSource() == btnDiv) {
+                if (number2 == 0) {
+                    lblResultado.setText("Error! División entre 0");
+                    lblResultado.setForeground(Color.RED);
+                } else {
+                    double result = number1 / number2;
+                    lblResultado.setText(String.format("= %.3f", result));
+                    lblResultado.setForeground(Color.BLACK);
+                }
+            } else if (e.getSource() == btnRaiz) {
+                if (number1 < 0) {
+                    lblResultado.setText("Error! Raíz de número negativo");
+                    lblResultado.setForeground(Color.RED);
+                } else {
+                    double result = Math.sqrt(number1);
+                    lblResultado.setText(String.format("= %.3f", result));
+                    lblResultado.setForeground(Color.BLACK);
+                }
             }
-            if (e.getSource() == btnDiv) {
-                lblResultado.setText(String.format("Resultado: %.2f",
-                        calculateDiv(isDataVerified(txfUno.getText()), isDataVerified(txfDos.getText()))));
-            }
-            if (e.getSource() == btnRaiz && isDataVerified(txfUno.getText()) > 0) { // FIXME RAIZ DE NUMEROS NEGATIVOS
-                lblResultado.setText(String.format("Resultado = %.2f",
-                        calculateRaiz(isDataVerified(txfUno.getText()))));
-            } else if (e.getSource() == btnRaiz && isDataVerified(txfUno.getText()) < 0) {
-                lblResultado.setText("Error! Introduce datos numéricos positivos");
-                lblResultado.setForeground(Color.RED);
-            }
-        } catch (NumberFormatException e1) {
+        } catch (NumberFormatException ex) {
             lblResultado.setText("Error! Introduce datos numéricos");
             lblResultado.setForeground(Color.RED);
         }
     }
 }
-
-/*
- * 6. Formulario con 2 cajas de texto, una etiqueta y un botón de suma, otro de
- * división y otro de raíz cuadrada. Al pulsar un botón realizará la operación
- * correspondiente con las cajas de edición (la raíz actúa sólo sobre la
- * primera) y
- * mostrará el resultado en la etiqueta anteponiendo un =. Si no son valores
- * numéricos, es una división entre 0 o la raíz es de un número negativo lo
- * indicará en
- * la JLabel de resultado en color rojo (NO uses JOptionPane). Hazlo con
- * FlowLayout.
- * Los resultados con 3 decimales en color negro.
- * Nota: Si quieres evitar problemas con comas o puntos decimales echa un
- * vistazo al
- * apéndice 3 del tema.
- */
