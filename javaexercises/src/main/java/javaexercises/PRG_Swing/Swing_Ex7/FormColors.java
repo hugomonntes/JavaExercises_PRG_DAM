@@ -1,5 +1,6 @@
 package javaexercises.PRG_Swing.Swing_Ex7;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -52,9 +53,28 @@ public class FormColors extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        validarDatosInput(txfUno.getText());
-        validarDatosInput(txfDos.getText());
-        validarDatosInput(txfTres.getText());
+        if (e.getSource() == btnColor && (e.getModifiers() & e.CTRL_MASK) == e.getModifiers()) { // FIXME
+            this.setBackground(Color.BLUE);
+        }
+        
+        if (validarDatosInput(txfUno.getText()) && validarDatosInput(txfDos.getText()) && validarDatosInput(txfTres.getText())) {
+            int colorTxf1 = Integer.parseInt(txfUno.getText());
+            int colorTxf2 = Integer.parseInt(txfDos.getText());
+            int colorTxf3 = Integer.parseInt(txfTres.getText());
+            btnColor.setBackground(new Color(colorTxf1, colorTxf2, colorTxf3));
+        }
     }
     
 }
+
+// En un formulario se colocan 3 textfield y un botón Color. En dichas textfield se
+// puede meter números RGB (0-255) en cada una y al pulsar el botón se cambia el
+// color del fondo del botón. Si al mismo tiempo que se produce el evento se está
+// pulsando la tecla CTRL, en lugar del color de fondo se cambia el del texto. También
+// cambiará si se pulsa ENTER en la tercera caja de texto (la referida al azul, en este
+// caso no tendrá efecto el CTRL).
+// Habrá otro textfield (de mayor tamaño) en el que se permite escribir el path
+// completo de una imagen, esta se cargará al pulsar Enter y se mostrará en otra
+// etiqueta(la trayectoria se le puede pasar directamente al constructor de ImageIcon
+// sin necesidad de getResource).
+// Introduce ToolTips en los botones y cajas de texto. Usa FlowLayout. 
