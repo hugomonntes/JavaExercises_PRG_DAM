@@ -18,6 +18,9 @@ public class Tragaperras extends JFrame implements ActionListener {
     private JButton btnTirada;
     private JLabel lblSaldo;
     private Timer timer;
+    private JLabel lblTimer;
+    int countMin = 0;
+    int countSec = 0;
     int saldo = 20;
 
     public Tragaperras() {
@@ -50,7 +53,11 @@ public class Tragaperras extends JFrame implements ActionListener {
 
         // Añadir Timer
         timer = new Timer(1000, this);
-        
+        timer.start();
+
+        // Añadir etiqueta timer
+        lblTimer = new JLabel();
+        this.add(lblTimer);
     }
 
     public String createRamdonNumber(){
@@ -59,21 +66,32 @@ public class Tragaperras extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        txfUno.setText(createRamdonNumber());
-        txfDos.setText(createRamdonNumber());
-        txfTres.setText(createRamdonNumber());
-
-        if (txfUno.getText().equals(txfDos.getText()) && txfUno.getText().equals(txfTres.getText())) {
-            saldo = saldo * 2;
-            JOptionPane.showMessageDialog(this, String.format("Enhorabuena! Has ganado el premio! Saldo actual de: %d€", saldo));
-            lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
-        } else if (!(txfUno.getText().equals(txfDos.getText()) && txfUno.getText().equals(txfTres.getText()))) {
-            saldo--;
-            lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
-            if (saldo == 0) {
-                JOptionPane.showMessageDialog(this, String.format("Has perdido! Saldo actual de: %d€", saldo));
-                this.dispose(); // Con esto cierro la ventana
+        if (e.getSource() == btnTirada) {
+            txfUno.setText(createRamdonNumber());
+            txfDos.setText(createRamdonNumber());
+            txfTres.setText(createRamdonNumber());
+    
+            if (txfUno.getText().equals(txfDos.getText()) && txfUno.getText().equals(txfTres.getText())) {
+                saldo = saldo * 2;
+                JOptionPane.showMessageDialog(this, String.format("Enhorabuena! Has ganado el premio! Saldo actual de: %d€", saldo));
+                lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
+            } else if (!(txfUno.getText().equals(txfDos.getText()) && txfUno.getText().equals(txfTres.getText()))) {
+                saldo--;
+                lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
+                if (saldo == 0) {
+                    JOptionPane.showMessageDialog(this, String.format("Has perdido! Saldo actual de: %d€", saldo));
+                    this.dispose(); // Cierro la ventana si el saldo es 0 (No está en la especificación)
+                }
             }
+        }
+
+        if (e.getSource() == timer) {
+            lblTimer.setText(String.format("mm: %02d ss: %02d", countMin, countSec));
+            if (countSec == 60) {
+                countMin++;
+                countSec = 0;
+            }
+            countSec++;
         }
 
     }
