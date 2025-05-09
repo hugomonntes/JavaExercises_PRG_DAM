@@ -1,13 +1,15 @@
 package javaexercises.PRG_Swing.Swing_Ex5;
 
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import java.awt.event.ActionListener;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
+import javax.swing.Timer;
 
 public class Tragaperras extends JFrame implements ActionListener {
     private JTextField txfUno; 
@@ -15,6 +17,7 @@ public class Tragaperras extends JFrame implements ActionListener {
     private JTextField txfTres;
     private JButton btnTirada;
     private JLabel lblSaldo;
+    private Timer timer;
     int saldo = 20;
 
     public Tragaperras() {
@@ -44,6 +47,10 @@ public class Tragaperras extends JFrame implements ActionListener {
         // Añadir saldo
         lblSaldo = new JLabel("Saldo disponible: 20€");
         this.add(lblSaldo);
+
+        // Añadir Timer
+        timer = new Timer(1000, this);
+        
     }
 
     public String createRamdonNumber(){
