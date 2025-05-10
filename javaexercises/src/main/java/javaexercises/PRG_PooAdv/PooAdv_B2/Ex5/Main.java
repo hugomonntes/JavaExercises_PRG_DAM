@@ -44,13 +44,9 @@ public class Main {
                     }
 
                     coleccionDeAstros.add(new Planeta(nombrePlaneta, radioPlaneta, isGaseoso));
-                    ;
                     break;
                 case 2:
-                    for (Astro astro : coleccionDeAstros) {
-                        System.out.println(astro.getNombre());
-                    }
-                    ;
+                    System.out.println(coleccionDeAstros.toString());
                     break;
                 case 3:
                     ;

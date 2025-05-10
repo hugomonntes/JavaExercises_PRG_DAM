@@ -58,10 +58,10 @@ public class FormColors extends JFrame implements ActionListener{
         }
         
         if (validarDatosInput(txfR.getText()) && validarDatosInput(txfG.getText()) && validarDatosInput(txfB.getText())) {
-            int colorTxf1 = Integer.parseInt(txfR.getText());
-            int colorTxf2 = Integer.parseInt(txfG.getText());
-            int colorTxf3 = Integer.parseInt(txfB.getText());
-            btnColor.setBackground(new Color(colorTxf1, colorTxf2, colorTxf3));
+            int colorTxfR = Integer.parseInt(txfR.getText());
+            int colorTxfG = Integer.parseInt(txfG.getText());
+            int colorTxfB = Integer.parseInt(txfB.getText());
+            btnColor.setBackground(new Color(colorTxfR, colorTxfG, colorTxfB));
         }
     }
     
