@@ -9,7 +9,7 @@ public class Cadena {
         cadena = new ArrayList<>();
         conjuntoDeChars = conjuntoDeChars.trim();
         for (int i = 0; i < conjuntoDeChars.length(); i++) {
-            cadena.add(conjuntoDeChars.charAt(i)); 
+            cadena.add(conjuntoDeChars.charAt(i));
         }
     }
 
@@ -23,20 +23,36 @@ public class Cadena {
     }
 
     @Override
-    public boolean equals(Object obj) { // Corregir
-        if (obj == null) { // <Si obj es un string un array o uina coolercceion sea lo que sea comparar length o size y elemento a elemento si son iguales return booleanm 
-            throw new IllegalArgumentException("El parámetro no puede ser null");
+    public boolean equals(Object obj) {
+        String cadenaComparar = "";
+        for (int i = 0; i < cadena.size(); i++) {
+            cadenaComparar += cadena.get(i);
         }
-
-        if (obj instanceof Cadena){
+        if (cadenaComparar.equals(obj)) {
             return true;
-        } else {
-            obj = (Cadena) obj;
+        }
+        if (obj == null || obj.getClass() != Cadena.class || obj.getClass() == String.class || obj.getClass() == Character[].class) {
             return false;
+        } else {
+            return true;
         }
     }
 
-    public int eliminarCaracteres (char caracter){
+    // - Sobreescribe equals(Object) para que devuelva true si el objeto que se le
+    // pasa
+    // como parámetro cumple:
+    // • Es de tipo Cadena y contiene los mismos caracteres y en las mismas
+    // posiciones que la colección de la instancia.
+    // • Es un objeto tipo String y contiene los mismos caracteres y en las
+    // mismas posiciones que la colección de la instancia.
+    // Es un vector de char y contiene los mismos caracteres y en las
+    // mismas posiciones que la colección de la instancia.
+
+    // Si se le pasa un objeto null o un parámetro que no sea tipo Cadena, String o
+    // char[]
+    // lanzará la excepción IllegalArgumentException
+
+    public int eliminarCaracteres(char caracter) {
         int contadorEliminaciones = 0;
         for (int i = 0; i < cadena.size(); i++) {
             if (cadena.get(i) == caracter) {
@@ -48,18 +64,6 @@ public class Cadena {
         return contadorEliminaciones;
     }
 }
-
-// - Sobreescribe equals(Object) para que devuelva true si el objeto que se le pasa
-// como parámetro cumple:
-// • Es de tipo Cadena y contiene los mismos caracteres y en las mismas
-// posiciones que la colección de la instancia.
-// • Es un objeto tipo String y contiene los mismos caracteres y en las
-// mismas posiciones que la colección de la instancia.
-// Es un vector de char y contiene los mismos caracteres y en las
-// mismas posiciones que la colección de la instancia.
-// Si se le pasa un objeto null o un parámetro que no sea tipo Cadena, String o char[]
-// lanzará la excepción IllegalArgumentException
-
 
 // - Método eliminar(char): se le pasa un carácter y elimina todas las veces que
 // aparece dicho carácter. Además devuelve la cantidad de caracteres que ha

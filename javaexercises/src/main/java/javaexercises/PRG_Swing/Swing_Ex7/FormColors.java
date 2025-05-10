@@ -10,9 +10,9 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 public class FormColors extends JFrame implements ActionListener{
-    private JTextField txfUno;
-    private JTextField txfDos;
-    private JTextField txfTres;
+    private JTextField txfR;
+    private JTextField txfG;
+    private JTextField txfB;
     private JButton btnColor;
 
     public FormColors(){
@@ -20,17 +20,17 @@ public class FormColors extends JFrame implements ActionListener{
         super("Formulario Colores");
         this.setLayout(new FlowLayout());
 
-        // Añadir txfUno
-        txfUno = new JTextField(10);
-        this.add(txfUno);
+        // Añadir txfR
+        txfR = new JTextField(10);
+        this.add(txfR);
 
-        // Añadir txfDos
-        txfDos = new JTextField(10);
-        this.add(txfDos);
+        // Añadir txfG
+        txfG = new JTextField(10);
+        this.add(txfG);
 
-        // Añadir txfTres
-        txfTres = new JTextField(10);
-        this.add(txfTres);
+        // Añadir txfB
+        txfB = new JTextField(10);
+        this.add(txfB);
 
         // Añadir btnColor
         btnColor = new JButton("Color");
@@ -53,14 +53,14 @@ public class FormColors extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnColor && (e.getModifiers() & e.CTRL_MASK) == e.getModifiers()) { // FIXME
+        if (e.getSource() == btnColor && ((e.getModifiers() & e.CTRL_MASK) == e.CTRL_MASK)) { // FIXME
             this.setBackground(Color.BLUE);
         }
         
-        if (validarDatosInput(txfUno.getText()) && validarDatosInput(txfDos.getText()) && validarDatosInput(txfTres.getText())) {
-            int colorTxf1 = Integer.parseInt(txfUno.getText());
-            int colorTxf2 = Integer.parseInt(txfDos.getText());
-            int colorTxf3 = Integer.parseInt(txfTres.getText());
+        if (validarDatosInput(txfR.getText()) && validarDatosInput(txfG.getText()) && validarDatosInput(txfB.getText())) {
+            int colorTxf1 = Integer.parseInt(txfR.getText());
+            int colorTxf2 = Integer.parseInt(txfG.getText());
+            int colorTxf3 = Integer.parseInt(txfB.getText());
             btnColor.setBackground(new Color(colorTxf1, colorTxf2, colorTxf3));
         }
     }
@@ -73,6 +73,7 @@ public class FormColors extends JFrame implements ActionListener{
 // pulsando la tecla CTRL, en lugar del color de fondo se cambia el del texto. También
 // cambiará si se pulsa ENTER en la tercera caja de texto (la referida al azul, en este
 // caso no tendrá efecto el CTRL).
+
 // Habrá otro textfield (de mayor tamaño) en el que se permite escribir el path
 // completo de una imagen, esta se cargará al pulsar Enter y se mostrará en otra
 // etiqueta(la trayectoria se le puede pasar directamente al constructor de ImageIcon
