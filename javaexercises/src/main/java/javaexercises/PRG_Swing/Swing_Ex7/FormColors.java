@@ -13,6 +13,7 @@ public class FormColors extends JFrame implements ActionListener{
     private JTextField txfR;
     private JTextField txfG;
     private JTextField txfB;
+    private JTextField txfImg;
     private JButton btnColor;
 
     public FormColors(){
@@ -31,6 +32,10 @@ public class FormColors extends JFrame implements ActionListener{
         // Añadir txfB
         txfB = new JTextField(10);
         this.add(txfB);
+
+        // Añadir txfImg
+        txfImg = new JTextField(10);
+        this.add(txfImg);
 
         // Añadir btnColor
         btnColor = new JButton("Color");
@@ -53,7 +58,7 @@ public class FormColors extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnColor && ((e.getModifiers() & e.CTRL_MASK) == e.CTRL_MASK)) { // FIXME
+        if (((e.getModifiers() & e.CTRL_MASK) == e.getModifiers())) { // FIXME
             this.setBackground(Color.BLUE);
         }
         
@@ -76,6 +81,6 @@ public class FormColors extends JFrame implements ActionListener{
 
 // Habrá otro textfield (de mayor tamaño) en el que se permite escribir el path
 // completo de una imagen, esta se cargará al pulsar Enter y se mostrará en otra
-// etiqueta(la trayectoria se le puede pasar directamente al constructor de ImageIcon
+// etiqueta (la trayectoria se le puede pasar directamente al constructor de ImageIcon
 // sin necesidad de getResource).
-// Introduce ToolTips en los botones y cajas de texto. Usa FlowLayout. 
+// Introduce ToolTips en los botones y cajas de texto. Usa FlowLayout.
