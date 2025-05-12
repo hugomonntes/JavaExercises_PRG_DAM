@@ -11,12 +11,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
-public class Tragaperras extends JFrame implements ActionListener { //TODO revisart cambio de minuto. Informar en etiqueta perder y ganar
-    private JTextField txfUno; 
-    private JTextField txfDos; 
+public class Tragaperras extends JFrame implements ActionListener { // TODO revisart cambio de minuto.(ok) Informar en (ok)
+                                                                    // etiqueta perder y ganar
+    private JTextField txfUno;
+    private JTextField txfDos;
     private JTextField txfTres;
     private JButton btnTirada;
     private JLabel lblSaldo;
+    private JLabel lblPremio;
     private Timer timer;
     private JLabel lblTimer;
     int countMin = 0;
@@ -47,6 +49,10 @@ public class Tragaperras extends JFrame implements ActionListener { //TODO revis
         this.add(btnTirada);
         btnTirada.addActionListener(this);
 
+        // Añadir lblPremio
+        lblPremio = new JLabel("Premio: ");
+        this.add(lblPremio);
+
         // Añadir saldo
         lblSaldo = new JLabel("Saldo disponible: 20€");
         this.add(lblSaldo);
@@ -60,8 +66,8 @@ public class Tragaperras extends JFrame implements ActionListener { //TODO revis
         this.add(lblTimer);
     }
 
-    public String createRamdonNumber(){
-        return String.format("%d", (int)(Math.random() * 3) + 1);
+    public String createRamdonNumber() {
+        return String.format("%d", (int) (Math.random() * 3) + 1);
     }
 
     @Override
@@ -70,16 +76,19 @@ public class Tragaperras extends JFrame implements ActionListener { //TODO revis
             txfUno.setText(createRamdonNumber());
             txfDos.setText(createRamdonNumber());
             txfTres.setText(createRamdonNumber());
-    
+
             if (txfUno.getText().equals(txfDos.getText()) && txfUno.getText().equals(txfTres.getText())) {
                 saldo = saldo * 2;
-                JOptionPane.showMessageDialog(this, String.format("Enhorabuena! Has ganado el premio! Saldo actual de: %d€", saldo));
-                lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
-            } else  {
+                lblPremio.setText("Enhorabuena! Has ganado el premio!");
+                // JOptionPane.showMessageDialog(this, String.format("Enhorabuena! Has ganado el
+                // premio! Saldo actual de: %d€", saldo));
+                // lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
+            } else {
                 saldo--;
                 lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
+                lblPremio.setText("Has perdido!");
                 if (saldo == 0) {
-                    JOptionPane.showMessageDialog(this, String.format("Has perdido! Saldo actual de: %d€", saldo));
+                    // JOptionPane.showMessageDialog(this, String.format("Has perdido! Saldo actual de: %d€", saldo));
                     this.dispose(); // Cierro la ventana si el saldo es 0 (No está en la especificación)
                 }
             }
@@ -87,11 +96,11 @@ public class Tragaperras extends JFrame implements ActionListener { //TODO revis
 
         if (e.getSource() == timer) {
             lblTimer.setText(String.format("%02d:%02d", countMin, countSec));
-            if (countSec == 59) {
+            countSec++;
+            if (countSec == 60) {
                 countMin++;
                 countSec = 0;
             }
-            countSec++;
         }
 
     }
