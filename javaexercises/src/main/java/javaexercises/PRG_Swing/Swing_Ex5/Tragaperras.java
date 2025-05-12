@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
-public class Tragaperras extends JFrame implements ActionListener {
+public class Tragaperras extends JFrame implements ActionListener { //TODO revisart cambio de minuto. Informar en etiqueta perder y ganar
     private JTextField txfUno; 
     private JTextField txfDos; 
     private JTextField txfTres;
@@ -20,7 +20,7 @@ public class Tragaperras extends JFrame implements ActionListener {
     private Timer timer;
     private JLabel lblTimer;
     int countMin = 0;
-    int countSec = 0;
+    int countSec = 56;
     int saldo = 20;
 
     public Tragaperras() {
@@ -61,7 +61,7 @@ public class Tragaperras extends JFrame implements ActionListener {
     }
 
     public String createRamdonNumber(){
-        return String.format("%d", (int)(Math.random() * 9) + 1);
+        return String.format("%d", (int)(Math.random() * 3) + 1);
     }
 
     @Override
@@ -75,7 +75,7 @@ public class Tragaperras extends JFrame implements ActionListener {
                 saldo = saldo * 2;
                 JOptionPane.showMessageDialog(this, String.format("Enhorabuena! Has ganado el premio! Saldo actual de: %d€", saldo));
                 lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
-            } else if (!(txfUno.getText().equals(txfDos.getText()) && txfUno.getText().equals(txfTres.getText()))) {
+            } else  {
                 saldo--;
                 lblSaldo.setText(String.format("Saldo disponible: %d€", saldo));
                 if (saldo == 0) {
@@ -86,8 +86,8 @@ public class Tragaperras extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == timer) {
-            lblTimer.setText(String.format("mm: %02d ss: %02d", countMin, countSec));
-            if (countSec == 60) {
+            lblTimer.setText(String.format("%02d:%02d", countMin, countSec));
+            if (countSec == 59) {
                 countMin++;
                 countSec = 0;
             }

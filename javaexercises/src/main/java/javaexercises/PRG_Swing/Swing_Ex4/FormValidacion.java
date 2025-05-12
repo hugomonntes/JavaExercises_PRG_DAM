@@ -13,13 +13,14 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class FormValidacion extends JFrame implements ActionListener { // TODO preguntar al cvargar(ok). Revisar trim(ok).
-                                                                       // Revisar que haya archivo(ok).
+public class FormValidacion extends JFrame implements ActionListener { // TODO revisar sin archivo
+                                                                       
     private JTextField txfNombre;
     private JTextField txfEdad;
     private JTextField txfDir;
     private JButton btnGuardar;
     private JButton btnCargar;
+    File archivo;
 
     public FormValidacion() {
         // Añadir Nombre textField
@@ -106,7 +107,7 @@ public class FormValidacion extends JFrame implements ActionListener { // TODO p
     public String[] leerDatosArchivo() throws FileNotFoundException {
         String cadenaDatos = "";
         try {
-            File archivo = new File("SwingEx4.txt");
+            archivo = new File("SwingEx4.txt");
             if (!archivo.exists()) {
                 JOptionPane.showMessageDialog(this, "El archivo no existe", "ERROR", JOptionPane.ERROR_MESSAGE);
                 throw new FileNotFoundException();
@@ -124,12 +125,12 @@ public class FormValidacion extends JFrame implements ActionListener { // TODO p
     }
 
     public void escribirDatosInput(String[] datosArchivo) {
-        if (txfNombre.getText().trim().isEmpty() || txfEdad.getText().trim().isEmpty()
-                || txfDir.getText().trim().isEmpty()) {
+        if ((txfNombre.getText().trim().isEmpty() || txfEdad.getText().trim().isEmpty()
+                || txfDir.getText().trim().isEmpty()) && archivo.exists()) {
             txfNombre.setText(datosArchivo[0]);
             txfEdad.setText(datosArchivo[1]);
             txfDir.setText(datosArchivo[2]);
-        } else {
+        } else if (archivo.exists()){
             int opcion = JOptionPane.showConfirmDialog(this,
                     "Los campos ya contienen datos. ¿Deseas sobrescribirlos?",
                     "Confirmación", JOptionPane.YES_NO_OPTION);
