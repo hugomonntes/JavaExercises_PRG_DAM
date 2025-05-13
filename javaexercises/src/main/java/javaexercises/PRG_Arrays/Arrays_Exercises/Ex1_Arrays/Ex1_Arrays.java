@@ -57,14 +57,14 @@ public class Ex1_Arrays { @SuppressWarnings("unused")
         }
         return auxiliar;
     }
-    public static boolean intercambiarDatos(int[] numeros, int indice1, int indice2){
+    public static int[] intercambiarDatos(int[] numeros, int indice1, int indice2){
         if (indice1 < 0 || indice1 >= numeros.length || indice2 < 0 || indice2 >= numeros.length){
-            return false;
+            return numeros;
         } else {
             int auxiliar = numeros[indice1];
             numeros[indice1] = numeros[indice2];
             numeros[indice2] = auxiliar;
-            return true;
+            return numeros;
         }
     }
     public static void main(String[] args) {
