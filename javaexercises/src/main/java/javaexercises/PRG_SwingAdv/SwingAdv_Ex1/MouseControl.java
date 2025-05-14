@@ -3,13 +3,14 @@ package javaexercises.PRG_SwingAdv.SwingAdv_Ex1;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class MouseControl extends JFrame {
     private JButton btnIzq;
@@ -22,6 +23,8 @@ public class MouseControl extends JFrame {
         this.setLayout(new FlowLayout());
         this.getContentPane().addMouseMotionListener(new EventosMouse());
         this.getContentPane().addMouseListener(new EventosMouse());
+        this.addKeyListener(new EventosTeclado());
+        this.setFocusable(true);
 
         // Añadir btnUno
         btnIzq = new JButton("Izquierdo");
@@ -66,10 +69,18 @@ public class MouseControl extends JFrame {
             }
         }
     }
+
+    private class EventosTeclado extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {   
+            lblTeclas.setText(String.format("Tecla: %s, Unicode: %d", e.getKeyChar(), e.getKeyCode()));
+            if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_C) {
+                FormSecundario formSecundario = new FormSecundario();
+            }
+        }
+    }
 }
 
-// • Al pulsar una tecla se mostrará en la label tanto la letra Unicode pulsada
-// como su código de teclado.
 // • Si se pulsa la combinación de teclas CTRL+C se abrirá un formulario
 // secundario modal (Puede ser FlowLayout) con las siguientes características:
 // ◦ Tiene un combo donde aparecen en cada línea un elemento del directorio
