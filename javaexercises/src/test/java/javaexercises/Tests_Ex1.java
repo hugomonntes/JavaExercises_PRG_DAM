@@ -2,6 +2,7 @@ package javaexercises;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,16 +14,16 @@ public class Tests_Ex1 {
     @Test
     public void testAnosNoBisiestos(){
         assertFalse(Ex4_b3.isBisiesto(1800));
+        assertTrue(Ex4_b3.isBisiesto(2000));
+        assertTrue(Ex4_b3.isBisiesto(2004));
         assertFalse(Ex4_b3.isBisiesto(2006));
         assertFalse(Ex4_b3.isBisiesto(2021));
-        assertFalse(!Ex4_b3.isBisiesto(2004));
-        assertFalse(!Ex4_b3.isBisiesto(2000));
     }
 
     @Test
     public void testAreaCilindro(){
         double resultadoOriginal = Ex3_b3.superficieCilindro(1, 1);
-        double resultadoModificado = 2 * 1 * 1 * Math.PI;
+        double resultadoModificado = (2 * 1 * 1 * Math.PI) + (2 * Math.PI * 1 * 1);
         assertEquals(resultadoOriginal, resultadoModificado, 0.00001);
         // Respuesta: No pasa el test
     }

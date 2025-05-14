@@ -5,13 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import javaexercises.PRG_Arrays.Arrays_Exercises.Ex1_Arrays.Ex1_Arrays;
 
 public class Test_Ex3 {
-    public static int[] ordenaVector(int[] v) { // Corregir
+    public static int[] ordenaVector(int[] v) {
         if (v == null) {
             return null;
         }
@@ -32,18 +31,18 @@ public class Test_Ex3 {
     }
 
     private int[] listaNumeros = new int[] {
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+            1, 2, 3, 4, 0
     };
 
     @Test
     public void testVector() {
         // assertEquals(9, Ex1_Arrays.maximo(null));
-        assertEquals(9, Ex1_Arrays.maximo(listaNumeros));
+        assertEquals(4, Ex1_Arrays.maximo(listaNumeros));
         assertEquals(0, Ex1_Arrays.minimo(listaNumeros));
-        assertArrayEquals(new int[] { 3, 2, 1, 4, 5, 6, 7, 8, 9, 0 }, Ex1_Arrays.intercambiarDatos(listaNumeros, 0, 2));
-        assertArrayEquals(new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, ordenaVector(listaNumeros));
-        assertEquals(36, sumaRango(listaNumeros, 0, 8));
-        // Ex1_Arrays.intercambiarDatos(null, 0, 2);
+        assertArrayEquals(new int[] { 3, 2, 1, 4, 0 }, Ex1_Arrays.intercambiarDatos(listaNumeros, 0, 2));
+        // assertArrayEquals(null, Ex1_Arrays.intercambiarDatos(null, 0, 2));
+        assertArrayEquals(new int[] { 0, 1, 2, 3, 4 }, ordenaVector(listaNumeros));
+        assertEquals(10, sumaRango(listaNumeros, 0, 4));
     }
 }
 

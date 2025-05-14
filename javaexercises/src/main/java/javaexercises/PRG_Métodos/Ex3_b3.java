@@ -50,7 +50,7 @@ public class Ex3_b3 {
      * @return el resultado del area
      */
     public static double superficieCilindro(int radio, int altura) {
-        return 2 * radio * altura * 3.1415;
+        return (2 * radio * radio * 3.1416) + (2 * 3.1416 * radio * altura);
     }
     /**
      * Muestra el resultado un mensaje más un dato real con 2 decimales
