@@ -9,15 +9,18 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class MouseControl extends JFrame implements ActionListener {
+public class MouseControl extends JFrame{
     private JButton btnUno;
     private JButton btnDos;
     private JLabel lblTeclas;
+    public String titleForm = "Control de Ratón";
 
     public MouseControl() {
-        this.setTitle("Control de Ratón");
+        this.setTitle(titleForm);
         this.setLayout(new FlowLayout());
+        this.addMouseMotionListener(new EventosMouse());
 
         // Añadir btnUno
         btnUno = new JButton("Boton 1");
@@ -29,20 +32,23 @@ public class MouseControl extends JFrame implements ActionListener {
 
         // Añadir lblTeclas
         lblTeclas = new JLabel("Teclas");
-        lblTeclas.addMouseMotionListener(new EventosMouse());
         this.add(lblTeclas);
-    }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        
+        JPanel contentPane = (JPanel) this.getContentPane();
+        MouseAdapter listener = new EventosMouse();
+        contentPane.addMouseMotionListener(listener);
+        contentPane.addMouseListener(listener);
     }
-
     private class EventosMouse extends MouseAdapter {
         @Override
         public void mouseMoved(MouseEvent e) {
             lblTeclas.setText(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX(), e.getY()));
             MouseControl.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX(), e.getY()));
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            MouseControl.this.setTitle(titleForm);
         }
     }
 }
