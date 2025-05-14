@@ -71,7 +71,7 @@ public class App {
                         indice = Libreria.pedirEntero();
                         colecciónDeFiguras.get(indice - 1).mostrarDatos();
                         break;
-                    case 4: // TODO borrar por TIPO
+                    case 4: // TODO borrar por TIPO(ok)
                         do {
                             System.out.println("1. Linea");
                             System.out.println("2. Poligono (Triangulo y Cuadrado)");

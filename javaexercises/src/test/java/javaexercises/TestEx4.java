@@ -18,5 +18,5 @@ Recuerda cuando pruebes eliminar que debes comprobar tanto el n.º de
 elementos eliminados que devuelve la función como que la cadnea quede bien.
 Nota: En los ejercicios de JUnit, no es imprescindible tener hecho la función o
 funciones a testear, pues lo que se valida es la creación y el diseño de las
-pruebas. Haz Mocks si no tienes las clases y/o funciones hechas. 
+pruebas. Haz Mocks si no tienes las clases y/o funciones hechas.
 */
