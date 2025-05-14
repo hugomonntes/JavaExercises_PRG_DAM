@@ -81,8 +81,7 @@ public class MouseControl extends JFrame {
     }
 }
 
-// • Si se pulsa la combinación de teclas CTRL+C se abrirá un formulario
-// secundario modal (Puede ser FlowLayout) con las siguientes características:
+
 // ◦ Tiene un combo donde aparecen en cada línea un elemento del directorio
 // de usuario.
 // ◦ Al seleccionar un archivo en el combo se muestra en un textarea el
