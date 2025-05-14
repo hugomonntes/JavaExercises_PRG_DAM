@@ -36,7 +36,7 @@ public class Tests_Ex1 {
         assertEquals(8, Ex6_b3.calcularPotencia(2, 3));
         assertEquals(1024, Ex6_b3.calcularPotencia(2, 10));
         assertEquals(1, Ex6_b3.calcularPotencia(99, 0));
-        assertEquals(0.25, Ex6_b3.calcularPotencia(2, -2)); // Preguntar Curro si hace falta exponente negativo
+        assertEquals(0.25, Ex6_b3.calcularPotencia(2, -2));
     }
 }
 

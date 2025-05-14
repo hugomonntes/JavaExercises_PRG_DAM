@@ -43,7 +43,7 @@ public class MouseControl extends JFrame implements ActionListener {
         public void mouseMoved(MouseEvent e) {
             lblTeclas.setText(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX(), e.getY()));
             MouseControl.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX(), e.getY()));
-        }      
+        }
     }
 }
 
