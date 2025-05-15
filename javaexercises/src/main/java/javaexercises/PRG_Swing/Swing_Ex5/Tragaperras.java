@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
-public class Tragaperras extends JFrame implements ActionListener { // TODO revisart cambio de minuto.(ok) Informar en (ok)
+public class Tragaperras extends JFrame implements ActionListener {  
                                                                     // etiqueta perder y ganar
     private JTextField txfUno;
     private JTextField txfDos;

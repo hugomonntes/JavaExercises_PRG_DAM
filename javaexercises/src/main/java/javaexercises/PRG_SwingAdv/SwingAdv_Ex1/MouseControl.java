@@ -29,10 +29,14 @@ public class MouseControl extends JFrame {
         // Añadir btnUno
         btnIzq = new JButton("Izquierdo");
         this.add(btnIzq);
+        btnIzq.addMouseListener(new EventosMouse());
+        btnIzq.addMouseMotionListener(new EventosMouse());
 
         // Añadir btnDos
         btnDer = new JButton("Derecho");
         this.add(btnDer);
+        btnDer.addMouseListener(new EventosMouse());
+        btnDer.addMouseMotionListener(new EventosMouse());
 
         // Añadir lblTeclas
         lblTeclas = new JLabel("Teclas");
@@ -42,8 +46,8 @@ public class MouseControl extends JFrame {
     private class EventosMouse extends MouseAdapter {
         @Override
         public void mouseMoved(MouseEvent e) {
-            lblTeclas.setText(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX(), e.getY()));
-            MouseControl.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX(), e.getY()));
+            lblTeclas.setText(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
+            MouseControl.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
         }
 
         @Override
@@ -62,15 +66,15 @@ public class MouseControl extends JFrame {
 
         @Override
         public void mouseReleased(MouseEvent e) {
-                btnIzq.setBackground(null);
-                btnDer.setBackground(null);
+            btnIzq.setBackground(null);
+            btnDer.setBackground(null);
         }
-        
+
     }
 
     private class EventosTeclado extends KeyAdapter {
         @Override
-        public void keyPressed(KeyEvent e) {   
+        public void keyPressed(KeyEvent e) {
             lblTeclas.setText(String.format("Tecla: %s, Unicode: %d", e.getKeyChar(), e.getKeyCode()));
             if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_C) {
                 FormSecundario formSecundario = new FormSecundario();
@@ -78,7 +82,6 @@ public class MouseControl extends JFrame {
         }
     }
 }
-
 
 // ◦ Tiene un combo donde aparecen en cada línea un elemento del directorio
 // de usuario.

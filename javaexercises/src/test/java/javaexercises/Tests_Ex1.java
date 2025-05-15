@@ -24,12 +24,12 @@ public class Tests_Ex1 {
     public void testAreaCilindro(){
         double resultadoOriginal = Ex3_b3.superficieCilindro(1, 1);
         double resultadoModificado = (2 * 1 * 1 * Math.PI) + (2 * Math.PI * 1 * 1);
-        assertEquals(resultadoOriginal, resultadoModificado, 0.00001);
+        assertEquals(resultadoModificado, resultadoOriginal , 0.00001);
         // Respuesta: No pasa el test
     }
 
     @Test
-    public void testCalcularPotencia(){
+    public void testCalcularPotencia(){ //TODO más preubas
         assertEquals(0, Ex6_b3.calcularPotencia(0, 5));
         assertEquals(1, Ex6_b3.calcularPotencia(2, 0));
         assertEquals(1, Ex6_b3.calcularPotencia(1, 10));
@@ -37,6 +37,9 @@ public class Tests_Ex1 {
         assertEquals(1024, Ex6_b3.calcularPotencia(2, 10));
         assertEquals(1, Ex6_b3.calcularPotencia(99, 0));
         assertEquals(0.25, Ex6_b3.calcularPotencia(2, -2));
+        // assertEquals(0, Ex6_b3.calcularPotencia(0, -1));
+        assertEquals(1, Ex6_b3.calcularPotencia(0, 0));
+        assertEquals(1/3, Ex6_b3.calcularPotencia(3, -1));
     }
 }
 

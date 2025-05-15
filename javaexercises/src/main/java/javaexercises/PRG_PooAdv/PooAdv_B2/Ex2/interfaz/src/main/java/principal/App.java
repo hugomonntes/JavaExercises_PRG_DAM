@@ -24,7 +24,7 @@ public class App {
             System.out.println("5. Salir");
             System.out.print("Elige una opción: ");
             try {
-                opcion = Libreria.pedirEntero();// TODO usar libreria)(ok)
+                opcion = Libreria.pedirEntero();
                 switch (opcion) {
                     case 1:
                         System.out.println("1. Línea");
@@ -65,13 +65,13 @@ public class App {
                             }
                         }
                         break;
-                    case 3:// TODO reducir (llee enunciado)(ok)
+                    case 3: 
                         int indice = 0;
                         System.out.printf("De que elementoquieres ver sus datos:");
                         indice = Libreria.pedirEntero();
                         colecciónDeFiguras.get(indice - 1).mostrarDatos();
                         break;
-                    case 4: // TODO borrar por TIPO(ok)
+                    case 4:  
                         do {
                             System.out.println("1. Linea");
                             System.out.println("2. Poligono (Triangulo y Cuadrado)");
