@@ -39,7 +39,10 @@ public class Tests_Ex1 {
         assertEquals(0.25, Ex6_b3.calcularPotencia(2, -2));
         // assertEquals(0, Ex6_b3.calcularPotencia(0, -1));
         assertEquals(1, Ex6_b3.calcularPotencia(0, 0));
-        assertEquals(1/3, Ex6_b3.calcularPotencia(3, -1));
+        // assertEquals(1/3, Ex6_b3.calcularPotencia(3, -1));
+        assertEquals(1, Ex6_b3.calcularPotencia(1, -1));
+        assertEquals(-1, Ex6_b3.calcularPotencia(-1, -1));
+        assertEquals(-1, Ex6_b3.calcularPotencia(-1, 1));
     }
 }
 
