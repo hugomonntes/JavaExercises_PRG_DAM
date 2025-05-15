@@ -62,12 +62,10 @@ public class MouseControl extends JFrame {
 
         @Override
         public void mouseReleased(MouseEvent e) {
-            if (e.getModifiersEx() == InputEvent.BUTTON1_DOWN_MASK) {
                 btnIzq.setBackground(null);
-            } else if (e.getModifiersEx() == InputEvent.BUTTON3_DOWN_MASK) {
                 btnDer.setBackground(null);
-            }
         }
+        
     }
 
     private class EventosTeclado extends KeyAdapter {
