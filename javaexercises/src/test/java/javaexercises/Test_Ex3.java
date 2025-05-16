@@ -15,30 +15,18 @@ import javaexercises.PRG_Arrays.Arrays_Exercises.Ex1_Arrays.Ex1_Arrays;
 
 public class Test_Ex3 {
     public static int[] ordenaVector(int[] v) {
-        if (v == null) {
-            return null;
-        }
-        Arrays.sort(v);
         return v;
     }
 
     public static int sumaRango(int[] v, int inicio, int fin) {
-        if (v == null || v.length == 0 || inicio < 0 || fin >= v.length || inicio > fin) {
-            throw new IllegalArgumentException("Parámetros inválidos!");
-        }
-
-        int suma = 0;
-        for (int i = inicio; i <= fin; i++) {
-            suma += v[i];
-        }
-        return suma;
+        return 0;
     }
 
     private int[] listaNumeros;
     @BeforeEach
     void AntesDeCadaUno(){
         listaNumeros = new int[] {
-            1, 2, 3, 4, 0
+           1, 2, 3, 4, 0
         };
     }
 
@@ -73,7 +61,23 @@ public class Test_Ex3 {
         } catch (NullPointerException e) {
             assertTrue(true);
         }
-        assertTrue(Ex1_Arrays.intercambiarDatos(listaNumeros, 0 , 0));
+        assertTrue(Ex1_Arrays.intercambiarDatos(listaNumeros, 0 , 3));
+        assertFalse(Ex1_Arrays.intercambiarDatos(listaNumeros, 0 , 99));
+    }
+
+    @Test
+    public void testOrdenarVector(){
+        assertArrayEquals(new int[]{0, 1, 2, 3, 4}, ordenaVector(listaNumeros));
+    }
+
+    @Test
+    public void testSumaRango(){
+        assertEquals(3, sumaRango(listaNumeros, 0, 2));
+        try {
+            assertEquals(3, sumaRango(listaNumeros, 0, -2));
+            fail("Dato final negativo!");
+        } catch (IllegalArgumentException e) {
+        }
     }
 }
 
