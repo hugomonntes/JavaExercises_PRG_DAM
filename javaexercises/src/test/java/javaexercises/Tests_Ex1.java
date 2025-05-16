@@ -18,6 +18,7 @@ public class Tests_Ex1 {
         assertTrue(Ex4_b3.isBisiesto(2004));
         assertFalse(Ex4_b3.isBisiesto(2006));
         assertFalse(Ex4_b3.isBisiesto(2021));
+        assertFalse(Ex4_b3.isBisiesto(2021));
     }
 
     @Test
