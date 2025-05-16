@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.Arrays;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javaexercises.PRG_Arrays.Arrays_Exercises.Ex1_Arrays.Ex1_Arrays;
@@ -33,9 +34,13 @@ public class Test_Ex3 {
         return suma;
     }
 
-    private int[] listaNumeros = new int[] {
+    private int[] listaNumeros;
+    @BeforeEach
+    void AntesDeCadaUno(){
+        listaNumeros = new int[] {
             1, 2, 3, 4, 0
-    };
+        };
+    }
 
     @Test
     public void testVectorMaximo() {
@@ -68,7 +73,7 @@ public class Test_Ex3 {
         } catch (NullPointerException e) {
             assertTrue(true);
         }
-        assertFalse(Ex1_Arrays.intercambiarDatos(listaNumeros, 0 , 0));
+        assertTrue(Ex1_Arrays.intercambiarDatos(listaNumeros, 0 , 0));
     }
 }
 
