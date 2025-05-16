@@ -1,10 +1,13 @@
 package javaexercises;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
 import javaexercises.PRG_PooAdv.PooAdv_B2.Ex1.Ex1_Excep;
+import javaexercises.PRG_PooAdv.PooAdv_B2.Ex1.StringOutOfBoundsException;
 
 public class Test_Ex2 {
     @Test
@@ -15,8 +18,20 @@ public class Test_Ex2 {
 
     @Test
     public void testsSubStringNegativos(){ // StringOutOfBoundsException
-        assertEquals("", Ex1_Excep.subCadena("Hola", 0, -2));
-        assertEquals("Hola", Ex1_Excep.subCadena("Hola", -5, 4));
+        assertEquals("", Ex1_Excep.subCadena("Hola", 0, 0));
+        try {
+            assertEquals("Hola", Ex1_Excep.subCadena("Hola", 0, -2));
+            fail("Error de longitud");
+        } catch (StringOutOfBoundsException e1) {
+            assertTrue(true);
+        }
+        
+        try {
+            assertEquals("Hola", Ex1_Excep.subCadena("Hola", -1, 3));
+            fail("Error de longitud");
+        } catch (StringOutOfBoundsException e) {
+            assertTrue(true);
+        }
     }
 }
 
