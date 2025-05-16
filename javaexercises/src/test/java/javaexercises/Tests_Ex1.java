@@ -30,20 +30,14 @@ public class Tests_Ex1 {
     }
 
     @Test
-    public void testCalcularPotencia(){ //TODO más preubas
-        assertEquals(0, Ex6_b3.calcularPotencia(0, 5));
-        assertEquals(1, Ex6_b3.calcularPotencia(2, 0));
-        assertEquals(1, Ex6_b3.calcularPotencia(1, 10));
-        assertEquals(8, Ex6_b3.calcularPotencia(2, 3));
-        assertEquals(1024, Ex6_b3.calcularPotencia(2, 10));
-        assertEquals(1, Ex6_b3.calcularPotencia(99, 0));
-        assertEquals(0.25, Ex6_b3.calcularPotencia(2, -2));
-        // assertEquals(0, Ex6_b3.calcularPotencia(0, -1));
-        assertEquals(1, Ex6_b3.calcularPotencia(0, 0));
-        // assertEquals(1/3, Ex6_b3.calcularPotencia(3, -1));
-        assertEquals(1, Ex6_b3.calcularPotencia(1, -1));
-        assertEquals(-1, Ex6_b3.calcularPotencia(-1, -1));
-        assertEquals(-1, Ex6_b3.calcularPotencia(-1, 1));
+    public void testCalcularPotencia(){ //TODO más preubas(ok)
+        int [] bases = {1, 0, -1, 2, -2, -0, 99};
+        int [] exponentes = {1, 0, -1, 2, 3, -2, -3, 99};
+        for (int i = 0; i < bases.length; i++) {
+            for (int j = 0; j < exponentes.length; j++) {
+                assertEquals(Math.pow(i, j), Ex6_b3.calcularPotencia(i, j), 0);
+            }
+        }
     }
 }
 

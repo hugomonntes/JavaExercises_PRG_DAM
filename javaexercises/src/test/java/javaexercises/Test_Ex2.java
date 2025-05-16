@@ -12,8 +12,10 @@ import javaexercises.PRG_PooAdv.PooAdv_B2.Ex1.StringOutOfBoundsException;
 public class Test_Ex2 {
     @Test
     public void testSubString(){
-        assertEquals("Hola", Ex1_Excep.subCadena("Hola", 0, 4));
-        assertEquals("H", Ex1_Excep.subCadena("Hola", 0, 1));
+        String fraseComprobar = "Hola";
+        assertEquals("Hola", Ex1_Excep.subCadena(fraseComprobar, 0, 4));
+        assertEquals("H", Ex1_Excep.subCadena(fraseComprobar, 0, 1));
+        assertEquals("", Ex1_Excep.subCadena(fraseComprobar, 0, 0));
     }
 
     @Test
