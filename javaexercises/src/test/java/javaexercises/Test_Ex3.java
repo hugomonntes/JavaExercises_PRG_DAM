@@ -2,6 +2,9 @@ package javaexercises;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.Arrays;
 
@@ -35,14 +38,37 @@ public class Test_Ex3 {
     };
 
     @Test
-    public void testVector() {
-        // assertEquals(9, Ex1_Arrays.maximo(null));
+    public void testVectorMaximo() {
+        try {
+            assertEquals(9, Ex1_Arrays.maximo(null));
+            fail("El vector es null");
+        } catch (NullPointerException e) {
+            assertTrue(true);
+        }
         assertEquals(4, Ex1_Arrays.maximo(listaNumeros));
-        assertEquals(0, Ex1_Arrays.minimo(listaNumeros));
-        assertArrayEquals(new int[] { 3, 2, 1, 4, 0 }, Ex1_Arrays.intercambiarDatos(listaNumeros, 0, 2));
-        // assertArrayEquals(null, Ex1_Arrays.intercambiarDatos(null, 0, 2));
-        assertArrayEquals(new int[] { 0, 1, 2, 3, 4 }, ordenaVector(listaNumeros));
         assertEquals(10, sumaRango(listaNumeros, 0, 4));
+    }
+
+    @Test
+    public void testVectorMinimo() {
+        try {
+            assertEquals(9, Ex1_Arrays.minimo(null));
+            fail("El vector es null");
+        } catch (NullPointerException e) {
+            assertTrue(true);
+        }
+        assertEquals(0, Ex1_Arrays.minimo(listaNumeros));
+    }
+
+    @Test
+    public void testVectorIntercambio() {
+        try {
+            assertFalse(Ex1_Arrays.intercambiarDatos(null, 0 , 0));
+            fail("El vector es null");
+        } catch (NullPointerException e) {
+            assertTrue(true);
+        }
+        assertFalse(Ex1_Arrays.intercambiarDatos(listaNumeros, 0 , 0));
     }
 }
 
