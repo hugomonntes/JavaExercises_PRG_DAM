@@ -1,14 +1,16 @@
 package javaexercises.PRG_SwingAdv.SwingAdv_Ex2;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
 public class TecladoMovil extends JFrame {
+    private JTextField txfPantalla;
     String[] etiquetasBotones = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "#", "*" };
 
     public TecladoMovil() {
@@ -16,7 +18,8 @@ public class TecladoMovil extends JFrame {
         this.setLayout(new FlowLayout());
         this.setVisible(true);
         this.setSize(500, 500);
-        
+
+        // Props Botones
         for (String etiqueta : etiquetasBotones) {
             JButton btnDefault = new JButton(etiqueta);
             class EventosMouse extends MouseAdapter {
@@ -44,16 +47,13 @@ public class TecladoMovil extends JFrame {
             this.add(btnDefault);
         }
 
+        // Props TxfPantalla
+        txfPantalla = new JTextField(100);
+        this.add(txfPantalla);
+        txfPantalla.setEditable(false);
+
     }
-
 }
-
-// • Debe tener al menos 12 botones con los números del 1 al 9 en las tres
-// primeras filas y en la última la almohadilla (#), el 0 y el asterisco (*).
-
-// Se inicializarán los 12 mediante un bucle (no habrá 12 variables JButton).
-// • Cuando el ratón pase por encima de los botones cambiará de color y si se
-// pulsan quedarán permanentemente con un tercer color.
 
 // • Además se dispondrá de un JTextfield donde se mostrarán los números
 // pulsados. Será no editable.
