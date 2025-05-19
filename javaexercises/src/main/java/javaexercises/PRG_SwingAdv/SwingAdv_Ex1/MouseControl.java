@@ -2,6 +2,7 @@ package javaexercises.PRG_SwingAdv.SwingAdv_Ex1;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Dialog.ModalExclusionType;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -12,7 +13,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class MouseControl extends JFrame {
+public class MouseControl extends JFrame {//TODO revisa pulsaciones contones ratón. Evento teclado en todos los comp.
+    //TODO secundario modal. Gestionar textarea en secundario.
     private JButton btnIzq;
     private JButton btnDer;
     private JLabel lblTeclas;
@@ -31,12 +33,14 @@ public class MouseControl extends JFrame {
         this.add(btnIzq);
         btnIzq.addMouseListener(new EventosMouse());
         btnIzq.addMouseMotionListener(new EventosMouse());
+        btnIzq.addKeyListener(new EventosTeclado());
 
         // Añadir btnDos
         btnDer = new JButton("Derecho");
         this.add(btnDer);
         btnDer.addMouseListener(new EventosMouse());
         btnDer.addMouseMotionListener(new EventosMouse());
+        btnDer.addKeyListener(new EventosTeclado());
 
         // Añadir lblTeclas
         lblTeclas = new JLabel("Teclas");
@@ -45,7 +49,7 @@ public class MouseControl extends JFrame {
 
     private class EventosMouse extends MouseAdapter {
         @Override
-        public void mouseMoved(MouseEvent e) {
+        public void mouseMoved(MouseEvent e) {//TODO detectar si estoy en form o botones
             lblTeclas.setText(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
             MouseControl.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
         }
