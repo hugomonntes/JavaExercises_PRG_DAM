@@ -13,14 +13,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class MouseControl extends JFrame {//TODO revisa pulsaciones contones ratón. Evento teclado en todos los comp.
+public class FormPrincipal extends JFrame {//TODO revisa pulsaciones contones ratón. Evento teclado en todos los comp.
     //TODO secundario modal. Gestionar textarea en secundario.
     private JButton btnIzq;
     private JButton btnDer;
     private JLabel lblTeclas;
     public String titleForm = "Control de Ratón";
 
-    public MouseControl() {
+    public FormPrincipal() {
         this.setTitle(titleForm);
         this.setLayout(new FlowLayout());
         this.getContentPane().addMouseMotionListener(new EventosMouse());
@@ -51,12 +51,12 @@ public class MouseControl extends JFrame {//TODO revisa pulsaciones contones rat
         @Override
         public void mouseMoved(MouseEvent e) {//TODO detectar si estoy en form o botones
             lblTeclas.setText(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
-            MouseControl.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
+            FormPrincipal.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
-            MouseControl.this.setTitle(titleForm);
+            FormPrincipal.this.setTitle(titleForm);
         }
 
         @Override
@@ -81,7 +81,7 @@ public class MouseControl extends JFrame {//TODO revisa pulsaciones contones rat
         public void keyPressed(KeyEvent e) {
             lblTeclas.setText(String.format("Tecla: %s, Unicode: %d", e.getKeyChar(), e.getKeyCode()));
             if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_C) {
-                FormSecundario formSecundario = new FormSecundario();
+                FormSecundario formSecundario = new FormSecundario(null);
             }
         }
     }
