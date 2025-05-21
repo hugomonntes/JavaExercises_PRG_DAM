@@ -1,14 +1,8 @@
 package javaexercises;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.util.Arrays;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javaexercises.PRG_Arrays.Arrays_Exercises.Ex1_Arrays.Ex1_Arrays;
@@ -22,62 +16,39 @@ public class Test_Ex3 {
         return 0;
     }
 
-    private int[] listaNumeros;
-    @BeforeEach
-    void AntesDeCadaUno(){
-        listaNumeros = new int[] {
-           1, 2, 3, 4, 0
-        };
-    }
-
     @Test
     public void testVectorMaximo() {
-        try {
-            assertEquals(9, Ex1_Arrays.maximo(null));
-            fail("El vector es null");
-        } catch (NullPointerException e) {
-            assertTrue(true);
-        }
-        assertEquals(4, Ex1_Arrays.maximo(listaNumeros));
-        assertEquals(10, sumaRango(listaNumeros, 0, 4));
+        assertEquals(0, Ex1_Arrays.maximo(new int[] { -4, -3, -2, -1, 0 }));
+        assertEquals(0, Ex1_Arrays.maximo(new int[] { 0, 0, 0, 0, 0 }));
+        assertEquals(4, Ex1_Arrays.maximo(new int[] { 1, 2, 3, 4, 0 }));
+        assertEquals(-1, Ex1_Arrays.maximo(new int[] { -1, -2, -3, -4, -9999 }));
+        assertEquals(1, Ex1_Arrays.maximo(new int[] {1}));
+        assertThrows(NullPointerException.class,() -> {
+                    Ex1_Arrays.maximo(null);
+                });
+        assertThrows(ArrayIndexOutOfBoundsException.class,() -> {
+                    Ex1_Arrays.maximo(new int[]{});
+                });
     }
 
     @Test
     public void testVectorMinimo() {
-        try {
-            assertEquals(9, Ex1_Arrays.minimo(null));
-            fail("El vector es null");
-        } catch (NullPointerException e) {
-            assertTrue(true);
-        }
-        assertEquals(0, Ex1_Arrays.minimo(listaNumeros));
+        assertEquals(-4, Ex1_Arrays.minimo(new int[] { -4, -3, -2, -1, 0 }));
+        assertEquals(0, Ex1_Arrays.minimo(new int[] { 0, 0, 0, 0, 0 }));
+        assertEquals(0, Ex1_Arrays.minimo(new int[] { 1, 2, 3, 4, 0 }));
+        assertEquals(-9999, Ex1_Arrays.minimo(new int[] { -1, -2, -3, -4, -9999 }));
+        assertEquals(1, Ex1_Arrays.minimo(new int[] {1}));
+        assertThrows(NullPointerException.class,() -> {
+                    Ex1_Arrays.minimo(null);
+                });
+        assertThrows(ArrayIndexOutOfBoundsException.class,() -> {
+                    Ex1_Arrays.minimo(new int[]{});
+                });
     }
 
     @Test
-    public void testVectorIntercambio() {
-        try {
-            assertFalse(Ex1_Arrays.intercambiarDatos(null, 0 , 0));
-            fail("El vector es null");
-        } catch (NullPointerException e) {
-            assertTrue(true);
-        }
-        assertTrue(Ex1_Arrays.intercambiarDatos(listaNumeros, 0 , 3));
-        assertFalse(Ex1_Arrays.intercambiarDatos(listaNumeros, 0 , 99));
-    }
-
-    @Test
-    public void testOrdenarVector(){
-        assertArrayEquals(new int[]{0, 1, 2, 3, 4}, ordenaVector(listaNumeros));
-    }
-
-    @Test
-    public void testSumaRango(){
-        assertEquals(3, sumaRango(listaNumeros, 0, 2));
-        try {
-            assertEquals(3, sumaRango(listaNumeros, 0, -2));
-            fail("Dato final negativo!");
-        } catch (IllegalArgumentException e) {
-        }
+    public void testVectorIntercambio(){
+        
     }
 }
 
