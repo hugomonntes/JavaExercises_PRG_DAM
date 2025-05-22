@@ -111,9 +111,3 @@ public class Test_Ex3 {
         });
     }
 }
-
-// ◦ int sumaRango(int[] v, int inicio, int fin): Función a la que se le pasa un
-// vector v y dos índices y devuelve la suma de los datos entre esos índices
-// ambos incluidos. Si alguno de los índices está fuera de rango o el inicio es
-// mayor que el fin o el vector es null o de tamaño 0 lanza
-// IllegalArgumentException.

@@ -12,8 +12,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class FormPrincipal extends JFrame {//TODO revisa pulsaciones con botones ratón. Evento teclado en todos los comp.(ok)
-    //TODO secundario modal(ok). Gestionar textarea en secundario.
+public class FormPrincipal extends JFrame {// TODO Evento teclado en todos los
+                                           // comp.(ok)
+    // TODO secundario modal(ok). Gestionar textarea en secundario.
     private JButton btnIzq;
     private JButton btnDer;
     private JLabel lblTeclas;
@@ -49,8 +50,11 @@ public class FormPrincipal extends JFrame {//TODO revisa pulsaciones con botones
     private class EventosMouse extends MouseAdapter {
         @Override
         public void mouseMoved(MouseEvent e) {
-            lblTeclas.setText(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
-            FormPrincipal.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
+            int x = e.getX() + btnDer.getX();
+            int y = e.getY() + btnDer.getY();
+
+            lblTeclas.setText(String.format("CoordenadasX: %d, CoordenadasY: %d", x, y));
+            FormPrincipal.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", x, y));
         }
 
         @Override
