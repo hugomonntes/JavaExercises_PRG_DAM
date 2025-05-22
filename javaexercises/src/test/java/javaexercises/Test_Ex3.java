@@ -5,10 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
-import org.opentest4j.AssertionFailedError;
 
 import javaexercises.PRG_Arrays.Arrays_Exercises.Ex1_Arrays.Ex1_Arrays;
 
@@ -20,49 +18,52 @@ public class Test_Ex3 {
     public static int sumaRango(int[] v, int inicio, int fin) {
         return 0;
     }
-
+    
+    int[] vOrdenado = new int[] {1, 2, 3, 4, 5};
     int[] vNegativos = new int[]{-1, -2, -3, -4, -9999};
-    int[] vPositivos = new int[]{1, 2, 3, 4, 0};
+    int[] vPositivos = new int[]{1, 2, 999, 4, 0};
     int[] vIguales = new int[] { 0, 0, 0, 0, 0 };
     int[] vUno = new int[] {0};
     int[] vVacio = new int[] {};
 
     @Test
     public void testVectorMaximo() {
-        assertEquals(0, Ex1_Arrays.maximo(new int[] { -4, -3, -2, -1, 0 }));
-        assertEquals(0, Ex1_Arrays.maximo(new int[] { 0, 0, 0, 0, 0 }));
-        assertEquals(4, Ex1_Arrays.maximo(new int[] { 1, 2, 3, 4, 0 }));
-        assertEquals(-1, Ex1_Arrays.maximo(new int[] { -1, -2, -3, -4, -9999 }));
-        assertEquals(1, Ex1_Arrays.maximo(new int[] {1}));
+        assertEquals(999, Ex1_Arrays.maximo(vPositivos));
+        assertEquals(0, Ex1_Arrays.maximo(vIguales));
+        assertEquals(-1, Ex1_Arrays.maximo(vNegativos));
+        assertEquals(0, Ex1_Arrays.maximo(vUno));
+        assertThrows(ArrayIndexOutOfBoundsException.class,() -> {
+                    Ex1_Arrays.maximo(vVacio);
+                });
         assertThrows(NullPointerException.class,() -> {
                     Ex1_Arrays.maximo(null);
-                });
-        assertThrows(ArrayIndexOutOfBoundsException.class,() -> {
-                    Ex1_Arrays.maximo(new int[]{});
                 });
     }
 
     @Test
     public void testVectorMinimo() {
-        assertEquals(-4, Ex1_Arrays.minimo(new int[] { -4, -3, -2, -1, 0 }));
-        assertEquals(0, Ex1_Arrays.minimo(new int[] { 0, 0, 0, 0, 0 }));
-        assertEquals(0, Ex1_Arrays.minimo(new int[] { 1, 2, 3, 4, 0 }));
-        assertEquals(-9999, Ex1_Arrays.minimo(new int[] { -1, -2, -3, -4, -9999 }));
-        assertEquals(1, Ex1_Arrays.minimo(new int[] {1}));
+        assertEquals(0, Ex1_Arrays.minimo(vPositivos));
+        assertEquals(0, Ex1_Arrays.minimo(vIguales));
+        assertEquals(-9999, Ex1_Arrays.minimo(vNegativos));
+        assertEquals(0, Ex1_Arrays.minimo(vUno));
+        assertThrows(ArrayIndexOutOfBoundsException.class,() -> {
+                    Ex1_Arrays.minimo(vVacio);
+                });
         assertThrows(NullPointerException.class,() -> {
                     Ex1_Arrays.minimo(null);
-                });
-        assertThrows(ArrayIndexOutOfBoundsException.class,() -> {
-                    Ex1_Arrays.minimo(new int[]{});
                 });
     }
 
     @Test
     public void testVectorIntercambio(){
-        assertTrue(Ex1_Arrays.intercambiarDatos(new int[] { -4, -3, -2, -1, 0 }, 0, 2));
-        assertFalse(Ex1_Arrays.intercambiarDatos(new int[] { -4, -3, -2, -1, 0 }, 0, 9));
-        assertFalse(Ex1_Arrays.intercambiarDatos(new int[] { -4, -3, -2, -1, 0 }, -1, 2));
-        assertArrayEquals(new int[] { -4, -3, -2, -1, 0 }, );
+        assertTrue(Ex1_Arrays.intercambiarDatos(vOrdenado, 0, 2));
+        assertArrayEquals(new int[] { 3, 2, 1, 4, 5}, vOrdenado);
+
+        assertTrue(Ex1_Arrays.intercambiarDatos(vNegativos, 0, 4));
+        assertArrayEquals(new int[] {-9999, -2, -3, -4, -1}, vNegativos);
+
+        assertFalse(Ex1_Arrays.intercambiarDatos(vPositivos, 0, 9));
+        assertFalse(Ex1_Arrays.intercambiarDatos(vPositivos, -1, 2));
     }
 }
 
