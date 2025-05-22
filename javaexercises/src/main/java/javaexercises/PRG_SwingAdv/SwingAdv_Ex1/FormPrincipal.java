@@ -2,7 +2,6 @@ package javaexercises.PRG_SwingAdv.SwingAdv_Ex1;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.Dialog.ModalExclusionType;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -13,8 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class FormPrincipal extends JFrame {//TODO revisa pulsaciones contones ratón. Evento teclado en todos los comp.
-    //TODO secundario modal. Gestionar textarea en secundario.
+public class FormPrincipal extends JFrame {//TODO revisa pulsaciones con botones ratón. Evento teclado en todos los comp.(ok)
+    //TODO secundario modal(ok). Gestionar textarea en secundario.
     private JButton btnIzq;
     private JButton btnDer;
     private JLabel lblTeclas;
@@ -49,7 +48,7 @@ public class FormPrincipal extends JFrame {//TODO revisa pulsaciones contones ra
 
     private class EventosMouse extends MouseAdapter {
         @Override
-        public void mouseMoved(MouseEvent e) {//TODO detectar si estoy en form o botones
+        public void mouseMoved(MouseEvent e) {
             lblTeclas.setText(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
             FormPrincipal.this.setTitle(String.format("CoordenadasX: %d, CoordenadasY: %d", e.getX() + btnDer.getX(), e.getY() + btnDer.getY()));
         }

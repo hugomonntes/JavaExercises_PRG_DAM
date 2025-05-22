@@ -8,14 +8,16 @@ import java.awt.event.ItemListener;
 import java.io.File;
 
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
-public class FormSecundario extends JFrame implements ActionListener, ItemListener { // TODO MODAL
+public class FormSecundario extends JDialog implements ActionListener, ItemListener {
     private JComboBox<String> cbElementosUser;
     private JTextArea txaTamañoFile;
 
     public FormSecundario(FormPrincipal formPrincipal){
+        super(formPrincipal, true); // Modal
         this.setTitle("Form Secundario");
         this.setSize(500, 500);
         this.setVisible(true);
