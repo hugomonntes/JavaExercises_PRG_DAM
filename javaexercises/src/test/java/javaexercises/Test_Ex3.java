@@ -1,9 +1,14 @@
 package javaexercises;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 
 import javaexercises.PRG_Arrays.Arrays_Exercises.Ex1_Arrays.Ex1_Arrays;
 
@@ -15,6 +20,12 @@ public class Test_Ex3 {
     public static int sumaRango(int[] v, int inicio, int fin) {
         return 0;
     }
+
+    int[] vNegativos = new int[]{-1, -2, -3, -4, -9999};
+    int[] vPositivos = new int[]{1, 2, 3, 4, 0};
+    int[] vIguales = new int[] { 0, 0, 0, 0, 0 };
+    int[] vUno = new int[] {0};
+    int[] vVacio = new int[] {};
 
     @Test
     public void testVectorMaximo() {
@@ -48,7 +59,10 @@ public class Test_Ex3 {
 
     @Test
     public void testVectorIntercambio(){
-        
+        assertTrue(Ex1_Arrays.intercambiarDatos(new int[] { -4, -3, -2, -1, 0 }, 0, 2));
+        assertFalse(Ex1_Arrays.intercambiarDatos(new int[] { -4, -3, -2, -1, 0 }, 0, 9));
+        assertFalse(Ex1_Arrays.intercambiarDatos(new int[] { -4, -3, -2, -1, 0 }, -1, 2));
+        assertArrayEquals(new int[] { -4, -3, -2, -1, 0 }, );
     }
 }
 
