@@ -8,24 +8,19 @@ import java.awt.event.ItemListener;
 import java.io.File;
 
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
-public class FormSecundario extends JDialog {
+public class FormSecundario extends JFrame implements ActionListener, ItemListener { // TODO MODAL
     private JComboBox<String> cbElementosUser;
     private JTextArea txaTamañoFile;
 
     public FormSecundario(FormPrincipal formPrincipal){
-        super(formPrincipal,true); // Modal si es true NO Modal con false
         this.setTitle("Form Secundario");
         this.setSize(500, 500);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLayout(new FlowLayout());
-    }
-    
-    private class VentanaSecundaria extends JFrame implements ActionListener, ItemListener{
         // File
         String directorioHome = System.getProperty("user.home");
         File filesUser = new File(directorioHome);
@@ -46,15 +41,15 @@ public class FormSecundario extends JDialog {
         this.add(txaTamañoFile);
         txaTamañoFile.setText(tamañoArchivo + "");
         
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // txaTamañoFile.setText(cbElementosUser.getSelectedItem().toString().length() + "");        
-        }
-    
-        @Override
-        public void itemStateChanged(ItemEvent e) {
-            System.out.println(e.getItem());
-        }
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // txaTamañoFile.setText(cbElementosUser.getSelectedItem().toString().length() + "");        
+    }
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        System.out.println(e.getItem());
     }
 }
 
