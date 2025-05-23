@@ -24,12 +24,41 @@ public class Cadena {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null || obj.getClass() != Cadena.class || obj.getClass() == String.class || obj.getClass() == Character[].class) {
-            throw new IllegalArgumentException();
+        if (obj.getClass() == char[].class) {
+            char[] arrayDeCadena = (char[]) obj;
+            if (arrayDeCadena.length == cadena.size()) {
+                for (int i = 0; i < arrayDeCadena.length; i++) {
+                    if (arrayDeCadena[i] != cadena.get(i)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        } else if (obj.getClass() == Cadena.class) {
+            ArrayList<Character> cadena2 = (ArrayList<Character>) obj;
+            if (cadena2.size() == cadena.size()) {
+                for (int i = 0; i < cadena2.size(); i++) {
+                    if (cadena.get(i) != cadena2.get(i)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return this.equals(obj);
+        } else if (obj.getClass() == String.class) {
+            String cadenaString = (String) obj;
+            if (cadenaString.length() == cadena.size()) {
+                for (int i = 0; i < cadenaString.length(); i++) {
+                    if (cadenaString.charAt(i) != cadena.get(i)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
         } else {
-            System.out.println(obj.getClass());
-            return true;
+            throw new IllegalArgumentException();
         }
+        return false;
     }
     // - Sobreescribe equals(Object) para que devuelva true si el objeto que se le
     // pasa como parámetro cumple:
