@@ -20,9 +20,9 @@ public class FormSecundario extends JDialog implements ActionListener, ItemListe
         super(formPrincipal, true); // Modal
         this.setTitle("Form Secundario");
         this.setSize(500, 500);
-        this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLayout(new FlowLayout());
+
         // File
         String directorioHome = System.getProperty("user.home");
         File filesUser = new File(directorioHome);
@@ -34,10 +34,7 @@ public class FormSecundario extends JDialog implements ActionListener, ItemListe
         this.add(cbElementosUser);
         cbElementosUser.addActionListener(this);
         cbElementosUser.addItemListener(this);
-        // for (String elemento : elementosUser) { // Es innecesario
-        //     cbElementosUser.addItem(elemento);
-        // }
-    
+        
         // Añadir txaTamañoFile
         txaTamañoFile = new JTextArea();
         this.add(txaTamañoFile);
@@ -46,12 +43,12 @@ public class FormSecundario extends JDialog implements ActionListener, ItemListe
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        // txaTamañoFile.setText(cbElementosUser.getSelectedItem().toString().length() + "");        
+       
     }
 
     @Override
     public void itemStateChanged(ItemEvent e) {
-        System.out.println(e.getItem());
+        
     }
 }
 

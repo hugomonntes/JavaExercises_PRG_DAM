@@ -1,7 +1,6 @@
 package javaexercises.PRG_SwingAdv.SwingAdv_Ex2;
 
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -17,7 +16,7 @@ public class TecladoMovil extends JFrame implements ActionListener {
 
     public TecladoMovil() {
         // Props Window
-        this.setLayout(new FlowLayout());
+        this.setLayout(null);
         this.setVisible(true);
         this.setSize(500, 500);
 

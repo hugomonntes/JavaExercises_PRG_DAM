@@ -84,7 +84,8 @@ public class FormPrincipal extends JFrame {// TODO Evento teclado en todos los
         public void keyPressed(KeyEvent e) {
             lblTeclas.setText(String.format("Tecla: %s, Unicode: %d", e.getKeyChar(), e.getKeyCode()));
             if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_C) {
-                FormSecundario formSecundario = new FormSecundario(null);
+                FormSecundario formSecundario = new FormSecundario(FormPrincipal.this);
+                formSecundario.setVisible(true);
             }
         }
     }

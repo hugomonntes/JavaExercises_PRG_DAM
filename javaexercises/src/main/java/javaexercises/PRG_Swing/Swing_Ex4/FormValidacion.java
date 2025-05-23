@@ -13,8 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class FormValidacion extends JFrame implements ActionListener {
-                                                                       
+public class FormValidacion extends JFrame implements ActionListener {                                                          
     private JTextField txfNombre;
     private JTextField txfEdad;
     private JTextField txfDir;

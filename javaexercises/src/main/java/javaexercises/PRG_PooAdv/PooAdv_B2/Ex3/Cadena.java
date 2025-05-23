@@ -24,23 +24,15 @@ public class Cadena {
 
     @Override
     public boolean equals(Object obj) {
-        String cadenaComparar = "";
-        for (int i = 0; i < cadena.size(); i++) {
-            cadenaComparar += cadena.get(i);
-        }
-        if (cadenaComparar.equals(obj)) {
-            return true;
-        }
         if (obj == null || obj.getClass() != Cadena.class || obj.getClass() == String.class || obj.getClass() == Character[].class) {
-            return false;
+            throw new IllegalArgumentException();
         } else {
+            System.out.println(obj.getClass());
             return true;
         }
     }
-
     // - Sobreescribe equals(Object) para que devuelva true si el objeto que se le
-    // pasa
-    // como parámetro cumple:
+    // pasa como parámetro cumple:
     // • Es de tipo Cadena y contiene los mismos caracteres y en las mismas
     // posiciones que la colección de la instancia.
     // • Es un objeto tipo String y contiene los mismos caracteres y en las
