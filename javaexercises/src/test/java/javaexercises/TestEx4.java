@@ -1,7 +1,9 @@
 package javaexercises;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +22,6 @@ public class TestEx4 {
     Cadena cNumeros;
     Cadena cSimbolos;
     Cadena cSpaces;
-    Cadena cNull;
 
     String sNormal;
     String sNormalTrim;
@@ -37,14 +38,6 @@ public class TestEx4 {
         vVacio = new char[] {};
         vCharsSpaces = new char[] { ' ', ' ', ' ' };
 
-        // Tipo Cadena
-        cNormal = new Cadena("HOLA");
-        cNormalTrim = new Cadena("   HOLA     ");
-        cNumeros = new Cadena("12345");
-        cSimbolos = new Cadena("/&&&&/");
-        cSpaces = new Cadena("    ");
-        // cNull = new Cadena(null);
-
         // Tipo String
         sNormal = "Hola";
         sNormalTrim = " Hola     ";
@@ -54,10 +47,27 @@ public class TestEx4 {
         sNull = null;
     }
 
+    @BeforeEach
+    public void inicializarCadena() {
+        cNormal = new Cadena("HOLA");
+        cNormalTrim = new Cadena("   HOLA     ");
+        cNumeros = new Cadena("12345");
+        cSimbolos = new Cadena("/&&&&/");
+        cSpaces = new Cadena("    ");
+    }
+
     @Test
     public void testFunctionEquals() {
         // assertTrue(cadenaBase.equals(new Cadena("HOLA")));
-        assertFalse(vCharsLetras.equals(new char[]{'a', 'b', 'c'}));
+        assertFalse(vCharsLetras.equals(new char[] { 'a', 'b', 'c' }));
+    }
+
+    @Test
+    public void testFunctionEliminarCaracteres() {
+        assertEquals(1, cNormal.eliminarCaracteres('A'));
+        assertEquals(0, cNormalTrim.eliminarCaracteres(' ')); // Trim set
+        assertEquals(1, cNumeros.eliminarCaracteres('1'));
+        assertEquals(4, cSimbolos.eliminarCaracteres('&'));
     }
 }
 
