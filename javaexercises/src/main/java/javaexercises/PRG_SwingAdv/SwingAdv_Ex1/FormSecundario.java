@@ -16,7 +16,7 @@ public class FormSecundario extends JDialog implements ActionListener, ItemListe
     private JComboBox<String> cbElementosUser;
     private JTextArea txaTamañoFile;
 
-    public FormSecundario(FormPrincipal formPrincipal){
+    public FormSecundario(FormPrincipal formPrincipal) {
         super(formPrincipal, true); // Modal
         this.setTitle("Form Secundario");
         this.setSize(500, 500);
@@ -28,28 +28,51 @@ public class FormSecundario extends JDialog implements ActionListener, ItemListe
         File filesUser = new File(directorioHome);
         String[] elementosUser = filesUser.list();
         long tamañoArchivo = filesUser.length();
-    
+
         // Añadir cbElementoUser
-        cbElementosUser = new JComboBox<>(elementosUser); // No me hace falta el foreach puedo pasarle como parametro del constructor la lista de elementos
+        cbElementosUser = new JComboBox<>(elementosUser); // No me hace falta el foreach puedo pasarle como parametro
+                                                          // del constructor la lista de elementos
         this.add(cbElementosUser);
         cbElementosUser.addActionListener(this);
         cbElementosUser.addItemListener(this);
-        
+
         // Añadir txaTamañoFile
-        txaTamañoFile = new JTextArea();
+        txaTamañoFile = new JTextArea(20, 40);
         this.add(txaTamañoFile);
         txaTamañoFile.setText(tamañoArchivo + "");
-        
+
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-       
+
     }
 
     @Override
     public void itemStateChanged(ItemEvent e) {
-        
+        if (e.getStateChange() == ItemEvent.SELECTED) {
+            String selectedItem = (String) cbElementosUser.getSelectedItem();
+            String directorioHome = System.getProperty("user.home");
+            File selectedFile = new File(directorioHome, selectedItem);
+
+            if (selectedFile.isFile()) {
+                long tamañoArchivo = selectedFile.length();
+                txaTamañoFile.setText(String.format("Tamaño del archivo: %d bytes", tamañoArchivo));
+            } else if (selectedFile.isDirectory()) {
+                File[] files = selectedFile.listFiles();
+                String contenido = "";
+                for (File f : files) {
+                    if (f.isDirectory()) {
+                        contenido += String.format("[DIR] %s \n", f.getName());
+                    } else {
+                        contenido += String.format("%s \n", f.getName());
+                    }
+                }
+                txaTamañoFile.setText(contenido);
+            }
+        }
     }
+
 }
 
 // ◦ Al seleccionar un archivo en el combo se muestra en un textarea el
