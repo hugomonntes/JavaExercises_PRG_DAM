@@ -84,6 +84,10 @@ public class Cadena {
         }
         return contadorEliminaciones;
     }
+
+    public Cadena(String cadena){
+        setCadena(cadena);
+    }
 }
 
 // - Método eliminar(char): se le pasa un carácter y elimina todas las veces que
