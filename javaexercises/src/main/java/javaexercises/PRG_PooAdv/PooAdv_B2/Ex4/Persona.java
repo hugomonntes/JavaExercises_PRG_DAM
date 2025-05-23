@@ -57,7 +57,7 @@ abstract class Persona {
         }
 
         this.dni = dniConLetra;
-        System.out.println("DNI válido. Letra correcta.");
+        System.out.println("DNI válido!");
     }
     // • Si el DNI no es un número válido de 9 dígitos (o no es un número) , o no
     // hay
@@ -66,6 +66,13 @@ abstract class Persona {
 
     public String getDni() {
         return dni;
+    }
+
+    public Persona(String nombre, String apellidos, int edad, String dni) {
+        setNombre(nombre);
+        setApellido(apellido);
+        setEdad(edad);
+        setDni(dni);
     }
 
     @Override
