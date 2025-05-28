@@ -1,5 +1,6 @@
 package javaexercises;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -59,11 +60,15 @@ public class TestEx4 {
     public void testFunctionEquals() {
         // assertTrue(cadenaBase.equals(new Cadena("HOLA")));
         assertFalse(vCharsLetras.equals(new char[] { 'a', 'b', 'c' }));
+        assertFalse(vCharsNumeros.equals(new char[] { '1', '0', '2' }));
+        assertFalse(vCharsSimbolos.equals(new char[] { '%', '$', '?' }));
+        assertFalse(vCharsSimbolos.equals(new char[] { '%', '$', '?' }));
     }
 
     @Test
-    public void testFunctionEliminarCaracteres() {
+    public void testFunctionEliminarCaracteres() { // TODO Comprobar comparaciones
         assertEquals(1, cNormal.eliminarCaracteres('A'));
+        assertEquals(new char[]{'A', 'B', 'C'}, cNormal);
         assertEquals(0, cNormalTrim.eliminarCaracteres(' ')); // Trim set
         assertEquals(1, cNumeros.eliminarCaracteres('1'));
         assertEquals(4, cSimbolos.eliminarCaracteres('&'));
