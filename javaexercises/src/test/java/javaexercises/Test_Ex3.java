@@ -75,7 +75,7 @@ public class Test_Ex3 {
     }
 
     @Test
-    public void testVectorIntercambio() { // TODO faltan pruebas
+    public void testVectorIntercambio() {
         assertTrue(Ex1_Arrays.intercambiarDatos(vOrdenado, 0, 2));
         assertArrayEquals(new int[] { 3, 2, 1, 4, 5 }, vOrdenado);
 
@@ -90,16 +90,16 @@ public class Test_Ex3 {
         assertArrayEquals(vPositivos, vPositivos);
 
         assertTrue(Ex1_Arrays.intercambiarDatos(vPositivos, 0, vPositivos.length - 1));
-        assertArrayEquals(new int[]{0, 2, 999, 4, 1}, vPositivos);
+        assertArrayEquals(new int[] { 0, 2, 999, 4, 1 }, vPositivos);
 
         assertTrue(Ex1_Arrays.intercambiarDatos(vPositivos, 2, 3));
-        assertArrayEquals(new int[]{0, 2, 4, 999, 1}, vPositivos);
+        assertArrayEquals(new int[] { 0, 2, 4, 999, 1 }, vPositivos);
 
         assertTrue(Ex1_Arrays.intercambiarDatos(vPositivos, 2, vPositivos.length - 1));
-        assertArrayEquals(new int[]{0, 2, 1, 999, 4}, vPositivos);
+        assertArrayEquals(new int[] { 0, 2, 1, 999, 4 }, vPositivos);
 
         try {
-            assertTrue(Ex1_Arrays.intercambiarDatos(vNull, 0, vPositivos.length - 1));
+            Ex1_Arrays.intercambiarDatos(vNull, 0, vPositivos.length - 1);
             fail("Vector null");
         } catch (NullPointerException e) {
             assertTrue(true);
@@ -117,7 +117,7 @@ public class Test_Ex3 {
     }
 
     @Test
-    public void testSumarRangos(){ //TODO quitar assertThrows
+    public void testSumarRangos() {
         assertEquals(3, sumaRango(vPositivos, 0, 1));
         assertEquals(-1008, sumaRango(vNegativos, 1, vNegativos.length - 1));
         assertEquals(0, sumaRango(vIguales, 1, vNegativos.length - 1));
@@ -136,7 +136,7 @@ public class Test_Ex3 {
         } catch (IllegalArgumentException e) {
             assertTrue(true);
         }
-        
+
         try {
             sumaRango(vPositivos, 0, vPositivos.length);
             fail("Fallo fin mayor a longitud");
