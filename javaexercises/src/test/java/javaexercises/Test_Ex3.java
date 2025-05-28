@@ -92,10 +92,16 @@ public class Test_Ex3 {
         assertTrue(Ex1_Arrays.intercambiarDatos(vPositivos, 0, vPositivos.length - 1));
         assertArrayEquals(new int[]{0, 2, 999, 4, 1}, vPositivos);
 
+        assertTrue(Ex1_Arrays.intercambiarDatos(vPositivos, 2, 3));
+        assertArrayEquals(new int[]{0, 2, 4, 999, 1}, vPositivos);
+
+        assertTrue(Ex1_Arrays.intercambiarDatos(vPositivos, 2, vPositivos.length - 1));
+        assertArrayEquals(new int[]{0, 2, 1, 999, 4}, vPositivos);
+
         try {
             assertTrue(Ex1_Arrays.intercambiarDatos(vNull, 0, vPositivos.length - 1));
             fail("Vector null");
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
             assertTrue(true);
         }
     }
