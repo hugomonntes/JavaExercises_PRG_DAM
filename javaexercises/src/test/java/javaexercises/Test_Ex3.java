@@ -27,6 +27,7 @@ public class Test_Ex3 {
     private int[] vIguales;
     private int[] vUno;
     private int[] vVacio;
+    private int[] vNull;
 
     @BeforeEach
     public void incializarVectores() {
@@ -84,10 +85,19 @@ public class Test_Ex3 {
         assertFalse(Ex1_Arrays.intercambiarDatos(vPositivos, 0, 9));
         assertFalse(Ex1_Arrays.intercambiarDatos(vPositivos, -1, 2));
         assertFalse(Ex1_Arrays.intercambiarDatos(vPositivos, 1, -1));
-        assertTrue(Ex1_Arrays.intercambiarDatos(vPositivos, 4, 3));
 
         assertTrue(Ex1_Arrays.intercambiarDatos(vPositivos, 2, 2)); // Cambiar mismas posiciones
         assertArrayEquals(vPositivos, vPositivos);
+
+        assertTrue(Ex1_Arrays.intercambiarDatos(vPositivos, 0, vPositivos.length - 1));
+        assertArrayEquals(new int[]{0, 2, 999, 4, 1}, vPositivos);
+
+        try {
+            assertTrue(Ex1_Arrays.intercambiarDatos(vNull, 0, vPositivos.length - 1));
+            fail("Vector null");
+        } catch (Exception e) {
+            assertTrue(true);
+        }
     }
 
     @Test
