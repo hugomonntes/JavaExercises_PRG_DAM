@@ -30,7 +30,7 @@ public class Tests_Ex1 {
     }
 
     @Test
-    public void testCalcularPotencia(){ //TODO más preubas(ok)
+    public void testCalcularPotencia(){
         int [] bases = {1, 0, -1, 2, -2, -0, 99};
         int [] exponentes = {1, 0, -1, 2, 3, -2, -3, 99};
         for (int i = 0; i < bases.length; i++) {

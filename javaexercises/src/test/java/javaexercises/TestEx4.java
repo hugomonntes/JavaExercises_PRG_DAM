@@ -68,7 +68,7 @@ public class TestEx4 {
     @Test
     public void testFunctionEliminarCaracteres() { // TODO Comprobar comparaciones
         assertEquals(1, cNormal.eliminarCaracteres('A'));
-        assertEquals(new char[]{'A', 'B', 'C'}, cNormal);
+        assertEquals("HOL", cNormal);
         assertEquals(0, cNormalTrim.eliminarCaracteres(' ')); // Trim set
         assertEquals(1, cNumeros.eliminarCaracteres('1'));
         assertEquals(4, cSimbolos.eliminarCaracteres('&'));
