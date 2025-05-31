@@ -1,5 +1,7 @@
 package prueba_examen.geometria;
 
+import prueba_examen.interfaz.Libreria;
+
 public class Poligono extends Figura{
     public Punto[] listaPuntos;
 
@@ -23,10 +25,20 @@ public class Poligono extends Figura{
     @Override
     public void pedirDatos() {
         super.pedirDatos();
+        for (int i = 0; i < listaPuntos.length; i++) {
+            System.out.print("Introduce Coordenadas X:");
+            double x = Libreria.pedirReales();
+            System.out.print("Introduce Coordenadas Y:");
+            double y = Libreria.pedirReales();
+            listaPuntos[i] = new Punto(x, y);
+        }
     }
 
     @Override
     public void mostrarDatos() {
         super.mostrarDatos();
+        for (Punto punto : listaPuntos) {
+            System.out.println(punto.toString());
+        }
     }
 }

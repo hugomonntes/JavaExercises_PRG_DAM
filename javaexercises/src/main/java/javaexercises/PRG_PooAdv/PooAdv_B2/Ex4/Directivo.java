@@ -24,22 +24,19 @@ public class Directivo extends Persona {
         }
     }
 
-    public Directivo() {
-        super("", "", 0, "");
-        departamento = "";
-        porcentajeBeneficios = 0;
-    }
-
-    public Directivo(String nombre, String apellidos, int edad, String dni, String departamento,
-            double porcentajeBeneficios) {
+    
+    public Directivo(String nombre, String apellidos, int edad, String dni, String departamento, double porcentajeBeneficios) {
         super(nombre, apellidos, edad, dni);
         setDepartamento(departamento);
         setPorcentajeBeneficios(porcentajeBeneficios);
     }
+    
+    public Directivo() {
+        this("","",20,"","",0);
+    }
 
     @Override
     String firmaMail() {
-        // TODO Auto-generated method stub
         return "";
     }
 }

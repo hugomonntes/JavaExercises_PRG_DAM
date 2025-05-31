@@ -48,7 +48,7 @@ public class Figura implements InterfazUsuario {
 
     @Override
     public void mostrarDatos() {
-        System.out.printf("Nombre: %s, Origen: %f,", getNombre(), getOrigen());
+        System.out.printf("Nombre: %s, Origen: %s,", getNombre(), getOrigen());
     }
 
     // Cumple el interface InterfazUsuario de forma que tendrá también un
