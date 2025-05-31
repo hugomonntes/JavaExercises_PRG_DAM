@@ -12,9 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class FormPrincipal extends JFrame {// TODO Evento teclado en todos los
-                                           // comp.(ok)
-    // TODO secundario modal(ok). Gestionar textarea en secundario.
+public class FormPrincipal extends JFrame {// TODO Evento teclado en todos los // comp.(ok) // TODO secundario modal(ok). Gestionar textarea en secundario.(ok)
     private JButton btnIzq;
     private JButton btnDer;
     private JLabel lblTeclas;

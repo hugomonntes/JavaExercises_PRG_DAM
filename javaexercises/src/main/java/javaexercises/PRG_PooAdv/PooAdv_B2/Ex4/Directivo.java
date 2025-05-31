@@ -24,7 +24,6 @@ public class Directivo extends Persona {
         }
     }
 
-    
     public Directivo(String nombre, String apellidos, int edad, String dni, String departamento, double porcentajeBeneficios) {
         super(nombre, apellidos, edad, dni);
         setDepartamento(departamento);
