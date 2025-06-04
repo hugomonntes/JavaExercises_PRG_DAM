@@ -19,19 +19,24 @@ public class Empleado extends Persona {
         return salarioAnual;
     }
 
+    public void setIrpf(double irpf) {
+        this.irpf = irpf;
+    }
+
     public double getIrpf() {
         return irpf;
     }
 
-    public Empleado() {
-        super("", "", 0, "");
-        salarioAnual = 0;
-        irpf=7.5;
-    }
-
+    
     public Empleado(String apellidos, String nombre, int edad, String dni, double salarioAnual) {
         super(nombre, apellidos, edad, dni);
         setSalarioAnual(salarioAnual);
+    }
+    
+    public Empleado() {
+        this("", "", 20, "", 0);
+        setSalarioAnual(0);
+        setIrpf(irpf);
     }
 
     double irpf() {

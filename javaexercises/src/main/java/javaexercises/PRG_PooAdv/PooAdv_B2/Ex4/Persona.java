@@ -32,7 +32,7 @@ abstract class Persona {
         return edad;
     }
 
-    public void setDni(String dniConLetra) { // Corregir
+    public void setDni(String dniConLetra) {
         String letrasDni = "TRWAGMYFPDXBNJZSQVHLCKE";
 
         dniConLetra = dniConLetra.replace("-", "").toUpperCase();
