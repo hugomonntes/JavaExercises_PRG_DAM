@@ -37,8 +37,8 @@ public class Cadena {
         } else if (obj.getClass() == Cadena.class) {
             ArrayList<Character> cadena2 = (ArrayList<Character>) ((Cadena)obj).cadena;
             if (cadena2.size() == cadena.size()) {
-                for (int i = 0; i < cadena2.size(); i++) {
-                    if (cadena.get(i) != cadena2.get(i)) {
+                for (int i = 0; i < cadena2.size(); i++) { // 1, 2, 3 (A)
+                    if (cadena.get(i) != cadena2.get(i)) { // 1, 2, 3 (B)
                         return false;
                     }
                 }
