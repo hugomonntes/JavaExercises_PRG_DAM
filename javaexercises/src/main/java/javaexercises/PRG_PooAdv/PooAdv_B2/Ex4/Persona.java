@@ -45,7 +45,7 @@ abstract class Persona {
         char letra = dniConLetra.charAt(8);
 
         int numero;
-        try { // Compruebo si el numero no es un numero lanza except
+        try {
             numero = Integer.parseInt(numeroStr);
         } catch (NumberFormatException e) {
             throw new DNIException();

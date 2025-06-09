@@ -35,7 +35,7 @@ public class Directivo extends Persona {
     }
 
     @Override
-    String firmaMail() {
+    String firmaMail() {//TODO 
         return "";
     }
 }

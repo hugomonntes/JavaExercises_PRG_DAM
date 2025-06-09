@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Cadena {
     private ArrayList<Character> cadena;
 
-    public void setCadena(String conjuntoDeChars) {
+    public void setCadena(String conjuntoDeChars) {//Sin trim. 
         cadena = new ArrayList<>();
         conjuntoDeChars = conjuntoDeChars.trim();
         for (int i = 0; i < conjuntoDeChars.length(); i++) {
@@ -35,10 +35,10 @@ public class Cadena {
                 return true;
             }
         } else if (obj.getClass() == Cadena.class) {
-            ArrayList<Character> cadena2 = (ArrayList<Character>) obj;
+            ArrayList<Character> cadena2 = (ArrayList<Character>) ((Cadena)obj).cadena;
             if (cadena2.size() == cadena.size()) {
-                for (int i = 0; i < cadena2.size(); i++) {
-                    if (cadena.get(i) != cadena2.get(i)) {
+                for (int i = 0; i < cadena2.size(); i++) { // 1, 2, 3 (A)
+                    if (cadena.get(i) != cadena2.get(i)) { // 1, 2, 3 (B)
                         return false;
                     }
                 }
@@ -60,18 +60,6 @@ public class Cadena {
         }
         return false;
     }
-    // - Sobreescribe equals(Object) para que devuelva true si el objeto que se le
-    // pasa como parámetro cumple:
-    // • Es de tipo Cadena y contiene los mismos caracteres y en las mismas
-    // posiciones que la colección de la instancia.
-    // • Es un objeto tipo String y contiene los mismos caracteres y en las
-    // mismas posiciones que la colección de la instancia.
-    // Es un vector de char y contiene los mismos caracteres y en las
-    // mismas posiciones que la colección de la instancia.
-
-    // Si se le pasa un objeto null o un parámetro que no sea tipo Cadena, String o
-    // char[]
-    // lanzará la excepción IllegalArgumentException
 
     public int eliminarCaracteres(char caracter) {
         int contadorEliminaciones = 0;
